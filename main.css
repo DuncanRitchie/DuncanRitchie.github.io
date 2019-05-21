@@ -224,7 +224,7 @@ a:link {
     position: relative
 }
 
-.index-link-div:hover {
+.index-link-div:not(.index-link-to-bad-page):hover {
     background-color:white;
 }
 
@@ -251,6 +251,14 @@ a:link {
     color:darkseagreen;
 }
 
+.index-link-to-bad-page .index-link-a {
+    color: #505050
+}
+
+.index-link-to-bad-page .index-link-a:hover {
+    color: #505050
+}
+
 .project-screenshot {
     height:240px;
 }
@@ -272,15 +280,15 @@ a:link {
 }
 
 .index-link-to-bad-page {
-    background-color:#e6f2ff;
-    border:5px solid #0066cc;
+    background-color:#f0f0f0;
+    border:5px solid #505050;
 }
 
-.index-link-to-bad-page a {
+.index-link-div a {
     color:#0066cc;
 }
 
-.index-link-to-bad-page a:hover {
+.index-link-div a:hover {
     color:dodgerblue;
 }
 
