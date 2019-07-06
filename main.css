@@ -119,6 +119,14 @@ a:link {
     background-color: rgb(61,122,197);
 }
 
+#bkgd-velut {
+    /* background-image: url(https://live.staticflickr.com/3870/14580541264_32fbdfa334_k.jpg); */
+    /* Photo of Chester's weir */
+    background-image: url(https://live.staticflickr.com/7617/26608354044_db61ef27f7_k.jpg);
+    /* Photo of Chester's Eastgate */
+    background-color: rgb(61,122,197);
+}
+
 #bkgd-about-me {
     background-image: url(https://farm5.staticflickr.com/4205/35511958260_2a0a5667f5_k.jpg);
     /* Photo of my dog in Duke's Drive woods*/
@@ -208,7 +216,8 @@ a:link {
     flex-wrap:wrap;
     justify-content:space-around;
     align-items:center;
-    min-height: max(calc(100vh - 48px), fit-content);
+    height: calc(100vh - 48px);
+    min-height: fit-content;
     width: 100vw
 }
 
@@ -377,6 +386,11 @@ a:link {
     #bkgd-coding {
         background-image: url(https://farm1.staticflickr.com/338/18527154218_173a70505d_k.jpg);
         /* Photo of Chester's weir */
+    }
+    
+    #bkgd-velut {
+        background-image: url(https://live.staticflickr.com/7617/26608354044_cc5b1d5fb7_b.jpg);
+        /* Photo of Chester's Eastgate */
     }
     
     #bkgd-about-me {
