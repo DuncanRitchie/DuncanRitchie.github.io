@@ -85,7 +85,7 @@ a:link {
     /* Padding is overruled on .jumbotron-main-with-image on larger sizes */
     padding:3vw 10vw;
     width: 100vw;
-    background:rgba(255,255,255,0.82);
+    background:rgba(255,255,255,0.9);
     border-radius: 0;
 }
 
@@ -128,8 +128,8 @@ a:link {
 }
 
 #bkgd-about-me {
-    background-image: url(https://farm5.staticflickr.com/4205/35511958260_2a0a5667f5_k.jpg);
-    /* Photo of my dog in Duke's Drive woods*/
+    background-image: url(https://live.staticflickr.com/65535/47981139392_033588044f_b.jpg);
+    /* Photo of my dog on the Meadows */
     background-color: rgb(117,135,56);
 }
 
@@ -180,7 +180,7 @@ a:link {
     display:flex;
     justify-content:space-between;
     transform:translateY(-1vh);
-    background:rgba(255,255,255,0.8);
+    background:rgba(255,255,255,0.85);
     color:black;
 }
 
