@@ -82,7 +82,7 @@ a:link {
 }
 
 .jumbotron-main{
-    /* Padding is overruled on .jumbotron-main-with-image on larger sizes */
+    /* Padding is overruled on .jumbotron-main-with-image on larger sizes. */
     padding:3vw 10vw;
     width: 100vw;
     background:rgba(255,255,255,0.9);
@@ -91,6 +91,21 @@ a:link {
 
 .highlight{
     color: rgb(25, 65, 65);
+}
+
+/* This selector is for adding an arrow after external links inside jumbotron-containers. */
+.jumbotron-container a[href^="http"]:not([href*="duncanritchie.co.uk"])::after {
+    content: " ↗";
+    vertical-align: super;
+    font-size: 60%;
+}
+
+/* Removing the underline that Bootstrap adds on hover */
+.jumbotron-container a[href^="http"]:not([href*="duncanritchie.co.uk"]):hover::after {
+    outline: none;
+    text-decoration: none;
+    /* A clip-path is a cheeky way of hiding the underline! */
+    clip-path: polygon(0 0, 100% 0, 100% 77%, 0 77%)
 }
 
 /* Jumbotron backgrounds */
