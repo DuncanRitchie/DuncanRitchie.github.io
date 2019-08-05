@@ -67,7 +67,7 @@ a:link {
 .jumbotron-container {
     margin-top:18px;
     padding:0 0;
-    height: 100%;
+    height: auto;
     min-height:calc(100vh - 48px);
     width: 100vw
 }
@@ -95,6 +95,7 @@ a:link {
 
 /* This selector is for adding an arrow after external links inside jumbotron-containers. */
 .jumbotron-container a[href^="http"]:not([href*="duncanritchie.co.uk"])::after {
+    /* The space before the arrow here is non-breaking. */
     content: " ↗";
     vertical-align: super;
     font-size: 60%;
@@ -116,7 +117,7 @@ a:link {
     padding:0 0;
     width:100vw;
     height: calc(100vh - 48px);
-    min-height: fit-content;
+    min-height: auto;
     background-position: center center;
     background-size:cover;
     background-repeat: no-repeat;
@@ -231,9 +232,9 @@ a:link {
     flex-wrap:wrap;
     justify-content:space-around;
     align-items:center;
-    height: calc(100vh - 48px);
-    min-height: fit-content;
-    width: 100vw
+    min-height: calc(100vh - 48px);
+    height: auto;
+    width: 100%
 }
 
 .index-link-div {
@@ -333,13 +334,15 @@ a:link {
     }
 
     .jumbotron-container {
-        min-height: max(calc(100vh - 48px), fit-content);
+        height: auto;
+        min-height: calc(100vh - 48px);
         width:100vw;
     }
 
     .jumbotron-bkgd-photo {
         display:grid;
-        min-height: max(calc(100vh - 48px), fit-content);
+        height: auto;
+        min-height: calc(100vh - 48px);
         align-items:center;
     }
 
@@ -373,7 +376,8 @@ a:link {
 
     #index-links-body {
         align-items:center;
-        height:100vh;
+        height:auto;
+        min-height: calc(100vh - 48px);
         font-size:18px;
         padding: 36px 12px 0px 12px;
     }
@@ -390,7 +394,8 @@ a:link {
         padding-top:36px;
         padding-bottom:90px;
         background-size:cover;
-        min-height:fit-content;
+        height:auto;
+        min-height: calc(100vh - 48px)
     }
 
     #bkgd-index {
@@ -482,7 +487,7 @@ a:link {
     }
 
     .index-links-body {
-        min-height:fit-content;
+        height: auto;
         justify-content:space-around;
         padding:36px 0px 18px 0px;
     }
@@ -492,11 +497,15 @@ a:link {
     }
 }
 
-/* Media query for tiny screens */
+/* Media query for tiny screens, e.g. Galaxy S5 */
 
 @media (max-width:375px) {
     .body {
         padding-top:600px;
+    }
+
+    .index-links-body {
+        height: auto
     }
     
     .index-link-div {
