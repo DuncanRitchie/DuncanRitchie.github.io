@@ -11,6 +11,7 @@ body {
 }
 
 a:link {
+    font-weight: bold;
     font-weight: 600;
 }
 
@@ -295,17 +296,18 @@ a:link {
 
 .index-made-with {
     /* font-size is set in media queries */
+    opacity: 0.8;
     font-weight:normal
 }
 
-.index-finish-date{
+.index-finish-date,.index-reason-no-demo{
     /* font-size is set in media queries */
     color:grey;
     font-weight:normal
 }
 
 .index-link-to-bad-page {
-    background-color:#f0f0f0;
+    background-color:#cecece;
     border:5px solid #505050;
 }
 
