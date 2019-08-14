@@ -38,7 +38,7 @@ a:link {
     display:none;
 }
 
-/* Scroll bar */
+/* Scroll bar (commented out)
 
 ::-webkit-scrollbar {
     height:0;
@@ -62,7 +62,7 @@ a:link {
 
 ::-webkit-scrollbar-corner {
     display:none;
-}
+} */
 
 /* Jumbotrons and containers */
 
