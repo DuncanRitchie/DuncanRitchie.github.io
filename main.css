@@ -240,17 +240,17 @@ a:link {
     margin-bottom: 36px;
 }
 
-.index-links-head {
+div.index-links-head {
     width: 100%;
     padding-left: calc(10vw - 12px);
     color: #707070;
 }
 
-.index-links-head:not(:first-of-type) {
+div.index-links-head:not(:first-of-type) {
     padding-top: 18px;
 }
 
-.index-links-head h1 {
+div.index-links-head h1 {
     color: grey;
 }
 
