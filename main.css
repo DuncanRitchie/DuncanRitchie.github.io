@@ -236,7 +236,22 @@ a:link {
     align-items:center;
     min-height: calc(100vh - 48px);
     height: auto;
-    width: 100%
+    width: 100%;
+    margin-bottom: 36px;
+}
+
+.index-links-head {
+    width: 100%;
+    padding-left: calc(10vw - 12px);
+    color: #707070;
+}
+
+.index-links-head:not(:first-of-type) {
+    padding-top: 18px;
+}
+
+.index-links-head h1 {
+    color: grey;
 }
 
 .index-link-div {
@@ -493,6 +508,10 @@ a:link {
         height: auto;
         justify-content:space-around;
         padding:36px 0px 18px 0px;
+    }
+    
+    .index-links-head:not(:first-of-type) {
+        padding-top: 6px;
     }
 
     .index-link-div {
