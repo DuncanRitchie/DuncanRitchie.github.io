@@ -107,25 +107,6 @@ div.showcase-links-head h1 {
     color:dodgerblue;
 }
 
-/* Media query for mobile/tablet */
-
-@media (max-width:767px) {
-
-    .showcase-links-body {
-        height: auto;
-        justify-content:space-around;
-        padding:36px 0px 18px 0px;
-    }
-
-    .showcase-links-head:not(:first-of-type) {
-        padding-top: 6px;
-    }
-
-    .showcase-link-div {
-        width:90vw;
-    }
-}
-
 
 
 /* Media query for mobile/tablet */
