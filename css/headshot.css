@@ -1,0 +1,14 @@
+/* Photo of me in index.html */
+
+.image-headshot {
+    display: block;
+    background-image: url(../headshot/duncan-ritchie-headshot.jpg);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.webp .image-headshot {
+    background-image: url(../headshot/duncan-ritchie-headshot.webp);
+}
+
