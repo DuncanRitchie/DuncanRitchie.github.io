@@ -245,21 +245,6 @@ a:link {
         align-self:flex-end;
     }
 
-    .jumbotron-main-with-image {
-        display: flex;
-        flex-direction: row-reverse;
-        justify-content: space-between;
-        padding: 3vw 5vw 3vw 10vw;
-    }
-
-    .jumbotron-image {
-        width: 20vw;
-        max-width: 30vh;
-        height: auto;
-        margin-left: 36px;
-        object-fit: cover;
-    }
-
     h1 {
         font-size: 54px;
     }
@@ -358,15 +343,6 @@ a:link {
         height: 100%;
         padding:2vw;
         border-radius: 0;
-    }
-
-    .jumbotron-image {
-        display: none;
-        position: absolute;
-        width: 20vw;
-        height: 20vh;
-        object-fit: cover;
-        margin: -2vw 0 -8vw 80vw;
     }
 
     .jumbotron p {
