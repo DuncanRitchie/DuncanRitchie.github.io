@@ -38,32 +38,6 @@ a:link {
     display:none;
 }
 
-/* Scroll bar (commented out)
-
-::-webkit-scrollbar {
-    height:0;
-    width:12px;
-    cursor:pointer;
-}
-
-::-webkit-scrollbar-track {
-    display:none; 
-}
-   
-::-webkit-scrollbar-thumb {
-    background: rgb(224, 224, 224);
-    box-shadow: inset 0 0 2px rgb(160, 160, 160);
-    border-radius:6px;
-}
-  
-::-webkit-scrollbar-thumb:hover {
-    background: rgb(255, 255, 255);
-}
-
-::-webkit-scrollbar-corner {
-    display:none;
-} */
-
 /* Jumbotrons and containers */
 
 .jumbotron-container {
@@ -107,7 +81,7 @@ a:link {
 .jumbotron-container a[href^="http"]:not([href*="duncanritchie.co.uk"]):hover::after {
     outline: none;
     text-decoration: none;
-    /* A clip-path is a cheeky way of hiding the underline! */
+    /* A clip-path is a cheeky way of hiding the underline! (Doesn't have an effect on Edge.) */
     clip-path: polygon(0 0, 100% 0, 100% 77%, 0 77%)
 }
 
@@ -126,71 +100,98 @@ a:link {
 }
 
 #bkgd-index {
-    background-image: url(https://farm1.staticflickr.com/865/40103359780_d32557cabd_k.jpg);
-    background-image: url(backgrounds/maydip.webp);
     /* Photo of St Andrews pier and East Sands at sunrise */
+    background-image: url(https://farm1.staticflickr.com/865/40103359780_d32557cabd_k.jpg);
     background-color: rgb(159,62,41);
 }
 
+.webp #bkgd-index {
+    background-image: url(backgrounds/maydip.webp);
+}
+
 #bkgd-coding {
-    background-image: url(https://farm1.staticflickr.com/338/18527154218_173a70505d_k.jpg);
-    background-image: url(backgrounds/weir.webp);
     /* Photo of Chester's weir */
+    background-image: url(https://farm1.staticflickr.com/338/18527154218_173a70505d_k.jpg);
     background-color: rgb(61,122,197);
+}
+
+.webp #bkgd-coding {
+    background-image: url(backgrounds/weir.webp);
 }
 
 #bkgd-velut {
-    background-image: url(https://live.staticflickr.com/7617/26608354044_db61ef27f7_k.jpg);
-    background-image: url(backgrounds/eastgate.webp);
     /* Photo of Chester's Eastgate */
+    background-image: url(https://live.staticflickr.com/7617/26608354044_db61ef27f7_k.jpg);
     background-color: rgb(61,122,197);
 }
 
+.webp #bkgd-velut {
+    background-image: url(backgrounds/eastgate.webp);
+}
+
 #bkgd-about-me {
-    background-image: url(https://live.staticflickr.com/65535/47981139392_033588044f_b.jpg);
-    background-image: url(backgrounds/dog.webp);
     /* Photo of my dog on the Meadows */
+    background-image: url(https://live.staticflickr.com/65535/47981139392_033588044f_b.jpg);
     background-color: rgb(117,135,56);
 }
 
+.webp #bkgd-about-me {
+    background-image: url(backgrounds/dog.webp);
+}
+
 #bkgd-chester {
-    background-image: url(https://farm2.staticflickr.com/1778/30115708258_55224642fc_k.jpg);
-    background-image: url(backgrounds/amphitheatre.webp);
     /* Photo of amphitheatre */
+    background-image: url(https://farm2.staticflickr.com/1778/30115708258_55224642fc_k.jpg);
     background-color: rgb(206,241,253);
 }
 
+.webp #bkgd-chester {
+    background-image: url(backgrounds/amphitheatre.webp);
+}
+
 #bkgd-latin {
-    background-image: url(https://farm1.staticflickr.com/869/41524368771_f294dcf6c6_k.jpg);
-    background-image: url(backgrounds/swallowgate.webp);
     /* Photo of Swallowgate */
+    background-image: url(https://farm1.staticflickr.com/869/41524368771_f294dcf6c6_k.jpg);
     background-color: rgb(194,204,207);
 }
 
+.webp #bkgd-latin {
+    background-image: url(backgrounds/swallowgate.webp);
+}
+
 #bkgd-photos {
-    background-image: url(https://farm2.staticflickr.com/1740/40646047430_11f67802b5_b.jpg);
-    background-image: url(backgrounds/heron.webp);
     /* Photo of heron (landscape) */
+    background-image: url(https://farm2.staticflickr.com/1740/40646047430_11f67802b5_b.jpg);
     background-color: rgb(148,167,24);
+}
+
+.webp #bkgd-photos {
+    background-image: url(backgrounds/heron.webp);
 }
 
 
 #bkgd-tiq {
-    background-image: url(https://farm5.staticflickr.com/4216/34984015144_e5bf503d8c_k.jpg);
-    background-image: url(backgrounds/stmarys.webp);
     /* Photo of St Mary's stained glass */
+    background-image: url(https://farm5.staticflickr.com/4216/34984015144_e5bf503d8c_k.jpg);
     background-color: rgb(173,138,43);
+}
+
+.webp #bkgd-tiq {
+    background-image: url(backgrounds/stmarys.webp);
 }
 
 /* Photo of me in index.html */
 
 .image-headshot {
     display: block;
-    background-image: url(./duncan-ritchie-headshot.jpg);
-    background-image: url(./duncan-ritchie-headshot.webp);
+    background-image: url(./headshot/duncan-ritchie-headshot.jpg);
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
+}
+
+.webp .image-headshot {
+    background-image: url(./headshot/duncan-ritchie-headshot.webp);
 }
 
 /* Captions under jumbotrons */
@@ -420,52 +421,76 @@ div.index-links-head h1 {
     }
 
     #bkgd-index {
-        background-image: url(https://farm1.staticflickr.com/980/28040346688_5f69829497_b.jpg);
-        background-image: url(backgrounds/maydip_mobile.webp);
         /* Photo of St Andrews pier and East Sands at sunrise (portrait)*/
+        background-image: url(https://farm1.staticflickr.com/980/28040346688_5f69829497_b.jpg);
+    }
+
+    .webp #bkgd-index {
+        background-image: url(backgrounds/maydip_mobile.webp);
     }
     
     #bkgd-coding {
-        background-image: url(https://live.staticflickr.com/338/18527154218_de7f8e9300_c.jpg);
-        background-image: url(backgrounds/weir_mobile.webp);
         /* Photo of Chester's weir */
+        background-image: url(https://live.staticflickr.com/338/18527154218_de7f8e9300_c.jpg);
+    }
+
+    .webp #bkgd-coding {
+        background-image: url(backgrounds/weir_mobile.webp);   
     }
     
     #bkgd-velut {
-        background-image: url(https://live.staticflickr.com/7617/26608354044_cc5b1d5fb7_b.jpg);
-        background-image: url(backgrounds/eastgate_mobile.webp);
         /* Photo of Chester's Eastgate */
+        background-image: url(https://live.staticflickr.com/7617/26608354044_cc5b1d5fb7_b.jpg);
+    }
+
+    .webp #bkgd-velut {
+        background-image: url(backgrounds/eastgate_mobile.webp);   
     }
     
     #bkgd-about-me {
-        background-image: url(https://farm8.staticflickr.com/7856/46560838581_f56d755718_k.jpg);
-        background-image: url(backgrounds/dog_mobile.webp);
         /* Photo of woods with my dog */
+        background-image: url(https://farm8.staticflickr.com/7856/46560838581_f56d755718_k.jpg);
+    }
+
+    .webp #bkgd-about-me {
+        background-image: url(backgrounds/dog_mobile.webp);
     }
     
     #bkgd-chester {
-        background-image: url(https://live.staticflickr.com/1778/30115708258_44ea84d19a_c.jpg);
-        background-image: url(backgrounds/amphitheatre_mobile.webp);
         /* Photo of amphitheatre */
+        background-image: url(https://live.staticflickr.com/1778/30115708258_44ea84d19a_c.jpg);
+    }
+
+    .webp #bkgd-chester {
+        background-image: url(backgrounds/amphitheatre_mobile.webp);
     }
     
     #bkgd-latin {
-        background-image: url(https://farm1.staticflickr.com/869/41524368771_f294dcf6c6_k.jpg);
-        background-image: url(backgrounds/swallowgate_mobile.webp);
         /* Photo of Swallowgate */
+        background-image: url(https://farm1.staticflickr.com/869/41524368771_f294dcf6c6_k.jpg);
+    }
+
+    .webp #bkgd-latin {
+        background-image: url(backgrounds/swallowgate_mobile.webp);
     }
     
     #bkgd-photos {
-        background-image: url(https://farm2.staticflickr.com/1746/40646045120_1e942c9374_b.jpg);
-        background-image: url(backgrounds/heron_mobile.webp);
         /* Photo of heron (portrait) */
+        background-image: url(https://farm2.staticflickr.com/1746/40646045120_1e942c9374_b.jpg);
+    }
+
+    .webp #bkgd-photos {
+        background-image: url(backgrounds/heron_mobile.webp);
     }
     
     
     #bkgd-tiq {
-        background-image: url(https://farm5.staticflickr.com/4216/34984015144_e5bf503d8c_k.jpg);
-        background-image: url(backgrounds/stmarys_mobile.webp);
         /* Photo of St Mary's stained glass */
+        background-image: url(https://farm5.staticflickr.com/4216/34984015144_e5bf503d8c_k.jpg);
+    }
+
+    .webp #bkgd-tiq {
+        background-image: url(backgrounds/stmarys_mobile.webp);
     }
 
     .jumbotron-main{
