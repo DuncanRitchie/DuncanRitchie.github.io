@@ -1,0 +1,27 @@
+/* Navbar CSS */
+/* Most of the styling is provided by Bootstrap */
+
+.navbar {
+    width:100%;
+}
+
+.navbar a {
+    font-weight: normal
+}
+
+.navbar-right {
+    padding-right:8px;
+}
+
+.header-icon {
+    display: inline;
+}
+
+/* Media query for desktops */
+
+@media (min-width:768px) {
+    .navbar-fixed-top {
+        position:fixed;
+        top:0;
+    }
+}

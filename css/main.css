@@ -15,24 +15,6 @@ a:link {
     font-weight: 600;
 }
 
-/* Navbar CSS */
-
-.navbar {
-    width:100%;
-}
-
-.navbar a {
-    font-weight: normal
-}
-
-.navbar-right {
-    padding-right:8px;
-}
-
-.header-icon {
-    display: inline;
-}
-
 /* Jumbotrons and containers */
 
 .jumbotron-container {
@@ -222,11 +204,6 @@ a:link {
 /* Media query for desktops */
 
 @media (min-width:768px) {
-    .navbar-fixed-top {
-        position:fixed;
-        top:0;
-    }
-
     .jumbotron-container {
         height: auto;
         min-height: calc(100vh - 48px);
