@@ -211,115 +211,6 @@ a:link {
     text-decoration: underline
 }  
 
-/* Code Nation project showcase */
-
-#index-links-body {
-    display:flex;
-    flex-flow:row;
-    flex-wrap:wrap;
-    justify-content:space-around;
-    align-items:center;
-    min-height: calc(100vh - 48px);
-    height: auto;
-    width: 100%;
-    margin-bottom: 36px;
-}
-
-div.index-links-head {
-    width: 100%;
-    padding-left: calc(10vw - 12px);
-    color: #707070;
-}
-
-div.index-links-head:not(:first-of-type) {
-    padding-top: 18px;
-}
-
-div.index-links-head h1 {
-    color: #959595;
-}
-
-.index-link-div {
-    display:flex;
-    margin:12px 0 6px 0;
-    width:425px;
-    height:255px;
-    background-color:azure;
-    text-align:center;
-    align-items:center;
-    border:5px solid teal;
-    position: relative
-}
-
-.index-link-div:not(.index-link-to-bad-page):hover {
-    background-color:white;
-}
-
-.github-link {
-    position: absolute;
-    right: 6px;
-    bottom: -4px;
-    font-size: 36px
-}
-
-.index-link-a {
-    width:100%;
-    height:100%;
-    padding:auto 50px;
-    display:flex;
-    align-items:center;
-    justify-content:space-evenly;
-    text-decoration:none;
-    color:teal;
-    font-weight:bold
-}
-
-.index-link-a:hover {
-    color:darkseagreen;
-}
-
-.index-link-to-bad-page .index-link-a {
-    color: #505050
-}
-
-.index-link-to-bad-page .index-link-a:hover {
-    color: #505050
-}
-
-.project-screenshot {
-    height:240px;
-}
-
-.index-link-a div {
-    width:250px;
-    padding:0 20px;
-}
-
-.index-made-with {
-    /* font-size is set in media queries */
-    opacity: 0.8;
-    font-weight:normal
-}
-
-.index-finish-date,.index-reason-no-demo{
-    /* font-size is set in media queries */
-    color:grey;
-    font-weight:normal
-}
-
-.index-link-to-bad-page {
-    background-color:#dddddd;
-    border:5px solid #505050;
-}
-
-.index-link-div a {
-    color:#0066cc;
-}
-
-.index-link-div a:hover {
-    color:dodgerblue;
-}
-
 /* Media query only for massive screens */
 
 @media (min-width:2048px){
@@ -375,18 +266,6 @@ div.index-links-head h1 {
     
     .jumbotron-main p {
         font-size: 20px;
-    }
-
-    #index-links-body {
-        align-items:center;
-        height:auto;
-        min-height: calc(100vh - 48px);
-        font-size:18px;
-        padding: 36px 12px 0px 12px;
-    }
-
-    .index-made-with,.index-finish-date,.index-reason-no-demo {
-        font-size: 16px
     }
 }
 
@@ -517,20 +396,6 @@ div.index-links-head h1 {
     .cuj-toggle {
         align-self:flex-end;
     }
-
-    .index-links-body {
-        height: auto;
-        justify-content:space-around;
-        padding:36px 0px 18px 0px;
-    }
-    
-    .index-links-head:not(:first-of-type) {
-        padding-top: 6px;
-    }
-
-    .index-link-div {
-        width:90vw;
-    }
 }
 
 /* Media query for tiny screens, e.g. Galaxy S5 */
@@ -538,28 +403,5 @@ div.index-links-head h1 {
 @media (max-width:375px) {
     .body {
         padding-top:600px;
-    }
-
-    .index-links-body {
-        height: auto
-    }
-    
-    .index-link-div {
-        height:270px;
-    }
-
-    .index-link-a {
-        padding:0;
-        display:flex;
-        align-items:center;
-    }
-
-    .project-screenshot {
-        transform:translateY(0px)
-    }
-
-    .index-link-a div {
-        margin:0;
-        height: auto;
     }
 }
