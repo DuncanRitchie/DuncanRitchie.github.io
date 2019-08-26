@@ -7,6 +7,7 @@ const toggleJumbotrons = () => {
         // This hides all jumbotrons on the page
         for (j=0;j<jumbotrons.length;j++) {
             jumbotrons[j].style.opacity = 0
+            jumbotrons[j].style.transform = "rotateX(90deg)"
         }
         // This changes the text to "Show text"
         for (k=0;k<cujToggles.length;k++) {
@@ -18,6 +19,7 @@ const toggleJumbotrons = () => {
         // This shows all jumbotrons on the page
         for (j=0;j<jumbotrons.length;j++) {
             jumbotrons[j].style.opacity = 1
+            jumbotrons[j].style.transform = "rotateX(0)"
         }
         // This changes the text to "Hide text"
         for (k=0;k<cujToggles.length;k++) {
