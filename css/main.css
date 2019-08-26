@@ -6,7 +6,6 @@ body {
     padding-left:0px;
     padding-right:0px;
     background-color:rgb(0,32,32);
-    /* overflow-x: hidden; */
     min-height:100vh;
     scroll-behavior: smooth;
 }
@@ -106,7 +105,7 @@ a:link {
 }
 
 .webp #bkgd-index {
-    background-image: url(backgrounds/maydip.webp);
+    background-image: url(../backgrounds/maydip.webp);
 }
 
 #bkgd-coding {
@@ -116,7 +115,7 @@ a:link {
 }
 
 .webp #bkgd-coding {
-    background-image: url(backgrounds/weir.webp);
+    background-image: url(../backgrounds/weir.webp);
 }
 
 #bkgd-velut {
@@ -126,7 +125,7 @@ a:link {
 }
 
 .webp #bkgd-velut {
-    background-image: url(backgrounds/eastgate.webp);
+    background-image: url(../backgrounds/eastgate.webp);
 }
 
 #bkgd-dog {
@@ -136,7 +135,7 @@ a:link {
 }
 
 .webp #bkgd-dog {
-    background-image: url(backgrounds/dog.webp);
+    background-image: url(../backgrounds/dog.webp);
 }
 
 #bkgd-chester {
@@ -146,7 +145,7 @@ a:link {
 }
 
 .webp #bkgd-chester {
-    background-image: url(backgrounds/amphitheatre.webp);
+    background-image: url(../backgrounds/amphitheatre.webp);
 }
 
 #bkgd-latin {
@@ -156,7 +155,7 @@ a:link {
 }
 
 .webp #bkgd-latin {
-    background-image: url(backgrounds/swallowgate.webp);
+    background-image: url(../backgrounds/swallowgate.webp);
 }
 
 #bkgd-photos {
@@ -166,7 +165,7 @@ a:link {
 }
 
 .webp #bkgd-photos {
-    background-image: url(backgrounds/heron.webp);
+    background-image: url(../backgrounds/heron.webp);
 }
 
 
@@ -177,7 +176,7 @@ a:link {
 }
 
 .webp #bkgd-tiq {
-    background-image: url(backgrounds/stmarys.webp);
+    background-image: url(../backgrounds/stmarys.webp);
 }
 
 /* Photo of me in index.html */
@@ -426,7 +425,7 @@ div.index-links-head h1 {
     }
 
     .webp #bkgd-index {
-        background-image: url(backgrounds/maydip_mobile.webp);
+        background-image: url(../backgrounds/maydip_mobile.webp);
     }
     
     #bkgd-coding {
@@ -435,7 +434,7 @@ div.index-links-head h1 {
     }
 
     .webp #bkgd-coding {
-        background-image: url(backgrounds/weir_mobile.webp);   
+        background-image: url(../backgrounds/weir_mobile.webp);   
     }
     
     #bkgd-velut {
@@ -444,7 +443,7 @@ div.index-links-head h1 {
     }
 
     .webp #bkgd-velut {
-        background-image: url(backgrounds/eastgate_mobile.webp);   
+        background-image: url(../backgrounds/eastgate_mobile.webp);   
     }
     
     #bkgd-dog {
@@ -453,7 +452,7 @@ div.index-links-head h1 {
     }
 
     .webp #bkgd-dog {
-        background-image: url(backgrounds/dog_mobile.webp);
+        background-image: url(../backgrounds/dog_mobile.webp);
     }
     
     #bkgd-chester {
@@ -462,7 +461,7 @@ div.index-links-head h1 {
     }
 
     .webp #bkgd-chester {
-        background-image: url(backgrounds/amphitheatre_mobile.webp);
+        background-image: url(../backgrounds/amphitheatre_mobile.webp);
     }
     
     #bkgd-latin {
@@ -471,7 +470,7 @@ div.index-links-head h1 {
     }
 
     .webp #bkgd-latin {
-        background-image: url(backgrounds/swallowgate_mobile.webp);
+        background-image: url(../backgrounds/swallowgate_mobile.webp);
     }
     
     #bkgd-photos {
@@ -480,7 +479,7 @@ div.index-links-head h1 {
     }
 
     .webp #bkgd-photos {
-        background-image: url(backgrounds/heron_mobile.webp);
+        background-image: url(../backgrounds/heron_mobile.webp);
     }
     
     
@@ -490,7 +489,7 @@ div.index-links-head h1 {
     }
 
     .webp #bkgd-tiq {
-        background-image: url(backgrounds/stmarys_mobile.webp);
+        background-image: url(../backgrounds/stmarys_mobile.webp);
     }
 
     .jumbotron-main{
