@@ -129,13 +129,13 @@ a:link {
     background-image: url(backgrounds/eastgate.webp);
 }
 
-#bkgd-about-me {
+#bkgd-dog {
     /* Photo of my dog on the Meadows */
     background-image: url(https://live.staticflickr.com/65535/47981139392_033588044f_b.jpg);
     background-color: rgb(117,135,56);
 }
 
-.webp #bkgd-about-me {
+.webp #bkgd-dog {
     background-image: url(backgrounds/dog.webp);
 }
 
@@ -447,12 +447,12 @@ div.index-links-head h1 {
         background-image: url(backgrounds/eastgate_mobile.webp);   
     }
     
-    #bkgd-about-me {
+    #bkgd-dog {
         /* Photo of woods with my dog */
         background-image: url(https://farm8.staticflickr.com/7856/46560838581_f56d755718_k.jpg);
     }
 
-    .webp #bkgd-about-me {
+    .webp #bkgd-dog {
         background-image: url(backgrounds/dog_mobile.webp);
     }
     
