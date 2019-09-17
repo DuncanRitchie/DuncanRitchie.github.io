@@ -41,3 +41,31 @@
         margin: -2vw 0 -8vw 80vw;
     }
 }
+
+
+/* Media query for printing. */
+
+@media print {
+    .jumbotron-main-with-image {
+        margin: 0;
+        padding: 0;
+    }
+
+    .image-headshot {
+        content: url(../headshot/duncan-ritchie-headshot.jpg)
+    }
+
+    .webp .image-headshot {
+        content: url(../headshot/duncan-ritchie-headshot.webp);
+    }
+}
+
+/* Ensure any image inside the jumbotron (i.e. my headshot) displays.  */
+@media print and (min-width: 400px) {
+    .jumbotron-image {
+        display: initial;
+        position: initial;
+        margin: initial;
+        padding: initial;
+    }
+}

@@ -334,3 +334,19 @@
         align-self:flex-end;
     }
 }
+
+
+/* Media query for printing. */
+
+@media print {
+    .jumbotron-container,.jumbotron-bkgd-photo,.jumbotron-main {
+        min-height: initial;
+        height: initial;
+        padding: initial;
+        margin: initial;
+    }
+
+    .cuj,.cuj-phone {
+        display: none;
+    }
+}

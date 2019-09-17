@@ -162,3 +162,29 @@ div.showcase-links-head p {
         height: auto;
     }
 }
+
+
+
+/* Media query for printing. */
+
+@media print {
+    #showcase-links-body,div.showcase-links-head {
+        margin: initial;
+        padding: initial;
+    }
+
+    .showcase-link-div {
+        border-width: 2px;
+    }
+}
+
+@media print and (min-width: 425px) {
+    #showcase-links-body {
+        justify-content: space-between;
+    }
+
+    .showcase-link-div {
+        width:352px;
+        margin:18px 0 9px 0;
+    }
+}
