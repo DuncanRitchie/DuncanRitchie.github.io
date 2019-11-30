@@ -22,13 +22,22 @@ div.showcase-links-head:not(:first-of-type) {
     padding-top: 48px;
 }
 
-div.showcase-links-head h1 {
+div.showcase-links-head,.showcase-links-second h1,h2 {
     color: #959595;
 }
 
-div.showcase-links-head p {
+div.showcase-links-head,.showcase-links-second p {
     font-size: 20px;
     color: #707070;
+}
+
+.showcase-links-second {
+    width: 100%;
+    padding-left: calc(15vw - 18px);
+}
+
+.showcase-link-div + .showcase-links-second {
+    padding-top: 48px;
 }
 
 .showcase-link-div {
@@ -89,7 +98,7 @@ div.showcase-links-head p {
     padding:0 20px;
 }
 
-.showcase-link-div div h2 {
+.showcase-link-div div h3 {
     font-size: 18px;
     margin: 3px 0 4px;
 }
