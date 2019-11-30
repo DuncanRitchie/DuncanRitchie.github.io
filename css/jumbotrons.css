@@ -34,7 +34,7 @@
 }
 
 /* This selector is for adding an arrow after external links inside jumbotron-containers. */
-.jumbotron-container a[href^="http"]:not([href*="duncanritchie.co.uk"])::after {
+.jumbotron-container p a[href^="http"]:not([href*="duncanritchie.co.uk"])::after {
     /* The space before the arrow here is non-breaking. */
     content: " ↗";
     vertical-align: super;
