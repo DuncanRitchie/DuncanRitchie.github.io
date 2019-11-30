@@ -1,6 +1,20 @@
 let  cujToggles = document.getElementsByClassName("cuj-toggle")
 let jumbotrons = document.getElementsByClassName("jumbotron-main")
-let showJumbotrons = true
+let showJumbotrons = false
+
+const addAnimatableAttribute = () => {
+    for (let jumbotron of jumbotrons) {
+        jumbotron.setAttribute("animatable","true")
+    }
+}
+
+const hideJumbotrons = () => {
+    for (let jumbotron of jumbotrons) {
+        jumbotron.style.opacity = 0
+        jumbotron.style.transform = "rotateX(90deg)"
+        showJumbotrons = false
+    }
+}
 
 const toggleJumbotrons = () => {
     if (showJumbotrons) {
@@ -34,3 +48,7 @@ for (i=0;i<cujToggles.length;i++) {
         toggleJumbotrons()
     })
 }
+
+hideJumbotrons()
+window.setTimeout(addAnimatableAttribute,0)
+window.setTimeout(toggleJumbotrons,0)
