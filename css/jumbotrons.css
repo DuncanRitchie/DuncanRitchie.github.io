@@ -81,13 +81,13 @@
 }
 
 #bkgd-velut {
-    /* Photo of Chester's Eastgate */
-    background-image: url(https://live.staticflickr.com/7617/26608354044_db61ef27f7_k.jpg);
+    /* Photo of fulmars*/
+    background-image: url(https://live.staticflickr.com/4785/40804008331_93317eda74_b.jpg);
     background-color: rgb(61,122,197);
 }
 
 .webp #bkgd-velut {
-    background-image: url(../backgrounds/eastgate.webp);
+    background-image: url(../backgrounds/fulmars.webp);
 }
 
 #bkgd-dog {
@@ -245,12 +245,12 @@
     }
     
     #bkgd-velut {
-        /* Photo of Chester's Eastgate */
-        background-image: url(https://live.staticflickr.com/7617/26608354044_cc5b1d5fb7_b.jpg);
+        /* Photo of fulmars */
+        background-image: url(../backgrounds/fulmars_mobile.jpg);
     }
 
     .webp #bkgd-velut {
-        background-image: url(../backgrounds/eastgate_mobile.webp);   
+        background-image: url(../backgrounds/fulmars_mobile.webp);   
     }
     
     #bkgd-dog {

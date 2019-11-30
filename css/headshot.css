@@ -14,6 +14,17 @@
     margin-left: 36px;
     object-fit: cover;
 }
+
+.no-crop {
+    margin-left: 36px;
+    object-fit: cover;
+    object-position: top;
+    min-width: 25vh;
+    max-width: 45vw;
+    /* min-height: inherit; */
+    max-height: 40vh;
+}
+
 /* Photo of me in index.html */
 
 .image-headshot {
@@ -32,7 +43,7 @@
 
 @media (max-width:767px) {
 
-    .jumbotron-image {
+    .jumbotron-image,.no-crop {
         display: none;
         position: absolute;
         width: 20vw;
