@@ -132,11 +132,14 @@
     .showcase-group {
         height: auto;
         justify-content: space-around;
-        padding: 36px 0px 18px 0px;
     }
 
-    .showcase-head:not(:first-of-type) {
-        padding-top: 6px;
+    .jumbotron-container + .showcase-group {
+        margin-top: 0px;
+    }
+    
+    .showcase-group + .jumbotron-container {
+        margin-top: 48px;
     }
 
     .showcase-link-div {
