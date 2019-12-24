@@ -7,6 +7,8 @@
     justify-content: space-around;
     align-items: center;
     width: 100%;
+    scroll-snap-type: y mandatory;
+    scroll-padding-top: 12px;
 }
 
 .jumbotron-container + .showcase-group {
@@ -17,12 +19,14 @@
     margin-top: 96px;
 }
 
-.showcase-head {
-    width: 100%;
-    padding-left: calc(10vw - 12px);
+.showcase-head,.showcase-link-div {
+    scroll-snap-align: start;
+    scroll-snap-stop: normal;
 }
 
 .showcase-head {
+    width: 100%;
+    padding-left: calc(10vw - 12px);
     padding-top: 48px;
 }
 
