@@ -35,10 +35,10 @@
 
 /* This selector is for adding an arrow after external links inside jumbotron-containers. */
 .jumbotron-container p a[href^="http"]:not([href*="duncanritchie.co.uk"])::after {
-    /* The space before the arrow here is non-breaking. */
-    content: " ↗";
+    content: "↗";
     vertical-align: super;
     font-size: 60%;
+    padding-left: 0.15rem;
 }
 
 /* Removing the underline that Bootstrap adds on hover */
