@@ -8,6 +8,7 @@
     align-items: center;
     width: 100%;
     scroll-snap-type: y mandatory;
+    overflow: auto;
     scroll-padding-top: 12px;
 }
 

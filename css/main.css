@@ -14,6 +14,7 @@ body {
 }
 
 main {
+    overflow: auto;
     scroll-snap-type: y mandatory;
     /* navbar height is 48px */
     scroll-padding-top: 96px;
