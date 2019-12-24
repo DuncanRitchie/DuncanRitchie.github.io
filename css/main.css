@@ -1,5 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Alegreya');
 
+html {
+    scroll-behavior: smooth;
+    scroll-snap-type: proximity;
+    /* navbar height is 48px */
+    scroll-padding-top: 48px;
+}
+
 body {
     font-family: 'Alegreya', serif;
     padding-top:30px;
@@ -7,7 +14,6 @@ body {
     padding-right:0px;
     background-color:rgb(0,32,32);
     min-height:100vh;
-    scroll-behavior: smooth;
 }
 
 a:link {
