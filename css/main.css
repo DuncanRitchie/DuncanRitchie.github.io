@@ -2,9 +2,6 @@
 
 html {
     scroll-behavior: smooth;
-    scroll-snap-type: proximity;
-    /* navbar height is 48px */
-    scroll-padding-top: 48px;
 }
 
 body {
@@ -14,6 +11,12 @@ body {
     padding-right:0px;
     background-color:rgb(0,32,32);
     min-height:100vh;
+}
+
+main {
+    scroll-snap-type: y mandatory;
+    /* navbar height is 48px */
+    scroll-padding-top: 96px;
 }
 
 a:link {
