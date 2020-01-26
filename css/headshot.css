@@ -71,7 +71,7 @@
     }
 }
 
-/* Ensure any image inside the jumbotron (i.e. my headshot) displays.  */
+/* Ensure any image inside the jumbotron displays.  */
 @media print and (min-width: 400px) {
     .jumbotron-image {
         display: initial;
