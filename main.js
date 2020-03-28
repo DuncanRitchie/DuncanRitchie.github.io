@@ -13,8 +13,8 @@ for (let i = 0; i < navTickboxes.length; i++) {
 }
 
 const main = document.getElementsByTagName("main")[0];
-const textWrapGuide = document.getElementsByClassName("text-wrap-guide")[0];
-// Update scroll `target`, and start the animation if it is not running already
+const textWrapGuide = document.getElementById("text-wrap-guide");
+// Update scroll `target`, and start the animation if it is not running already.
 function moveTextWrapGuide () {
     const windowHeight =  document.documentElement.clientHeight;
     const newUpperEdge = window.scrollY || window.pageYOffset;
@@ -35,5 +35,7 @@ function updateScroll () {
     window.setTimeout(moveTextWrapGuide, 100);
 }
   
-// Listen for `scroll` event to update `target` scroll position
+// Listen for `scroll` event to update the position of #text-wrap-guide.
 window.addEventListener("scroll", updateScroll)
+// Update scroll position on page load.
+window.addEventListener("load", moveTextWrapGuide)

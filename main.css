@@ -205,7 +205,7 @@ section h1 + p {
     /* shape-outside: polygon(0 0, 90% 0, 100% 100%, 0 100%); */
 }
 
-.text-wrap-guide {
+#text-wrap-guide {
     float: left;
     /* display: relative; */
     /* background-color: #b3d3f7ff; */
