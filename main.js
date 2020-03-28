@@ -9,11 +9,21 @@ for (let i = 0; i < navTickboxes.length; i++) {
                 navTickboxes[j].checked = false;
             }
         }
+    });
+}
+
+//// Hide nav submenus after an item has been clicked.
+const navSubmenuItems = document.querySelectorAll("nav ul ul li a");
+for (let i = 0; i < navSubmenuItems.length; i++) {
+    navSubmenuItems[i].addEventListener("click", (e)=>{
+        for (let j = 0; j < navTickboxes.length; j++) {
+            navTickboxes[j].checked = false;
+        }
     })
 }
 
 const textWrapGuide = document.getElementById("text-wrap-guide");
-// Update scroll `target`, and start the animation if it is not running already.
+//// Make the section text flow correctly against the diagonal by moving #text-wrap-guide.
 function moveTextWrapGuide (windowHeight, distanceScrolled) {
     const newLowerEdge = windowHeight + distanceScrolled;
     const docHeight = Math.max(document.documentElement.clientHeight, document.documentElement.offsetHeight, document.documentElement.scrollHeight);
@@ -50,7 +60,7 @@ function updateScrollWithTimeout() {
     window.setTimeout(updateScroll, 100);
 }
   
-// Listen for `scroll` event to update the position of #text-wrap-guide.
+//// Listen for `scroll` event to update anything that can change after scrolling.
 window.addEventListener("scroll", updateScrollWithTimeout);
-// Update scroll position on page load.
+//// Update scroll position on page load.
 window.addEventListener("load", updateScroll);
