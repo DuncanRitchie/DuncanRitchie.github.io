@@ -14,12 +14,10 @@ for (let i = 0; i < navTickboxes.length; i++) {
 
 const textWrapGuide = document.getElementById("text-wrap-guide");
 // Update scroll `target`, and start the animation if it is not running already.
-function moveTextWrapGuide () {
-    const windowHeight = document.documentElement.clientHeight;
-    const newUpperEdge = window.scrollY || window.pageYOffset;
-    const newLowerEdge = windowHeight + newUpperEdge;
+function moveTextWrapGuide (windowHeight, distanceScrolled) {
+    const newLowerEdge = windowHeight + distanceScrolled;
     const docHeight = Math.max(document.documentElement.clientHeight, document.documentElement.offsetHeight, document.documentElement.scrollHeight);
-    const newShapeOutside = "polygon(0 0, 100% 0, 100% "+(newUpperEdge/2)+"px, 90% "+newUpperEdge+"px, 90% "+newUpperEdge+"px, 100% "+newLowerEdge+"px, 100% "+docHeight+"px, 0 "+docHeight+"px)";
+    const newShapeOutside = "polygon(0 0, 100% 0, 100% "+(distanceScrolled/2)+"px, 90% "+distanceScrolled+"px, 90% "+distanceScrolled+"px, 100% "+newLowerEdge+"px, 100% "+docHeight+"px, 0 "+docHeight+"px)";
 
     textWrapGuide.style.height = docHeight + "px";
     textWrapGuide.style.shapeOutside = newShapeOutside;
@@ -27,10 +25,8 @@ function moveTextWrapGuide () {
 
 const mainImages = document.getElementsByClassName("main-image");
 
-function showMainImages() {
-    const windowHeight = document.documentElement.clientHeight;
-    const newUpperEdge = window.scrollY || window.pageYOffset;
-    const indexOfSectionVisible = Math.round(newUpperEdge / windowHeight);
+function showMainImages(windowHeight, distanceScrolled) {
+    const indexOfSectionVisible = Math.round(distanceScrolled / windowHeight);
     for (let i = 0; i < mainImages.length; i++) {
         if (i == indexOfSectionVisible) {
             //console.log("Showing image "+i);
@@ -44,8 +40,10 @@ function showMainImages() {
 }
 
 function updateScroll() {
-    moveTextWrapGuide();
-    showMainImages();
+    let windowHeight = document.documentElement.clientHeight;
+    let distanceScrolled = window.scrollY || window.pageYOffset;
+    moveTextWrapGuide(windowHeight, distanceScrolled);
+    showMainImages(windowHeight, distanceScrolled);
 }
 
 function updateScrollWithTimeout() {
