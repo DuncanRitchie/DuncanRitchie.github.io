@@ -21,7 +21,7 @@ function moveTextWrapGuide () {
     // const newUpperEdge = 0;
     const newLowerEdge = windowHeight + newUpperEdge;
     const docHeight = Math.max(document.documentElement.clientHeight, document.documentElement.offsetHeight, document.documentElement.scrollHeight);
-    const newShapeOutside = "polygon(0 0, 90% 0, 90% "+newUpperEdge+"px, 100% "+newLowerEdge+"px, 100% "+docHeight+"px, 0 "+docHeight+"px)";
+    const newShapeOutside = "polygon(0 0, 100% 0, 100% "+(newUpperEdge/2)+"px, 90% "+newUpperEdge+"px, 90% "+newUpperEdge+"px, 100% "+newLowerEdge+"px, 100% "+docHeight+"px, 0 "+docHeight+"px)";
     console.log(newUpperEdge);
     console.log(newShapeOutside);
     console.log(docHeight);
