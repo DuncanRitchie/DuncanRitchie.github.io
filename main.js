@@ -27,7 +27,7 @@ const textWrapGuide = document.getElementById("text-wrap-guide");
 function moveTextWrapGuide (windowHeight, distanceScrolled) {
     const newLowerEdge = windowHeight + distanceScrolled;
     const docHeight = Math.max(document.documentElement.clientHeight, document.documentElement.offsetHeight, document.documentElement.scrollHeight);
-    const newShapeOutside = "polygon(0 0, 100% 0, 100% "+(distanceScrolled/2)+"px, 90% "+distanceScrolled+"px, 90% "+distanceScrolled+"px, 100% "+newLowerEdge+"px, 100% "+docHeight+"px, 0 "+docHeight+"px)";
+    const newShapeOutside = "polygon(0 0, 90% 0, 90% "+(distanceScrolled/2)+"px, 90% "+distanceScrolled+"px, 90% "+distanceScrolled+"px, 100% "+newLowerEdge+"px, 100% "+docHeight+"px, 0 "+docHeight+"px)";
 
     textWrapGuide.style.height = docHeight + "px";
     textWrapGuide.style.shapeOutside = newShapeOutside;
@@ -37,15 +37,18 @@ const mainImages = document.getElementsByClassName("main-image");
 
 function showMainImages(windowHeight, distanceScrolled) {
     const indexOfSectionVisible = Math.round(distanceScrolled / windowHeight);
+    let zIndex = 1;
     for (let i = 0; i < mainImages.length; i++) {
         if (i == indexOfSectionVisible) {
             //console.log("Showing image "+i);
             mainImages[i].className = "main-image";
+            zIndex = 0;
         }
         else {
             //console.log("Hiding image "+i);
             mainImages[i].className = "main-image hidden";
         }
+        mainImages[i].style.zIndex = zIndex;
     }
 }
 
