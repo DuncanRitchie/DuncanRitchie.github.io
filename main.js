@@ -40,11 +40,11 @@ function showMainImages(windowHeight, distanceScrolled) {
     for (let i = 0; i < mainImages.length; i++) {
         if (i == indexOfSectionVisible) {
             //console.log("Showing image "+i);
-            mainImages[i].style.opacity = "1";
+            mainImages[i].className = "main-image";
         }
         else {
             //console.log("Hiding image "+i);
-            mainImages[i].style.opacity = "0";
+            mainImages[i].className = "main-image hidden";
         }
     }
 }
