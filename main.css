@@ -1,0 +1,218 @@
+@import url('https://fonts.googleapis.com/css?family=Alegreya');
+
+html,body {
+    margin: 0;
+    padding: 0;
+    font-family: "Alegreya", serif;
+    font-size: 24px;
+    --colour1: #5e93d7ff;
+    --colour2: rgb(202, 222, 245);
+    --colour3: rgb(182, 192, 174);
+    --colour4: rgb(155, 182, 66);
+    --colour5: rgb(140, 179, 75);
+    --colour6: rgb(62, 97, 41);
+    --nav-text: #333333ff;
+    --body-text: #111111ff;
+    scroll-snap-type: proximity;
+    scroll-snap-type: y proximity;
+}
+
+body {
+    background-image: linear-gradient(
+        #5e93d7ff,
+        #b3d3f7ff,
+        #9aa691ff,
+        #7d952fff,
+        #82aa3bff,
+        #2d4a1bff
+    );
+    background-image: linear-gradient(
+        var(--colour1),
+        var(--colour2),
+        var(--colour3),
+        var(--colour4),
+        var(--colour5),
+        var(--colour6)
+    );
+    background-attachment: fixed;
+}
+
+h1 {
+    font-size: 84px;
+    font-weight: normal;
+}
+
+main a {
+    text-decoration: underline;
+}
+
+main a:hover {
+    text-decoration: none;
+    border-bottom: 1px thin;
+}
+
+nav {
+    position: fixed;
+    display: flex;
+    z-index: 2;
+    width: calc(100% - 48px);
+    justify-content: space-between;
+    align-items: center;
+    margin: 24px 0 0;
+    padding: 0 24px;
+    font-size: 19px;
+    background-color: #ffffff7f;
+    color: var(--nav-text);
+    text-decoration: none;
+}
+
+nav a {
+    color: inherit;
+    text-decoration: inherit;
+}
+
+nav ul {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+}
+
+nav ul li a:not(#nav-icon-a),label {
+    padding: 12px;
+}
+
+nav ul li label:hover,a:hover {
+    color: var(--colour6);
+    background-image: linear-gradient(#ffffff00, #ffffff00, #ffffff00, #2d4a1b4f);
+}
+
+nav ul input {
+    display: none;
+}
+
+nav ul li a,label {
+    padding-left: 9px;
+    padding-right: 9px;
+}
+
+nav #nav-icon {
+    width: 36px;
+    margin-top: 6px;
+    padding: 0;
+    background-color: initial;
+}
+
+nav #skip-nav-li {
+    color: var(--colour6);
+    transition: all 0.3s;
+}
+
+nav #skip-nav-li:not(:focus-within) {
+    width: 0;
+    transform: translateX(-100vw);
+}
+
+nav ul ul {
+    position: absolute;
+    flex-direction: column;
+    display: none;
+    font-size: 20px;
+    margin-top: 12px;
+    background-color: #ffffffcf;
+    clip-path: polygon(0 0, 90% 0, 100% 100%, 0 100%);
+}
+
+nav label {
+    cursor: pointer;
+    padding: 12px 18px;
+}
+
+nav label::after {
+    content: "⮟";
+    font-size: 16px;
+}
+
+nav :checked ~ label {
+    background-color: #ffffffdf;
+}
+
+nav :checked ~ ul {
+    display: block;
+}
+
+nav ul ul li {
+    padding: 6px 12px 0 0;
+    width: 100%;
+}
+
+nav ul ul li a {
+    display: inline-block;
+    padding: 6px 12px 6px 18px;
+    width: 100%;
+}
+
+main {
+    min-height: 100vh;
+    padding: 0;
+    margin: 0;
+    color: var(--body-text);
+}
+
+section {
+    padding: 0;
+    margin: 0;
+    min-height: 100vh;
+    scroll-snap-align: start;
+}
+
+section h1 {
+    z-index: 1;
+    text-align: right;
+    padding-top: 36px;
+    right: 30px;
+    position: absolute;
+    background: -webkit-linear-gradient(top,#111007,#58522c);
+    background: linear-gradient(180deg, #111007, #58522c);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 400;
+}
+
+section p {
+    margin: 0;
+    padding: 0px 18px 18px 40%;
+    z-index: 1;
+    position: relative;
+}
+
+section h1 + p {
+    padding-top: 228px;
+}
+
+.main-img {
+    z-index: 0;
+    position: fixed;
+    /* float: left; */
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 53%;
+    object-fit: cover;
+    clip-path: polygon(0 0, 85% 0, 95% 100%, 0 100%);
+    /* shape-outside: polygon(0 0, 90% 0, 100% 100%, 0 100%); */
+}
+
+.text-wrap-guide {
+    float: left;
+    /* display: relative; */
+    /* background-color: #b3d3f7ff; */
+    left: 0;
+    top: 0;
+    min-height: 100vh;
+    width: 53%;
+    shape-outside: polygon(0 0, 90% 0, 90% 0, 100% 100%, 100% 100%, 0 100%);
+    transition: shape-outside 1s;
+}
