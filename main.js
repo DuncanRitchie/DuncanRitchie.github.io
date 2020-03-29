@@ -35,6 +35,10 @@ function moveTextWrapGuide (windowHeight, distanceScrolled) {
 
 const mainImages = document.getElementsByClassName("main-image");
 
+//// Set z-index to 1 on images earlier than the image to show,
+//// and set z-index to 0 on the image to show and the images after.
+//// This ensures that the image to show is always revealed by the
+//// previously displayed image disappearing.
 function showMainImages(windowHeight, distanceScrolled) {
     const indexOfSectionVisible = Math.round(distanceScrolled / windowHeight);
     let zIndex = 1;
