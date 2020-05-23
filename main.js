@@ -33,7 +33,36 @@ function moveTextWrapGuide (windowHeight, distanceScrolled) {
     textWrapGuide.style.shapeOutside = newShapeOutside;
 }
 
+const sections =  document.getElementsByTagName("section");
 const mainImages = document.getElementsByClassName("main-image");
+const scrollCallback = (entries, observer) => {
+    console.log("scrollCallback invoked");
+    for (let i = 0; i < sections.length; i++) {
+        if (sections[i]==entries[0].target) {
+            console.log(sections[i], "is in scroll")
+            sections[i].className="in-scroll";
+        }
+        else {
+            sections[i].className="out-of-scroll";
+        }
+    }
+    entries.forEach(entry=>{
+        console.log(entry);
+        //let mainImage = document.querySelector(".main-image");
+        if (entry.intersectionRatio > 0) {
+            entry.target.className = "in-scroll";
+        }
+        else {
+            entry.target.className = "out-of-scroll";
+        }
+    });
+}
+const intersectionObserver = new IntersectionObserver(scrollCallback, {threshold: [0.1]});
+
+for (let i = 0; i < sections.length; i++) {
+    console.log(`Observing Heading ${i}: ${sections[i].firstChild.textContent}`)
+    intersectionObserver.observe(sections[i]);
+}
 
 //// Set z-index to 1 on images earlier than the image to show,
 //// and set z-index to 0 on the image to show and the images after.
@@ -60,7 +89,7 @@ function updateScroll() {
     let windowHeight = document.documentElement.clientHeight;
     let distanceScrolled = window.scrollY || window.pageYOffset;
     moveTextWrapGuide(windowHeight, distanceScrolled);
-    showMainImages(windowHeight, distanceScrolled);
+    //showMainImages(windowHeight, distanceScrolled);
 }
 
 function updateScrollWithTimeout() {
