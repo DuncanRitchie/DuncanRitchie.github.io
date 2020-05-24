@@ -37,53 +37,64 @@ const sections =  document.getElementsByTagName("section");
 const mainImages = document.getElementsByClassName("main-image");
 const scrollCallback = (entries, observer) => {
     console.log("scrollCallback invoked");
-    for (let i = 0; i < sections.length; i++) {
-        if (sections[i]==entries[0].target) {
-            console.log(sections[i], "is in scroll")
-            sections[i].className="in-scroll";
-        }
-        else {
-            sections[i].className="out-of-scroll";
+    let currentSectionClass = "earlier-than-scrolled";
+    let sectionVisibleIndex = -1;
+    for (let i = 0; i < entries.length; i++) {
+        for (let j = 0; j < sections.length; j++) {
+            if (entries[i].target.id === sections[j].id
+                && entries[i].intersectionRatio > 0.1) {
+                sectionVisibleIndex = j;
+            }
         }
     }
-    entries.forEach(entry=>{
-        console.log(entry);
-        //let mainImage = document.querySelector(".main-image");
-        if (entry.intersectionRatio > 0) {
-            entry.target.className = "in-scroll";
+    if (sectionVisibleIndex > -1) {
+        for (let i = 0; i < sections.length; i++) {
+            if (i < sectionVisibleIndex) {
+                sections[i].className = "not-in-scroll";
+                mainImages[i].className = "main-image hidden";
+                mainImages[i].style.zIndex = 1;
+            }
+            else if (i == sectionVisibleIndex) {
+                sections[i].className = "in-scroll";
+                mainImages[i].className = "main-image";
+                console.log(sections[i]);
+                mainImages[i].style.zIndex = 0;
+            }
+            else {
+                sections[i].className = "not-in-scroll";
+                mainImages[i].className = "main-image hidden";
+                mainImages[i].style.zIndex = 0;
+            }
         }
-        else {
-            entry.target.className = "out-of-scroll";
-        }
-    });
+    }
 }
 const intersectionObserver = new IntersectionObserver(scrollCallback, {threshold: [0.1]});
 
 for (let i = 0; i < sections.length; i++) {
-    console.log(`Observing Heading ${i}: ${sections[i].firstChild.textContent}`)
+    console.log(`Observing Section ${i}: ${sections[i].id}`)
     intersectionObserver.observe(sections[i]);
 }
 
-//// Set z-index to 1 on images earlier than the image to show,
-//// and set z-index to 0 on the image to show and the images after.
-//// This ensures that the image to show is always revealed by the
-//// previously displayed image disappearing.
-function showMainImages(windowHeight, distanceScrolled) {
-    const indexOfSectionVisible = Math.round(distanceScrolled / windowHeight);
-    let zIndex = 1;
-    for (let i = 0; i < mainImages.length; i++) {
-        if (i == indexOfSectionVisible) {
-            //console.log("Showing image "+i);
-            mainImages[i].className = "main-image";
-            zIndex = 0;
-        }
-        else {
-            //console.log("Hiding image "+i);
-            mainImages[i].className = "main-image hidden";
-        }
-        mainImages[i].style.zIndex = zIndex;
-    }
-}
+// //// Set z-index to 1 on images earlier than the image to show,
+// //// and set z-index to 0 on the image to show and the images after.
+// //// This ensures that the image to show is always revealed by the
+// //// previously displayed image disappearing.
+// function showMainImages(windowHeight, distanceScrolled) {
+//     const indexOfSectionVisible = Math.round(distanceScrolled / windowHeight);
+//     let zIndex = 1;
+//     for (let i = 0; i < mainImages.length; i++) {
+//         if (i == indexOfSectionVisible) {
+//             //console.log("Showing image "+i);
+//             mainImages[i].className = "main-image";
+//             zIndex = 0;
+//         }
+//         else {
+//             //console.log("Hiding image "+i);
+//             mainImages[i].className = "main-image hidden";
+//         }
+//         mainImages[i].style.zIndex = zIndex;
+//     }
+// }
 
 function updateScroll() {
     let windowHeight = document.documentElement.clientHeight;
