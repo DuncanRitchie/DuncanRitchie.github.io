@@ -33,48 +33,55 @@ function moveTextWrapGuide (windowHeight, distanceScrolled) {
     textWrapGuide.style.shapeOutside = newShapeOutside;
 }
 
-//// Find which mainImage should be displayed, then change styling on mainImages accordingly.
-const sections =  document.getElementsByTagName("section");
 const mainImages = document.getElementsByClassName("main-image");
-const scrollCallback = (entries, observer) => {
-    //// Find which mainImage should be displayed by finding which section is intersecting with screen.
-    //// If two sections are on the screen, indexOfSectionVisible will be set to the first section
-    //// in one loop iteration and then set to the second section in another loop iteration, so 
-    //// it will be the second section that will determine which mainImage is displayed.
-    let indexOfSectionVisible = -1;
-    for (let i = 0; i < entries.length; i++) {
-        for (let j = 0; j < sections.length; j++) {
-            if (entries[i].target.id === sections[j].id
-                && entries[i].intersectionRatio > 0.1) {
-                indexOfSectionVisible = j;
+
+if (!!window.IntersectionObserver) {
+    document.querySelector("body").classList.remove("no-intersection-observer");
+    document.querySelector("body").classList.add("has-intersection-observer");
+
+    //// Find which mainImage should be displayed, then change styling on mainImages accordingly.
+    const sections =  document.getElementsByTagName("section");
+    const scrollCallback = (entries, observer) => {
+        //// Find which mainImage should be displayed by finding which section is intersecting with screen.
+        //// If two sections are on the screen, indexOfSectionVisible will be set to the first section
+        //// in one loop iteration and then set to the second section in another loop iteration, so 
+        //// it will be the second section that will determine which mainImage is displayed.
+        let indexOfSectionVisible = -1;
+        for (let i = 0; i < entries.length; i++) {
+            for (let j = 0; j < sections.length; j++) {
+                if (entries[i].target.id === sections[j].id
+                    && entries[i].intersectionRatio > 0.1) {
+                    indexOfSectionVisible = j;
+                }
+            }
+        }
+        //// indexOfSectionVisible will still be -1 if the observer has fired, but not reported an intersection.
+        if (indexOfSectionVisible > -1) {
+            for (let i = 0; i < sections.length; i++) {
+                if (i < indexOfSectionVisible) {
+                    mainImages[i].className = "main-image hidden";
+                    mainImages[i].style.zIndex = 1;
+                }
+                else if (i == indexOfSectionVisible) {
+                    mainImages[i].className = "main-image";
+                    mainImages[i].style.zIndex = 0;
+                }
+                else {
+                    mainImages[i].className = "main-image hidden";
+                    mainImages[i].style.zIndex = 0;
+                }
             }
         }
     }
-    //// indexOfSectionVisible will still be -1 if the observer has fired, but not reported an intersection.
-    if (indexOfSectionVisible > -1) {
-        for (let i = 0; i < sections.length; i++) {
-            if (i < indexOfSectionVisible) {
-                mainImages[i].className = "main-image hidden";
-                mainImages[i].style.zIndex = 1;
-            }
-            else if (i == indexOfSectionVisible) {
-                mainImages[i].className = "main-image";
-                mainImages[i].style.zIndex = 0;
-            }
-            else {
-                mainImages[i].className = "main-image hidden";
-                mainImages[i].style.zIndex = 0;
-            }
-        }
+
+    const intersectionObserver = new IntersectionObserver(scrollCallback, {threshold: [0.1]});
+
+    for (let i = 0; i < sections.length; i++) {
+        // console.log(`Observing Section ${i}: ${sections[i].id}`)
+        intersectionObserver.observe(sections[i]);
     }
 }
 
-const intersectionObserver = new IntersectionObserver(scrollCallback, {threshold: [0.1]});
-
-for (let i = 0; i < sections.length; i++) {
-    // console.log(`Observing Section ${i}: ${sections[i].id}`)
-    intersectionObserver.observe(sections[i]);
-}
 
 function updateScroll() {
     let windowHeight = document.documentElement.clientHeight;

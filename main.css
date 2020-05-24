@@ -20,6 +20,10 @@ html,body {
 
 body {
     min-height: 100vh;
+    /* Browsers that don’t do gradients will use the jpeg background. */
+    background-image: url(backgrounds/gradient-background.jpg);
+    background-size: 100% 100%;
+    /* Browsers that don’t do CSS variables will use the hex values. */
     background-image: linear-gradient(
         #5e93d7ff,
         #b3d3f7ff,
@@ -28,6 +32,7 @@ body {
         #82aa3bff,
         #2d4a1bff
     );
+    /* Browsers that support gradients and CSS variables will use these. */
     background-image: linear-gradient(
         var(--colour1),
         var(--colour2),
@@ -37,11 +42,6 @@ body {
         var(--colour6)
     );
     background-attachment: fixed;
-}
-
-h1 {
-    font-size: 84px;
-    font-weight: normal;
 }
 
 main a {
@@ -58,6 +58,8 @@ main a:hover {
     border-bottom: 1px thin;
 }
 
+/* Styles for the navbar. */
+
 nav {
     position: fixed;
     display: flex;
@@ -68,6 +70,7 @@ nav {
     margin: 24px 0 0;
     padding: 0 24px;
     font-size: 19px;
+    background-color: #bfd4ef;
     background-color: #ffffff7f;
     color: var(--nav-text);
     text-decoration: none;
@@ -127,6 +130,7 @@ nav ul ul {
     display: none;
     font-size: 20px;
     margin-top: 12px;
+    background-color: #9ebee7;
     background-color: #ffffffcf;
     clip-path: polygon(0 0, 90% 0, 100% 100%, 0 100%);
 }
@@ -163,35 +167,15 @@ nav ul ul li a {
 section {
     padding: 0;
     margin: 0;
-    min-height: 100vh;
     scroll-snap-align: start;
 }
 
-section h1 {
+h1 {
+    font-size: 84px;
+    font-weight: normal;
+    font-weight: 400;
     z-index: 1;
     text-align: right;
-    padding-top: 36px;
-    right: 30px;
-    position: absolute;
-    /* Browsers that don’t understand background-clip will show white text on a gradient-filled rectangle. */
-    color: white;
-    background: -webkit-linear-gradient(top,#111007,#58522c);
-    background: linear-gradient(180deg, #111007, #58522c);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-weight: 400;
-}
-
-section p {
-    margin: 0;
-    padding: 0px 18px 18px 40%;
-    z-index: 1;
-    position: relative;
-}
-
-section h1 + p {
-    padding-top: 228px;
 }
 
 /* This selector is for adding an arrow after external links inside sections. */
@@ -205,7 +189,46 @@ section p a[href^="http"]:not([href*="duncanritchie.co.uk"])::after {
     clip-path: polygon(0 0, 100% 0, 100% 77%, 0 77%)
 }
 
-.main-image {
+section .img-container {
+    padding-top: 24px;
+    text-align: right;
+}
+
+section .img-container img {
+    width: 300px;
+}
+
+/* CSS for browsers that support intersection observers. */
+
+.has-intersection-observer section {
+    min-height: 100vh;
+}
+
+.has-intersection-observer h1 {
+    padding-top: 36px;
+    right: 30px;
+    position: absolute;
+    /* Browsers that don’t understand background-clip will show white text on a gradient-filled rectangle. */
+    color: white;
+    background: -webkit-linear-gradient(top,#111007,#58522c);
+    background: linear-gradient(180deg, #111007, #58522c);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.has-intersection-observer section h1 + p {
+    padding-top: 228px;
+}
+
+.has-intersection-observer section p {
+    margin: 0;
+    padding: 0px 18px 18px 40%;
+    z-index: 1;
+    position: relative;
+}
+
+.has-intersection-observer .main-image {
     z-index: 0;
     position: fixed;
     left: 0;
@@ -217,13 +240,12 @@ section p a[href^="http"]:not([href*="duncanritchie.co.uk"])::after {
     transition: clip-path 0.6s 0s;
 }
 
-/* Hidden main images */
-.main-image.hidden {
+.has-intersection-observer .main-image.hidden {
     clip-path: polygon(85% 0, 85% 0, 95% 100%, 95% 100%);
     transition: clip-path 0.6s 0.6s;
 }
 
-#text-wrap-guide {
+.has-intersection-observer #text-wrap-guide {
     float: left;
     left: 0;
     top: 0;
@@ -232,3 +254,36 @@ section p a[href^="http"]:not([href*="duncanritchie.co.uk"])::after {
     shape-outside: polygon(0 0, 100% 0, 100% 0, 90% 0, 90% 0, 100% 100%, 100% 100%, 0 100%);
     transition: shape-outside 1s;
 }
+
+/* CSS for browsers that don’t support intersection observers. */
+
+.no-intersection-observer .main-image {
+    position: relative;
+    float: left;
+    width: 50vw;
+    min-height: 36vw;
+    border-bottom: solid #58522c 2px;
+    padding: 84px 0 24px 0;
+}
+
+.no-intersection-observer section {
+    float: right;
+    width: 45vw;
+    padding: 84px 2vw 24px 1vw;
+}
+
+.no-intersection-observer h1 {
+    color: #3c381d;
+    margin: 0;
+}
+
+.no-intersection-observer .main-image:last-of-type {
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.no-intersection-observer section:last-of-type {
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
