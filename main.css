@@ -168,11 +168,13 @@ section {
 }
 
 section h1 {
-    z-index: 1;
+    /* z-index: 0; */
     text-align: right;
     padding-top: 36px;
     right: 30px;
     position: absolute;
+    /* Browsers that don’t understand background-clip will show white text on a gradient-filled rectangle. */
+    color: white;
     background: -webkit-linear-gradient(top,#111007,#58522c);
     background: linear-gradient(180deg, #111007, #58522c);
     -webkit-background-clip: text;
