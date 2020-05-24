@@ -33,74 +33,53 @@ function moveTextWrapGuide (windowHeight, distanceScrolled) {
     textWrapGuide.style.shapeOutside = newShapeOutside;
 }
 
+//// Find which mainImage should be displayed, then change styling on mainImages accordingly.
 const sections =  document.getElementsByTagName("section");
 const mainImages = document.getElementsByClassName("main-image");
 const scrollCallback = (entries, observer) => {
-    console.log("scrollCallback invoked");
-    let currentSectionClass = "earlier-than-scrolled";
-    let sectionVisibleIndex = -1;
+    //// Find which mainImage should be displayed by finding which section is intersecting with screen.
+    //// If two sections are on the screen, indexOfSectionVisible will be set to the first section
+    //// in one loop iteration and then set to the second section in another loop iteration, so 
+    //// it will be the second section that will determine which mainImage is displayed.
+    let indexOfSectionVisible = -1;
     for (let i = 0; i < entries.length; i++) {
         for (let j = 0; j < sections.length; j++) {
             if (entries[i].target.id === sections[j].id
                 && entries[i].intersectionRatio > 0.1) {
-                sectionVisibleIndex = j;
+                indexOfSectionVisible = j;
             }
         }
     }
-    if (sectionVisibleIndex > -1) {
+    //// indexOfSectionVisible will still be -1 if the observer has fired, but not reported an intersection.
+    if (indexOfSectionVisible > -1) {
         for (let i = 0; i < sections.length; i++) {
-            if (i < sectionVisibleIndex) {
-                sections[i].className = "not-in-scroll";
+            if (i < indexOfSectionVisible) {
                 mainImages[i].className = "main-image hidden";
                 mainImages[i].style.zIndex = 1;
             }
-            else if (i == sectionVisibleIndex) {
-                sections[i].className = "in-scroll";
+            else if (i == indexOfSectionVisible) {
                 mainImages[i].className = "main-image";
-                console.log(sections[i]);
                 mainImages[i].style.zIndex = 0;
             }
             else {
-                sections[i].className = "not-in-scroll";
                 mainImages[i].className = "main-image hidden";
                 mainImages[i].style.zIndex = 0;
             }
         }
     }
 }
+
 const intersectionObserver = new IntersectionObserver(scrollCallback, {threshold: [0.1]});
 
 for (let i = 0; i < sections.length; i++) {
-    console.log(`Observing Section ${i}: ${sections[i].id}`)
+    // console.log(`Observing Section ${i}: ${sections[i].id}`)
     intersectionObserver.observe(sections[i]);
 }
-
-// //// Set z-index to 1 on images earlier than the image to show,
-// //// and set z-index to 0 on the image to show and the images after.
-// //// This ensures that the image to show is always revealed by the
-// //// previously displayed image disappearing.
-// function showMainImages(windowHeight, distanceScrolled) {
-//     const indexOfSectionVisible = Math.round(distanceScrolled / windowHeight);
-//     let zIndex = 1;
-//     for (let i = 0; i < mainImages.length; i++) {
-//         if (i == indexOfSectionVisible) {
-//             //console.log("Showing image "+i);
-//             mainImages[i].className = "main-image";
-//             zIndex = 0;
-//         }
-//         else {
-//             //console.log("Hiding image "+i);
-//             mainImages[i].className = "main-image hidden";
-//         }
-//         mainImages[i].style.zIndex = zIndex;
-//     }
-// }
 
 function updateScroll() {
     let windowHeight = document.documentElement.clientHeight;
     let distanceScrolled = window.scrollY || window.pageYOffset;
     moveTextWrapGuide(windowHeight, distanceScrolled);
-    //showMainImages(windowHeight, distanceScrolled);
 }
 
 function updateScrollWithTimeout() {
