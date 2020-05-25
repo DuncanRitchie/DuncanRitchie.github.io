@@ -114,7 +114,7 @@ nav #nav-icon {
     background-color: initial;
 }
 
-nav #skip-nav-li {
+/* nav #skip-nav-li {
     color: var(--colour6);
     transition: all 0.3s;
 }
@@ -122,7 +122,7 @@ nav #skip-nav-li {
 nav #skip-nav-li:not(:focus-within) {
     width: 0;
     transform: translateX(-100vw);
-}
+} */
 
 nav ul ul {
     position: absolute;
