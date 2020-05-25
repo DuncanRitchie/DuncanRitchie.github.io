@@ -6,10 +6,19 @@
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
-    width: 100%;
+    z-index: 2;
+    float: none;
     scroll-snap-type: y mandatory;
-    overflow: auto;
     scroll-padding-top: 12px;
+}
+
+.no-intersection-observer .showcase-group {
+    width: 95vw;
+}
+
+.has-intersection-observer .showcase-group {
+    display: none;
+    position: absolute;
 }
 
 .jumbotron-container + .showcase-group {
@@ -32,13 +41,14 @@
 }
 
 .showcase-head h1 {
-    color: #959595;
+    position: relative;
+    /* color: #959595; */
 }
 
-.showcase-head p {
+/* .showcase-head p {
     font-size: 20px;
     color: #707070;
-}
+} */
 
 .showcase-link-div {
     display: flex;

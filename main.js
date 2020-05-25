@@ -22,16 +22,8 @@ for (let i = 0; i < navSubmenuItems.length; i++) {
     })
 }
 
-const textWrapGuide = document.getElementById("text-wrap-guide");
-//// Make the section text flow correctly against the diagonal by moving #text-wrap-guide.
-function moveTextWrapGuide (windowHeight, distanceScrolled) {
-    const newLowerEdge = windowHeight + distanceScrolled;
-    const docHeight = Math.max(document.documentElement.clientHeight, document.documentElement.offsetHeight, document.documentElement.scrollHeight);
-    const newShapeOutside = "polygon(0 0, 90% 0, 90% "+(distanceScrolled/2)+"px, 90% "+distanceScrolled+"px, 90% "+distanceScrolled+"px, 100% "+newLowerEdge+"px, 100% "+docHeight+"px, 0 "+docHeight+"px)";
-
-    textWrapGuide.style.height = docHeight + "px";
-    textWrapGuide.style.shapeOutside = newShapeOutside;
-}
+//// The code to change the main images uses Intersection Observer.
+//// The code to change text-wrap-guide does not.
 
 const mainImages = document.getElementsByClassName("main-image");
 
@@ -40,7 +32,7 @@ if (!!window.IntersectionObserver) {
     document.querySelector("body").classList.add("has-intersection-observer");
 
     //// Find which mainImage should be displayed, then change styling on mainImages accordingly.
-    const sections =  document.getElementsByTagName("section");
+    const sections =  document.querySelectorAll("section:not(.showcase-group)");
     const scrollCallback = (entries, observer) => {
         //// Find which mainImage should be displayed by finding which section is intersecting with screen.
         //// If two sections are on the screen, indexOfSectionVisible will be set to the first section
@@ -82,11 +74,32 @@ if (!!window.IntersectionObserver) {
     }
 }
 
+// const pageHasProjectShowcase = !!document.getElementsByClassName("showcase-group")[0];
+
+// if (pageHasProjectShowcase) {
+//     console.log("Top offset of showcase: ", document.getElementsByClassName("showcase-group")[0].offsetTop);
+//     console.log("Top offset of velut: ", document.getElementById("velut").offsetTop);
+// }
+
+
+//// Code to move text-wrap-guide. It uses scroll position, but not Intersection Observer.
+
+const textWrapGuide = document.getElementById("text-wrap-guide");
+//// Make the section text flow correctly against the diagonal by moving #text-wrap-guide.
+function moveTextWrapGuide (windowHeight, distanceScrolled, startOfTextWrapping, endOfTextWrapping) {
+    const newLowerEdge = windowHeight + distanceScrolled;
+    const newShapeOutside = "polygon(0 " + startOfTextWrapping + ", 90% 0, 90% "+(distanceScrolled/2)+"px, 90% "+distanceScrolled+"px, 90% "+distanceScrolled+"px, 100% "+newLowerEdge+"px, 100% "+endOfTextWrapping+"px, 0 "+endOfTextWrapping+"px)";
+
+    textWrapGuide.style.height = endOfTextWrapping + "px";
+    textWrapGuide.style.shapeOutside = newShapeOutside;
+}
 
 function updateScroll() {
-    let windowHeight = document.documentElement.clientHeight;
-    let distanceScrolled = window.scrollY || window.pageYOffset;
-    moveTextWrapGuide(windowHeight, distanceScrolled);
+    const windowHeight = document.documentElement.clientHeight;
+    const distanceScrolled = window.scrollY || window.pageYOffset;
+    const startOfTextWrapping = 0;
+    const endOfTextWrapping = Math.max(document.documentElement.clientHeight, document.documentElement.offsetHeight, document.documentElement.scrollHeight);
+    moveTextWrapGuide(windowHeight, distanceScrolled, startOfTextWrapping, endOfTextWrapping);
 }
 
 function updateScrollWithTimeout() {
