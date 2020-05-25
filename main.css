@@ -179,7 +179,7 @@ h1 {
 }
 
 /* This selector is for adding an arrow after external links inside sections. */
-section p a[href^="http"]:not([href*="duncanritchie.co.uk"])::after {
+section p:not(.img-container) a[href^="http"]:not([href*="duncanritchie.co.uk"])::after {
     content: "↗";
     vertical-align: super;
     font-size: 60%;
@@ -195,7 +195,7 @@ section .img-container {
 }
 
 section .img-container img {
-    width: 300px;
+    width: 240px;
 }
 
 /* CSS for browsers that support intersection observers. */
