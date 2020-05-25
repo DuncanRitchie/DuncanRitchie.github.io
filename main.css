@@ -257,12 +257,15 @@ section .img-container img {
 
 /* CSS for browsers that don’t support intersection observers. */
 
+.no-intersection-observer .default-main-image {
+    display: none;
+}
+
 .no-intersection-observer .main-image {
     position: relative;
     float: left;
     width: 50vw;
     min-height: 36vw;
-    border-bottom: solid #58522c 2px;
     padding: 84px 0 24px 0;
 }
 

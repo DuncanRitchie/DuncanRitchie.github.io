@@ -51,13 +51,13 @@ if (!!window.IntersectionObserver) {
             for (let j = 0; j < sections.length; j++) {
                 if (entries[i].target.id === sections[j].id
                     && entries[i].intersectionRatio > 0.1) {
-                    indexOfSectionVisible = j;
+                    indexOfSectionVisible = j + 1;
                 }
             }
         }
         //// indexOfSectionVisible will still be -1 if the observer has fired, but not reported an intersection.
         if (indexOfSectionVisible > -1) {
-            for (let i = 0; i < sections.length; i++) {
+            for (let i = 0; i <= sections.length; i++) {
                 if (i < indexOfSectionVisible) {
                     mainImages[i].className = "main-image hidden";
                     mainImages[i].style.zIndex = 1;

@@ -91,119 +91,169 @@
     </nav>
 
     <!-- <main> -->
-        <div id="text-wrap-guide"></div>
-        <img 
-            class="main-image"
-            alt="My dog"
-            src="https://live.staticflickr.com/845/42335351435_391fe637c2_b.jpg"
+    <div id="text-wrap-guide"></div>
+    <!-- Default main image, shown immediately on navigating onto page -->
+    <picture>
+        <source
+            media="(min-width:0px)"
+            srcset="https://res.cloudinary.com/duncanritchie/image/upload/c_fill,g_west,h_1000,w_1000,x_358/v1581894718/site/DuncanOnCaerCaradoc.webp"
+        >
+        <img
+            class="main-image default-main-image"
+            alt="Duncan on Caer Caradoc in Shropshire"
+            src="https://res.cloudinary.com/duncanritchie/image/upload/c_fill,g_west,h_1000,w_1000,x_358/v1581894718/site/DuncanOnCaerCaradoc.jpg"
         />
-        <section id="dog">
-            <h1>
-                My dog.
-            </h1>
-            <p>
-                She’s an eight-year-old Weimaraner–Labrador cross.
-            </p>
-        </section>
-        <img 
+    </picture>
+
+    <!-- Main images and sections -->
+
+    <picture>
+        <source
+            media="(min-width:0px)"
+            srcset="https://res.cloudinary.com/duncanritchie/image/upload/c_fill,g_center,h_1000,w_1000,x_358/v1590405391/site/DogOnDukesDrive.webp"
+        >
+        <img
             class="main-image hidden"
-            alt="Chester’s amphitheatre"
-            src="./backgrounds/amphitheatre.webp"
+            alt="My dog on a path" 
+            src="https://res.cloudinary.com/duncanritchie/image/upload/c_fill,g_center,h_1000,w_1000,x_358/v1590405391/site/DogOnDukesDrive.jpg"
         />
-        <section id="chester">
-            <h1>
-                The city of Chester.
-            </h1>
-            <p>
-                Founded by the Romans, extended by the Saxons, captured by the
-                Normans, besieged by the Parliamentarians, gentrified by the Georgians,
-                and connected to the canal and railway networks by the Victorians, 
-                it is the place I am very privileged to call home.
-            </p>
-        </section>
-        <img 
+    </picture>
+    <section id="dog">
+        <h1>
+            My dog.
+        </h1>
+        <p>
+            She’s an eight-year-old Weimaraner–Labrador cross.
+        </p>
+    </section>
+
+    <picture>
+        <source
+            media="(min-width:0px)"
+            srcset="https://res.cloudinary.com/duncanritchie/image/upload/c_fill,g_center,h_1000,w_1000,x_358/v1590406374/site/ChesterAmphitheatre.webp"
+        >
+        <img
             class="main-image hidden"
-            alt="The Swallowgate building at the University of St Andrews"
-            src="./backgrounds/swallowgate.webp"
+            alt="Chester’s amphitheatre" 
+            src="https://res.cloudinary.com/duncanritchie/image/upload/c_fill,g_center,h_1000,w_1000,x_358/v1590406374/site/ChesterAmphitheatre.jpg"
         />
-        <section id="latin">
-            <h1>
-                I did Latin.
-            </h1>
-            <p>
-                I studied Latin at the <a href="https://www.st-andrews.ac.uk/" title="University of St Andrews">University of St Andrews</a>, graduating with a 2:1 master’s 
-                in June 2018. My favourite module was on Latin prose composition, and I really 
-                got into the nitty-gritty of the grammar.
-            </p>
-            <p>
-                I managed to develop my coding in tandem with my linguistic skills by making an
-                Excel file that stores, and returns detailed information on, more than ninety
-                thousand Latin words. The information returned includes inflected forms,
-                definitions, cognates, anagrams, rhymes, and links to online dictionaries.
-                I’ve since made a <a href="./code.html#velut" title="velut — a Latin dictionary">website</a> with this functionality.
-            </p>
-            <p>
-                In my sub-honours years, I also studied Ancient Greek for two years and Classical
-                Studies and Russian for a year each.
-            </p>
-            <p>
-                Outside of the curriculum, I was a regular member of the uni’s classics 
-                society, and wrote several of the nerdier rounds in their pub quizzes. 
-            </p>
-        </section>
-        <img 
+    </picture>
+    <section id="chester">
+        <h1>
+            The city of Chester.
+        </h1>
+        <p>
+            Founded by the Romans, extended by the Saxons, captured by the
+            Normans, besieged by the Parliamentarians, gentrified by the Georgians,
+            and connected to the canal and railway networks by the Victorians, 
+            it is the place I am very privileged to call home.
+        </p>
+    </section>
+
+    <picture>
+        <source
+            media="(min-width:0px)"
+            srcset="https://res.cloudinary.com/duncanritchie/image/upload/c_fill,g_xy_center,h_1000,w_1000,x_2138,y_579,z_1.2/v1590408641/site/Swallowgate.webp"
+        >
+        <img
+            class="main-image hidden"
+            alt="Swallowgate building at the University of St Andrews’s School of Classics" 
+            src="https://res.cloudinary.com/duncanritchie/image/upload/c_fill,g_xy_center,h_1000,w_1000,x_2138,y_579,z_1.2/v1590408641/site/Swallowgate.jpg"
+        />
+    </picture>
+    <section id="latin">
+        <h1>
+            I did Latin.
+        </h1>
+        <p>
+            I studied Latin at the <a href="https://www.st-andrews.ac.uk/" title="University of St Andrews">University of St Andrews</a>, graduating with a 2:1 master’s 
+            in June 2018. My favourite module was on Latin prose composition, and I really 
+            got into the nitty-gritty of the grammar.
+        </p>
+        <p>
+            I managed to develop my coding in tandem with my linguistic skills by making an
+            Excel file that stores, and returns detailed information on, more than ninety
+            thousand Latin words. The information returned includes inflected forms,
+            definitions, cognates, anagrams, rhymes, and links to online dictionaries.
+            I’ve since made a <a href="./code.html#velut" title="velut — a Latin dictionary">website</a> with this functionality.
+        </p>
+        <p>
+            In my sub-honours years, I also studied Ancient Greek for two years and Classical
+            Studies and Russian for a year each.
+        </p>
+        <p>
+            Outside of the curriculum, I was a regular member of the uni’s classics 
+            society, and wrote several of the nerdier rounds in their pub quizzes. 
+        </p>
+    </section>
+
+    <picture>
+        <source
+            media="(min-width:0px)"
+            srcset="https://res.cloudinary.com/duncanritchie/image/upload/c_fill,g_center,h_1000,w_1000,x_358/v1590407249/site/HallowHill.webp"
+        >
+        <img
             class="main-image hidden"
             alt="Sunlight shining through trees on Hallow Hill, St Andrews"
-            src="./backgrounds/hallowhill.jpg"
+            src="https://res.cloudinary.com/duncanritchie/image/upload/c_fill,g_center,h_1000,w_1000,x_358/v1590407249/site/HallowHill.jpg"
         />
-        <section id="photos">
-            <h1>
-                My photography.
-            </h1>
-            <p>
-                Since the age of nine I have been taking photos, such as several on this site.
-                My usual subjects include the birds and landscapes I can find myself around. 
-            </p>
-        </section>
-        <img 
+    </picture>
+    <section id="photos">
+        <h1>
+            My photography.
+        </h1>
+        <p>
+            Since the age of nine I have been taking photos, such as several on this site.
+            My usual subjects include the birds and landscapes I can find myself around. 
+        </p>
+    </section>
+
+    <picture>
+        <source
+            media="(min-width:0px)"
+            srcset="https://res.cloudinary.com/duncanritchie/image/upload/c_fill,g_center,h_1000,w_1000,x_358/v1590407575/site/ChairsOnStage.webp"
+        >
+        <img
             class="main-image hidden"
-            alt="Chairs arranged for an audience"
-            src="./backgrounds/chairs.jpg"
+            alt="Chairs arranged as part of a performance"
+            src="https://res.cloudinary.com/duncanritchie/image/upload/c_fill,g_center,h_1000,w_1000,x_358/v1590407575/site/ChairsOnStage.jpg"
         />
-        <section id="tiq">
-            <h1>
-                Theatre in the Quarter (TiQ).
-            </h1>
-            <p>
-                <a href="https://theatreinthequarter.co.uk/" title="Theatre in the Quarter’s website">TiQ</a> is 
-                a drama company in my hometown of Chester, focussed on giving musical on-stage 
-                experiences to children and the local community.
-            </p>
-            <p>
-                My capacities include poster-designer, programme-designer, lyricist, photographer, 
-                and assistant-director. These roles have enabled me to develop technical skills 
-                (e.g. in fine art, graphic design, and poetic metre), and also soft skills such 
-                as self-confidence, leadership, and teamwork.
-            </p>
-            <p>    
-                I have so far designed 30 posters and 17 programmes (the 
-                paper-items-sold-or-given-to-the-audience kind) and lyricized 19 songs.
-            </p>
-            <p> 
-                I’ve volunteered with TiQ since 2012, but I was a member of their children’s group 
-                Jigsaw Music Theatre for several years prior. For the full list of shows I’ve done 
-                with TiQ, see <a href="https://www.duncanritchie.co.uk/tiq-oeuvre/" title="My œuvre with Theatre in the Quarter and related groups">my TiQ œuvre</a>.
-            </p>
-            <p class="img-container">
-                <a href="https://www.duncanritchie.co.uk/tiq-oeuvre/" title="My TiQ &oelig;uvre">
-                    <img 
-                        src="https://res.cloudinary.com/duncanritchie/image/upload/w_400/v1578613462/2020_TheDayWarCame.png" 
-                        alt="Poster for “The Day War Came”" 
-                        id="screenshot-poster"
-                    />
-                </a>
-            </p>
-        </section>
+    </picture>
+    <section id="tiq">
+        <h1>
+            Theatre in the Quarter (TiQ).
+        </h1>
+        <p>
+            <a href="https://theatreinthequarter.co.uk/" title="Theatre in the Quarter’s website">TiQ</a> is 
+            a drama company in my hometown of Chester, focussed on giving musical on-stage 
+            experiences to children and the local community.
+        </p>
+        <p>
+            My capacities include poster-designer, programme-designer, lyricist, photographer, 
+            and assistant-director. These roles have enabled me to develop technical skills 
+            (e.g. in fine art, graphic design, and poetic metre), and also soft skills such 
+            as self-confidence, leadership, and teamwork.
+        </p>
+        <p>    
+            I have so far designed 30 posters and 17 programmes (the 
+            paper-items-sold-or-given-to-the-audience kind) and lyricized 19 songs.
+        </p>
+        <p> 
+            I’ve volunteered with TiQ since 2012, but I was a member of their children’s group 
+            Jigsaw Music Theatre for several years prior. For the full list of shows I’ve done 
+            with TiQ, see <a href="https://www.duncanritchie.co.uk/tiq-oeuvre/" title="My œuvre with Theatre in the Quarter and related groups">my TiQ œuvre</a>.
+        </p>
+        <p class="img-container">
+            <a href="https://www.duncanritchie.co.uk/tiq-oeuvre/" title="My TiQ &oelig;uvre">
+                <img 
+                    src="https://res.cloudinary.com/duncanritchie/image/upload/w_400/v1578613462/2020_TheDayWarCame.png" 
+                    alt="Poster for “The Day War Came”" 
+                    id="screenshot-poster"
+                />
+            </a>
+        </p>
+    </section>
+    
     <!-- </main> -->
     <script src="main.js"></script>
 </body>

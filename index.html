@@ -95,13 +95,34 @@
         </ul>
     </nav>
 
-    <!-- <main id="main"> -->
+    <!-- <main> -->
     <div id="text-wrap-guide"></div>
-    <img 
-        class="main-image" 
-        alt="Duncan on Caer Caradoc in Shropshire" 
-        src="https://res.cloudinary.com/duncanritchie/image/upload/c_fill,g_south_west,h_1000,w_1000,x_358/v1581894718/DuncanOnCaerCaradoc.jpg"
-    />    
+    <!-- Default main image, shown immediately on navigating onto page -->
+    <picture>
+        <source
+            media="(min-width:0px)"
+            srcset="https://res.cloudinary.com/duncanritchie/image/upload/c_fill,g_west,h_1000,w_1000,x_358/v1581894718/site/DuncanOnCaerCaradoc.webp"
+        >
+        <img
+            class="main-image default-main-image"
+            alt="Duncan on Caer Caradoc in Shropshire"
+            src="https://res.cloudinary.com/duncanritchie/image/upload/c_fill,g_west,h_1000,w_1000,x_358/v1581894718/site/DuncanOnCaerCaradoc.jpg"
+        />
+    </picture>
+
+    <!-- Main image for first (only) section. Same as default image. -->
+    <picture>
+        <source
+            media="(min-width:0px)"
+            srcset="https://res.cloudinary.com/duncanritchie/image/upload/c_fill,g_west,h_1000,w_1000,x_358/v1581894718/site/DuncanOnCaerCaradoc.webp"
+        >
+        <img
+            class="main-image"
+            alt="Duncan on Caer Caradoc in Shropshire"
+            src="https://res.cloudinary.com/duncanritchie/image/upload/c_fill,g_west,h_1000,w_1000,x_358/v1581894718/site/DuncanOnCaerCaradoc.jpg"
+        />
+    </picture>
+    <!-- First (only) section -->
     <section>
         <h1>
             Hi. I&rsquo;m Duncan Ritchie.
@@ -124,6 +145,7 @@
             I have been volunteering with drama company <a href="./aboutme.html#tiq">Theatre in the Quarter</a> since 2012.
         </p>
     </section>
+    
     <!-- </main> -->
     <script src="main.js"></script>
 </body>
