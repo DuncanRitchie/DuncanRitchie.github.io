@@ -85,28 +85,30 @@ if (!!window.IntersectionObserver) {
 //// Code to move text-wrap-guide. It uses scroll position, but not Intersection Observer.
 
 const textWrapGuide = document.getElementById("text-wrap-guide");
-//// Make the section text flow correctly against the diagonal by moving #text-wrap-guide.
-function moveTextWrapGuide (windowHeight, distanceScrolled, startOfTextWrapping, endOfTextWrapping) {
-    const newLowerEdge = windowHeight + distanceScrolled;
-    const newShapeOutside = "polygon(0 " + startOfTextWrapping + ", 90% 0, 90% "+(distanceScrolled/2)+"px, 90% "+distanceScrolled+"px, 90% "+distanceScrolled+"px, 100% "+newLowerEdge+"px, 100% "+endOfTextWrapping+"px, 0 "+endOfTextWrapping+"px)";
+if (!!textWrapGuide) {
+    //// Make the section text flow correctly against the diagonal by moving #text-wrap-guide.
+    function moveTextWrapGuide (windowHeight, distanceScrolled, startOfTextWrapping, endOfTextWrapping) {
+        const newLowerEdge = windowHeight + distanceScrolled;
+        const newShapeOutside = "polygon(0 " + startOfTextWrapping + ", 90% 0, 90% "+(distanceScrolled/2)+"px, 90% "+distanceScrolled+"px, 90% "+distanceScrolled+"px, 100% "+newLowerEdge+"px, 100% "+endOfTextWrapping+"px, 0 "+endOfTextWrapping+"px)";
 
-    textWrapGuide.style.height = endOfTextWrapping + "px";
-    textWrapGuide.style.shapeOutside = newShapeOutside;
-}
+        textWrapGuide.style.height = endOfTextWrapping + "px";
+        textWrapGuide.style.shapeOutside = newShapeOutside;
+    }
 
-function updateScroll() {
-    const windowHeight = document.documentElement.clientHeight;
-    const distanceScrolled = window.scrollY || window.pageYOffset;
-    const startOfTextWrapping = 0;
-    const endOfTextWrapping = Math.max(document.documentElement.clientHeight, document.documentElement.offsetHeight, document.documentElement.scrollHeight);
-    moveTextWrapGuide(windowHeight, distanceScrolled, startOfTextWrapping, endOfTextWrapping);
-}
+    function updateScroll() {
+        const windowHeight = document.documentElement.clientHeight;
+        const distanceScrolled = window.scrollY || window.pageYOffset;
+        const startOfTextWrapping = 0;
+        const endOfTextWrapping = Math.max(document.documentElement.clientHeight, document.documentElement.offsetHeight, document.documentElement.scrollHeight);
+        moveTextWrapGuide(windowHeight, distanceScrolled, startOfTextWrapping, endOfTextWrapping);
+    }
 
-function updateScrollWithTimeout() {
-    window.setTimeout(updateScroll, 100);
+    function updateScrollWithTimeout() {
+        window.setTimeout(updateScroll, 100);
+    }
+    
+    //// Listen for `scroll` event to update anything that can change after scrolling.
+    window.addEventListener("scroll", updateScrollWithTimeout);
+    //// Update scroll position on page load.
+    window.addEventListener("load", updateScroll);
 }
-  
-//// Listen for `scroll` event to update anything that can change after scrolling.
-window.addEventListener("scroll", updateScrollWithTimeout);
-//// Update scroll position on page load.
-window.addEventListener("load", updateScroll);

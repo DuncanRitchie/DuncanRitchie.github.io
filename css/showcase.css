@@ -1,4 +1,23 @@
-/* Code Nation project showcase */
+/* Code Nation (etc) project showcase */
+
+.no-intersection-observer .showcase-group {
+    width: 95vw;
+}
+
+#text-wrap-guide,.main-image {
+    display: none;
+}
+
+/* .has-intersection-observer .showcase-container {
+    display: flex;
+    position: fixed;
+    width: 95vw;
+    z-index: 2;
+} */
+
+/* .has-intersection-observer .showcase-container * {
+    position: absolute;
+} */
 
 .showcase-group {
     display: flex;
@@ -6,31 +25,13 @@
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
-    z-index: 2;
-    float: none;
     scroll-snap-type: y mandatory;
     scroll-padding-top: 12px;
-}
-
-.no-intersection-observer .showcase-group {
-    width: 95vw;
-}
-
-.has-intersection-observer .showcase-group {
-    display: none;
-    position: absolute;
-}
-
-.jumbotron-container + .showcase-group {
-    margin-top: 24px;
-}
-
-.showcase-group + .jumbotron-container {
-    margin-top: 96px;
+    height: initial;
 }
 
 .showcase-head,.showcase-link-div {
-    scroll-snap-align: start;
+    scroll-snap-align: center;
     scroll-snap-stop: normal;
 }
 
@@ -40,9 +41,14 @@
     padding-top: 48px;
 }
 
-.showcase-head h1 {
+.has-intersection-observer .showcase-head h1 {
     position: relative;
+    margin: 0 0 24px;
     /* color: #959595; */
+}
+
+.has-intersection-observer .showcase-head h1 + p {
+    padding-top: 0px;
 }
 
 /* .showcase-head p {

@@ -200,7 +200,7 @@ section .img-container img {
 
 /* CSS for browsers that support intersection observers. */
 
-.has-intersection-observer section {
+.has-intersection-observer section:not(.showcase-group) {
     min-height: 100vh;
 }
 
@@ -217,8 +217,16 @@ section .img-container img {
     -webkit-text-fill-color: transparent;
 }
 
-.has-intersection-observer section h1 + p {
+.has-intersection-observer #velut h1 {
+    position: relative;
+}
+
+.has-intersection-observer section:not(.showcase-group):not(#velut) h1 + p {
     padding-top: 228px;
+}
+
+.has-intersection-observer #velut h1 {
+    margin-bottom: 24px;
 }
 
 .has-intersection-observer section p {
