@@ -229,7 +229,7 @@ section .img-container img {
     margin-bottom: 24px;
 }
 
-.has-intersection-observer section p {
+.has-intersection-observer section:not(.showcase-group) p {
     margin: 0;
     padding: 0px 18px 18px 40%;
     z-index: 1;

@@ -8,17 +8,6 @@
     display: none;
 }
 
-/* .has-intersection-observer .showcase-container {
-    display: flex;
-    position: fixed;
-    width: 95vw;
-    z-index: 2;
-} */
-
-/* .has-intersection-observer .showcase-container * {
-    position: absolute;
-} */
-
 .showcase-group {
     display: flex;
     flex-flow: row;
@@ -37,24 +26,24 @@
 
 .showcase-head {
     width: 100%;
-    padding-left: calc(10vw - 12px);
     padding-top: 48px;
 }
 
 .has-intersection-observer .showcase-head h1 {
     position: relative;
     margin: 0 0 24px;
-    /* color: #959595; */
 }
 
 .has-intersection-observer .showcase-head h1 + p {
     padding-top: 0px;
 }
 
-/* .showcase-head p {
-    font-size: 20px;
-    color: #707070;
-} */
+.showcase-head p {
+    color: #3c381d;
+    text-align: left;
+    margin: 0;
+    padding: 0px 18px 18px 40%;
+}
 
 .showcase-link-div {
     display: flex;
