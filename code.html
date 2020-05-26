@@ -99,7 +99,8 @@
 
     <!-- <main> -->
     <!-- <div id="text-wrap-guide"></div> -->
-    <!-- Default main image, shown immediately on navigating onto page -->
+    
+    <!-- Main images and sections. -->
     <picture>
         <source
             media="(min-width:481px)"
@@ -110,28 +111,12 @@
             srcset="https://res.cloudinary.com/duncanritchie/image/upload/c_fill,g_west,h_480,w_480,x_358/v1581894718/site/DuncanOnCaerCaradoc.webp"
         >
         <img
-            class="main-image default-main-image"
+            class="main-image"
             alt="Duncan on Caer Caradoc in Shropshire"
             src="https://res.cloudinary.com/duncanritchie/image/upload/c_fill,g_west,h_1000,w_1000,x_358/v1581894718/site/DuncanOnCaerCaradoc.jpg"
         />
     </picture>
 
-    <!-- Main images and sections. -->
-    <picture>
-        <source
-            media="(min-width:481px)"
-            srcset="https://res.cloudinary.com/duncanritchie/image/upload/c_fill,g_center,h_1000,w_1000,x_358/v1590421479/site/ChesterWeir.webp"
-        >
-        <source
-            media="(min-width:0px)"
-            srcset="https://res.cloudinary.com/duncanritchie/image/upload/c_fill,g_center,h_480,w_480,x_358/v1590421479/site/ChesterWeir.webp"
-        >
-        <img
-            class="main-image"
-            alt="Weir on the river Dee at Chester"
-            src="https://res.cloudinary.com/duncanritchie/image/upload/c_fill,g_center,h_1000,w_1000,x_358/v1590421479/site/ChesterWeir.jpg"
-        />
-    </picture>
     <section id="code">
         <h1>
             My coding story.
@@ -688,6 +673,7 @@
             srcset="https://res.cloudinary.com/duncanritchie/image/upload/c_fill,g_center,h_480,w_480,x_358/v1590423024/site/FulmarLanding.webp"
         >
         <img
+            id="velut-main-image"
             class="main-image"
             alt="Fulmar landing on a cliff, because I use a photo of a fulmar for my logo"
             src="https://res.cloudinary.com/duncanritchie/image/upload/c_fill,g_center,h_1000,w_1000,x_358/v1590423024/site/FulmarLanding.jpg"
@@ -724,6 +710,7 @@
     </section>
     <!-- </main> -->
     <script src="./js/main.js"></script>
+    <script src="./js/showcase.js"></script>
     <script src="./js/navbar.js"></script>
 </body>
 </html>

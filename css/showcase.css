@@ -4,10 +4,6 @@
     width: 95vw;
 }
 
-#text-wrap-guide,.main-image {
-    display: none;
-}
-
 .showcase-group {
     display: flex;
     flex-flow: row;
