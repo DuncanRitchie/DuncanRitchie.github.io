@@ -10,12 +10,17 @@
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
-    scroll-snap-type: y mandatory;
+    scroll-snap-type: y proximity;
     scroll-padding-top: 12px;
     height: initial;
 }
 
-.showcase-head,.showcase-link-div {
+.showcase-head {
+    scroll-snap-align: start;
+    scroll-snap-stop: normal;
+}
+
+.showcase-link-div {
     scroll-snap-align: center;
     scroll-snap-stop: normal;
 }
