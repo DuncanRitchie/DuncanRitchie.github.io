@@ -267,7 +267,7 @@ section .img-container img {
 }
 
 .has-intersection-observer .main-image {
-    z-index: 0;
+    z-index: -1;
     position: fixed;
     left: 0;
     top: 0;

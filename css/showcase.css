@@ -16,8 +16,7 @@
     width: 100%;
     padding-bottom: 24px;
     padding-bottom: 1rem;
-    background-color: hsla(147, 100%, 4%, 0.502);
-    background-image: radial-gradient(hsla(147, 100%, 4%, 0.3), hsla(147, 100%, 4%, 0.5));
+    background-color: hsla(147, 100%, 4%, 0.75);
     background-position: absolute;
 }
 
