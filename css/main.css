@@ -88,10 +88,9 @@ nav a {
     text-decoration: inherit;
 }
 
-nav #nav-icon-li {
+nav #nav-icon-a {
     flex-basis: min-content;
     flex-grow: 0;
-    list-style-type: none;
 }
 
 nav #nav-icon {
@@ -382,7 +381,7 @@ section .img-container img {
             "icon main";
     }
 
-    nav #nav-icon-li {
+    nav #nav-icon-a {
         grid-area: icon;
     }
 
