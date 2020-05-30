@@ -296,8 +296,9 @@ section .img-container img {
 }
 
 .no-intersection-observer section {
-    float: right;
+    float: left;
     width: 45vw;
+    width: calc(47vw - 24px);
     padding: 84px 2vw 24px 1vw;
 }
 
