@@ -30,8 +30,8 @@
     scroll-snap-align: start;
     scroll-snap-stop: normal;
     width: 100%;
-    padding-top: 48px;
-    padding-top: 2rem;
+    padding-top: 60px;
+    padding-top: 2.5rem;
     color: #b3d3f7ff;
     color: var(--colour2);
 }
