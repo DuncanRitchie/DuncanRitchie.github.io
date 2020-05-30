@@ -195,6 +195,7 @@ h1 {
     font-weight: 400;
     z-index: 1;
     text-align: right;
+    color: #3c381d; /* Overruled if intersection observer exists, or in showcase. */
 }
 
 /* This selector is for adding an arrow after external links inside sections. */
@@ -325,7 +326,7 @@ section .img-container img {
     padding: 3.5rem 0 1rem 0;
 }
 
-.no-intersection-observer section {
+.no-intersection-observer section:not(.showcase-group) {
     float: left;
     width: 45vw;
     width: calc(47vw - 24px);
@@ -335,7 +336,6 @@ section .img-container img {
 }
 
 .no-intersection-observer h1 {
-    color: #3c381d;
     margin: 0;
 }
 
