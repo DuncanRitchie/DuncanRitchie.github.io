@@ -84,10 +84,10 @@
     position: absolute;
     right: 6px;
     right: 0.25rem;
-    bottom: -4px;
-    bottom: -0.1667rem;
-    font-size: 36px;
-    font-size: 1.5rem;
+    bottom: -6px;
+    bottom: -0.25rem;
+    font-size: 42px;
+    font-size: 1.75rem;
 }
 
 /* Screenreaders do not understand the GitHub logo shown to sighted users,
@@ -171,7 +171,7 @@ Taken from https://webaim.org/techniques/css/invisiblecontent/ */
 }
 
 .project-link-div a {
-    color: #003366;
+    color: #006168;
 }
 
 .project-link-div a:hover {
