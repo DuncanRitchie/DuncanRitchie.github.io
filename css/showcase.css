@@ -16,7 +16,8 @@
     width: 100%;
     padding-bottom: 24px;
     padding-bottom: 1rem;
-    background-color: hsla(147, 100%, 4%, 0.75);
+    background-color: #001409c0;
+    background-color: rgba(0, 20, 9, 0.75);
     background-position: absolute;
 }
 
