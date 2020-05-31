@@ -293,14 +293,28 @@ section .img-container img {
         padding-top: 0.5rem;
         right: 30px;
         right: 1.25rem;
+        line-height: 90%;
+        /* height: 100%; */
         position: absolute;
         /* Browsers that don’t understand background-clip will show white text on a gradient-filled rectangle. */
         color: white;
-        background: -webkit-linear-gradient(top,#111007,#58522c);
-        background: linear-gradient(180deg, #111007, #58522c);
+        background: -webkit-linear-gradient(top, #111007,#58522c, #58522c);
+        background: linear-gradient(180deg, #111007, #58522c, #58522c);
+        /* The height of the gradient fill is not dependent on the height of the h1. */
+        background-size: 100% 9.45rem;
+        background-position: center;
         -webkit-background-clip: text;
         background-clip: text;
         -webkit-text-fill-color: transparent;
+    }
+
+    /* Hack to stop background-clip cutting off the descenders of the last line of the h1. */
+    /* \00000a is a newline, therefore the last line of the h1 is no longer the last line. */
+    .has-intersection-observer h1::after {
+        content: "\00000a .";
+        white-space: pre;
+        white-space: pre-wrap;
+        opacity: 0;
     }
 
     .has-intersection-observer section:not(.showcase-group):not(#velut) h1 + p {
@@ -309,10 +323,13 @@ section .img-container img {
     }
 
     .has-intersection-observer #velut-section h1 {
-        padding-top: 72px;
-        padding-top: 3rem;
+        margin-top: 72px;
+        margin-top: 3rem;
         margin-bottom: 24px;
         margin-bottom: 1rem;
+        /* The border adds spacing but does not affect the gradient-filled background like padding would. */
+        border-top: 72px solid transparent;
+        border-top: 3rem solid transparent;
     }
 
     .has-intersection-observer section:not(.showcase-group) p {
