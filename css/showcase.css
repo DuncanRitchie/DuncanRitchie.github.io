@@ -79,6 +79,7 @@
     background-color: white;
 }
 
+/* This contains the GitHub logo from Font Awesome. */
 .github-link {
     position: absolute;
     right: 6px;
@@ -87,6 +88,19 @@
     bottom: -0.1667rem;
     font-size: 36px;
     font-size: 1.5rem;
+}
+
+/* Screenreaders do not understand the GitHub logo shown to sighted users,
+so extra text has been added and then hidden from sighted users.
+Screenreaders will read the words eg “Cyberpet code”, but sighted users won’t.
+Taken from https://webaim.org/techniques/css/invisiblecontent/ */
+.github-link-accessible-text {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
 }
 
 .showcase-link-a {
