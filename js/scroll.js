@@ -1,6 +1,8 @@
 //// The code to change the main images uses Intersection Observer.
 //// The code to change text-wrap-guide does not.
 
+const textWrapGuide = document.getElementById("text-wrap-guide");
+
 const isViewportBigEnoughForScrollBehaviour = () => {
     return document.documentElement.clientWidth > 600;
 }
@@ -48,6 +50,9 @@ if (!!window.IntersectionObserver) {
         //// There was a bug in that the default main image would appear, when making the viewport small.
         else {
             document.getElementsByClassName("default-main-image")[0].classList.add("hidden");
+            if (!!textWrapGuide) {
+                textWrapGuide.classList.add("hidden");
+            }
         }
     }
 
@@ -61,7 +66,6 @@ if (!!window.IntersectionObserver) {
 
 //// Code to move text-wrap-guide. It uses scroll position, but not Intersection Observer.
 
-const textWrapGuide = document.getElementById("text-wrap-guide");
 if (!!textWrapGuide) {
     //// Make the section text flow correctly against the diagonal by moving #text-wrap-guide.
     function moveTextWrapGuide (windowHeight, distanceScrolled, startOfTextWrapping, endOfTextWrapping) {
@@ -73,7 +77,8 @@ if (!!textWrapGuide) {
     }
 
     function updateScroll() {
-        if (isViewportBigEnoughForScrollBehaviour()) {            
+        if (isViewportBigEnoughForScrollBehaviour()) {   
+            textWrapGuide.classList.remove("hidden");         
             const windowHeight = document.documentElement.clientHeight;
             const distanceScrolled = window.scrollY || window.pageYOffset;
             const startOfTextWrapping = 0;
