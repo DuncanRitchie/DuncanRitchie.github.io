@@ -465,3 +465,34 @@ section .img-container img {
         scroll-snap-align: none;
     }
 }
+
+
+/* Media query for printing. */
+
+@media print {
+    html,body {
+        min-height: initial;
+        background: none;
+        font-size: 16px;
+        scroll-snap-type: unset;
+    }
+
+    nav,.main-image,h1 {
+        position: initial;
+        float: initial;
+        top: unset;
+        left: unset;
+    }
+
+    .has-intersection-observer h1 {
+        color: #58522c;
+    }
+
+    #text-wrap-guide,.default-main-image {
+        display: none;
+    }
+
+    a:link::after {
+        content: none;
+    }
+}
