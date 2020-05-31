@@ -31,7 +31,7 @@
     width: 100%;
     padding-top: 60px;
     padding-top: 2.5rem;
-    color: #b3d3f7ff;
+    color: #b3d3f7;
     color: var(--colour2);
 }
 
@@ -39,12 +39,17 @@
     position: relative;
     margin: 42px 0 24px;
     margin: 1.75rem 0 1rem;
-    color: black;
+    color: inherit;
     background: -webkit-linear-gradient(top, #b3d3f7ff, #9aa691ff);
     background: linear-gradient(180deg, var(--colour2), var(--colour3));
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+
+.no-intersection-observer .showcase-head h1 {
+    padding-right: 36px;
+    padding-right: 1.5rem;
 }
 
 .showcase-head p {

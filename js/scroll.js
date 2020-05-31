@@ -31,19 +31,23 @@ if (!!window.IntersectionObserver) {
             if (indexOfSectionVisible > -1) {
                 for (let i = 0; i <= sections.length; i++) {
                     if (i < indexOfSectionVisible) {
-                        mainImages[i].className = "main-image hidden";
+                        mainImages[i].classList.add("hidden");
                         mainImages[i].style.zIndex = 1;
                     }
                     else if (i == indexOfSectionVisible) {
-                        mainImages[i].className = "main-image";
+                        mainImages[i].classList.remove("hidden");
                         mainImages[i].style.zIndex = 0;
                     }
                     else {
-                        mainImages[i].className = "main-image hidden";
+                        mainImages[i].classList.add("hidden");
                         mainImages[i].style.zIndex = 0;
                     }
                 }
             }
+        }
+        //// There was a bug in that the default main image would appear, when making the viewport small.
+        else {
+            document.getElementsByClassName("default-main-image")[0].classList.add("hidden");
         }
     }
 
@@ -86,4 +90,7 @@ if (!!textWrapGuide) {
     window.addEventListener("scroll", updateScrollWithTimeout);
     //// Update scroll position on page load.
     window.addEventListener("load", updateScroll);
+    //// Also scroll-y things on window resize.
+    window.onresize = updateScrollWithTimeout;
 }
+
