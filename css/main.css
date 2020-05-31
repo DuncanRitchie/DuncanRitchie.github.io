@@ -210,7 +210,7 @@ a.anchor {
     scroll-snap-align: start;
 }
 
-#text-wrap-guide.hidden {
+*:not(.main-image).hidden {
     display: none;
 }
 
