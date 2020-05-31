@@ -274,11 +274,21 @@
         </p>
         <p class="img-container">
             <a href="https://www.duncanritchie.co.uk/tiq-oeuvre/" title="My TiQ &oelig;uvre">
-                <img 
-                    src="https://res.cloudinary.com/duncanritchie/image/upload/w_400/v1578613462/2020_TheDayWarCame.png" 
-                    alt="Poster for “The Day War Came”" 
-                    id="latest-tiq-poster"
-                />
+                <picture>
+                    <source
+                        media="(min-width:481px)"
+                        srcset="https://res.cloudinary.com/duncanritchie/image/upload/w_200/v1578613462/2020_TheDayWarCame.png"
+                    >
+                    <source
+                        media="(min-width:0px)"
+                        srcset="https://res.cloudinary.com/duncanritchie/image/upload/w_400/v1578613462/2020_TheDayWarCame.png"
+                    >
+                    <img
+                        src="https://res.cloudinary.com/duncanritchie/image/upload/w_400/v1578613462/2020_TheDayWarCame.png" 
+                        alt="Poster for “The Day War Came”" 
+                        id="latest-tiq-poster"
+                    />
+                </picture>
             </a>
         </p>
     </section>
