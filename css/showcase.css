@@ -55,7 +55,7 @@
     padding: 0 0.75rem 0.75rem 40%;
 }
 
-.showcase-link-div {
+.project-link-div {
     scroll-snap-align: center;
     scroll-snap-stop: normal;
     display: flex;
@@ -75,7 +75,7 @@
     position: relative
 }
 
-.showcase-link-div:not(.showcase-link-to-bad-page):hover {
+.project-link-div:not(.project-link-to-bad-page):hover {
     background-color: white;
 }
 
@@ -103,7 +103,7 @@ Taken from https://webaim.org/techniques/css/invisiblecontent/ */
     overflow: hidden;
 }
 
-.showcase-link-a {
+.project-link-a {
     width: 100%;
     height: 100%;
     padding: auto 50px;
@@ -116,15 +116,15 @@ Taken from https://webaim.org/techniques/css/invisiblecontent/ */
     font-weight: bold;
 }
 
-.showcase-link-a:hover {
+.project-link-a:hover {
     color: darkseagreen;
 }
 
-.showcase-link-to-bad-page .showcase-link-a {
+.project-link-to-bad-page .project-link-a {
     color: #505050;
 }
 
-.showcase-link-to-bad-page .showcase-link-a:hover {
+.project-link-to-bad-page .project-link-a:hover {
     color: #505050;
 }
 
@@ -135,46 +135,46 @@ Taken from https://webaim.org/techniques/css/invisiblecontent/ */
     width: 5.7004rem;
 }
 
-.showcase-link-a div {
+.project-link-a div {
     width: 250px;
     width: 10.4167rem;
     padding: 0 20px;
     padding: 0 0.8333rem;
 }
 
-.showcase-link-div div h2 {
+.project-link-div div h2 {
     font-size: 24px;
     font-size: 1rem;
     margin: 3px 0 4px;
     margin: 0.125rem 0 0.1667rem;
 }
 
-.index-made-with {
+.project-made-with {
     opacity: 0.85;
     font-weight: normal;
     font-size: 20px;
     font-size: 0.8333rem;
 }
 
-.index-finish-date,
-.index-reason-no-demo {
+.project-finish-date,
+.project-reason-no-demo {
     color: #606060ff;
     font-weight: normal;
     font-size: 20px;
     font-size: 0.8333rem;
 }
 
-.showcase-link-to-bad-page {
+.project-link-to-bad-page {
     background-color: #dddddd;
     border: 5px solid #505050;
     border: 0.2083rem solid #505050;
 }
 
-.showcase-link-div a {
+.project-link-div a {
     color: #0066cc;
 }
 
-.showcase-link-div a:hover {
+.project-link-div a:hover {
     color: dodgerblue;
 }
 
@@ -188,16 +188,7 @@ Taken from https://webaim.org/techniques/css/invisiblecontent/ */
         justify-content: space-around;
     }
 
-    .jumbotron-container + .showcase-group {
-        margin-top: 0;
-    }
-    
-    .showcase-group + .jumbotron-container {
-        margin-top: 48px;
-        margin-top: 2rem;
-    }
-
-    .showcase-link-div {
+    .project-link-div {
         width: 90vw;
     }
 }
@@ -212,12 +203,12 @@ Taken from https://webaim.org/techniques/css/invisiblecontent/ */
         height: auto
     }
 
-    .showcase-link-div {
+    .project-link-div {
         height: 270px;
         height: 11.25rem;
     }
 
-    .showcase-link-a {
+    .project-link-a {
         padding: 0;
         display: flex;
         align-items: center;
@@ -227,7 +218,7 @@ Taken from https://webaim.org/techniques/css/invisiblecontent/ */
         transform: translateY(0);
     }
 
-    .showcase-link-a div {
+    .project-link-a div {
         margin: 0;
         height: auto;
     }
@@ -245,7 +236,7 @@ Taken from https://webaim.org/techniques/css/invisiblecontent/ */
         padding: initial;
     }
 
-    .showcase-link-div {
+    .project-link-div {
         border-width: 2px;
     }
 }
@@ -255,7 +246,7 @@ Taken from https://webaim.org/techniques/css/invisiblecontent/ */
         justify-content: space-between;
     }
 
-    .showcase-link-div {
+    .project-link-div {
         width: 352px;
         margin: 18px 0 9px 0;
     }
