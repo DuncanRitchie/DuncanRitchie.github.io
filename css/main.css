@@ -506,8 +506,8 @@ section .img-container img {
 
 @media (max-width: 424px) {
     .main-image {
-        padding-top: 192px;
-        padding-top: 8rem;
+        padding-top: 168px;
+        padding-top: 7rem;
     }
 }
 
