@@ -11,8 +11,8 @@ html,body {
     --colour2: #d6e9ff;
     --colour3: #b8c5af;
     --colour4: #a9cc36;
-    --colour5: #a4d64d;
-    --colour6: #426e26;
+    --colour5: #bde972;
+    --colour6: #698830;
     --nav-text: #333333;
     --body-text: #111111;
     --unvisited-text: #00465c;
@@ -34,8 +34,8 @@ body {
         #d6e9ff,
         #b8c5af,
         #a9cc36,
-        #a4d64d,
-        #426e26
+        #bde972,
+        #698830
     );
     /* Browsers that support gradients and CSS variables will use these. */
     background-image: linear-gradient(
@@ -65,7 +65,7 @@ section:not(.showcase-group) a:visited {
 }
 
 section:not(.showcase-group) a:hover {
-    color: #426e26;
+    color: #698830;
     color: var(--colour6);
     text-decoration: none;
     border-bottom: 1px thin;
@@ -124,7 +124,7 @@ nav ul li a:not(#nav-icon-a),label {
 }
 
 nav ul li label:hover,a:hover {
-    color: #426e26;
+    color: #698830;
     color: var(--colour6);
     background-image: linear-gradient(#ffffff00, #ffffff00, #ffffff00, #2d4a1b4f);
 }
@@ -488,7 +488,7 @@ section .img-container img {
     }
 
     body:not(#code-body) section:not(:last-of-type) {
-        border-bottom: 2px solid #426e26;
+        border-bottom: 2px solid #698830;
         border-bottom: 2px solid var(--colour6);
     }
 
@@ -509,7 +509,6 @@ section .img-container img {
         padding-top: 192px;
         padding-top: 8rem;
     }
-
 }
 
 
