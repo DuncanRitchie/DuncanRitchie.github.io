@@ -496,6 +496,8 @@ section .img-container img {
         padding: 0 1rem;
         margin: 0;
         scroll-snap-align: none;
+        font-size: 72px;
+        font-size: 3rem;
     }
 }
 
