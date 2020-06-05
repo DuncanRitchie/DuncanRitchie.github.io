@@ -11,7 +11,7 @@ html,body {
     --colour2: #d6e9ff;
     --colour3: #9aa691;
     --colour4: #7d952f;
-    --colour5: #82aa3b;
+    --colour5: #a4d64d;
     --colour6: #2d4a1b;
     --nav-text: #333333;
     --body-text: #111111;
@@ -34,7 +34,7 @@ body {
         #d6e9ff,
         #9aa691,
         #7d952f,
-        #82aa3b,
+        #a4d64d,
         #2d4a1b
     );
     /* Browsers that support gradients and CSS variables will use these. */
@@ -87,6 +87,7 @@ nav {
     font-size: 0.7917rem;
     background-color: #bfd4ef;
     background-color: #ffffff7f;
+    color: #333333;
     color: var(--nav-text);
     text-decoration: none;
 }
