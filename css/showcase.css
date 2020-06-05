@@ -41,7 +41,7 @@
     margin: 42px 0 24px;
     margin: 1.75rem 0 1rem;
     color: inherit;
-    background: -webkit-linear-gradient(top, #d6e9ff, #9aa691);
+    background: -webkit-linear-gradient(top, #d6e9ff, #b8c5af);
     background: linear-gradient(180deg, var(--colour2), var(--colour3));
     -webkit-background-clip: text;
     background-clip: text;
