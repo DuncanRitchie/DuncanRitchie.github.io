@@ -98,11 +98,6 @@ nav a {
     text-decoration: inherit;
 }
 
-nav #nav-icon-a {
-    flex-basis: min-content;
-    flex-grow: 0;
-}
-
 nav #nav-icon {
     width: 36px;
     width: 1.5rem;
@@ -287,7 +282,7 @@ section .img-container img {
 
 /* CSS for browsers that support intersection observers. */
 
-@media (min-width: 601px) {
+@media (min-width: 625px) {
 
     .has-intersection-observer section:not(.showcase-group) {
         min-height: 100vh;
@@ -394,17 +389,36 @@ section .img-container img {
 
 /* CSS for mobile. */
 
-@media (max-width: 600px) {
+@media (max-width: 624px) {
     nav {
         display: grid;
         grid-template-columns: 2rem 1fr;
         grid-template-areas: 
             "icon socials"
             "icon main";
+        padding: 0 12px;
+        padding: 0 0.5rem;
+        width: calc(100% - 1rem);
     }
 
     nav #nav-icon-a {
         grid-area: icon;
+        display: flex;
+        justify-content: center;
+        padding: 6px;
+        padding: 0.25rem;
+        width: 36px;
+        width: 1.5rem;
+    }
+
+    nav #nav-icon {
+        margin: 0;
+        flex-grow: 1;
+    }
+
+    nav a, nav label {
+        display: inline-block;
+        text-align: center;
     }
 
     nav #nav-main-list {
@@ -417,16 +431,31 @@ section .img-container img {
     nav #socials-list {
         grid-area: socials;
         justify-content: end;
+        margin-left: auto;
+        margin-right: 12px;
+        margin-right: 0.5rem;
+    }
+
+    nav ul ul {
+        clip-path: unset;
+        margin: 0;
+        padding: 0.25rem 0.5rem 0 0;
+    }
+
+    nav #socials-list li a {
+        padding: 0.5rem;
+        width: 100%;
+        text-align: center;
     }
 
     #socials-list li {
-        padding: 6px 12px 3px;
-        padding: 0.25rem 0.5rem 0.125rem;
+        padding: 0 12px 0;
+        padding: 0 0.5rem 0;
     }
 
-    #nav-main-list li {
-        padding: 3px 3px 6px;
-        padding: 0.125rem 0.125rem 0.25rem;
+    #nav-main-list li a {
+        text-align: left;
+        width: calc(100% - 0.5rem);
     }
 
     .main-image {
