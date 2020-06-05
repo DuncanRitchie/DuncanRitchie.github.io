@@ -20,6 +20,7 @@ html,body {
     scroll-snap-type: proximity;
     scroll-snap-type: y proximity;
     scroll-behavior: smooth;
+    color: var(--body-text);
 }
 
 body {
