@@ -8,7 +8,7 @@ html,body {
     /* font-size: calc(19px + (28px - 19px) * ((100vw - 360px) / (2400px - 360px))); */
     font-size: calc(19px + 9 * ((100vw - 360px) / 2040));
     --colour1: #5e93d7;
-    --colour2: #b3d3f7;
+    --colour2: #d6e9ff;
     --colour3: #9aa691;
     --colour4: #7d952f;
     --colour5: #82aa3b;
@@ -31,7 +31,7 @@ body {
     /* Browsers that don’t do CSS variables will use the hex values. */
     background-image: linear-gradient(
         #5e93d7,
-        #b3d3f7,
+        #d6e9ff,
         #9aa691,
         #7d952f,
         #82aa3b,
