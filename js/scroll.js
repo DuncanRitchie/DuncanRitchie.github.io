@@ -26,7 +26,7 @@ if (!!window.IntersectionObserver) {
                         && entries[i].intersectionRatio > 0.1) {
                         indexOfSectionVisible = j + 1;
                         
-                        console.log(mainImages[indexOfSectionVisible])
+                        // console.log(mainImages[indexOfSectionVisible])
                     }
                 }
             }

@@ -219,6 +219,31 @@ a.anchor {
     display: none;
 }
 
+.main-image-picture::after {
+    transition: clip-path 0.6s 0.6s, opacity 0.6s 0.6s;
+    clip-path: polygon(0 0, 0 0, 0.25rem 100%, 0.25rem 100%);
+    content: attr(title);
+    z-index: 1;
+    position: absolute;
+    max-width: calc(80% - 2rem);
+    left: 1rem;
+    transform: translateY(-100%);
+    height: 2rem;
+    font-size: 0.8rem;
+    color: var(--body-text);
+    background-color: var(--colour5);
+    background-image: linear-gradient(var(--colour5), var(--colour6));
+    padding: 0.25rem 3rem 0.25rem 1rem;
+    display: flex;
+    align-items: end;
+    opacity: 0;
+}
+
+.main-image-picture.with-caption::after {
+    clip-path: polygon(0 0, calc(100% - 0.25rem) 0, 100% 100%, 0.25rem 100%);
+    opacity: 100%;
+}
+
 section {
     padding: 0;
     margin: 0;
@@ -260,7 +285,11 @@ section .img-container img {
 
 /* CSS for browsers that don’t support intersection observers. */
 
-.no-intersection-observer .default-main-image {
+.no-intersection-observer .default-main-image-picture {
+    display: none;
+}
+
+.no-intersection-observer .main-image-picture::after {
     display: none;
 }
 
@@ -299,6 +328,12 @@ section .img-container img {
 /* CSS for browsers that support intersection observers. */
 
 @media (min-width: 625px) {
+    .has-intersection-observer .main-image-picture::after {
+        position: fixed;
+        width: 40%;
+        left: 1rem;
+        bottom: 1.5rem;
+    }
 
     .has-intersection-observer section:not(.showcase-group) {
         min-height: calc(100vh - 1.5rem);
