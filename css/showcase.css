@@ -78,7 +78,7 @@
     align-items: center;
     border: 5px solid teal;
     border: 0.2083rem solid teal;
-    position: relative
+    position: relative;
 }
 
 .project-link-div:not(.project-link-to-bad-page):hover {

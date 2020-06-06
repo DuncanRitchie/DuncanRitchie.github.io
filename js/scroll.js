@@ -57,7 +57,7 @@ if (!!window.IntersectionObserver) {
         }
     }
 
-    const intersectionObserver = new IntersectionObserver(scrollCallback, {threshold: [0.1]});
+    const intersectionObserver = new IntersectionObserver(scrollCallback, {threshold: [0.1, 0.9]});
 
     for (let i = 0; i < sections.length; i++) {
         // console.log(`Observing Section ${i}: ${sections[i].id}`)
