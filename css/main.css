@@ -373,28 +373,6 @@ section .img-container img {
         transition: clip-path 0.6s 0.6s, width 0.6s 0.6s;
     }
 
-    .has-intersection-observer .main-image.rectangular {
-        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-        width: calc(40% - 36px);
-        width: calc(40% - 1.5rem);
-    }
-
-    .has-intersection-observer #code-section {
-        padding-bottom: 84px;
-        padding-bottom: 3.5rem;
-    }
-
-    .has-intersection-observer .main-image#velut-main-image {
-        z-index: 0;
-        position: sticky;
-        float: left;
-    }
-
-    .has-intersection-observer section#velut-section h1 {
-        margin-top: 12px;
-        margin-top: 0.5rem;
-    }
-
     .has-intersection-observer #text-wrap-guide {
         float: left;
         left: 0;
@@ -404,7 +382,6 @@ section .img-container img {
         shape-outside: polygon(0 0, 100% 0, 100% 0, 90% 0, 90% 0, 100% 100%, 100% 100%, 0 100%);
         transition: shape-outside 1s;
     }
-
 }
 
 
