@@ -474,6 +474,11 @@ section .img-container img {
         padding: 0.75rem 0.5rem 4rem;
     }
 
+    section:not(.showcase-group):last-of-type {
+        padding-bottom: 48px;
+        padding-bottom: 2rem;
+    }
+
     body:not(#code-body) section:not(:last-of-type) {
         border-bottom: 2px solid #698830;
         border-bottom: 2px solid var(--colour6);
