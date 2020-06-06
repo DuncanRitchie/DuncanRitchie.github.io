@@ -4,7 +4,8 @@
 const textWrapGuide = document.getElementById("text-wrap-guide");
 
 const isViewportBigEnoughForScrollBehaviour = () => {
-    return document.documentElement.clientWidth > 600;
+    //// The number also appears in main.css media queries for screenwidth above and below.
+    return document.documentElement.clientWidth > 624;
 }
 
 const mainImages = document.getElementsByClassName("main-image");
@@ -82,7 +83,7 @@ if (!!textWrapGuide) {
             const windowHeight = document.documentElement.clientHeight;
             const distanceScrolled = window.scrollY || window.pageYOffset;
             const startOfTextWrapping = 0;
-            const endOfTextWrapping = Math.max(document.documentElement.clientHeight, document.documentElement.offsetHeight, document.documentElement.scrollHeight);
+            const endOfTextWrapping = Math.max(windowHeight, document.documentElement.offsetHeight, document.documentElement.scrollHeight);
             moveTextWrapGuide(windowHeight, distanceScrolled, startOfTextWrapping, endOfTextWrapping);
         }
     }

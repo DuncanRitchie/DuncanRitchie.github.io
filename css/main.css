@@ -17,10 +17,14 @@ html,body {
     --body-text: #111111;
     --unvisited-text: #00465c;
     --visited-text: #76027a;
-    scroll-snap-type: proximity;
-    scroll-snap-type: y proximity;
+    /* scroll-snap-type: proximity;
+    scroll-snap-type: y proximity; */
     scroll-behavior: smooth;
     color: var(--body-text);
+}
+
+html {
+    height: 100%;
 }
 
 body {
@@ -81,8 +85,9 @@ nav {
     width: calc(100% - 2rem);
     justify-content: space-between;
     align-items: center;
-    margin: 24px 0 0;
-    margin: 1rem 0 0;
+    top: 24px;
+    top: 1rem;
+    margin: 0;
     padding: 0 24px;
     padding: 0 1rem;
     font-size: 19px;
@@ -296,7 +301,7 @@ section .img-container img {
 @media (min-width: 625px) {
 
     .has-intersection-observer section:not(.showcase-group) {
-        min-height: 100vh;
+        min-height: calc(100vh - 1.5rem);
     }
 
     .has-intersection-observer h1 {
