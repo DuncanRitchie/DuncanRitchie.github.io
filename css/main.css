@@ -379,6 +379,11 @@ section .img-container img {
         width: calc(40% - 1.5rem);
     }
 
+    .has-intersection-observer #code-section {
+        padding-bottom: 84px;
+        padding-bottom: 3.5rem;
+    }
+
     .has-intersection-observer .main-image#velut-main-image {
         z-index: 0;
         position: sticky;
