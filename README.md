@@ -59,7 +59,7 @@ I’ve improved the site’s responsiveness to screen-size by:
 
 It is also crucial to consider browser differences. I’ve mentioned that Edge does not support polygonal `clip-path` or `shape-outside` values. I mainly use Firefox in developing this site, but from the start of the redesign process I have also looked at the site in JavaScript-less Internet Explorer, as well as modern versions of Chrome, Opera, and Edge. Browsers that don’t support intersection observers can’t do the scrolling effects on the photos and text-wrapping, so on such browsers I’ve made the photos float statically beside the text. Browsers that don’t support the WebP image format get Jpeg and PNG fallbacks.
 
-There are minor improvements remaining to be done. CSS for printing, most importantly. But overall, I’m delighted with what I’ve made. It looks good (to me, at least); and I’ve learnt more about HTML, CSS, and JavaScript: eg, the `<picture>` tag, `rem` units, the `shape-outside` property, and intersection observers.
+There are minor improvements remaining to be done. CSS for printing, most importantly. I will also be improving the legibility of headings when they are superimposed on photos (as the [Wave](https://wave.webaim.org/report#/www.duncanritchie.co.uk) tool correctly complains about it). But overall, I’m delighted with what I’ve made. It looks good (to me, at least); and I’ve learnt more about HTML, CSS, and JavaScript: eg, the `<picture>` tag, `rem` units, the `shape-outside` property, and intersection observers.
 
 The Lighthouse profiling tool now gives my site 100% scores on Accessibility, SEO, and Best Practices on mobile and desktop on all three pages. Performance fluctuates between 97% and 100%. Lighthouse ranked my old site slightly worse.
 
