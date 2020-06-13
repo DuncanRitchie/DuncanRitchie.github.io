@@ -269,7 +269,8 @@ section p:not(.img-container) a[href^="http"]:not([href*="duncanritchie.co.uk"])
     padding-left: 0.15rem;
     outline: none;
     text-decoration: none;
-    clip-path: polygon(0 0, 100% 0, 100% 77%, 0 77%)
+    clip-path: inset(90% 100%);
+    /* clip-path: polygon(0 0, 100% 0, 100% 77%, 0 77%) */
 }
 
 section .img-container {
@@ -327,7 +328,7 @@ section .img-container img {
 
 /* CSS for browsers that support intersection observers. */
 
-@media (min-width: 625px) {
+@media screen and (min-width: 625px) {
     .has-intersection-observer .main-image-picture::after {
         position: fixed;
         width: 40%;
@@ -542,6 +543,7 @@ section .img-container img {
 /* Media query for printing. */
 
 @media print {
+
     html,body {
         min-height: initial;
         background: none;
@@ -549,22 +551,51 @@ section .img-container img {
         scroll-snap-type: unset;
     }
 
-    nav,.main-image,h1 {
-        position: initial;
-        float: initial;
-        top: unset;
-        left: unset;
+    a:not(#nav-icon-a)::after {
+        content: attr(href);
+        padding-left: 0.25rem;
+        vertical-align: super;
+        font-size: 60%;
+        padding-left: 3.6pt;
+        padding-left: 0.15rem;
+        outline: none;
+        text-decoration: none;
+        outline: none;
+        text-decoration: none;
+        clip-path: inset(90% 100%);
     }
 
-    .has-intersection-observer h1 {
-        color: #58522c;
+    nav {
+        position: static;
+        margin-top: 1rem;
+    }
+
+    #nav-main-list a::after {
+        content: none;
+    }
+
+    #socials-list a::after {
+        position: absolute;
+        transform: translateX(-100%) translateY(100%);
     }
 
     #text-wrap-guide,.default-main-image {
         display: none;
     }
 
-    a:link::after {
-        content: none;
+    .main-image {
+        width: 50%;
+        float: left;
+        margin-right: 2.5%;
+    }
+
+    section {
+        height: initial;
+    }
+    
+    /* This selector is for adding an arrow after external links inside sections. */
+    section p:not(.img-container) a[href^="http"]:not([href*="duncanritchie.co.uk"])::after {
+        content: attr(href);
+        padding-left: 0.25rem;
     }
 }

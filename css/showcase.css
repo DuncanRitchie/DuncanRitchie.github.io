@@ -32,20 +32,33 @@
     width: 100%;
     padding-top: 60px;
     padding-top: 2.5rem;
-    color: #d6e9ff;
-    color: var(--colour2);
 }
+
+@media screen {
+
+    .showcase-head {
+        scroll-snap-align: start;
+        scroll-snap-stop: normal;
+        width: 100%;
+        padding-top: 60px;
+        padding-top: 2.5rem;
+    }
+
+    .showcase-head h1 {
+        color: inherit;
+        background: -webkit-linear-gradient(top, #d6e9ff, #b8c5af);
+        background: linear-gradient(180deg, var(--colour2), var(--colour3));
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+}
+
 
 .showcase-head h1 {
     position: relative;
     margin: 42px 0 24px;
     margin: 1.75rem 0 1rem;
-    color: inherit;
-    background: -webkit-linear-gradient(top, #d6e9ff, #b8c5af);
-    background: linear-gradient(180deg, var(--colour2), var(--colour3));
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
 }
 
 .no-intersection-observer .showcase-head h1 {
@@ -264,7 +277,7 @@ Taken from https://webaim.org/techniques/css/invisiblecontent/ */
 
 @media print {
 
-    #showcase-group,
+    .showcase-group,
     .showcase-head {
         margin: initial;
         padding: initial;
@@ -272,6 +285,15 @@ Taken from https://webaim.org/techniques/css/invisiblecontent/ */
 
     .project-link-div {
         border-width: 2px;
+    }
+
+    section.showcase-group {
+        background: none;
+    }
+
+    .showcase-group a::after {
+        position: absolute;
+        transform: translateX(-100%) translateY(100%);
     }
 }
 
