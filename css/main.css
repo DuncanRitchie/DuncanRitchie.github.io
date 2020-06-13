@@ -555,7 +555,7 @@ section .img-container img {
         content: attr(href);
         padding-left: 0.25rem;
         vertical-align: super;
-        font-size: 60%;
+        font-size: 80%;
         padding-left: 3.6pt;
         padding-left: 0.15rem;
         outline: none;
@@ -579,6 +579,10 @@ section .img-container img {
         transform: translateX(-100%) translateY(100%);
     }
 
+    #socials-list li:first-of-type a::after {
+        transform: translateX(-130%) translateY(100%);
+    }
+
     #text-wrap-guide,.default-main-image {
         display: none;
     }
@@ -597,5 +601,10 @@ section .img-container img {
     section p:not(.img-container) a[href^="http"]:not([href*="duncanritchie.co.uk"])::after {
         content: attr(href);
         padding-left: 0.25rem;
+    }
+
+    p.img-container a::after {
+        position: absolute;
+        transform: translateX(-100%) translateY(-100%);
     }
 }

@@ -34,31 +34,11 @@
     padding-top: 2.5rem;
 }
 
-@media screen {
-
-    .showcase-head {
-        scroll-snap-align: start;
-        scroll-snap-stop: normal;
-        width: 100%;
-        padding-top: 60px;
-        padding-top: 2.5rem;
-    }
-
-    .showcase-head h1 {
-        color: inherit;
-        background: -webkit-linear-gradient(top, #d6e9ff, #b8c5af);
-        background: linear-gradient(180deg, var(--colour2), var(--colour3));
-        -webkit-background-clip: text;
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
-}
-
-
 .showcase-head h1 {
     position: relative;
     margin: 42px 0 24px;
     margin: 1.75rem 0 1rem;
+    color: inherit;
 }
 
 .no-intersection-observer .showcase-head h1 {
@@ -72,6 +52,29 @@
     margin: 0;
     padding: 0 18px 18px 40%;
     padding: 0 0.75rem 0.75rem 40%;
+}
+
+@media screen {
+
+    .showcase-head {
+        scroll-snap-align: start;
+        scroll-snap-stop: normal;
+        width: 100%;
+        padding-top: 60px;
+        padding-top: 2.5rem;
+    }
+
+    .showcase-head h1 {
+        background: -webkit-linear-gradient(top, #d6e9ff, #b8c5af);
+        background: linear-gradient(180deg, var(--colour2), var(--colour3));
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .showcase-head p {
+        color: var(--colour2);
+    }
 }
 
 .project-link-div {
@@ -272,42 +275,6 @@ Taken from https://webaim.org/techniques/css/invisiblecontent/ */
 }
 
 
-
-/* Media query for printing. */
-
-@media print {
-
-    .showcase-group,
-    .showcase-head {
-        margin: initial;
-        padding: initial;
-    }
-
-    .project-link-div {
-        border-width: 2px;
-    }
-
-    section.showcase-group {
-        background: none;
-    }
-
-    .showcase-group a::after {
-        position: absolute;
-        transform: translateX(-100%) translateY(100%);
-    }
-}
-
-@media print and (min-width: 425px) {
-    #showcase-group {
-        justify-content: space-between;
-    }
-
-    .project-link-div {
-        width: 352px;
-        margin: 18px 0 9px 0;
-    }
-}
-
 /* Media query for printing. */
 
 @media print {
@@ -317,9 +284,33 @@ Taken from https://webaim.org/techniques/css/invisiblecontent/ */
         margin: initial;
         padding: initial;
     }
+    
+    section.showcase-group {
+        background: none;
+    }
 
-    .showcase-link-div {
+    .showcase-group a:not(#nav-icon-a)::after {
+        position: absolute;
+        clip-path: none;
+        width: 19rem;
+        transform: translateX(-15rem) translateY(5.25rem);
+    }
+
+    .showcase-group a.project-link-a:not(#nav-icon-a)::after {
+        /* display: none; */
+        transform: translateX(0rem) translateY(6.5rem);
+    }
+
+    .github-link a:not(#nav-icon-a)::after {
+        font-size: 0.6rem;
+        width: 18rem;
+        transform: translateX(-17rem) translateY(3.5rem);
+    }
+
+    .project-link-div {
         border-width: 2px;
+        margin: 18px 0 120px 0;
+        margin: 0.75rem 0 5rem 0;
     }
 }
 
