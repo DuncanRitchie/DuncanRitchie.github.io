@@ -568,6 +568,7 @@ section .img-container img {
     nav {
         position: static;
         margin-top: 1rem;
+        margin-bottom: 2.5rem;
     }
 
     #nav-main-list a::after {
@@ -587,14 +588,42 @@ section .img-container img {
         display: none;
     }
 
+    .main-image-picture:not(.default-main-image-picture)::after {
+        position: absolute;
+        top: initial;
+        z-index: 3;
+        display: initial;
+        clip-path: none;
+        opacity: 100%;
+        width: calc(50vw - 6rem - 2px);
+        transform: translateX(1rem) translateY(calc(0.5rem));
+        margin: 0;
+        background: none;
+        border: 1px solid var(--colour6);
+        border-bottom: none;
+    }
+
+    .has-intersection-observer .main-image.rectangular {
+        width: 50vw;
+    }
+
     .main-image {
-        width: 50%;
+        width: 50vw;
         float: left;
+        margin-top: 3rem;
         margin-right: 2.5%;
+        padding-top: 0;
+        height: initial;
     }
 
     section {
         height: initial;
+        min-height: calc(13rem - 2px);
+        min-height: max(calc(13rem - 2px), 50vw);
+    }
+
+    body:not(#code-body) section:not(:last-of-type) {
+        border: none;
     }
     
     /* This selector is for adding an arrow after external links inside sections. */
@@ -606,5 +635,15 @@ section .img-container img {
     p.img-container a::after {
         position: absolute;
         transform: translateX(-100%) translateY(-100%);
+    }
+}
+
+@media print and (max-width: 624px) {
+    nav #socials-list {
+        padding-bottom: 2.5rem;
+    }
+
+    .main-image-picture:not(.default-main-image-picture)::after {
+        width: calc(50vw - 6rem - 2px);
     }
 }

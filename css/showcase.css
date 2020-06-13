@@ -202,7 +202,7 @@ Taken from https://webaim.org/techniques/css/invisiblecontent/ */
 
 /* CSS for browsers that support intersection observers. */
 
-@media (min-width: 625px) {
+@media screen and (min-width: 625px) {
 
     .has-intersection-observer .main-image.rectangular {
         clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
