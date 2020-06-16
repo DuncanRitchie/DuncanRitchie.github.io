@@ -31,14 +31,14 @@
     padding-top: 2.5rem;
 }
 
-.showcase-head h1 {
+.showcase-head h2 {
     position: relative;
     margin: 42px 0 24px;
     margin: 1.75rem 0 1rem;
     color: inherit;
 }
 
-.no-intersection-observer .showcase-head h1 {
+.no-intersection-observer .showcase-head h2 {
     padding-right: 36px;
     padding-right: 1.5rem;
 }
@@ -59,7 +59,7 @@
         padding-top: 2.5rem;
     }
 
-    .showcase-head h1 {
+    .showcase-head h2 {
         background: -webkit-linear-gradient(top, #d6e9ff, #b8c5af);
         background: linear-gradient(180deg, var(--colour2), var(--colour3));
         -webkit-background-clip: text;
@@ -157,7 +157,7 @@ Taken from https://webaim.org/techniques/css/invisiblecontent/ */
     padding: 0 0.8333rem;
 }
 
-.project-link-div div h2 {
+.project-link-div div h3 {
     font-size: 24px;
     font-size: 1rem;
     margin: 3px 0 4px;
@@ -214,7 +214,7 @@ Taken from https://webaim.org/techniques/css/invisiblecontent/ */
         float: left;
     }
 
-    .has-intersection-observer section#velut-section h1 {
+    .has-intersection-observer section#velut-section h2 {
         margin-top: 12px;
         margin-top: 0.5rem;
     }
