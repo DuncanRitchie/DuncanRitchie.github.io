@@ -527,11 +527,10 @@ section .img-container img {
 
 @media (max-width: 424px) {
     .main-image {
-        padding-top: 168px;
-        padding-top: 7rem;
+        padding-top: 120px;
+        padding-top: 5rem;
     }
 }
-
 
 /* Media query for printing. */
 

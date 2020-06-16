@@ -236,6 +236,14 @@ Taken from https://webaim.org/techniques/css/invisiblecontent/ */
     }
 }
 
+/* Media query for when the navbar becomes two rows. */
+
+@media (max-width: 624px) {
+    .showcase-head {
+        padding-top: 96px;
+        padding-top: 4rem;
+    }
+}
 
 
 /* Media query for tiny screens, e.g. Galaxy S5 */
