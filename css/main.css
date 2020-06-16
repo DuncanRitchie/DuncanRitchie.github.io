@@ -105,6 +105,8 @@ nav a {
 nav #nav-icon {
     width: 36px;
     width: 1.5rem;
+    height: 36px;
+    height: 1.5rem;
     margin-top: 6px;
     margin-top: 0.25rem;
     padding: 0;
