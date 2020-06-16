@@ -10,7 +10,6 @@
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
-    scroll-snap-type: y proximity;
     scroll-padding-top: 12px;
     height: initial;
     width: 100%;
@@ -27,8 +26,6 @@
 }
 
 .showcase-head {
-    scroll-snap-align: start;
-    scroll-snap-stop: normal;
     width: 100%;
     padding-top: 60px;
     padding-top: 2.5rem;
@@ -57,8 +54,6 @@
 @media screen {
 
     .showcase-head {
-        scroll-snap-align: start;
-        scroll-snap-stop: normal;
         width: 100%;
         padding-top: 60px;
         padding-top: 2.5rem;
@@ -78,8 +73,6 @@
 }
 
 .project-link-div {
-    scroll-snap-align: center;
-    scroll-snap-stop: normal;
     display: flex;
     margin: 18px 0 9px 0;
     margin: 0.75rem 0 0.375rem 0;
