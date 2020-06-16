@@ -105,19 +105,6 @@
     font-size: 1.75rem;
 }
 
-/* Screenreaders do not understand the GitHub logo shown to sighted users,
-so extra text has been added and then hidden from sighted users.
-Screenreaders will read the words eg “Cyberpet code”, but sighted users won’t.
-Taken from https://webaim.org/techniques/css/invisiblecontent/ */
-.github-link-accessible-text {
-    position: absolute;
-    left: -10000px;
-    top: auto;
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
-}
-
 .project-link-a {
     width: 100%;
     height: 100%;

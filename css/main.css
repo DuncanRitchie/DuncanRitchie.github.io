@@ -243,6 +243,19 @@ a.anchor {
     opacity: 100%;
 }
 
+/* Applies to <h1> and the non-icon part of the GitHub links on the project showcase.
+Having exactly one <h1> on a page is good for accessibility, but conflicts with my layout, so I hide it from sighted users.
+Screenreaders will read the words eg “More about me” or “Cyberpet code”, but sighted users won’t.
+Taken from https://webaim.org/techniques/css/invisiblecontent/ */
+.screenreader-only {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
 section {
     padding: 0;
     margin: 0;
