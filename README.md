@@ -89,7 +89,7 @@ Some examples of how I’ve kept the site looking decent across browsers:
 ![Screenshot of the redesigned site in Internet Explorer, without JavaScript](https://github.com/DuncanRitchie/portfolio-screenshots/blob/main/minified/new-desktop-withoutcaption-internetexplorer-home__small.png)
 
 ### Current state
-There are minor improvements remaining to be done. CSS for printing, for instance. I will also be improving the legibility of headings when they are superimposed on photos (as the [Wave](https://wave.webaim.org/report#/www.duncanritchie.co.uk) tool correctly complains about it). But overall, I’m delighted with what I’ve made. It looks good (to me, at least); and I’ve learnt more about HTML, CSS, and JavaScript: eg, the `<picture>` tag, `rem` units, the `shape-outside` property, and intersection observers.
+There are minor improvements remaining to be done. For instance, I’ll be improving the legibility of headings when they are superimposed on photos (as the [Wave](https://wave.webaim.org/report#/www.duncanritchie.co.uk) tool correctly complains about it). But overall, I’m delighted with what I’ve made. It looks good (to me, at least); and I’ve learnt more about HTML, CSS, and JavaScript: eg, the `<picture>` tag, `rem` units, the `shape-outside` property, and intersection observers.
 
 The Lighthouse profiling tool now gives my site 100% scores on Accessibility, SEO, and Best Practices on mobile and desktop on all three pages. Performance fluctuates between 97% and 100%. Lighthouse ranked my old site slightly worse.
 
