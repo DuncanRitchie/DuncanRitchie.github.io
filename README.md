@@ -94,6 +94,6 @@ There are minor improvements remaining to be done. CSS for printing, for instanc
 The Lighthouse profiling tool now gives my site 100% scores on Accessibility, SEO, and Best Practices on mobile and desktop on all three pages. Performance fluctuates between 97% and 100%. Lighthouse ranked my old site slightly worse.
 
 ## Deployments
-To see the old design, which I’ve kept on the [master-before-2020-redesign](https://github.com/DuncanRitchie/DuncanRitchie.github.io/tree/master-before-2020-redesign) branch, go to [old.duncanritchie.co.uk](https://old.duncanritchie.co.uk/).
+To see the old design, which I’ve kept on the [before-2020-redesign](https://github.com/DuncanRitchie/DuncanRitchie.github.io/tree/before-2020-redesign) branch, go to [old.duncanritchie.co.uk](https://old.duncanritchie.co.uk/).
 
 Since 31st May 2020 the new design has been live on the [master](https://github.com/DuncanRitchie/DuncanRitchie.github.io/tree/master) branch at [www.duncanritchie.co.uk](https://www.duncanritchie.co.uk/).
