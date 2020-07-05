@@ -57,6 +57,8 @@
         width: 100%;
         padding-top: 60px;
         padding-top: 2.5rem;
+        color: #d6e9ff;
+        color: var(--colour2);
     }
 
     .showcase-head h2 {
@@ -65,10 +67,6 @@
         -webkit-background-clip: text;
         background-clip: text;
         -webkit-text-fill-color: transparent;
-    }
-
-    .showcase-head p {
-        color: var(--colour2);
     }
 }
 
