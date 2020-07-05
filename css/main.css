@@ -19,6 +19,7 @@ html,body {
     --visited-text: #76027a;
     scroll-behavior: smooth;
     color: var(--body-text);
+    hyphens: manual;
 }
 
 html {
