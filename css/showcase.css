@@ -33,14 +33,16 @@
 
 .showcase-head h2 {
     position: relative;
-    margin: 42px 0 24px;
-    margin: 1.75rem 0 1rem;
+    margin: 42px 0 0;
+    margin: 1.75rem 0 0;
     color: inherit;
 }
 
 .no-intersection-observer .showcase-head h2 {
     padding-right: 36px;
     padding-right: 1.5rem;
+    margin-bottom: 24px;
+    margin-bottom: 1rem;
 }
 
 .showcase-head p {
