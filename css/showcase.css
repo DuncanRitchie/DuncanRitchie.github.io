@@ -20,6 +20,10 @@
     background-position: absolute;
 }
 
+.showcase-group :focus {
+    outline-color: #001409c0;
+}
+
 .showcase-group#csharp-projects {
     padding-bottom: 120px;
     padding-bottom: 5rem;

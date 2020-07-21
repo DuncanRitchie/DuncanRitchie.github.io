@@ -54,6 +54,11 @@ body {
     background-size: 100% 100vh;
 }
 
+:focus {
+    outline: dashed 2px #76027a;
+    outline-color: var(--visited-text);
+}
+
 section:not(.showcase-group) a {
     text-decoration: underline;
 }
@@ -61,6 +66,11 @@ section:not(.showcase-group) a {
 section:not(.showcase-group) a:link {
     color: #00465c;
     color: var(--unvisited-text);
+}
+
+section:not(.showcase-group) :not(:visited):focus {
+    outline-color: #00465c;
+    outline-color: var(--unvisited-text);
 }
 
 section:not(.showcase-group) a:visited {
@@ -73,6 +83,11 @@ section:not(.showcase-group) a:hover {
     color: var(--colour6);
     text-decoration: none;
     border-bottom: 1px thin;
+}
+
+section:not(.showcase-group) :hover:focus {
+    outline-color: #698830;
+    outline-color: var(--colour6);
 }
 
 /* Styles for the navbar. */
