@@ -15,13 +15,14 @@
     width: 100%;
     padding-bottom: 24px;
     padding-bottom: 1rem;
-    background-color: #001409c0;
-    background-color: rgba(0, 20, 9, 0.75);
+    background-color: #002712 /* --showcase-background-opaque */;
+    background-color: #001409c0 /* --showcase-background */;
     background-position: absolute;
 }
 
 .showcase-group :focus {
-    outline-color: #001409c0;
+    outline-color: #002712 /* --showcase-background-opaque */;
+    outline-color: #001409c0 /* --showcase-background */;
 }
 
 .showcase-group#csharp-projects {
@@ -63,13 +64,11 @@
         width: 100%;
         padding-top: 60px;
         padding-top: 2.5rem;
-        color: #d6e9ff;
-        color: var(--colour2);
+        color: #d6e9ff /* --colour2 */;
     }
 
     .showcase-head h2 {
-        background: -webkit-linear-gradient(top, #d6e9ff, #b8c5af);
-        background: linear-gradient(180deg, var(--colour2), var(--colour3));
+        background: -webkit-linear-gradient(top, #d6e9ff /* --colour2 */, #b8c5af /* --colour3 */);
         -webkit-background-clip: text;
         background-clip: text;
         -webkit-text-fill-color: transparent;
@@ -89,8 +88,8 @@
     font-size: 20px;
     font-size: 0.8333rem;
     align-items: center;
-    border: 5px solid teal;
-    border: 0.2083rem solid teal;
+    border: 5px solid teal /* --linked-project-text */;
+    border-width: 0.2083rem;
     position: relative;
 }
 
@@ -118,7 +117,7 @@
     align-items: center;
     justify-content: space-evenly;
     text-decoration: none;
-    color: teal;
+    color: teal /* --linked-project-text */;
     font-weight: bold;
 }
 
@@ -127,11 +126,11 @@
 }
 
 .project-link-to-bad-page .project-link-a {
-    color: #505050;
+    color: #505050 /* --unlinked-project-text */;
 }
 
 .project-link-to-bad-page .project-link-a:hover {
-    color: #505050;
+    color: #505050 /* --unlinked-project-text */;
 }
 
 .project-screenshot {
@@ -164,7 +163,7 @@
 
 .project-finish-date,
 .project-reason-no-demo {
-    color: #606060ff;
+    color: #606060;
     font-weight: normal;
     font-size: 20px;
     font-size: 0.8333rem;
@@ -172,8 +171,8 @@
 
 .project-link-to-bad-page {
     background-color: #dddddd;
-    border: 5px solid #505050;
-    border: 0.2083rem solid #505050;
+    border: 5px solid #505050 /* --unlinked-project-text */;
+    border-width: 0.2083rem;
 }
 
 .project-link-div a {
@@ -209,7 +208,6 @@
         margin-top: 12px;
         margin-top: 0.5rem;
     }
-
 }
 
 

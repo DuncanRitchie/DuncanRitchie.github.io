@@ -3,60 +3,51 @@
 html,body {
     margin: 0;
     padding: 0;
+    scroll-behavior: smooth;
+    hyphens: manual;
     font-family: "Alegreya", serif;
     font-size: 24px;
     /* font-size: calc(19px + (28px - 19px) * ((100vw - 360px) / (2400px - 360px))); */
     font-size: calc(19px + 9 * ((100vw - 360px) / 2040));
-    --colour1: #73a3e2;
-    --colour2: #d6e9ff;
-    --colour3: #b8c5af;
-    --colour4: #a9cc36;
-    --colour5: #bde972;
-    --colour6: #698830;
-    --nav-text: #333333;
-    --body-text: #111111;
-    --unvisited-text: #00465c;
-    --visited-text: #76027a;
-    scroll-behavior: smooth;
-    color: var(--body-text);
-    hyphens: manual;
 }
 
 html {
     height: 100%;
+    /* CSS variables are not used on this site, but I find having the colour-scheme here convenient.  */
+    --colour1: #73a3e2 /* --colour1 */;
+    --colour2: #d6e9ff /* --colour2 */;
+    --colour3: #b8c5af /* --colour3 */;
+    --colour4: #a9cc36 /* --colour4 */;
+    --colour5: #bde972 /* --colour5 */;
+    --colour6: #698830 /* --colour6 */;
+    --nav-text: #333333 /* --nav-text */;
+    --body-text: #111111 /* --body-text */;
+    --unvisited-text: #00465c /* --unvisited-text */;
+    --visited-text: #76027a /* --visited-text */;
 }
 
 body {
     min-height: 100vh;
-    background-color: var(--colour2);
+    background-color: #d6e9ff /* --colour2 */;
     /* Browsers that don’t do gradients will use the jpeg background. */
     background-image: url(../images/gradient-background.jpg);
     background-size: 100% 100%;
     /* Browsers that don’t do CSS variables will use the hex values. */
     background-image: linear-gradient(
-        #73a3e2,
-        #d6e9ff,
-        #b8c5af,
-        #a9cc36,
-        #bde972,
-        #698830
-    );
-    /* Browsers that support gradients and CSS variables will use these. */
-    background-image: linear-gradient(
-        var(--colour1),
-        var(--colour2),
-        var(--colour3),
-        var(--colour4),
-        var(--colour5),
-        var(--colour6)
+        #73a3e2 /* --colour1 */,
+        #d6e9ff /* --colour2 */,
+        #b8c5af /* --colour3 */,
+        #a9cc36 /* --colour4 */,
+        #bde972 /* --colour5 */,
+        #698830 /* --colour6 */
     );
     background-attachment: fixed;
     background-size: 100% 100vh;
+    color: #111111 /* --body-text */;
 }
 
-:focus {
-    outline: dashed 2px #76027a;
-    outline-color: var(--visited-text);
+body :focus {
+    outline: dashed 2px #76027a /* --visited-text */;
 }
 
 section:not(.showcase-group) a {
@@ -64,30 +55,25 @@ section:not(.showcase-group) a {
 }
 
 section:not(.showcase-group) a:link {
-    color: #00465c;
-    color: var(--unvisited-text);
+    color: #00465c /* --unvisited-text */;
 }
 
 section:not(.showcase-group) :not(:visited):focus {
-    outline-color: #00465c;
-    outline-color: var(--unvisited-text);
+    outline-color: #00465c /* --unvisited-text */;
 }
 
 section:not(.showcase-group) a:visited {
-    color: #76027a;
-    color: var(--visited-text);
+    color: #76027a /* --visited-text */;
 }
 
 section:not(.showcase-group) a:hover {
-    color: #698830;
-    color: var(--colour6);
+    color: #698830 /* --colour6 */;
     text-decoration: none;
     border-bottom: 1px thin;
 }
 
 section:not(.showcase-group) :hover:focus {
-    outline-color: #698830;
-    outline-color: var(--colour6);
+    outline-color: #698830 /* --colour6 */;
 }
 
 /* Styles for the navbar. */
@@ -109,8 +95,7 @@ nav {
     font-size: 0.7917rem;
     background-color: #bfd4ef;
     background-color: #ffffff7f;
-    color: #333333;
-    color: var(--nav-text);
+    color: #333333 /* --nav-text */;
     text-decoration: none;
 }
 
@@ -155,8 +140,7 @@ nav ul li a:not(#nav-icon-a),label {
 }
 
 nav ul li label:hover,a:hover {
-    color: #698830;
-    color: var(--colour6);
+    color: #698830 /* --colour6 */;
     background-image: linear-gradient(#ffffff00, #ffffff00, #ffffff00, #2d4a1b4f);
 }
 
@@ -255,9 +239,9 @@ nav #socials-list {
     transform: translateY(-100%);
     height: 2rem;
     font-size: 0.8rem;
-    color: var(--body-text);
-    background-color: var(--colour5);
-    background-image: linear-gradient(var(--colour5), var(--colour6));
+    color: #111111 /* --body-text */;
+    background-color: #bde972;
+    background-image: linear-gradient(#bde972 /* --colour5 */, #698830 /* --colour6 */);
     padding: 0.25rem 3rem 0.25rem 1rem;
     display: flex;
     align-items: end;
@@ -504,7 +488,7 @@ section .img-container img {
         width: 100%;
         grid-area: main;
         justify-content: space-between;
-        border-top: 1px solid var(--nav-text);
+        border-top: 1px solid #333333 /* --nav-text */;
     }
     
     nav #socials-list {
@@ -560,8 +544,7 @@ section .img-container img {
     }
 
     body:not(#code-body) section:not(:last-of-type) {
-        border-bottom: 2px solid #698830;
-        border-bottom: 2px solid var(--colour6);
+        border-bottom: 2px solid #698830 /* --colour6 */;
     }
 
     h2 {
@@ -662,7 +645,7 @@ section .img-container img {
         transform: translateX(1rem) translateY(calc(0.5rem));
         margin: 0;
         background: none;
-        border: 1px solid var(--colour6);
+        border: 1px solid #698830 /* --colour6 */;
         border-bottom: none;
     }
 
