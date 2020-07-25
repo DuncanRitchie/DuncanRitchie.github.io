@@ -52,10 +52,20 @@ for (let i = 0; i < navLabels.length; i++) {
 for (let i = 0; i < navSubmenuItems.length; i++) {
     navSubmenuItems[i].addEventListener("keydown", (e)=>{
         switch (e.keyCode) {
+            /// Arrow Up.
             case 38:
-                //// Go up an item.
-                i==0 || navSubmenuItems[i-1].focus();
+                //// If the item is the first in its submenu (assuming 2 submenus).
+                if (i==0 || i==document.querySelectorAll("nav ul *:first-child li").length) {
+                    const currentSubmenuLabel = document.querySelector("nav input:checked ~ label");
+                    currentSubmenuLabel.click();
+                    currentSubmenuLabel.focus();
+                }
+                else {
+                    //// Go up an item.
+                    navSubmenuItems[i-1].focus();
+                }
                 break;
+            //// Arrow Down.
             case 40:
                 //// Go down an item.
                 i==navSubmenuItems.length || navSubmenuItems[i+1].focus();
