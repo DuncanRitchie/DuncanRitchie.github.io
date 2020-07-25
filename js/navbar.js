@@ -39,7 +39,14 @@ for (let i = 0; i < navLabels.length; i++) {
         //// On Arrow Up.
         if (e.keyCode == 38) {
             //// If the current submenu is open, close it.
-            document.querySelectorAll("nav input:checked ~ label:focus") && navLabels[i].click();
+            if (document.querySelector("nav input:checked ~ label:focus")) {
+                navLabels[i].click();
+            }
+            //// Otherwise, open the menu and focus the last item.
+            else {
+                navLabels[i].click();
+                document.querySelector("nav label:focus ~ ul li:last-child a").focus();
+            }
             return;
         }
         //// If the key pressed is not Tab or Shift.
