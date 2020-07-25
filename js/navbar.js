@@ -49,12 +49,14 @@ for (let i = 0; i < navLabels.length; i++) {
     });
 }
 
+//// Assumes a submenu is open.
 const closeCurrentSubmenu = () => {
     const currentSubmenuLabel = document.querySelector("nav input:checked ~ label");
     currentSubmenuLabel.click();
     currentSubmenuLabel.focus();
 }
 
+//// Keyboard events on nav submenu items.
 for (let i = 0; i < navSubmenuItems.length; i++) {
     navSubmenuItems[i].addEventListener("keydown", (e)=>{
         switch (e.keyCode) {
