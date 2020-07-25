@@ -49,6 +49,12 @@ for (let i = 0; i < navLabels.length; i++) {
     });
 }
 
+const closeCurrentSubmenu = () => {
+    const currentSubmenuLabel = document.querySelector("nav input:checked ~ label");
+    currentSubmenuLabel.click();
+    currentSubmenuLabel.focus();
+}
+
 for (let i = 0; i < navSubmenuItems.length; i++) {
     navSubmenuItems[i].addEventListener("keydown", (e)=>{
         switch (e.keyCode) {
@@ -56,9 +62,7 @@ for (let i = 0; i < navSubmenuItems.length; i++) {
             case 38:
                 //// If the item is the first in its submenu (assuming 2 submenus).
                 if (i==0 || i==document.querySelectorAll("nav ul *:first-child li").length) {
-                    const currentSubmenuLabel = document.querySelector("nav input:checked ~ label");
-                    currentSubmenuLabel.click();
-                    currentSubmenuLabel.focus();
+                    closeCurrentSubmenu();
                 }
                 else {
                     //// Go up an item.
@@ -68,7 +72,14 @@ for (let i = 0; i < navSubmenuItems.length; i++) {
             //// Arrow Down.
             case 40:
                 //// Go down an item.
-                i==navSubmenuItems.length || navSubmenuItems[i+1].focus();
+                console.log("number of submenu items", navSubmenuItems.length)
+                console.log("i", i)
+                if (i==document.querySelectorAll("nav ul *:first-child li").length-1 || i == navSubmenuItems.length-1) {
+                    closeCurrentSubmenu();
+                }
+                else {
+                    navSubmenuItems[i+1].focus();
+                }
                 break;
             default:
                 break;
