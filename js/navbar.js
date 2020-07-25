@@ -22,18 +22,22 @@ for (let i = 0; i < navSubmenuItems.length; i++) {
     });
 }
 
+//// Keyboard events on nav labels.
 //// When a nav label is focused, keypresses should have the effect of clicks (of opening/hiding the submenu)
+//// When showing the submenu on Arrow Down/Up, the first/last item receives focus.
 for (let i = 0; i < navLabels.length; i++) {
     navLabels[i].addEventListener("keydown", (e)=>{
         //// On Arrow Down.
         if (e.keyCode == 40) {
-            let firstItemOfSubmenu = document.querySelectorAll("nav input:checked ~ label:focus ~ ul li a")[0];
-            //// If the current submenu is not open, it needs to be opened for its first item to be found.
-            if (!firstItemOfSubmenu) {
+            //// If the current submenu is open, close it.
+            if (document.querySelector("nav input:checked ~ label:focus")) {
                 navLabels[i].click();
-                firstItemOfSubmenu = document.querySelectorAll("nav input:checked ~ label:focus ~ ul li a")[0];
             }
-            firstItemOfSubmenu.focus();
+            //// Otherwise, open the menu and focus the first item.
+            else {
+                navLabels[i].click();
+                document.querySelector("nav label:focus ~ ul li:first-child a").focus();
+            }
             return;
         }
         //// On Arrow Up.
