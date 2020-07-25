@@ -60,23 +60,22 @@ for (let i = 0; i < navSubmenuItems.length; i++) {
         switch (e.keyCode) {
             /// Arrow Up.
             case 38:
-                //// If the item is the first in its submenu (assuming 2 submenus).
+                //// If the item is the first in its submenu (assuming 2 submenus), close the submenu.
                 if (i==0 || i==document.querySelectorAll("nav ul *:first-child li").length) {
                     closeCurrentSubmenu();
                 }
+                //// Otherwise, go up an item.
                 else {
-                    //// Go up an item.
                     navSubmenuItems[i-1].focus();
                 }
                 break;
             //// Arrow Down.
             case 40:
-                //// Go down an item.
-                console.log("number of submenu items", navSubmenuItems.length)
-                console.log("i", i)
+                //// If the item is the last in its submenu (assuming 2 submenus), close the submenu.
                 if (i==document.querySelectorAll("nav ul *:first-child li").length-1 || i == navSubmenuItems.length-1) {
                     closeCurrentSubmenu();
                 }
+                //// Otherwise, go down an item.
                 else {
                     navSubmenuItems[i+1].focus();
                 }
