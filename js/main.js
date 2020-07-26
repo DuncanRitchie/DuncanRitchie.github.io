@@ -9,8 +9,8 @@ const mainImagePictures = document.getElementsByClassName("main-image-picture");
 for (let i = 0; i < mainImages.length; i++) {
     mainImages[i].addEventListener("mouseover", () => {
         mainImagePictures[i].classList.add("with-caption");
-    })
+    });
     mainImages[i].addEventListener("mouseout", () => {
         mainImagePictures[i].classList.remove("with-caption");
-    })
+    });
 }

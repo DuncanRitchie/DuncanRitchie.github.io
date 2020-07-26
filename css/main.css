@@ -240,7 +240,7 @@ nav #socials-list {
     height: 2rem;
     font-size: 0.8rem;
     color: #111111 /* --body-text */;
-    background-color: #bde972;
+    background-color: #bde972 /* --colour5 */;
     background-image: linear-gradient(#bde972 /* --colour5 */, #698830 /* --colour6 */);
     padding: 0.25rem 3rem 0.25rem 1rem;
     display: flex;
@@ -323,8 +323,8 @@ section .img-container img {
     float: left;
     width: 50vw;
     min-height: 36vw;
-    padding: 84px 0 24px 0;
-    padding: 3.5rem 0 1rem 0;
+    padding: 42px 0 24px 0;
+    padding: 1.75rem 0 1rem 0;
 }
 
 .no-intersection-observer section:not(.showcase-group) {

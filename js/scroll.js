@@ -96,7 +96,7 @@ if (!!textWrapGuide) {
     window.addEventListener("scroll", updateScrollWithTimeout);
     //// Update scroll position on page load.
     window.addEventListener("load", updateScroll);
-    //// Also scroll-y things on window resize.
+    //// Also do scroll-related things on window resize.
     window.onresize = updateScrollWithTimeout;
 }
 
