@@ -24,22 +24,10 @@ for (let i = 0; i < navSubmenuItems.length; i++) {
 
 //// Keyboard events on nav labels.
 //// When a nav label is focused, keypresses should have the effect of clicks (of opening/hiding the submenu)
-//// When showing the submenu on Arrow Down/Up, the first/last item receives focus.
+//// When opening the submenu, the first item receives focus,
+//// except on Arrow Up, in which case the last item receives focus.
 for (let i = 0; i < navLabels.length; i++) {
     navLabels[i].addEventListener("keydown", (e)=>{
-        //// On Arrow Down.
-        if (e.keyCode == 40) {
-            //// If the current submenu is open, close it.
-            if (document.querySelector("nav input:checked ~ label:focus")) {
-                navLabels[i].click();
-            }
-            //// Otherwise, open the menu and focus the first item.
-            else {
-                navLabels[i].click();
-                document.querySelector("nav label:focus ~ ul li:first-child a").focus();
-            }
-            return;
-        }
         //// On Arrow Up.
         if (e.keyCode == 38) {
             //// If the current submenu is open, close it.
@@ -53,9 +41,18 @@ for (let i = 0; i < navLabels.length; i++) {
             }
             return;
         }
-        //// If the key pressed is not Tab or Shift.
+        //// On any other key, but not Tab or Shift.
         if (e.keyCode !== 9 && e.keyCode !== 16) {
-            navLabels[i].click();
+            //// If the current submenu is open, close it.
+            if (document.querySelector("nav input:checked ~ label:focus")) {
+                navLabels[i].click();
+            }
+            //// Otherwise, open the menu and focus the first item.
+            else {
+                navLabels[i].click();
+                document.querySelector("nav label:focus ~ ul li:first-child a").focus();
+            }
+            return;
         }
     });
 }
