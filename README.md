@@ -57,20 +57,21 @@ In a similar way, my redesign of www.duncanritchie.co.uk started with me choosin
 ### Considerations about different pages
 On [aboutme.html](https://www.duncanritchie.co.uk/aboutme.html), there are several sections, with a photo for each. On wide enough screens, the photos (`class="main-image"`) are fixed in position to the viewport, so they all take up the left side of the screen; the Intersection Observer API is used in the [JavaScript](https://github.com/DuncanRitchie/DuncanRitchie.github.io/blob/main/js/scroll.js) to control which image is visible, by watching for section headings to come into or out of view. A CSS transition on the `clip-path` property makes the effect look less jarring.
 
-(The Edge browser does not currently support `clip-path: polygon(...)`, so the image visible changes on scroll, but without the transition, and the image visible is the one previous to the correct image. An SVG `clip-path` would probably work; I’m looking into it. `shape-outside: polygon(...)` also doesn’t work in Edge.)
-
-The photos, however, do not affect the layout of the text — their fixed position puts them outside of the document flow. To make the text fit against the diagonal edge, I needed an empty `<div>` in the HTML (`id="text-wrap-guide"`), with appropriate `width`, `height`, and `shape-outside` properties. [JavaScript](https://github.com/DuncanRitchie/DuncanRitchie.github.io/blob/main/js/scroll.js) is used to make the values change when the viewport is scrolled or resized. A CSS transition on `shape-outside` makes the text move more smoothly.
+The photos, however, do not affect the layout of the text — their fixed position puts them outside of the document flow. To make the text fit against the diagonal edge, even when the page is scrolled, I needed an empty `<div>` in the HTML (`id="text-wrap-guide"`), with appropriate `width`, `height`, and `shape-outside` properties. [JavaScript](https://github.com/DuncanRitchie/DuncanRitchie.github.io/blob/master/js/scroll.js) is used to make the values change when the viewport is scrolled or resized. A CSS transition on `shape-outside` makes the text move more smoothly.
 
 On [code.html](https://www.duncanritchie.co.uk/code.html), my showcase of projects meant that I couldn’t have the diagonal layout: I want the showcase to take up the width of the screen, instead of being squashed into the right side. I’ve therefore made a more rectangular layout with narrower photos; the images are less relevant to the page anyway.
 
 ![Screenshot of my showcase of projects, on desktop Firefox](https://github.com/DuncanRitchie/portfolio-screenshots/blob/main/minified/new-desktop-projectshowcase-firefox-javascript__small.png)
 
 ### Accessibility
-Accessibility is something I’ve improved by:
-* increasing the font sizes,
-* not having text over pictures (except for the headings),
-* using `<img>` tags with `alt` text instead of `<div>` with `background-image`, and
-* inserting screenreader-only text next to the GitHub icons on my project showcase.
+Accessibility is something I’ve improved in several ways.
+* I’ve increased the font sizes.
+* Text is no longer on top of pictures, except for the headings, which now have a background gradient (and the heading text has an outline on supporting browsers).
+* All images (except inline icons) are represented by `<img>` tags with `alt` text instead of `<div>` with `background-image`.
+* All elements are ordered in the HTML (and therefore in the tab-order) in the order displayed on screen.
+* Screenreader-only text appears next to the GitHub icons on my project showcase.
+
+(Still to do — allow the navigation menus to be toggled without either JavaScript or a mouse.)
 
 ### Screen-size
 I’ve improved the site’s responsiveness to screen-size by:
@@ -89,9 +90,22 @@ Some examples of how I’ve kept the site looking decent across browsers:
 ![Screenshot of the redesigned site in Internet Explorer, without JavaScript](https://github.com/DuncanRitchie/portfolio-screenshots/blob/main/minified/new-desktop-withoutcaption-internetexplorer-home__small.png)
 
 ### Current state
-There are minor improvements remaining to be done. For instance, I’ll be improving the legibility of headings when they are superimposed on photos (as the [Wave](https://wave.webaim.org/report#/www.duncanritchie.co.uk) tool correctly complains about it). But overall, I’m delighted with what I’ve made. It looks good (to me, at least); and I’ve learnt more about HTML, CSS, and JavaScript: eg, the `<picture>` tag, `rem` units, the `shape-outside` property, and intersection observers.
+There are minor improvements remaining to be done. But overall, I’m delighted with what I’ve made. It looks good (to me, at least); and I’ve learnt more about HTML, CSS, and JavaScript: eg, the `<picture>` tag, `rem` units, the `shape-outside` property, and intersection observers.
 
-The Lighthouse profiling tool now gives my site 100% scores on Accessibility, SEO, and Best Practices on mobile and desktop on all three pages. Performance fluctuates between 97% and 100%. Lighthouse ranked my old site slightly worse.
+## Lighthouse scores
+The Lighthouse profiling tool now gives my site 100% scores on Accessibility, SEO, and Best Practices on desktop on all three pages.
+On mobile, Accessibility and SEO get 100% on all three pages; Best Practices gets 92% because the tool thinks that the fulmar icon in the navbar is too small for its display size (the relevant image file is 32×32px, and it displays at 29×29px, Lighthouse wants 88×88px). Performance fluctuates between 97% and 100%.
+
+My most recent scores are in the table. My old site was ranked slightly worse.
+
+| Page | Device | Performance | Accessibility | Best Practices | SEO |
+| :--: | :----: | ----------: | ------------: | -------------: | --: |
+| Home | Mobile | 100 | 100 | 92 | 100 |
+| My code | Mobile | 98 | 100 | 92 | 100 |
+| More about me | Mobile | 97 | 100 | 92 | 100 |
+| Home | Desktop | 99 | 100 | 100 | 100 |
+| My code | Desktop | 100 | 100 | 100 | 100 |
+| More about me | Desktop | 99 | 100 | 100 | 100 |
 
 ## Deployments
 To see the old design, which I’ve kept on the [before-2020-redesign](https://github.com/DuncanRitchie/DuncanRitchie.github.io/tree/before-2020-redesign) branch, go to [old.duncanritchie.co.uk](https://old.duncanritchie.co.uk/).
