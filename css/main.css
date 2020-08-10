@@ -1,47 +1,712 @@
 @import url('https://fonts.googleapis.com/css?family=Alegreya');
 
-html {
+html,body {
+    margin: 0;
+    padding: 0;
     scroll-behavior: smooth;
+    hyphens: manual;
+    font-family: "Alegreya", serif;
+    font-size: 24px;
+    /* font-size: calc(19px + (28px - 19px) * ((100vw - 360px) / (2400px - 360px))); */
+    font-size: calc(19px + 9 * ((100vw - 360px) / 2040));
+}
+
+html {
+    height: 100%;
+    /* CSS variables are not used on this site, but I find having the colour-scheme here convenient.  */
+    --colour1: #73a3e2 /* --colour1 */;
+    --colour2: #d6e9ff /* --colour2 */;
+    --colour3: #b8c5af /* --colour3 */;
+    --colour4: #a9cc36 /* --colour4 */;
+    --colour5: #bde972 /* --colour5 */;
+    --colour6: #698830 /* --colour6 */;
+    --nav-text: #333333 /* --nav-text */;
+    --body-text: #111111 /* --body-text */;
+    --unvisited-text: #00465c /* --unvisited-text */;
+    --visited-text: #76027a /* --visited-text */;
 }
 
 body {
-    font-family: 'Alegreya', serif;
-    padding-top:30px;
-    padding-left:0px;
-    padding-right:0px;
-    background-color:rgb(0,32,32);
-    min-height:100vh;
+    min-height: 100vh;
+    background-color: #d6e9ff /* --colour2 */;
+    /* Browsers that don’t do gradients will use the jpeg background. */
+    background-image: url(../images/gradient-background.jpg);
+    background-size: 100% 100%;
+    /* Browsers that don’t do CSS variables will use the hex values. */
+    background-image: linear-gradient(
+        #73a3e2 /* --colour1 */,
+        #d6e9ff /* --colour2 */,
+        #b8c5af /* --colour3 */,
+        #a9cc36 /* --colour4 */,
+        #bde972 /* --colour5 */,
+        #698830 /* --colour6 */
+    );
+    background-attachment: fixed;
+    background-size: 100% 100vh;
+    color: #111111 /* --body-text */;
 }
 
-main {
-    overflow: auto;
-    scroll-snap-type: y mandatory;
-    /* navbar height is 48px */
-    scroll-padding-top: 96px;
+body :focus {
+    outline: dashed 2px #76027a /* --visited-text */;
 }
 
-a:link {
-    font-weight: bold;
-    font-weight: 600;
+section:not(.showcase-group) a {
+    text-decoration: underline;
 }
 
-/* Media query for tiny screens, e.g. Galaxy S5 */
+section:not(.showcase-group) a:link {
+    color: #00465c /* --unvisited-text */;
+}
 
-@media (max-width:375px) {
-    .body {
-        padding-top:600px;
+section:not(.showcase-group) :not(:visited):focus {
+    outline-color: #00465c /* --unvisited-text */;
+}
+
+section:not(.showcase-group) a:visited {
+    color: #76027a /* --visited-text */;
+}
+
+section:not(.showcase-group) a:hover {
+    color: #698830 /* --colour6 */;
+    text-decoration: none;
+    border-bottom: 1px thin;
+}
+
+section:not(.showcase-group) :hover:focus {
+    outline-color: #698830 /* --colour6 */;
+}
+
+/* Styles for the navbar. */
+
+nav {
+    position: fixed;
+    display: flex;
+    z-index: 2;
+    width: calc(100% - 36px);
+    width: calc(100% - 1.5rem);
+    justify-content: space-between;
+    align-items: center;
+    top: 24px;
+    top: 1rem;
+    margin: 0;
+    padding: 0 18px;
+    padding: 0 0.75rem;
+    font-size: 19px;
+    font-size: 0.7917rem;
+    background-color: #bfd4ef;
+    background-color: #ffffff7f;
+    color: #333333 /* --nav-text */;
+    text-decoration: none;
+}
+
+nav a {
+    color: inherit;
+    text-decoration: inherit;
+}
+
+nav #nav-icon-a {
+    display: flex;
+    align-items: center;
+    padding: 0 12px 0 6px;
+    padding: 0 0.5rem 0 0.25rem;
+}
+
+nav #nav-icon {
+    width: 36px;
+    width: 1.5rem;
+    height: 36px;
+    height: 1.5rem;
+    margin-top: 6px;
+    margin-top: 0.25rem;
+    margin-right: 12px;
+    margin-right: 0.5rem;
+    padding: 0;
+    background-color: initial;
+}
+
+nav ul {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+    flex-basis: max-content;
+    flex-grow: 1;
+}
+
+nav ul li a:not(#nav-icon-a),label {
+    padding: 12px;
+    padding: 0.5rem;
+}
+
+nav ul li label:hover,a:hover {
+    color: #698830 /* --colour6 */;
+    background-image: linear-gradient(#ffffff00, #ffffff00, #ffffff00, #2d4a1b4f);
+}
+
+nav ul input {
+    display: none;
+}
+
+nav ul li a,label {
+    padding-left: 9px;
+    padding-right: 9px;
+    padding-left: 0.375rem;
+    padding-right: 0.375rem;
+}
+
+nav ul ul {
+    position: absolute;
+    flex-direction: column;
+    display: none;
+    font-size: 20px;
+    font-size: 0.8333rem;
+    margin-top: 12px;
+    margin-top: 0.5rem;
+    background-color: #9ebee7;
+    background-color: #ffffffcf;
+    clip-path: polygon(0 0, 90% 0, 100% 100%, 0 100%);
+}
+
+nav label {
+    cursor: pointer;
+    padding: 12px 18px;
+    padding: 0.5rem 0.75rem;
+}
+
+nav label::after {
+    content: "⮟";
+    font-size: 0;
+    font-size: 0.6667rem;
+    color: transparent;
+    /* width: 16px; */
+    background-image: url(../images/arrow-down.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+nav label:hover::after {
+    background-image: url(../images/arrow-down-hover.svg);
+}
+
+nav :checked ~ label {
+    background-color: #ffffffdf;
+}
+
+nav :checked ~ ul {
+    display: block;
+}
+
+nav ul ul li {
+    padding: 6px 12px 0 0;
+    padding: 0.25rem 0.5rem 0 0;
+    width: 100%;
+}
+
+nav ul ul li a {
+    display: inline-block;
+    padding: 6px 12px 6px 18px;
+    padding: 0.25rem 0.5rem 0.25rem 0.75rem;
+    width: 100%;
+}
+
+nav #socials-list {
+    flex-grow: 0;
+}
+
+.anchor {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    line-height: 0;
+    transform: translateY(-22px);
+    transform: translateY(calc(2px - 1rem));
+}
+
+*:not(.main-image).hidden {
+    display: none;
+}
+
+.main-image-picture::after {
+    transition: clip-path 0.6s 0.6s, opacity 0.6s 0.6s;
+    clip-path: polygon(0 0, 0 0, 0.25rem 100%, 0.25rem 100%);
+    content: attr(title);
+    z-index: 1;
+    position: absolute;
+    max-width: calc(80% - 2rem);
+    left: 1rem;
+    transform: translateY(-100%);
+    height: 2rem;
+    font-size: 0.8rem;
+    color: #111111 /* --body-text */;
+    background-color: #bde972 /* --colour5 */;
+    background-image: linear-gradient(#bde972 /* --colour5 */, #698830 /* --colour6 */);
+    padding: 0.25rem 3rem 0.25rem 1rem;
+    display: flex;
+    align-items: end;
+    opacity: 0;
+}
+
+.main-image-picture.with-caption::after {
+    clip-path: polygon(0 0, calc(100% - 0.25rem) 0, 100% 100%, 0.25rem 100%);
+    opacity: 100%;
+}
+
+/* Applies to <h1> and the non-icon part of the GitHub links on the project showcase.
+Having exactly one <h1> on a page is good for accessibility, but conflicts with my layout, so I hide it from sighted users.
+Screenreaders will read the words eg “More about me” or “Cyberpet code”, but sighted users won’t.
+Taken from https://webaim.org/techniques/css/invisiblecontent/ */
+.screenreader-only {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+section {
+    padding: 0;
+    margin: 0;
+}
+
+h2 {
+    font-size: 84px;
+    font-size: 3.5rem;
+    font-weight: normal;
+    font-weight: 400;
+    z-index: 1;
+    text-align: right;
+    color: #3c381d; /* Overruled if intersection observer exists, or in showcase. */
+}
+
+/* This selector is for adding an arrow after external links inside sections. */
+section p:not(.img-container) a[href^="http"]:not([href*="duncanritchie.co.uk"])::after {
+    content: "↗";
+    vertical-align: super;
+    font-size: 60%;
+    padding-left: 3.6pt;
+    padding-left: 0.15rem;
+    outline: none;
+    text-decoration: none;
+    clip-path: inset(90% 100%);
+}
+
+section .img-container {
+    padding-top: 24px;
+    padding-top: 1rem;
+    text-align: right;
+}
+
+section .img-container img {
+    width: 240px;
+    width: 10rem;
+}
+
+/* CSS for browsers that don’t support intersection observers. */
+
+.no-intersection-observer .anchor {
+    width: 100%;
+}
+
+.no-intersection-observer .default-main-image-picture {
+    display: none;
+}
+
+.no-intersection-observer .main-image-picture::after {
+    display: none;
+}
+
+.no-intersection-observer .main-image {
+    position: relative;
+    float: left;
+    width: 50vw;
+    min-height: 36vw;
+    padding: 42px 0 24px 0;
+    padding: 1.75rem 0 1rem 0;
+}
+
+.no-intersection-observer section:not(.showcase-group) {
+    float: left;
+    width: 45vw;
+    width: calc(47vw - 24px);
+    width: calc(47vw - 1rem);
+    padding: 84px 2vw 24px 1vw;
+    padding: 3.5rem 2vw 1rem 1vw;
+}
+
+.no-intersection-observer h2 {
+    margin: 0;
+}
+
+.no-intersection-observer .main-image:last-of-type {
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.no-intersection-observer section:last-of-type {
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+/* CSS for browsers that support intersection observers. */
+
+@media screen and (min-width: 625px) {
+    .has-intersection-observer .main-image-picture::after {
+        position: fixed;
+        width: 40%;
+        left: 1rem;
+        bottom: 1.5rem;
+    }
+
+    .has-intersection-observer section:not(.showcase-group) {
+        min-height: calc(100vh - 1.5rem);
+    }
+
+    .has-intersection-observer h2 {
+        padding-top: 12px;
+        padding-top: 0.5rem;
+        right: 30px;
+        right: 1.25rem;
+        line-height: 90%;
+        position: absolute;
+        /* Browsers that don’t understand background-clip will show white text on a gradient-filled rectangle. */
+        color: white;
+        background: -webkit-linear-gradient(top, #111007,#58522c, #58522c);
+        background: linear-gradient(180deg, #111007, #58522c, #58522c);
+        /* The height of the gradient fill is not dependent on the height of the h2. */
+        background-size: 100% 9.45rem;
+        background-position: center;
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        -webkit-text-stroke: 0.02rem rgba(214, 233, 255, 0.8) /* --colour2 */;
+        z-index: 1;
+    }
+
+    /* Gradient behind headings so their overlap over main images doesn’t cause a contrast problem. */
+    .has-intersection-observer section:not(.showcase-group) h2::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: calc(100% - 1em);
+        /* background-color: rgba(214, 233, 255, 0.5); */
+        background-image: linear-gradient(180deg, rgba(255, 255, 255, 0), rgba(214, 233, 255, 0.6), rgba(214, 233, 255, 0.7) 80%, rgba(214, 233, 255, 0));
+        z-index: 0;
+        transform: translateX(-0.65em);
+        padding: 0 0.4em;
+        overflow: hidden;
+        mix-blend-mode: darken;
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0.75vw 100%);
+    }
+
+    /* Hack to stop background-clip cutting off the descenders of the last line of the h2. */
+    /* \00000a is a newline, therefore the last line of the h2 is no longer the last line. */
+    .has-intersection-observer h2::after {
+        content: "\00000a .";
+        white-space: pre;
+        white-space: pre-wrap;
+        opacity: 0;
+    }
+
+    .has-intersection-observer section:not(.showcase-group):not(#velut) h2 + p {
+        padding-top: 228px;
+        padding-top: 9.5rem;
+    }
+
+    .has-intersection-observer #velut-section h2 {
+        margin-top: 72px;
+        margin-top: 3rem;
+        margin-bottom: 24px;
+        margin-bottom: 1rem;
+        /* The border adds spacing but does not affect the gradient-filled background like padding would. */
+        border-top: 72px solid transparent;
+        border-top: 3rem solid transparent;
+    }
+
+    .has-intersection-observer section:not(.showcase-group) p {
+        margin: 0;
+        padding: 0 18px 18px 40%;
+        padding: 0 0.75rem 0.75rem 40%;
+        z-index: 1;
+        position: relative;
+    }
+
+    .has-intersection-observer .main-image {
+        z-index: -1;
+        position: fixed;
+        left: 0;
+        top: 0;
+        height: 100vh;
+        width: 53%;
+        object-fit: cover;
+        clip-path: polygon(-10% 0, 85% 0, 95% 100%, 0 100%);
+        transition: clip-path 0.6s 0s;
+    }
+
+    .has-intersection-observer .main-image.hidden {
+        clip-path: polygon(85% 0, 85% 0, 95% 100%, 95% 100%);
+        transition: clip-path 0.6s 0.6s, width 0.6s 0.6s;
+    }
+
+    .has-intersection-observer #text-wrap-guide {
+        float: left;
+        left: 0;
+        top: 0;
+        min-height: 100vh;
+        width: 53%;
+        shape-outside: polygon(0 0, 100% 0, 100% 0, 90% 0, 90% 0, 100% 100%, 100% 100%, 0 100%);
+        transition: shape-outside 1s;
     }
 }
 
+
+/* CSS for mobile. */
+@media (max-width: 660px) {
+    nav #nav-icon-a {
+        padding-right: 0;
+    }
+}
+
+@media (max-width: 624px) {
+    nav {
+        display: grid;
+        grid-template-columns: max-content 1fr;
+        grid-template-areas: 
+            "icon socials"
+            "icon main";
+        padding: 0 12px 0 9px;
+        padding: 0 0.5rem 0 0.375rem;
+        width: calc(100% - 0.875rem);
+    }
+
+    nav #nav-icon-a {
+        grid-area: icon;
+        display: flex;
+        justify-content: center;
+        padding: 6px;
+        padding: 0.25rem;
+        height: calc(100% - 12px);
+        height: calc(100% - 0.5rem);
+    }
+
+    nav #nav-icon {
+        margin: 0 9px 0 0;
+        margin: 0 0.375rem 0 0;
+    }
+
+    nav a, nav label {
+        display: inline-block;
+        text-align: center;
+    }
+
+    nav #nav-main-list {
+        width: 100%;
+        grid-area: main;
+        justify-content: space-between;
+        border-top: 1px solid #333333 /* --nav-text */;
+    }
+    
+    nav #socials-list {
+        grid-area: socials;
+        justify-content: end;
+        margin-left: auto;
+        margin-right: 12px;
+        margin-right: 0.5rem;
+    }
+
+    nav ul ul {
+        clip-path: unset;
+        margin: 0;
+        padding: 0.25rem 0.5rem 0 0;
+    }
+
+    nav #socials-list li a {
+        padding: 0.5rem;
+        width: 100%;
+        text-align: center;
+    }
+
+    #socials-list li {
+        padding: 0 12px 0;
+        padding: 0 0.5rem 0;
+    }
+
+    #nav-main-list li a {
+        text-align: left;
+        width: calc(100% - 0.5rem);
+    }
+
+    .main-image {
+        width: 100%;
+        height: 75vw;
+        object-fit: cover;
+        padding-top: 93px;
+        padding-top: 3.875rem;
+    }
+
+    .default-main-image,.text-wrap-guide {
+        display: none;
+    }
+
+    section:not(.showcase-group) {
+        padding: 18px 12px 96px;
+        padding: 0.75rem 0.5rem 4rem;
+    }
+
+    section:not(.showcase-group):last-of-type {
+        padding-bottom: 48px;
+        padding-bottom: 2rem;
+    }
+
+    body:not(#code-body) section:not(:last-of-type) {
+        border-bottom: 2px solid #698830 /* --colour6 */;
+    }
+
+    h2 {
+        padding: 0 24px;
+        padding: 0 1rem;
+        margin: 0;
+        font-size: 72px;
+        font-size: 3rem;
+    }
+}
+
+/* CSS for smaller mobiles. */
+
+@media (max-width: 424px) {
+    nav {
+        grid-template-columns: min-content 1fr;
+    }
+}
+
+@media (max-width: 355px) {
+    nav #nav-icon-a {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav #nav-icon {
+        margin-right: 0;
+    }
+
+    .main-image {
+        padding-top: 96px;
+        padding-top: 4rem;
+    }
+}
+
+@media (max-width: 316px) {
+    .main-image {
+        padding-top: 120px;
+        padding-top: 5rem;
+    }
+}
 
 /* Media query for printing. */
 
 @media print {
-    body {
+
+    html,body {
         min-height: initial;
+        background: none;
+        font-size: 16px;
     }
 
-    a:link::after {
+    a:not(#nav-icon-a)::after {
+        content: attr(href);
+        padding-left: 0.25rem;
+        vertical-align: super;
+        font-size: 80%;
+        padding-left: 3.6pt;
+        padding-left: 0.15rem;
+        outline: none;
+        text-decoration: none;
+        outline: none;
+        text-decoration: none;
+        clip-path: inset(90% 100%);
+    }
+
+    nav {
+        position: static;
+        margin-top: 1rem;
+        margin-bottom: 2.5rem;
+    }
+
+    #nav-main-list a::after {
         content: none;
+    }
+
+    #socials-list a::after {
+        position: absolute;
+        transform: translateX(-100%) translateY(100%);
+    }
+
+    #socials-list li:first-of-type a::after {
+        transform: translateX(-130%) translateY(100%);
+    }
+
+    #text-wrap-guide,.default-main-image {
+        display: none;
+    }
+
+    .main-image-picture:not(.default-main-image-picture)::after {
+        position: absolute;
+        top: initial;
+        z-index: 3;
+        display: initial;
+        clip-path: none;
+        opacity: 100%;
+        width: calc(320px - 6rem - 2px);
+        transform: translateX(1rem) translateY(calc(0.5rem));
+        margin: 0;
+        background: none;
+        border: 1px solid #698830 /* --colour6 */;
+        border-bottom: none;
+    }
+
+    .has-intersection-observer .main-image.rectangular {
+        width: 320px;
+    }
+
+    .main-image {
+        width: 320px;
+        float: left;
+        margin-top: 3rem;
+        margin-right: 2.5%;
+        padding-top: 0;
+        height: initial;
+    }
+
+    section {
+        height: initial;
+        min-height: calc(13rem - 2px);
+        min-height: max(calc(13rem - 2px), 50vw);
+    }
+
+    body:not(#code-body) section:not(:last-of-type) {
+        border: none;
+    }
+    
+    /* This selector is for adding an arrow after external links inside sections. */
+    section p:not(.img-container) a[href^="http"]:not([href*="duncanritchie.co.uk"])::after {
+        content: attr(href);
+        padding-left: 0.25rem;
+    }
+
+    p.img-container a::after {
+        position: absolute;
+        transform: translateX(-100%) translateY(-100%);
+    }
+}
+
+@media print and (max-width: 624px) {
+    nav #socials-list {
+        padding-bottom: 2.5rem;
+    }
+
+    .main-image-picture:not(.default-main-image-picture)::after {
+        width: calc(50vw - 6rem - 2px);
     }
 }

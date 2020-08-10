@@ -1,722 +1,888 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-  <title>My code &mdash; Duncan Ritchie&rsquo;s portfolio</title>
-
-  <meta name="Description" content="Duncan Ritchie&rsquo;s coding story and links to projects in JavaScript and Java.">
-  <!-- Bootstrap -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
-    integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
-    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-  <!-- [if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-  <link href="https://fonts.googleapis.com/css?family=Alegreya" rel="stylesheet">
-  <link rel="stylesheet" href="./css/main.css">
-  <link rel="stylesheet" href="./css/navbar.css">
-  <link rel="stylesheet" href="./css/jumbotrons.css">
-  <link rel="stylesheet" href="./css/showcase.css">
-  <link rel="stylesheet" href="./css/headshot.css">
-  <link rel="icon" href="./favicon.ico" type="image/x-icon" />
-  <link rel="icon" href="./favicon-96x96.png" type="image/png" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="Duncan Ritchie’s coding story and links to programming projects.">
+    <title>My code — Duncan Ritchie’s portfolio</title>
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/showcase.css">
+    <link rel="icon" href="./favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="./favicon-96x96.png" type="image/png" />
 </head>
 
-<body>
-  <nav class="navbar navbar-default navbar-fixed-top">
-    <div class="container-fluid">
-      <!-- Brand and toggle get grouped for better mobile display -->
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-          data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="./index.html"><img src="favicon-96x96.png" width="16" height="16"
-            class="header-icon" alt="Duncan Ritchie&rsquo;s icon" /></a>
-        <a class="navbar-brand" href="./index.html">Duncan Ritchie</a>
-      </div>
-      <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav">
-          <li><a href="./index.html#index">Home</a></li>
-          <li class="dropdown active">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-              aria-expanded="false">My code <span class="sr-only">(current)</span> <span class="caret"></span></a>
-            <ul class="dropdown-menu">
-              <li><a href="#code">My story</a></li>
-              <li><a href="#javascript-projects">JavaScript projects</a></li>
-              <li><a href="#java-projects">Java projects</a></li>
-              <li><a href="#csharp-projects">C# projects</a></li>
-              <li><a href="#velut">Latin dictionary</a></li>
-            </ul>
-          </li>
-          <li class="dropdown">
-            <a href="./aboutme.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-              aria-expanded="false">More about me <span class="caret"></span></a>
-            <ul class="dropdown-menu">
-              <li><a href="./aboutme.html#dog">My dog</a></li>
-              <li><a href="./aboutme.html#chester">Chester</a></li>
-              <li><a href="./aboutme.html#latin">Latin</a></li>
-              <li><a href="./aboutme.html#photos">Photography</a></li>
-              <li><a href="./aboutme.html#tiq">Theatre in the Quarter</a></li>
-              <li role="separator" class="divider"></li>
-              <li><a href="https://www.duncanritchie.co.uk/tiq-oeuvre/">TiQ &oelig;uvre</a></li>
-            </ul>
-          </li>
+<body class="no-intersection-observer" id="code-body">
+    <nav>
+        <a id="nav-icon-a" href="index.html" title="Home — Duncan Ritchie’s portfolio">
+            <picture>
+                <source media="(min-width:601px)" srcset="https://www.duncanritchie.co.uk/favicon-96x96.png">
+                <img id="nav-icon" src="https://www.duncanritchie.co.uk/favicon-32x32.png" alt="Duncan’s fulmar icon" />
+            </picture>
+            Duncan Ritchie
+        </a>
+        <ul id="nav-main-list">
+            <li>
+                <input type="checkbox" id="code-nav-tickbox" />
+                <label for="code-nav-tickbox" title="Show or hide menu for my code" tabindex="0">
+                    My code
+                </label>
+                <ul>
+                    <li>
+                        <a href="#code" title="My coding story — Duncan Ritchie’s portfolio">
+                            My story
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#javascript-projects" title="JavaScript projects — Duncan Ritchie’s portfolio">
+                            JavaScript projects
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#java-projects" title="Java projects — Duncan Ritchie’s portfolio">
+                            Java projects
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#csharp-projects" title="C# projects — Duncan Ritchie’s portfolio">
+                            C# projects
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#velut" title="velut, a Latin rhyming dictionary — Duncan Ritchie’s portfolio">
+                            Latin dictionary
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li><input type="checkbox" id="about-me-nav-tickbox" />
+                <label for="about-me-nav-tickbox" title="Show or hide menu for more about me" tabindex="0">
+                    More about me
+                </label>
+                <ul>
+                    <li>
+                        <a href="aboutme.html#dog" title="My dog — Duncan Ritchie’s portfolio">
+                            My dog
+                        </a>
+                    </li>
+                    <li>
+                        <a href="aboutme.html#chester" title="Chester — Duncan Ritchie’s portfolio">
+                            Chester
+                        </a>
+                    </li>
+                    <li>
+                        <a href="aboutme.html#latin" title="Latin — Duncan Ritchie’s portfolio">
+                            Latin
+                        </a>
+                    </li>
+                    <li>
+                        <a href="aboutme.html#photos" title="Photography — Duncan Ritchie’s portfolio">
+                            Photography
+                        </a>
+                    </li>
+                    <li>
+                        <a href="aboutme.html#tiq" title="Theatre in the Quarter — Duncan Ritchie’s portfolio">Theatre
+                            in the Quarter</a></li>
+                </ul>
+            </li>
         </ul>
-        <ul class="nav navbar-nav navbar-right">
-          <!-- <li><a href="./CV/DuncanRitchieCV.pdf" title="Duncan Ritchie&rsquo;s CV"><i class="fas fa-file"></i>&nbsp; CV</a></li> -->
-          <li><a href="https://github.com/DuncanRitchie" title="Duncan Ritchie&rsquo;s GitHub"><i
-                class="fab fa-github"></i>&nbsp; GitHub</a></li>
-          <li><a href="https://www.linkedin.com/in/duncan-ritchie-uk/" title="Duncan Ritchie&rsquo;s LinkedIn"><i
-                class="fab fa-linkedin"></i>&nbsp; LinkedIn</a></li>
+        <ul id="socials-list">
+            <li><a href="https://github.com/DuncanRitchie/" title="Duncan Ritchie — GitHub"><i
+                        class="fab fa-github"></i> GitHub</a></li>
+            <li><a href="https://www.linkedin.com/in/duncan-ritchie-uk/" title="Duncan Ritchie — LinkedIn"><i
+                        class="fab fa-linkedin"></i> LinkedIn</a></li>
         </ul>
-      </div><!-- /.navbar-collapse -->
-    </div><!-- /.container-fluid -->
-  </nav>
+    </nav>
 
-  <main>
-    <section class="jumbotron-container">
-      <a class="anchor" id="code"></a>
-      <div class="jumbotron-bkgd-photo" id="bkgd-coding">
-        <div class="jumbotron-main">
-          <h1>My <span class="highlight">coding</span> story.</h1>
-          <p>
-            I have always been interested in <span class="highlight">getting computers to do neat stuff</span>.
-          </p>
-          <p>
-            I self-taught myself a lot of <span class="highlight">advanced MS Excel</span> functionality,
-            in the development of sophisticated personal projects, including a
-            <span class="highlight">Latin rhyming dictionary</span>.
-          </p>
-          <p>
+    <!-- <main> -->
+    <!-- <div id="text-wrap-guide"></div> -->
+
+    <!-- Main images and sections. -->
+    <a class="anchor" id="code"></a>
+    <h1 class="screenreader-only">My code</h1>
+
+    <picture class="main-image-picture" title="Duncan on Caer Caradoc in Shropshire">
+        <source media="(min-width:601px)"
+            srcset="https://res.cloudinary.com/duncanritchie/image/upload/c_fill,g_west,h_1000,w_1000,x_358/q_auto:eco/v1581894718/site/DuncanOnCaerCaradoc.webp">
+        <source media="(min-width:481px)"
+            srcset="https://res.cloudinary.com/duncanritchie/image/upload/c_fill,g_west,h_600,w_600,x_358/q_auto:eco/v1581894718/site/DuncanOnCaerCaradoc.webp">
+        <source media="(min-width:0px)"
+            srcset="https://res.cloudinary.com/duncanritchie/image/upload/c_fill,g_west,h_480,w_480,x_358/q_auto:eco/v1581894718/site/DuncanOnCaerCaradoc.webp">
+        <img class="main-image" alt="Duncan on Caer Caradoc in Shropshire"
+            src="https://res.cloudinary.com/duncanritchie/image/upload/c_fill,g_west,h_1000,w_1000,x_358/q_auto:eco/v1581894718/site/DuncanOnCaerCaradoc.jpg" />
+    </picture>
+
+    <section id="code-section">
+        <h2>
+            My coding story.
+        </h2>
+        <p>
+            I have always been interested in getting computers to do neat stuff.
+        </p>
+        <p>
+            I taught myself a lot of advanced MS Excel functionality, in the development of
+            sophisticated personal projects, including a Latin rhyming dictionary.
+        </p>
+        <p>
             My formal education in the field was minimal. That changed in January 2019, when I joined
-            <a href="https://wearecodenation.com/" title="Code Nation&rsquo;s website">Code&nbsp;Nation</a>,
-            a bootcamp that will teach you employable IT skills,
-            through projects that test your burgeoning understanding of
-            <span class="highlight">HTML</span>, <span class="highlight">CSS</span>, and
-            <span class="highlight">JavaScript</span>. I designed and built this site, for instance,
-            but I&rsquo;ve also used <span class="highlight">React.js</span>,
-            <span class="highlight">Node.js</span>, <span class="highlight">Express.js</span>, and
-            <span class="highlight">MongoDB</span>.
-          </p>
-          <p>
-            Some of my <a href="#javascript-projects" title="My JavaScript projects">projects</a> are linked below.
-            I am particularly pleased with my
+            <a href="https://wearecodenation.com/" title="Code Nation’s website">Code&nbsp;Nation</a>,
+            a bootcamp that will teach you employable IT skills, through projects that test your
+            burgeoning understanding of HTML, CSS, and JavaScript. I designed and built this site,
+            for instance, but I’ve also used React.js, Node.js, Express.js, and MongoDB.
+        </p>
+        <p>
+            Some of my <a href="#javascript-projects" title="My JavaScript projects">projects</a> are
+            linked below. I am particularly pleased with my
             <a href="https://www.duncanritchie.co.uk/jsChallenges/chess/chess.html" title="My chess game">chess
-              game</a>,
-            and my contributions to group projects.
-          </p>
-          <p>
-            After graduating from Code&nbsp;Nation, I developed my Latin Excel file into a proper <a href="#velut"
-              title="velut &mdash; a Latin dictionary">website</a>,
-            and got an apprenticeship with <a href="http://informationcatalyst.com/"
-              title="Information Catalyst&rsquo;s website">Information&nbsp;Catalyst</a>.
-          </p>
-          <p>
+                game</a>, and my contributions to group projects.
+        </p>
+        <p>
+            After graduating from Code&nbsp;Nation, I developed my Latin Excel file into a proper
+            <a href="#velut" title="velut, a Latin dictionary">website</a>, and got an apprenticeship
+            with <a href="http://www.informationcatalyst.com/"
+                title="Information Catalyst’s website">Information&nbsp;Catalyst</a>.
+        </p>
+        <p>
             For the first three months of my apprenticeship, I returned to Code&nbsp;Nation for further training,
-            in which I started learning <a href="#java-projects" title="My Java projects">Java</a> &mdash;
-            Information&nbsp;Catalyst&rsquo;s usual language &mdash; and MySql.
-          </p>
-          <p>
-            Since October 2019, however, I&rsquo;ve been collaborating on a C# endeavour, using Windows Forms
-            and the MS Office Interop API to process Word documents. I&rsquo;m very much enjoying it!
-          </p>
-        </div>
-        <div class="cuj" id="cuj-coding">
-          <p>
-            Background photo: The river Dee in my hometown, Chester.
-          </p>
-          <p class="cuj-toggle">
-            <!-- <a href="https://www.flickr.com/photos/dunnock_d/18527154218/" title="Chester&#x27;s weir, 2015 Jun 07 -- photo 1"> -->
-            Hide text
-            <!-- </a> -->
-          </p>
-        </div>
-        <div class="cuj-phone" id="cuj-coding-phone">
-          <p>
-            Background photo: The river Dee in my hometown, Chester.
-          </p>
-          <p class="cuj-toggle">
-            <!-- <a href="https://www.flickr.com/photos/dunnock_d/18527154218/" title="Chester&#x27;s weir, 2015 Jun 07 -- photo 1"> -->
-            Hide text
-            <!-- </a> -->
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section class="showcase-group">
-      <!-- JavaScript heading -->
-      <div class="showcase-head">
-        <a class="anchor" id="javascript-projects"></a>
-        <h1>
-          JavaScript projects.
-        </h1>
-        <p>
-          The GitHub logo links to the source code.
+            in which I started learning <a href="#java-projects" title="My Java projects">Java</a> —
+            Information&nbsp;Catalyst’s usual language — and MySql.
         </p>
-      </div>
-      <!-- Cash machine -->
-      <!-- <div class="showcase-link-div">
-        <div class="github-link">
-          <a href="https://github.com/DuncanRitchie/jsChallenges/tree/gh-pages/cashmachine" title="JavaScript cash machine code on GitHub">
-            <i class="fab fa-github-square" aria-label="GitHub"></i>
-          </a>
-        </div>
-        <a class="showcase-link-a" href="https://www.duncanritchie.co.uk/jsChallenges/cashmachine/cashmachine.html" title="My JavaScript cash machine">
-          <img src="./screenshots/cash-machine.png" class="project-screenshot" alt="Screenshot of my JavaScript cash machine"/>
-          <div>
-            <h2>Cash machine</h2>
-            <span class="index-finish-date">(finished 2019 Jan 28)</span>
-          </div>
-        </a>
-    </div> -->
-      <!-- Cyber-pet -->
-      <div class="showcase-link-div">
-        <div class="github-link">
-          <a href="https://github.com/DuncanRitchie/jsChallenges/tree/gh-pages/cyberpet"
-            title="JavaScript cyber-pet code on GitHub">
-            <i class="fab fa-github-square" aria-label="GitHub"></i>
-          </a>
-        </div>
-        <a class="showcase-link-a" href="https://www.duncanritchie.co.uk/jsChallenges/cyberpet/cyberpet.html"
-          title="My JavaScript cyber-pet">
-          <img src="./screenshots/cyber-pet.png" class="project-screenshot"
-            alt="Screenshot of my JavaScript cash machine" />
-          <div>
-            <h2>Cyber-pet</h2>
-            <span class="index-finish-date">(finished 2019 Feb 01)</span>
-          </div>
-        </a>
-      </div>
-      <!-- Keycode generator and drumkit -->
-      <!-- <div class="showcase-link-div">
-        <div class="github-link">
-          <a href="https://github.com/DuncanRitchie/jsChallenges/tree/gh-pages/keycode-drumkit" title="Keycode generator and drumkit code on GitHub">
-            <i class="fab fa-github-square" aria-label="GitHub"></i>
-          </a>
-        </div>
-        <a class="showcase-link-a" href="https://www.duncanritchie.co.uk/jsChallenges/keycode-drumkit/keycode-drumkit.html" title="My keycode generator and drumkit">
-          <img src="./screenshots/keycode-generator-and-drumkit.png" class="project-screenshot" alt="Screenshot of my keycode generator and drumkit"/>
-          <div>
-            <h2>Keycode generator &amp; drumkit</h2>
-            <span class="index-made-with">
-              (works best with a keyboard)<br/>
-            </span>
-            <span class="index-finish-date">(finished 2019 Feb 11)</span>
-          </div>
-        </a>
-    </div> -->
-      <!-- Dice game -->
-      <div class="showcase-link-div">
-        <div class="github-link">
-          <a href="https://github.com/DuncanRitchie/jsChallenges/tree/gh-pages/dice" title="Dice game code on GitHub">
-            <i class="fab fa-github-square" aria-label="GitHub"></i>
-          </a>
-        </div>
-        <a class="showcase-link-a" href="https://www.duncanritchie.co.uk/jsChallenges/dice/dice.html"
-          title="My dice game">
-          <img src="./screenshots/dice-game.png" class="project-screenshot" alt="Screenshot of my dice game" />
-          <div>
-            <h2>Dice game</h2>
-            <span class="index-finish-date">(finished 2019 Feb 11)</span>
-          </div>
-        </a>
-      </div>
-      <!-- Whack-a-mole -->
-      <!-- <div class="showcase-link-div">
-        <div class="github-link">
-          <a href="https://github.com/DuncanRitchie/jsChallenges/tree/gh-pages/whackamole" title="Whack-a-mole code on GitHub">
-            <i class="fab fa-github-square" aria-label="GitHub"></i>
-          </a>
-        </div>
-        <a class="showcase-link-a" href="https://www.duncanritchie.co.uk/jsChallenges/whackamole/whackamole.html" title="My whack-a-mole">
-          <img src="./screenshots/whack-a-mole.png" class="project-screenshot" alt="Screenshot of my whack-a-mole"/>
-          <div>
-            <h2>Whack-a-mole</h2>
-            <span class="index-finish-date">(finished 2019 Feb 12)</span>
-          </div>
-        </a>
-    </div> -->
-      <!-- Clock -->
-      <!-- <div class="showcase-link-div">
-        <div class="github-link">
-          <a href="https://github.com/DuncanRitchie/jsChallenges/tree/gh-pages/clock" title="Clock code on GitHub">
-            <i class="fab fa-github-square" aria-label="GitHub"></i>
-          </a>
-        </div>
-        <a class="showcase-link-a" href="https://www.duncanritchie.co.uk/jsChallenges/clock/clock.html" title="My clock">
-          <img src="./screenshots/clock.png" class="project-screenshot" alt="Screenshot of my clock"/>
-          <div>
-            <h2>Clock</h2>
-            <span class="index-finish-date">(finished 2019 Feb 12)</span>
-          </div>
-        </a>
-    </div> -->
-      <!-- Chess -->
-      <div class="showcase-link-div">
-        <div class="github-link">
-          <a href="https://github.com/DuncanRitchie/jsChallenges/tree/gh-pages/chess" title="Chess code on GitHub">
-            <i class="fab fa-github-square" aria-label="GitHub"></i>
-          </a>
-        </div>
-        <a class="showcase-link-a" href="https://www.duncanritchie.co.uk/jsChallenges/chess/chess.html"
-          title="My chess game">
-          <img src="./screenshots/chess.png" class="project-screenshot" title="Screenshot of my chess game" />
-          <div>
-            <h2>Chess</h2>
-            <span class="index-finish-date">(finished 2019 Feb 18)</span>
-          </div>
-        </a>
-      </div>
-      <!-- Calculator -->
-      <div class="showcase-link-div">
-        <div class="github-link">
-          <a href="https://github.com/DuncanRitchie/calculator" title="Calculator code on GitHub">
-            <i class="fab fa-github-square" aria-label="GitHub"></i>
-          </a>
-        </div>
-        <a class="showcase-link-a" href="https://www.duncanritchie.co.uk/calculator" title="My calculator">
-          <img src="./screenshots/calculator.png" class="project-screenshot" alt="Screenshot of my calculator" />
-          <div>
-            <h2>Calculator</h2>
-            <span class="index-made-with">
-              made with React.js<br />
-            </span>
-            <span class="index-finish-date">
-              (finished 2019 Feb 26)
-            </span>
-          </div>
-        </a>
-      </div>
-      <!-- Chat-room app -->
-      <div class="showcase-link-div">
-        <div class="github-link">
-          <a href="https://github.com/DuncanRitchie/room-me" title="Chat-room front-end code on GitHub">
-            <i class="fab fa-github-square" aria-label="GitHub"></i>
-          </a>
-        </div>
-        <a class="showcase-link-a" href="https://www.duncanritchie.co.uk/room-me/" title="My chat-room front-end">
-          <img src="./screenshots/chat-room-frontend.png" class="project-screenshot"
-            alt="Screenshot of my chat-room front-end" />
-          <div>
-            <h2>Chat-room front-end</h2>
-            <span class="index-made-with">
-              made with React.js with four other devs<br />
-            </span>
-            <span class="index-reason-no-demo">
-              (not finished)
-            </span>
-          </div>
-        </a>
-      </div>
-      <!-- Train-times app -->
-      <div class="showcase-link-div">
-        <div class="github-link">
-          <a href="https://github.com/DuncanRitchie/Train_app" title="Train-times app code on GitHub">
-            <i class="fab fa-github-square" aria-label="GitHub"></i>
-          </a>
-        </div>
-        <a class="showcase-link-a" href="https://cn-train-app.herokuapp.com/" title="My train-times app on Heroku">
-          <img src="./screenshots/train-times-app.png" class="project-screenshot"
-            alt="Screenshot of my train-times app" />
-          <div>
-            <h2>Train-times app</h2>
-            <span class="index-made-with">
-              made with API calls, Express.js, and React.js with two other devs<br />
-            </span>
-            <span class="index-reason-no-demo">
-              (almost finished)
-            </span>
-          </div>
-        </a>
-      </div>
-      <!-- Clocking-in-and-out app -->
-      <!-- <div class="showcase-link-div showcase-link-to-bad-page">
-      <div class="github-link">
-        <a href="https://github.com/DuncanRitchie/cloc.io" title="Clocking-in-and-out app code on GitHub">
-          <i class="fab fa-github-square" aria-label="GitHub"></i>
-        </a>
-      </div>
-      <div class="showcase-link-a">
-        <img src="./screenshots/clocking-in-and-out-app.png" class="project-screenshot" alt="Screenshot of my clocking-in-and-out app"/>
-        <div>
-          <h2>Clocking-in-and-out app</h2>
-          <span class="index-made-with">
-            made with React.js, Express.js, and MongoDB with 13 other devs<br />
-          </span>
-          <span class="index-reason-no-demo">
-            (no live demo because it&rsquo;s not finished)
-          </span>
-        </div>
-      </div>
-    </div> -->
-      <!-- TiQ oeuvre -->
-      <div class="showcase-link-div">
-        <div class="github-link">
-          <a href="https://github.com/DuncanRitchie/tiq-oeuvre"
-            title="Theatre in the Quarter &oelig;uvre code on GitHub">
-            <i class="fab fa-github-square" aria-label="GitHub"></i>
-          </a>
-        </div>
-        <a class="showcase-link-a" href="https://www.duncanritchie.co.uk/tiq-oeuvre/"
-          title="My Theatre in the Quarter &oelig;uvre">
-          <img src="./screenshots/tiq-oeuvre.png" class="project-screenshot"
-            alt="Screenshot of my Theatre in the Quarter &oelig;uvre" />
-          <div>
-            <h2>Theatre in the Quarter &oelig;uvre</h2>
-            <span class="index-made-with">
-              made with React.js and Json data generated by an Excel spreadsheet that lists my voluntary work in this
-              drama company<br />
-            </span>
-            <span class="index-finish-date">
-              (finished 2019 Apr 18, but I keep the data updated)
-            </span>
-          </div>
-        </a>
-      </div>
-      <!-- Countdown timer -->
-      <div class="showcase-link-div">
-        <div class="github-link">
-          <a href="https://github.com/DuncanRitchie2/countdown-timer" title="Countdown timer code on GitHub">
-            <i class="fab fa-github-square" aria-label="GitHub"></i>
-          </a>
-        </div>
-        <a class="showcase-link-a" href="https://www.duncanritchie.co.uk/countdown-timer/" title="My countdown timer">
-          <img src="./screenshots/countdown-timer.png" class="project-screenshot"
-            alt="Screenshot of my countdown timer" />
-          <div>
-            <h2>Countdown timer</h2>
-            <span class="index-made-with">
-              made with vanilla JS<br />
-            </span>
-            <span class="index-finish-date">
-              (finished 2019 Aug 28)
-            </span>
-          </div>
-        </a>
-      </div>
-      <!-- Quiz -->
-      <div class="showcase-link-div">
-        <div class="github-link">
-          <a href="https://github.com/DuncanRitchie2/quiz" title="Quiz code on GitHub">
-            <i class="fab fa-github-square" aria-label="GitHub"></i>
-          </a>
-        </div>
-        <a class="showcase-link-a" href="https://www.duncanritchie.co.uk/quiz/" title="My quiz">
-          <img src="./screenshots/quiz.png" class="project-screenshot" alt="Screenshot of my quiz" />
-          <div>
-            <h2>Quiz</h2>
-            <span class="index-made-with">
-              made with vanilla JS<br />
-            </span>
-            <span class="index-finish-date">
-              (finished 2019 Sep 03)
-            </span>
-          </div>
-        </a>
-      </div>
-      <!-- JavaScript snake -->
-      <div class="showcase-link-div">
-        <div class="github-link">
-          <a href="https://github.com/DuncanRitchie2/js-snake" title="JavaScript snake code on GitHub">
-            <i class="fab fa-github-square" aria-label="GitHub"></i>
-          </a>
-        </div>
-        <a class="showcase-link-a" href="https://www.duncanritchie.co.uk/snake/" title="My JavaScript snake">
-          <img src="./screenshots/snake.png" class="project-screenshot" alt="Screenshot of my JavaScript snake" />
-          <div>
-            <h2>Snake</h2>
-            <span class="index-made-with">
-              made with vanilla JS<br />
-            </span>
-            <span class="index-finish-date">
-              (finished 2019 Sep 05)
-            </span>
-          </div>
-        </a>
-      </div>
-      <!-- Reminders app -->
-      <div class="showcase-link-div showcase-link-to-bad-page">
-        <div class="github-link">
-          <a href="https://github.com/DuncanRitchie2/reminders" title="Reminders app code on GitHub">
-            <i class="fab fa-github-square" aria-label="GitHub"></i>
-          </a>
-        </div>
-        <div class="showcase-link-a">
-          <!-- <a class="showcase-link-a" href="https://www.duncanritchie.co.uk/reminders/" title="My reminders app"> -->
-          <img src="./screenshots/reminders-app.png" class="project-screenshot" alt="Screenshot of my reminders app" />
-          <div>
-            <h2>Reminders app</h2>
-            <span class="index-made-with">
-              made with Express.js and MySql with two other devs<br />
-            </span>
-            <span class="index-reason-no-demo">
-              (no live demo as I&rsquo;ve not deployed it)<br />
-            </span>
-            <span class="index-finish-date">
-              (finished 2019 Oct 07)
-            </span>
-          </div>
-          <!-- </a> -->
-        </div>
-      </div>
-      <!-- Information Catalyst / Code Nation final project -->
-      <div class="showcase-link-div showcase-link-to-bad-page">
-        <div class="github-link">
-          <a href="https://github.com/DuncanRitchie2/window-bookings" title="Window survey bookings app code on GitHub">
-            <i class="fab fa-github-square" aria-label="GitHub"></i>
-          </a>
-        </div>
-        <div class="showcase-link-a">
-          <img src="./screenshots/window-survey-bookings-app.png" class="project-screenshot"
-            alt="Screenshot of my window survey bookings app" />
-          <div>
-            <h2>Window survey bookings app</h2>
-            <span class="index-made-with">
-              made with React.js, Express.js, and MySql<br />
-            </span>
-            <span class="index-reason-no-demo">
-              (no live demo as I&rsquo;ve not finished nor deployed it)<br />
-            </span>
-            <span class="index-finish-date">
-              (ended 2019 Oct 22)
-            </span>
-          </div>
-        </div>
-      </div>
-      <!-- End of last JavaScript project -->
-    </section>
-
-    <section class="showcase-group">
-      <!-- Java heading -->
-      <div class="showcase-head">
-        <a class="anchor" id="java-projects"></a>
-        <h1>
-          Java projects.
-        </h1>
         <p>
-          The GitHub logo links to the source code.
+            Since October 2019, however, I’ve been collaborating on a C# endeavour, using Windows Forms
+            and the MS Office Interop API to process Word documents. I’m very much enjoying it!
         </p>
-      </div>
-      <!-- Java cash machine -->
-      <div class="showcase-link-div showcase-link-to-bad-page">
-        <div class="github-link">
-          <a href="https://github.com/DuncanRitchie2/cash-machine" title="Java cash machine code on GitHub">
-            <i class="fab fa-github-square" aria-label="GitHub"></i>
-          </a>
-        </div>
-        <div class="showcase-link-a">
-          <img src="./screenshots/java-cash-machine.png" class="project-screenshot"
-            alt="Screenshot of my Java cash-machine" />
-          <div>
-            <h2>Cash machine</h2>
-            <span class="index-reason-no-demo">
-              (no live demo because it&rsquo;s command-line-only)<br />
-            </span>
-            <span class="index-finish-date">(finished 2019 Aug 06)</span>
-          </div>
-        </div>
-      </div>
-      <!-- Java cyber-pet -->
-      <div class="showcase-link-div showcase-link-to-bad-page">
-        <div class="github-link">
-          <a href="https://github.com/DuncanRitchie2/cyberpet" title="Java cyber-pet code on GitHub">
-            <i class="fab fa-github-square" aria-label="GitHub"></i>
-          </a>
-        </div>
-        <div class="showcase-link-a">
-          <img src="./screenshots/java-cyberpet.png" class="project-screenshot" alt="Screenshot of my Java cyberpet" />
-          <div>
-            <h2>Cyber-pet</h2>
-            <span class="index-reason-no-demo">
-              (no live demo because it&rsquo;s command-line-only)<br />
-            </span>
-            <span class="index-finish-date">
-              (finished 2019 Aug 12)
-            </span>
-          </div>
-        </div>
-      </div>
-      <!-- Java snake -->
-      <div class="showcase-link-div showcase-link-to-bad-page">
-        <div class="github-link">
-          <a href="https://github.com/DuncanRitchie2/java-snake" title="Java snake code on GitHub">
-            <i class="fab fa-github-square" aria-label="GitHub"></i>
-          </a>
-        </div>
-        <div class="showcase-link-a">
-          <img src="./screenshots/java-snake.png" class="project-screenshot" alt="Screenshot of my Java snake" />
-          <div>
-            <h2>Snake</h2>
-            <span class="index-made-with">
-              made with Swing<br />
-            </span>
-            <span class="index-reason-no-demo">
-              (no live demo, but you can download the <a
-                href="https://github.com/DuncanRitchie2/java-snake/blob/main/out/artifacts/Snake_jar/Snake.jar"
-                title="Download the .jar file to play my Snake game on your computer">.jar file</a> from GitHub)<br />
-            </span>
-            <span class="index-finish-date">
-              (finished 2019 Sep 11)
-            </span>
-          </div>
-        </div>
-      </div>
-      <!-- Spring Boot weather app -->
-      <div class="showcase-link-div">
-        <div class="github-link">
-          <a href="https://github.com/DuncanRitchie2/spring-boot-weather-app" title="Weather app code on GitHub">
-            <i class="fab fa-github-square" aria-label="GitHub"></i>
-          </a>
-        </div>
-        <a class="showcase-link-a" href="https://spring-weather.herokuapp.com" title="My weather app">
-          <img src="./screenshots/spring-weather.png" class="project-screenshot" alt="Screenshot of my weather app" />
-          <div>
-            <h2>Weather app</h2>
-            <span class="index-made-with">
-              made with Spring Boot and the Mapbox and Dark Sky APIs<br />
-            </span>
-            <span class="index-finish-date">
-              (finished 2019 Sep 25)
-            </span>
-          </div>
-        </a>
-      </div>
-      <!-- End of last Java project -->
     </section>
 
-    <section class="showcase-group">
-      <!-- C# heading -->
-      <div class="showcase-head">
-        <a class="anchor" id="csharp-projects"></a>
-        <h1>
-          <!-- If number of C# projects exceeds one, heading and navbar will need to change to plural -->
-          C# projects.
-        </h1>
+    <section class="showcase-group" id="javascript-projects">
+        <!-- JavaScript heading -->
+        <div class="showcase-head">
+            <h2>
+                Java&shy;Script projects.
+            </h2>
+            <p>
+                The GitHub logo links to the source code.
+            </p>
+        </div>
+        <!-- Cash machine -->
+        <!-- <div class="project">
+            <a class="project-link-a" href="https://www.duncanritchie.co.uk/jsChallenges/cashmachine/cashmachine.html" title="My JavaScript cash-machine">
+                <picture>
+                    <source 
+                        media="(min-width:0px)"
+                        srcset="https://res.cloudinary.com/duncanritchie/image/upload/c_scale,w_180/v1590940219/project-screenshots/cash-machine.webp"
+                    >
+                    <img
+                        src="https://res.cloudinary.com/duncanritchie/image/upload/c_scale,w_180/v1590940219/project-screenshots/cash-machine.png"
+                        class="project-screenshot"
+                        alt="Screenshot of my JavaScript cash-machine"
+                    />
+                </picture>
+                <div>
+                    <h3>Cash-machine</h3>
+                    <span class="project-made-with">
+                        made with vanilla JS<br />
+                    </span>
+                    <span class="project-finish-date">(finished 2019 Jan 28)</span>
+                </div>
+            </a>
+            <div class="github-div">
+                <a href="https://github.com/DuncanRitchie/jsChallenges/tree/gh-pages/cashmachine" title="JavaScript cash-machine code on GitHub">
+                    <i class="fab fa-github-square"></i>
+                    <span class="screenreader-only">JavaScript cash-machine code</span>
+                </a>
+            </div>
+        </div> -->
+        <!-- Cyber-pet -->
+        <div class="project">
+            <a class="project-link-a" href="https://www.duncanritchie.co.uk/jsChallenges/cyberpet/cyberpet.html"
+                title="My JavaScript cyber-pet">
+                <picture>
+                    <source media="(min-width:0px)"
+                        srcset="https://res.cloudinary.com/duncanritchie/image/upload/c_scale,w_180/v1590938117/project-screenshots/cyber-pet.webp">
+                    <img src="https://res.cloudinary.com/duncanritchie/image/upload/c_scale,w_180/v1590938117/project-screenshots/cyber-pet.png"
+                        class="project-screenshot" alt="Screenshot of my JavaScript cyber-pet" />
+                </picture>
+                <div>
+                    <h3>Cyber-pet</h3>
+                    <span class="project-made-with">
+                        made with vanilla JS<br />
+                    </span>
+                    <span class="project-finish-date">(finished 2019 Feb 01)</span>
+                </div>
+            </a>
+            <div class="github-div">
+                <a href="https://github.com/DuncanRitchie/jsChallenges/tree/gh-pages/cyberpet"
+                    title="JavaScript cyber-pet code on GitHub">
+                    <i class="fab fa-github-square"></i>
+                    <span class="screenreader-only">JavaScript cyber-pet code</span>
+                </a>
+            </div>
+        </div>
+        <!-- Keycode generator and drumkit -->
+        <!-- <div class="project">
+            <a class="project-link-a" href="https://www.duncanritchie.co.uk/jsChallenges/keycode-drumkit/keycode-drumkit.html" title="My keycode generator and drumkit">
+                <picture>
+                    <source 
+                        media="(min-width:0px)"
+                        srcset="https://res.cloudinary.com/duncanritchie/image/upload/c_scale,w_180/v1590940219/project-screenshots/keycode-generator-and-drumkit.webp"
+                    >
+                    <img
+                        src="https://res.cloudinary.com/duncanritchie/image/upload/c_scale,w_180/v1590940219/project-screenshots/keycode-generator-and-drumkit.png"
+                        class="project-screenshot"
+                        alt="Screenshot of my keycode generator &amp; drumkit"
+                    />
+                </picture>
+                <div>
+                    <h3>Keycode generator &amp; drumkit</h3>
+                        <span class="project-made-with">
+                            (vanilla JS, works best with a keyboard)<br/>
+                        </span>
+                    <span class="project-finish-date">(finished 2019 Feb 11)</span>
+                </div>
+            </a>
+            <div class="github-div">
+                <a href="https://github.com/DuncanRitchie/jsChallenges/tree/gh-pages/keycode-drumkit" title="Keycode generator and drumkit code on GitHub">
+                    <i class="fab fa-github-square"></i>
+                    <span class="screenreader-only">Keycode generator &amp; drumkit code</span>
+                </a>
+            </div>
+      </div> -->
+        <!-- Dice game -->
+        <div class="project">
+            <a class="project-link-a" href="https://www.duncanritchie.co.uk/jsChallenges/dice/dice.html"
+                title="My dice game">
+                <picture>
+                    <source media="(min-width:0px)"
+                        srcset="https://res.cloudinary.com/duncanritchie/image/upload/c_scale,w_180/v1590938117/project-screenshots/dice-game.webp">
+                    <img
+                        src="https://res.cloudinary.com/duncanritchie/image/upload/c_scale,w_180/v1590938117/project-screenshots/dice-game.png"
+                        class="project-screenshot"
+                        alt="Screenshot of my dice game"
+                    />
+                </picture>
+                <div>
+                    <h3>Dice game</h3>
+                    <span class="project-made-with">
+                        made with vanilla JS<br />
+                    </span>
+                    <span class="project-finish-date">(finished 2019 Feb 11)</span>
+                </div>
+            </a>
+            <div class="github-div">
+                <a href="https://github.com/DuncanRitchie/jsChallenges/tree/gh-pages/dice"
+                    title="Dice game code on GitHub">
+                    <i class="fab fa-github-square"></i>
+                    <span class="screenreader-only">Dice game code</span>
+                </a>
+            </div>
+        </div>
+        <!-- Whack-a-mole -->
+        <!-- <div class="project">
+            <a class="project-link-a" href="https://www.duncanritchie.co.uk/jsChallenges/whackamole/whackamole.html" title="My whack-a-mole game">
+                <picture>
+                    <source 
+                        media="(min-width:0px)"
+                        srcset="https://res.cloudinary.com/duncanritchie/image/upload/c_scale,w_180/v1590940220/project-screenshots/whack-a-mole.webp"
+                    >
+                    <img
+                        src="https://res.cloudinary.com/duncanritchie/image/upload/c_scale,w_180/v1590940220/project-screenshots/whack-a-mole.png"
+                        class="project-screenshot"
+                        alt="Screenshot of my whack-a-mole game"
+                    />
+                </picture>
+                <div>
+                    <h3>Whack-a-mole</h3>
+                    <span class="project-made-with">
+                        made with vanilla JS<br />
+                    </span>
+                    <span class="project-finish-date">(finished 2019 Feb 12)</span>
+                </div>
+            </a>
+            <div class="github-div">
+                <a href="https://github.com/DuncanRitchie/jsChallenges/tree/gh-pages/whackamole" title="Whack-a-mole code on GitHub">
+                    <i class="fab fa-github-square"></i>
+                    <span class="screenreader-only">Whack-a-mole code</span>
+                </a>
+            </div>
+        </div> -->
+        <!-- Clock -->
+        <!-- <div class="project">
+            <a class="project-link-a" href="https://www.duncanritchie.co.uk/jsChallenges/clock/clock.html" title="My clock">
+                <picture>
+                    <source 
+                        media="(min-width:0px)"
+                        srcset="https://res.cloudinary.com/duncanritchie/image/upload/c_scale,w_180/v1590940219/project-screenshots/clock.webp"
+                    >
+                    <img
+                        src="https://res.cloudinary.com/duncanritchie/image/upload/c_scale,w_180/v1590940219/project-screenshots/clock.png"
+                        class="project-screenshot"
+                        alt="Screenshot of my clock"
+                    />
+                </picture>
+                <div>
+                    <h3>Clock</h3>
+                    <span class="project-made-with">
+                        made with vanilla JS<br />
+                    </span>
+                    <span class="project-finish-date">(finished 2019 Feb 12)</span>
+                </div>
+            </a>
+            <div class="github-div">
+                <a href="https://github.com/DuncanRitchie/jsChallenges/tree/gh-pages/clock" title="Clock code on GitHub">
+                    <i class="fab fa-github-square"></i>
+                    <span class="screenreader-only">Clock code</span>
+                </a>
+            </div>
+        </div> -->
+        <!-- Chess -->
+        <div class="project">
+            <a class="project-link-a" href="https://www.duncanritchie.co.uk/jsChallenges/chess/chess.html"
+                title="My chess game">
+                <picture>
+                    <source media="(min-width:0px)"
+                        srcset="https://res.cloudinary.com/duncanritchie/image/upload/c_scale,w_180/v1590938117/project-screenshots/chess.webp">
+                    <img src="https://res.cloudinary.com/duncanritchie/image/upload/c_scale,w_180/v1590938117/project-screenshots/chess.png"
+                        class="project-screenshot" alt="Screenshot of my chess game" />
+                </picture>
+                <div>
+                    <h3>Chess</h3>
+                    <span class="project-made-with">
+                        made with vanilla JS<br />
+                    </span>
+                    <span class="project-finish-date">(finished 2019 Feb 18)</span>
+                </div>
+            </a>
+            <div class="github-div">
+                <a href="https://github.com/DuncanRitchie/jsChallenges/tree/gh-pages/chess" title="Chess code on GitHub">
+                    <i class="fab fa-github-square"></i>
+                    <span class="screenreader-only">Chess code</span>
+                </a>
+            </div>
+        </div>
+        <!-- Calculator -->
+        <div class="project">
+            <a class="project-link-a" href="https://www.duncanritchie.co.uk/calculator" title="My React.js calculator">
+                <picture>
+                    <source media="(min-width:0px)"
+                        srcset="https://res.cloudinary.com/duncanritchie/image/upload/c_scale,w_180/v1590938117/project-screenshots/calculator.webp">
+                    <img src="https://res.cloudinary.com/duncanritchie/image/upload/c_scale,w_180/v1590938117/project-screenshots/calculator.png"
+                        class="project-screenshot" alt="Screenshot of my React calculator" />
+                </picture>
+                <div>
+                    <h3>Calculator</h3>
+                    <span class="project-made-with">
+                        made with React.js<br />
+                    </span>
+                    <span class="project-finish-date">
+                        (finished 2019 Feb 26)
+                    </span>
+                </div>
+            </a>
+            <div class="github-div">
+                <a href="https://github.com/DuncanRitchie/calculator" title="React.js calculator code on GitHub">
+                    <i class="fab fa-github-square"></i>
+                    <span class="screenreader-only">React.js calculator code</span>
+                </a>
+            </div>
+        </div>
+        <!-- Chat-room app -->
+        <div class="project">
+            <a class="project-link-a" href="https://www.duncanritchie.co.uk/room-me/" title="My chat-room front-end">
+                <picture>
+                    <source media="(min-width:0px)"
+                        srcset="https://res.cloudinary.com/duncanritchie/image/upload/c_scale,w_180/v1590938117/project-screenshots/chat-room-front-end.webp">
+                    <img src="https://res.cloudinary.com/duncanritchie/image/upload/c_scale,w_180/v1590938117/project-screenshots/chat-room-front-end.png"
+                        class="project-screenshot" alt="Screenshot of my chat-room front-end" />
+                </picture>
+                <div>
+                    <h3>Chat-room front-end</h3>
+                    <span class="project-made-with">
+                        made with React.js with four other devs<br />
+                    </span>
+                    <span class="project-reason-no-demo">
+                        (not finished)
+                    </span>
+                </div>
+            </a>
+            <div class="github-div">
+                <a href="https://github.com/DuncanRitchie/room-me" title="Chat-room front-end code on GitHub">
+                    <i class="fab fa-github-square"></i>
+                    <span class="screenreader-only">Chat-room front-end code</span>
+                </a>
+            </div>
+        </div>
+        <!-- Train-times app -->
+        <div class="project">
+            <a class="project-link-a" href="https://cn-train-app.herokuapp.com/" title="My train-times app on Heroku">
+                <picture>
+                    <source media="(min-width:0px)"
+                        srcset="https://res.cloudinary.com/duncanritchie/image/upload/c_scale,w_180/v1590938117/project-screenshots/train-times-app.webp">
+                    <img src="https://res.cloudinary.com/duncanritchie/image/upload/c_scale,w_180//v1590938117/project-screenshots/train-times-app.png"
+                        class="project-screenshot" alt="Screenshot of my train-times app" />
+                </picture>
+                <div>
+                    <h3>Train-times app</h3>
+                    <span class="project-made-with">
+                        made with API calls, Express.js, and React.js with two other devs<br />
+                    </span>
+                    <span class="project-reason-no-demo">
+                        (almost finished)
+                    </span>
+                </div>
+            </a>
+            <div class="github-div">
+                <a href="https://github.com/DuncanRitchie/Train_app" title="Train-times app code on GitHub">
+                    <i class="fab fa-github-square"></i>
+                    <span class="screenreader-only">Train-times app code</span>
+                </a>
+            </div>
+        </div>
+        <!-- Clocking-in-and-out app -->
+        <!-- <div class="project project-with-no-demo">
+            <div class="project-link-a">
+                <picture>
+                    <source 
+                        media="(min-width:0px)"
+                        srcset="https://res.cloudinary.com/duncanritchie/image/upload/c_scale,w_180/v1590938855/project-screenshots/clocking-in-and-out-app.webp"
+                    >
+                    <img
+                        src="https://res.cloudinary.com/duncanritchie/image/upload/c_scale,w_180/v1590938855/project-screenshots/clocking-in-and-out-app.png"
+                        class="project-screenshot"
+                        alt="Screenshot of my clocking-in-and-out app"
+                    />
+                </picture>
+                <div>
+                    <h3>Clocking-in-and-out app</h3>
+                    <span class="project-made-with">
+                    made with React.js, Express.js, and MongoDB with 13 other devs<br />
+                    </span>
+                    <span class="project-reason-no-demo">
+                    (no live demo because it&rsquo;s not finished)
+                    </span>
+                </div>
+            </div>
+            <div class="github-div">
+                <a href="https://github.com/DuncanRitchie/cloc.io" title="Clocking-in-and-out app code on GitHub">
+                    <i class="fab fa-github-square"></i>
+                    <span class="screenreader-only">Clocking-in-and-out app code</span>
+                </a>
+            </div>
+        </div> -->
+        <!-- TiQ oeuvre -->
+        <div class="project">
+            <a class="project-link-a" href="https://www.duncanritchie.co.uk/tiq-oeuvre/"
+                title="My Theatre in the Quarter &oelig;uvre">
+                <picture>
+                    <source media="(min-width:0px)"
+                        srcset="https://res.cloudinary.com/duncanritchie/image/upload/c_scale,w_180/v1590938117/project-screenshots/tiq-oeuvre.webp">
+                    <img src="https://res.cloudinary.com/duncanritchie/image/upload/c_scale,w_180/v1590938117/project-screenshots/tiq-oeuvre.png"
+                        class="project-screenshot" alt="Screenshot of my Theatre in the Quarter &oelig;uvre" />
+                </picture>
+                <div>
+                    <h3>Theatre in the Quarter &oelig;uvre</h3>
+                    <span class="project-made-with">
+                        made with React.js and Json data generated by an Excel file
+                        that lists my voluntary work for this drama company<br />
+                    </span>
+                    <span class="project-finish-date">
+                        (finished 2019 Apr 18, but I keep the data updated)
+                    </span>
+                </div>
+            </a>
+            <div class="github-div">
+                <a href="https://github.com/DuncanRitchie/tiq-oeuvre"
+                    title="Theatre in the Quarter &oelig;uvre code on GitHub">
+                    <i class="fab fa-github-square"></i>
+                    <span class="screenreader-only">TiQ &oelig;uvre code</span>
+                </a>
+            </div>
+        </div>
+        <!-- Countdown timer -->
+        <div class="project">
+            <a class="project-link-a" href="https://www.duncanritchie.co.uk/countdown-timer/"
+                title="My countdown timer">
+                <picture>
+                    <source media="(min-width:0px)"
+                        srcset="https://res.cloudinary.com/duncanritchie/image/upload/c_scale,w_180/v1590938117/project-screenshots/countdown-timer.webp">
+                    <img src="https://res.cloudinary.com/duncanritchie/image/upload/c_scale,w_180/v1590938117/project-screenshots/countdown-timer.png"
+                        class="project-screenshot" alt="Screenshot of my countdown timer" />
+                </picture>
+                <div>
+                    <h3>Countdown timer</h3>
+                    <span class="project-made-with">
+                        made with vanilla JS<br />
+                    </span>
+                    <span class="project-finish-date">
+                        (finished 2019 Aug 28)
+                    </span>
+                </div>
+            </a>
+            <div class="github-div">
+                <a href="https://github.com/DuncanRitchie2/countdown-timer" title="Countdown timer code on GitHub">
+                    <i class="fab fa-github-square"></i>
+                    <span class="screenreader-only">Countdown timer code</span>
+                </a>
+            </div>
+        </div>
+        <!-- Quiz -->
+        <div class="project">
+            <a class="project-link-a" href="https://www.duncanritchie.co.uk/quiz/" title="My quiz">
+                <picture>
+                    <source media="(min-width:0px)"
+                        srcset="https://res.cloudinary.com/duncanritchie/image/upload/c_scale,w_180/v1590938116/project-screenshots/quiz.webp">
+                    <img src="https://res.cloudinary.com/duncanritchie/image/upload/c_scale,w_180/v1590938116/project-screenshots/quiz.png"
+                        class="project-screenshot" alt="Screenshot of my quiz" />
+                </picture>
+                <div>
+                    <h3>Quiz</h3>
+                    <span class="project-made-with">
+                        made with vanilla JS<br />
+                    </span>
+                    <span class="project-finish-date">
+                        (finished 2019 Sep 03)
+                    </span>
+                </div>
+            </a>
+            <div class="github-div">
+                <a href="https://github.com/DuncanRitchie2/quiz" title="Quiz code on GitHub">
+                    <i class="fab fa-github-square"></i>
+                    <span class="screenreader-only">Quiz code</span>
+                </a>
+            </div>
+        </div>
+        <!-- JavaScript snake -->
+        <div class="project">
+            <a class="project-link-a" href="https://www.duncanritchie.co.uk/snake/" title="My JavaScript snake game">
+                <picture>
+                    <source media="(min-width:0px)"
+                        srcset="https://res.cloudinary.com/duncanritchie/image/upload/c_scale,w_180/v1590944763/project-screenshots/snake.webp">
+                    <img src="https://res.cloudinary.com/duncanritchie/image/upload/c_scale,w_180/v1590944763/project-screenshots/snake.png"
+                        class="project-screenshot" alt="Screenshot of my JavaScript snake game" />
+                </picture>
+                <div>
+                    <h3>Snake</h3>
+                    <span class="project-made-with">
+                        made with vanilla JS<br />
+                    </span>
+                    <span class="project-finish-date">
+                        (finished 2019 Sep 05)
+                    </span>
+                </div>
+            </a>
+            <div class="github-div">
+                <a href="https://github.com/DuncanRitchie2/js-snake" title="JavaScript snake code on GitHub">
+                    <i class="fab fa-github-square"></i>
+                    <span class="screenreader-only">JavaScript snake code</span>
+                </a>
+            </div>
+        </div>
+        <!-- Reminders app -->
+        <div class="project project-with-no-demo">
+            <div class="project-link-a">
+                <!-- <a class="project-link-a" href="https://www.duncanritchie.co.uk/reminders/" title="My reminders app"> -->
+                <picture>
+                    <source media="(min-width:0px)"
+                        srcset="https://res.cloudinary.com/duncanritchie/image/upload/c_scale,w_180/v1590938855/project-screenshots/reminders-app.webp">
+                    <img src="https://res.cloudinary.com/duncanritchie/image/upload/c_scale,w_180/v1590938855/project-screenshots/reminders-app.png"
+                        class="project-screenshot" alt="Screenshot of my reminders app" />
+                </picture>
+                <div>
+                    <h3>Reminders app</h3>
+                    <span class="project-made-with">
+                        made with Express.js and MySql with two other devs<br />
+                    </span>
+                    <span class="project-reason-no-demo">
+                        (no live demo as I&rsquo;ve not deployed it)<br />
+                    </span>
+                    <span class="project-finish-date">
+                        (finished 2019 Oct 07)
+                    </span>
+                </div>
+                <!-- </a> -->
+            </div>
+            <div class="github-div">
+                <a href="https://github.com/DuncanRitchie2/reminders" title="Reminders app code on GitHub">
+                    <i class="fab fa-github-square"></i>
+                    <span class="screenreader-only">Reminders app code</span>
+                </a>
+            </div>
+        </div>
+        <!-- Information Catalyst / Code Nation final project -->
+        <div class="project project-with-no-demo">
+            <div class="project-link-a">
+                <picture>
+                    <source media="(min-width:0px)"
+                        srcset="https://res.cloudinary.com/duncanritchie/image/upload/c_scale,w_180/v1590938855/project-screenshots/window-survey-bookings-app.webp">
+                    <img src="https://res.cloudinary.com/duncanritchie/image/upload/c_scale,w_180/v1590938855/project-screenshots/window-survey-bookings-app.png"
+                        class="project-screenshot" alt="Screenshot of my window survey bookings app" />
+                </picture>
+                <div>
+                    <h3>Window survey bookings app</h3>
+                    <span class="project-made-with">
+                        made with React.js, Express.js, and MySql<br />
+                    </span>
+                    <span class="project-reason-no-demo">
+                        (no live demo as I&rsquo;ve not finished nor deployed it)<br />
+                    </span>
+                    <span class="project-finish-date">
+                        (ended 2019 Oct 22)
+                    </span>
+                </div>
+            </div>
+            <div class="github-div">
+                <a href="https://github.com/DuncanRitchie2/window-bookings"
+                    title="Window survey bookings app code on GitHub">
+                    <i class="fab fa-github-square"></i>
+                    <span class="screenreader-only">Window surveys bookings app code</span>
+                </a>
+            </div>
+        </div>
+        <!-- End of last JavaScript project -->
+    </section>
+
+    <section class="showcase-group" id="java-projects">
+        <!-- Java heading -->
+        <div class="showcase-head">
+            <h2>
+                Java projects.
+            </h2>
+            <p>
+                The GitHub logo links to the source code.
+            </p>
+        </div>
+        <!-- Java cash machine -->
+        <div class="project project-with-no-demo">
+            <div class="project-link-a">
+                <picture>
+                    <source media="(min-width:0px)"
+                        srcset="https://res.cloudinary.com/duncanritchie/image/upload/c_scale,w_180/v1590938855/project-screenshots/java-cash-machine.webp">
+                    <img src="https://res.cloudinary.com/duncanritchie/image/upload/c_scale,w_180/v1590938855/project-screenshots/java-cash-machine.png"
+                        class="project-screenshot" alt="Screenshot of my Java cash-machine" />
+                </picture>
+                <div>
+                    <h3>Cash-machine</h3>
+                    <span class="project-reason-no-demo">
+                        (no live demo because it&rsquo;s command-line-only)<br />
+                    </span>
+                    <span class="project-finish-date">(finished 2019 Aug 06)</span>
+                </div>
+            </div>
+            <div class="github-div">
+                <a href="https://github.com/DuncanRitchie2/cash-machine" title="Java cash-machine code on GitHub">
+                    <i class="fab fa-github-square"></i>
+                    <span class="screenreader-only">Java cash-machine code</span>
+                </a>
+            </div>
+        </div>
+        <!-- Java cyber-pet -->
+        <div class="project project-with-no-demo">
+            <div class="project-link-a">
+                <picture>
+                    <source media="(min-width:0px)"
+                        srcset="https://res.cloudinary.com/duncanritchie/image/upload/c_scale,w_180/v1590938855/project-screenshots/java-cyber-pet.webp">
+                    <img src="https://res.cloudinary.com/duncanritchie/image/upload/c_scale,w_180/v1590938855/project-screenshots/java-cyber-pet.png"
+                        class="project-screenshot" alt="Screenshot of my Java cyber-pet" />
+                </picture>
+                <div>
+                    <h3>Cyber-pet</h3>
+                    <span class="project-reason-no-demo">
+                        (no live demo because it&rsquo;s command-line-only)<br />
+                    </span>
+                    <span class="project-finish-date">
+                        (finished 2019 Aug 12)
+                    </span>
+                </div>
+            </div>
+            <div class="github-div">
+                <a href="https://github.com/DuncanRitchie2/cyberpet" title="Java cyber-pet code on GitHub">
+                    <i class="fab fa-github-square"></i>
+                    <span class="screenreader-only">Java cyber-pet code</span>
+                </a>
+            </div>
+        </div>
+        <!-- Java snake -->
+        <div class="project project-with-no-demo">
+            <div class="project-link-a">
+                <picture>
+                    <source media="(min-width:0px)"
+                        srcset="https://res.cloudinary.com/duncanritchie/image/upload/c_scale,w_180/v1590938855/project-screenshots/java-snake.webp">
+                    <img src="https://res.cloudinary.com/duncanritchie/image/upload/c_scale,w_180/v1590938855/project-screenshots/java-snake.png"
+                        class="project-screenshot" alt="Screenshot of my Java snake game" />
+                </picture>
+                <div>
+                    <h3>Snake</h3>
+                    <span class="project-made-with">
+                        made with Swing<br />
+                    </span>
+                    <span class="project-reason-no-demo">
+                        (no live demo, but you can download the <a
+                            href="https://github.com/DuncanRitchie2/java-snake/blob/main/out/artifacts/Snake_jar/Snake.jar"
+                            title="Download the .jar file to play my Snake game on your computer">.jar file</a> from
+                        GitHub)<br />
+                    </span>
+                    <span class="project-finish-date">
+                        (finished 2019 Sep 11)
+                    </span>
+                </div>
+            </div>
+            <div class="github-div">
+                <a href="https://github.com/DuncanRitchie2/java-snake" title="Java snake code on GitHub">
+                    <i class="fab fa-github-square"></i>
+                    <span class="screenreader-only">Java snake code</span>
+                </a>
+            </div>
+        </div>
+        <!-- Spring Boot weather app -->
+        <div class="project">
+            <a class="project-link-a" href="https://spring-weather.herokuapp.com" title="My weather app">
+                <picture>
+                    <source media="(min-width:0px)"
+                        srcset="https://res.cloudinary.com/duncanritchie/image/upload/c_scale,w_180/v1590938116/project-screenshots/spring-weather.webp">
+                    <img src="https://res.cloudinary.com/duncanritchie/image/upload/c_scale,w_180/v1590938116/project-screenshots/spring-weather.png"
+                        class="project-screenshot" alt="Screenshot of my weather app" />
+                </picture>
+                <div>
+                    <h3>Weather app</h3>
+                    <span class="project-made-with">
+                        made with Spring Boot and the Mapbox and Dark Sky APIs<br />
+                    </span>
+                    <span class="project-finish-date">
+                        (finished 2019 Sep 25)
+                    </span>
+                </div>
+            </a>
+            <div class="github-div">
+                <a href="https://github.com/DuncanRitchie2/spring-boot-weather-app" title="Weather app code on GitHub">
+                    <i class="fab fa-github-square"></i>
+                    <span class="screenreader-only">Weather app code</span>
+                </a>
+            </div>
+        </div>
+        <!-- End of last Java project -->
+    </section>
+
+    <section class="showcase-group" id="csharp-projects">
+        <!-- C# heading -->
+        <div class="showcase-head">
+            <h2>
+                C# projects.
+            </h2>
+            <p>
+                The GitHub logo links to the source code.
+            </p>
+        </div>
+        <!-- Calculator (Winforms) -->
+        <div class="project project-with-no-demo">
+            <div class="project-link-a">
+                <picture>
+                    <source media="(min-width:0px)"
+                        srcset="https://res.cloudinary.com/duncanritchie/image/upload/c_scale,w_180/v1590938855/project-screenshots/calculator-winforms.webp">
+                    <img src="https://res.cloudinary.com/duncanritchie/image/upload/c_scale,w_180/v1590938855/project-screenshots/calculator-winforms.png"
+                        class="project-screenshot" alt="Screenshot of my C# calculator" />
+                </picture>
+                <div>
+                    <h3>Calculator</h3>
+                    <span class="project-made-with">
+                        made with Windows Forms<br />
+                    </span>
+                    <span class="project-reason-no-demo">
+                        (no live demo, but you can download the <a
+                            href="https://github.com/DuncanRitchie2/CalculatorWinforms/blob/main/CalculatorWinforms/bin/Release/CalculatorWinforms.exe"
+                            title="Download the .exe file to run my calculator">.exe file</a> from GitHub)<br />
+                    </span>
+                    <span class="project-finish-date">(finished 2019 Nov 27)</span>
+                </div>
+            </div>
+            <div class="github-div">
+                <a href="https://github.com/DuncanRitchie2/CalculatorWinforms" title="C# calculator code on GitHub">
+                    <i class="fab fa-github-square"></i>
+                    <span class="screenreader-only">C# calculator code</span>
+                </a>
+            </div>
+        </div>
+        <!-- Transfer Photos from Card -->
+        <div class="project project-with-no-demo">
+            <div class="project-link-a">
+                <picture>
+                    <source media="(min-width:0px)"
+                        srcset="https://res.cloudinary.com/duncanritchie/image/upload/c_scale,w_180/v1590938855/project-screenshots/transfer-photos-from-card.webp">
+                    <img src="https://res.cloudinary.com/duncanritchie/image/upload/c_scale,w_180/v1590938855/project-screenshots/transfer-photos-from-card.png"
+                        class="project-screenshot" alt="Screenshot of my app to transfer photos from a memory-card" />
+                </picture>
+                <div>
+                    <h3>App to transfer photos from a memory-card</h3>
+                    <span class="project-reason-no-demo">
+                        (no live demo because it’s a console-app, but you can download the <a
+                            href="https://github.com/DuncanRitchie/TransferPhotosFromCard/blob/main/TransferPhotosFromCard/bin/Release/TransferPhotosFromCard.exe"
+                            title="Download the .exe file to run my app to transfer photos from a memory-card">.exe
+                            file</a> from GitHub)<br />
+                    </span>
+                    <span class="project-finish-date">(finished 2020 May 23)</span>
+                </div>
+            </div>
+            <div class="github-div">
+                <a href="https://github.com/DuncanRitchie/TransferPhotosFromCard"
+                    title="Code for my app to transfer photos from a memory-card on GitHub">
+                    <i class="fab fa-github-square"></i>
+                    <span class="screenreader-only">“Transfer Photos from Card” code</span>
+                </a>
+            </div>
+        </div>
+        <!-- End of last C# project -->
+    </section>
+
+    <a class="anchor" id="velut"></a>
+    <!-- velut main image -->
+    <picture class="main-image-picture"
+        title="Fulmar landing on a cliff, because I use a photo of a fulmar for my logo">
+        <source media="(min-width:601px)"
+            srcset="https://res.cloudinary.com/duncanritchie/image/upload/c_fill,g_center,h_1000,w_1000,x_358/q_auto:eco/q_auto:eco/v1590423024/site/FulmarLanding.webp">
+        <source media="(min-width:481px)"
+            srcset="https://res.cloudinary.com/duncanritchie/image/upload/c_fill,g_center,h_600,w_600,x_358/q_auto:eco/v1590423024/site/FulmarLanding.webp">
+        <source media="(min-width:0px)"
+            srcset="https://res.cloudinary.com/duncanritchie/image/upload/c_fill,g_center,h_480,w_480,x_358/q_auto:eco/v1590423024/site/FulmarLanding.webp">
+        <img id="velut-main-image" class="main-image"
+            alt="Fulmar landing on a cliff, because I use a photo of a fulmar for my logo"
+            src="https://res.cloudinary.com/duncanritchie/image/upload/c_fill,g_center,h_1000,w_1000,x_358/q_auto:eco/v1590423024/site/FulmarLanding.jpg" />
+    </picture>
+    <!-- velut section -->
+    <section id="velut-section">
+        <h2>
+            velut — a Latin rhyming dictionary.
+        </h2>
         <p>
-          The GitHub logo links to the source code.
+            If you know Latin and you’re interested in writing rhyming poetry or lyrics in that language
+            (and who isn’t???), you might just be interested in a website I made in the summer of 2019.
         </p>
-      </div>
-      <!-- Calculator (Winforms) -->
-      <div class="showcase-link-div showcase-link-to-bad-page">
-        <div class="github-link">
-          <a href="https://github.com/DuncanRitchie2/CalculatorWinforms" title="C# calculator code on GitHub">
-            <i class="fab fa-github-square" aria-label="GitHub"></i>
-          </a>
-        </div>
-        <div class="showcase-link-a">
-          <img src="./screenshots/calculator-winforms.png" class="project-screenshot"
-            alt="Screenshot of my C# calculator" />
-          <div>
-            <h2>Calculator</h2>
-            <span class="index-made-with">
-              made with Windows Forms<br />
-            </span>
-            <span class="index-reason-no-demo">
-              (no live demo, but you can download the <a
-                href="https://github.com/DuncanRitchie2/CalculatorWinforms/blob/main/CalculatorWinforms/bin/Release/CalculatorWinforms.exe"
-                title="Download the .exe file to run my calculator">.exe file</a> from GitHub)<br />
-            </span>
-            <span class="index-finish-date">(finished 2019 Nov 27)</span>
-          </div>
-        </div>
-      </div>
-      <!-- Transfer Photos from Card -->
-      <div class="showcase-link-div showcase-link-to-bad-page">
-        <div class="github-link">
-          <a href="https://github.com/DuncanRitchie/TransferPhotosFromCard" title="Code for my app to transfer photos from a memory-card on GitHub">
-            <i class="fab fa-github-square" aria-label="GitHub"></i>
-          </a>
-        </div>
-        <div class="showcase-link-a">
-          <img src="./screenshots/transfer-photos-from-card.png" class="project-screenshot"
-            alt="Screenshot of my app to transfer photos from a memory-card" />
-          <div>
-            <h2>App to transfer photos from a memory-card</h2>
-            <span class="index-reason-no-demo">
-              (no live demo because it’s a console-app, but you can download the <a
-                href="https://github.com/DuncanRitchie/TransferPhotosFromCard/blob/main/TransferPhotosFromCard/bin/Release/TransferPhotosFromCard.exe"
-                title="Download the .exe file to run my app to transfer photos from a memory-card">.exe file</a> from GitHub)<br />
-            </span>
-            <span class="index-finish-date">(finished 2020 May 23)</span>
-          </div>
-        </div>
-      </div>
-      <!-- End of last C# project -->
+        <p>
+            Go to <a href="https://www.velut.co.uk" title="Duncan Ritchie’s velut">velut.co.uk</a>,
+            type in a Latin word, click “Search!”, and you’ll be returned rhymes (or other word lists),
+            information about the lemma(ta) that the word is a form of, and links to other online dictionaries.
+            You can also search for words made with only the letters you provide, like in a game of Scrabble
+            or the TV show “Countdown” (but in Latin).
+        </p>
+        <p>
+            This is my first project using the MERN stack, or integrating with any sort of database. Details can be
+            found on <a href="https://www.velut.co.uk/about" title="About velut">velut’s about page</a>.
+        </p>
+        <p class="img-container">
+            <a href="https://www.velut.co.uk" title="velut &mdash; a Latin dictionary">
+                <picture>
+                    <source media="(min-width:481px)"
+                        srcset="https://res.cloudinary.com/duncanritchie/image/upload/c_scale,w_270/v1590939033/project-screenshots/velut.webp">
+                    <source media="(min-width:0px)"
+                        srcset="https://res.cloudinary.com/duncanritchie/image/upload/c_scale,w_180/v1590939033/project-screenshots/velut.webp">
+                    <img src="https://res.cloudinary.com/duncanritchie/image/upload/c_scale,w_270/v1590939033/project-screenshots/velut.png"
+                        alt="Screenshot of my Latin website" />
+                </picture>
+            </a>
+        </p>
     </section>
-
-    <section class="jumbotron-container">
-      <a class="anchor" id="velut"></a>
-      <div class="jumbotron-bkgd-photo" id="bkgd-velut">
-        <div class="jumbotron-main jumbotron-main-with-image">
-          <a href="https://www.velut.co.uk" title="velut &mdash; a Latin dictionary">
-            <img src="./screenshots/velut.png" alt="Screenshot of my Latin website" id="screenshot-velut"
-              class="no-crop" />
-          </a>
-          <div class="jumbotron-main-by-image">
-            <h1><span class="highlight">velut</span> &mdash; a Latin rhyming dictionary.</h1>
-            <p>
-              If you know Latin and you&rsquo;re interested in writing rhyming poetry or lyrics in that language
-              (and who isn&rsquo;t???), you might just be interested in a website I made in the summer of 2019.
-            </p>
-            <p>
-              Go to <a href="https://www.velut.co.uk" title="velut &mdash; a Latin dictionary">velut.co.uk</a>,
-              type in a Latin word, click &ldquo;Search!&rdquo;, and you&rsquo;ll be returned rhymes (or other word
-              lists),
-              information about the lemma(ta) that the word is a form of, and links to other online dictionaries.
-              You can also search for words made with only the letters you provide, like in a game of Scrabble
-              or the TV show &ldquo;Countdown&rdquo; (but in Latin).
-            </p>
-            <p>
-              This is my first project using the MERN stack, or integrating with any sort of database. Details can be
-              found on <a href="https://www.velut.co.uk/about" title="About velut">velut&rsquo;s about page</a>.
-            </p>
-          </div>
-        </div>
-        <div class="cuj" id="cuj-velut">
-          <p>
-            Background photo: Two fulmars on a cliff-face, because I use a photo of a fulmar for my logo.
-          </p>
-          <p class="cuj-toggle">
-            Hide text
-          </p>
-        </div>
-        <div class="cuj-phone" id="cuj-velut-phone">
-          <p>
-            Background photo: Two fulmars on a cliff-face, because I use a photo of a fulmar for my logo.
-          </p>
-          <p class="cuj-toggle">
-            Hide text
-          </p>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- JavaScript for toggling visibility of jumbotrons -->
-  <script src="./main.js"></script>
-  <!-- Modernizr adds a class name of "webp" to <html> if the browser supports WebP, otherwise "no-webp" -->
-  <script src="modernizr-webp.js"></script>
-  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-    integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous"></script>
-  <!-- Include all compiled plugins (below), or include individual files as needed -->
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"
-    integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous">
-  </script>
+    <!-- </main> -->
+    <script src="./js/main.js"></script>
+    <script src="./js/navbar.js"></script>
+    <script src="./js/showcase.js"></script>
+    <script src="https://kit.fontawesome.com/dbef39a218.js" crossorigin="anonymous" async></script>
 </body>
 
 </html>

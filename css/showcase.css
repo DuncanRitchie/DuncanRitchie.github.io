@@ -1,4 +1,8 @@
-/* Code Nation project showcase */
+/* Code Nation (etc) project showcase */
+
+.no-intersection-observer .showcase-group {
+    width: 100%;
+}
 
 .showcase-group {
     display: flex;
@@ -6,127 +10,205 @@
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
-    width: 100%;
-    scroll-snap-type: y mandatory;
-    overflow: auto;
     scroll-padding-top: 12px;
+    height: initial;
+    width: 100%;
+    padding-bottom: 24px;
+    padding-bottom: 1rem;
+    background-color: #002712 /* --showcase-background-opaque */;
+    background-color: #001409c0 /* --showcase-background */;
+    background-position: absolute;
 }
 
-.jumbotron-container + .showcase-group {
-    margin-top: 24px;
+.showcase-group :focus {
+    outline-color: #002712 /* --showcase-background-opaque */;
+    outline-color: #001409c0 /* --showcase-background */;
 }
 
-.showcase-group + .jumbotron-container {
-    margin-top: 96px;
-}
-
-.showcase-head,.showcase-link-div {
-    scroll-snap-align: start;
-    scroll-snap-stop: normal;
+.showcase-group#csharp-projects {
+    padding-bottom: 120px;
+    padding-bottom: 5rem;
 }
 
 .showcase-head {
     width: 100%;
-    padding-left: calc(10vw - 12px);
-    padding-top: 48px;
+    padding-top: 60px;
+    padding-top: 2.5rem;
 }
 
-.showcase-head h1 {
-    color: #959595;
+.showcase-head h2 {
+    position: relative;
+    margin: 42px 0 0;
+    margin: 1.75rem 0 0;
+    color: inherit;
+}
+
+.no-intersection-observer .showcase-head h2 {
+    padding-right: 36px;
+    padding-right: 1.5rem;
+    margin-bottom: 24px;
+    margin-bottom: 1rem;
 }
 
 .showcase-head p {
-    font-size: 20px;
-    color: #707070;
+    color: inherit;
+    text-align: left;
+    margin: 0;
+    padding: 0 18px 18px 40%;
+    padding: 0 0.75rem 0.75rem 40%;
 }
 
-.showcase-link-div {
+@media screen {
+
+    .showcase-head {
+        width: 100%;
+        padding-top: 60px;
+        padding-top: 2.5rem;
+        color: #d6e9ff /* --colour2 */;
+    }
+
+    .showcase-head h2 {
+        background: -webkit-linear-gradient(top, #d6e9ff /* --colour2 */, #b8c5af /* --colour3 */);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+}
+
+.project {
     display: flex;
     margin: 18px 0 9px 0;
+    margin: 0.75rem 0 0.375rem 0;
     width: 425px;
+    width: 17.7083rem;
     height: 255px;
+    height: 10.625rem;
     background-color: azure;
     text-align: center;
-    font-size: 17px;
+    font-size: 20px;
+    font-size: 0.8333rem;
     align-items: center;
-    border: 5px solid teal;
-    position: relative
+    border: 5px solid teal /* --linked-project-text */;
+    border-width: 0.2083rem;
+    position: relative;
 }
 
-.showcase-link-div:not(.showcase-link-to-bad-page):hover {
+.project:not(.project-with-no-demo):hover {
     background-color: white;
 }
 
-.github-link {
+/* This contains the GitHub logo from Font Awesome. */
+.github-div {
     position: absolute;
     right: 6px;
-    bottom: -4px;
-    font-size: 36px
+    right: 0.25rem;
+    bottom: -6px;
+    bottom: -0.25rem;
+    font-size: 42px;
+    font-size: 1.75rem;
 }
 
-.showcase-link-a {
+.project-link-a {
     width: 100%;
     height: 100%;
     padding: auto 50px;
+    padding: auto 2.0833rem;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
     text-decoration: none;
-    color: teal;
-    font-weight: bold
+    color: teal /* --linked-project-text */;
+    font-weight: bold;
 }
 
-.showcase-link-a:hover {
+.project-link-a:hover {
     color: darkseagreen;
 }
 
-.showcase-link-to-bad-page .showcase-link-a {
-    color: #505050
+.project-with-no-demo .project-link-a {
+    color: #505050 /* --unlinked-project-text */;
 }
 
-.showcase-link-to-bad-page .showcase-link-a:hover {
-    color: #505050
+.project-with-no-demo .project-link-a:hover {
+    color: #505050 /* --unlinked-project-text */;
 }
 
 .project-screenshot {
     height: 240px;
+    height: 10rem;
     width: 136.81px;
+    width: 5.7004rem;
 }
 
-.showcase-link-a div {
+.project-link-a div {
     width: 250px;
+    width: 10.4167rem;
     padding: 0 20px;
+    padding: 0 0.8333rem;
 }
 
-.showcase-link-div div h2 {
-    font-size: 18px;
+.project div h3 {
+    font-size: 24px;
+    font-size: 1rem;
     margin: 3px 0 4px;
+    margin: 0.125rem 0 0.1667rem;
 }
 
-.index-made-with {
+.project-made-with {
     opacity: 0.85;
     font-weight: normal;
-    font-size: 16px;
+    font-size: 20px;
+    font-size: 0.8333rem;
+    color: #222222;
 }
 
-.index-finish-date,
-.index-reason-no-demo {
-    color: grey;
+.project-finish-date,
+.project-reason-no-demo {
+    color: #606060;
     font-weight: normal;
-    font-size: 16px;
+    font-size: 20px;
+    font-size: 0.8333rem;
 }
 
-.showcase-link-to-bad-page {
+.project-with-no-demo {
     background-color: #dddddd;
-    border: 5px solid #505050;
+    border: 5px solid #505050 /* --unlinked-project-text */;
+    border-width: 0.2083rem;
 }
 
-.showcase-link-div a {
-    color: #0066cc;
+.project a {
+    color: #006168;
 }
 
-.showcase-link-div a:hover {
+.project a:hover {
     color: dodgerblue;
+}
+
+/* CSS for browsers that support intersection observers. */
+
+@media screen and (min-width: 625px) {
+
+    .has-intersection-observer .main-image.rectangular {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+        width: calc(40% - 36px);
+        width: calc(40% - 1.5rem);
+    }
+
+    .has-intersection-observer #code-section {
+        padding-bottom: 84px;
+        padding-bottom: 3.5rem;
+    }
+
+    .has-intersection-observer .main-image#velut-main-image {
+        z-index: 0;
+        position: sticky;
+        float: left;
+    }
+
+    .has-intersection-observer section#velut-section h2 {
+        margin-top: 12px;
+        margin-top: 0.5rem;
+    }
 }
 
 
@@ -139,19 +221,19 @@
         justify-content: space-around;
     }
 
-    .jumbotron-container + .showcase-group {
-        margin-top: 0px;
-    }
-    
-    .showcase-group + .jumbotron-container {
-        margin-top: 48px;
-    }
-
-    .showcase-link-div {
+    .project {
         width: 90vw;
     }
 }
 
+/* Media query for when the navbar becomes two rows. */
+
+@media (max-width: 624px) {
+    .showcase-head {
+        padding-top: 96px;
+        padding-top: 4rem;
+    }
+}
 
 
 /* Media query for tiny screens, e.g. Galaxy S5 */
@@ -162,26 +244,26 @@
         height: auto
     }
 
-    .showcase-link-div {
+    .project {
         height: 270px;
+        height: 11.25rem;
     }
 
-    .showcase-link-a {
+    .project-link-a {
         padding: 0;
         display: flex;
         align-items: center;
     }
 
     .project-screenshot {
-        transform: translateY(0px)
+        transform: translateY(0);
     }
 
-    .showcase-link-a div {
+    .project-link-a div {
         margin: 0;
         height: auto;
     }
 }
-
 
 
 /* Media query for printing. */
@@ -193,9 +275,33 @@
         margin: initial;
         padding: initial;
     }
+    
+    section.showcase-group {
+        background: none;
+    }
 
-    .showcase-link-div {
+    .showcase-group a:not(#nav-icon-a)::after {
+        position: absolute;
+        clip-path: none;
+        width: 19rem;
+        transform: translateX(-15rem) translateY(5.25rem);
+    }
+
+    .showcase-group a.project-link-a:not(#nav-icon-a)::after {
+        /* display: none; */
+        transform: translateX(0rem) translateY(6.5rem);
+    }
+
+    .github-div a:not(#nav-icon-a)::after {
+        font-size: 0.6rem;
+        width: 18rem;
+        transform: translateX(-17rem) translateY(3.5rem);
+    }
+
+    .project {
         border-width: 2px;
+        margin: 18px 0 120px 0;
+        margin: 0.75rem 0 5rem 0;
     }
 }
 
