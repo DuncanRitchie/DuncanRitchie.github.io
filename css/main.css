@@ -370,7 +370,6 @@ section .img-container img {
         right: 30px;
         right: 1.25rem;
         line-height: 90%;
-        /* height: 100%; */
         position: absolute;
         /* Browsers that don’t understand background-clip will show white text on a gradient-filled rectangle. */
         color: white;
@@ -382,6 +381,24 @@ section .img-container img {
         -webkit-background-clip: text;
         background-clip: text;
         -webkit-text-fill-color: transparent;
+        -webkit-text-stroke: 0.02rem rgba(214, 233, 255, 0.8) /* --colour2 */;
+        z-index: 1;
+    }
+
+    /* Gradient behind headings so their overlap over main images doesn’t cause a contrast problem. */
+    .has-intersection-observer section:not(.showcase-group) h2::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: calc(100% - 1em);
+        /* background-color: rgba(214, 233, 255, 0.5); */
+        background-image: linear-gradient(180deg, rgba(255, 255, 255, 0), rgba(214, 233, 255, 0.6), rgba(214, 233, 255, 0.7) 80%, rgba(214, 233, 255, 0));
+        z-index: 0;
+        transform: translateX(-0.65em);
+        padding: 0 0.4em;
+        overflow: hidden;
+        mix-blend-mode: darken;
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0.75vw 100%);
     }
 
     /* Hack to stop background-clip cutting off the descenders of the last line of the h2. */
