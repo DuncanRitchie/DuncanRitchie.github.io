@@ -133,11 +133,17 @@
     color: #505050 /* --unlinked-project-text */;
 }
 
+.project-link-a picture {
+    line-height: 0;
+}
+
 .project-screenshot {
     height: 240px;
     height: 10rem;
     width: 136.81px;
     width: 5.7004rem;
+    margin-left: 4px;
+    margin-left: 0.1667rem;
 }
 
 .project-link-a div {
