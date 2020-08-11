@@ -369,7 +369,7 @@ section .img-container img {
         padding-top: 0.5rem;
         right: 30px;
         right: 1.25rem;
-        line-height: 90%;
+        line-height: 110%;
         position: absolute;
         /* Browsers that don’t understand background-clip will show white text on a gradient-filled rectangle. */
         color: white;
@@ -377,7 +377,7 @@ section .img-container img {
         background: linear-gradient(180deg, #111007, #58522c, #58522c);
         /* The height of the gradient fill is not dependent on the height of the h2. */
         background-size: 100% 9.45rem;
-        background-position: center;
+        background-position: top;
         -webkit-background-clip: text;
         background-clip: text;
         -webkit-text-fill-color: transparent;
@@ -412,19 +412,15 @@ section .img-container img {
         opacity: 0;
     }
 
-    .has-intersection-observer section:not(.showcase-group):not(#velut) h2 + p {
+    .has-intersection-observer section:not(.showcase-group) h2 + p {
         padding-top: 228px;
         padding-top: 9.5rem;
     }
 
     .has-intersection-observer #velut-section h2 {
-        margin-top: 72px;
-        margin-top: 3rem;
-        margin-bottom: 24px;
-        margin-bottom: 1rem;
         /* The border adds spacing but does not affect the gradient-filled background like padding would. */
-        border-top: 72px solid transparent;
-        border-top: 3rem solid transparent;
+        border-top: 60px solid transparent;
+        border-top: 2.5rem solid transparent;
     }
 
     .has-intersection-observer section:not(.showcase-group) p {
@@ -460,6 +456,26 @@ section .img-container img {
         width: 53%;
         shape-outside: polygon(0 0, 100% 0, 100% 0, 90% 0, 90% 0, 100% 100%, 100% 100%, 0 100%);
         transition: shape-outside 1s;
+    }
+}
+
+/* When headings wrap onto two lines, the paragraphs following them need to be moved down
+explicitly because the headings are positioned absolutely and are therefore out of flow. 
+The max-width values here are defined by where wrapping occurs (in Firefox), determined 
+by the text & font. The min-width is the threshold between “mobile” and “desktop” view. */
+@media screen and (min-width: 625px) and (max-width: 722px) {
+    .has-intersection-observer #home-section h2 + p {
+        padding-top: 11.5rem;
+    }
+}
+@media screen and (min-width: 625px) and (max-width: 1200px) {
+    .has-intersection-observer #velut-section h2 + p {
+        padding-top: 11.5rem;
+    }
+}
+@media screen and (min-width: 625px) and (max-width: 928px) {
+    .has-intersection-observer #tiq-section h2 + p {
+        padding-top: 11.5rem;
     }
 }
 
