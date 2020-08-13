@@ -290,7 +290,6 @@ section p:not(.img-container) a[href^="http"]:not([href*="duncanritchie.co.uk"])
     padding-left: 0.15rem;
     /* Remove the underline. We can’t do `text-decoration: none;` because the underline
     for the entire <a> element would still extend under the ::after pseudo-element. */
-    /* display: inline-block; */
     clip-path: polygon(0 0, 100% 0, 100% 76%, 0 76%);
     /* Aside: `display: inline-block;` would also remove the underline, but would allow 
     a line-break to appear before the pseudo-element. */
