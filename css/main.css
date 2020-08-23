@@ -394,8 +394,7 @@ section .img-container img {
         width: 100%;
         max-width: 100vw;
         right: 0;
-        height: calc(100% - 1em);
-        /* background-color: rgba(214, 233, 255, 0.5); */
+        height: calc(100% - 1em) /* The -1em is because of ::after adding an excess line that must be removed. */;
         background-image: linear-gradient(180deg, rgba(255, 255, 255, 0), rgba(214, 233, 255, 0.6), rgba(214, 233, 255, 0.7) 80%, rgba(214, 233, 255, 0));
         z-index: 0;
         transform: translateX(0.35em);
@@ -406,12 +405,13 @@ section .img-container img {
     }
 
     /* Hack to stop background-clip cutting off the descenders of the last line of the h2. */
+    /* This would happen when descenders extended beyond the line-height. */
     /* \00000a is a newline, therefore the last line of the h2 is no longer the last line. */
+    /* The space after the newline is non-breaking; the newline would be ignored without it. */
     .has-intersection-observer h2::after {
-        content: "\00000a .";
+        content: "\00000a ";
         white-space: pre;
         white-space: pre-wrap;
-        opacity: 0;
     }
 
     .has-intersection-observer section:not(.showcase-group) h2 + p {
