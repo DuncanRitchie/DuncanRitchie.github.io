@@ -375,8 +375,8 @@ section .img-container img {
         position: absolute;
         /* Browsers that don’t understand background-clip will show white text on a gradient-filled rectangle. */
         color: white;
-        background: -webkit-linear-gradient(top, #111007,#58522c, #58522c);
-        background: linear-gradient(180deg, #111007, #58522c, #58522c);
+        background: -webkit-linear-gradient(top, #111007,#58522c 33%);
+        background: linear-gradient(180deg, #111007, #58522c 33%);
         /* The height of the gradient fill is not dependent on the height of the h2. */
         background-size: 100% 9.45rem;
         background-position: top;
