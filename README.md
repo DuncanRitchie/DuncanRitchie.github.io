@@ -93,19 +93,18 @@ Some examples of how I’ve kept the site looking decent across browsers:
 There are minor improvements remaining to be done. But overall, I’m delighted with what I’ve made. It looks good (to me, at least); and I’ve learnt more about HTML, CSS, and JavaScript: eg, the `<picture>` tag, `rem` units, the `shape-outside` property, and intersection observers.
 
 ## Lighthouse scores
-The Lighthouse profiling tool now gives my site 100% scores on Accessibility, SEO, and Best Practices on desktop on all three pages.
-On mobile, Accessibility and SEO get 100% on all three pages; Best Practices gets 92% because the tool thinks that the fulmar icon in the navbar is too small for its display size (the relevant image file is 32×32px, and it displays at 29×29px, Lighthouse wants 88×88px). Performance fluctuates between 97% and 100%.
+The Lighthouse profiling tool now gives my site 100% scores on Accessibility, SEO, and Best Practices on desktop and mobile on all three pages. Performance fluctuates between 95% and 100%.
 
 My most recent scores are in the table. My old site was ranked slightly worse.
 
 | Page | Device | Performance | Accessibility | Best Practices | SEO |
 | :--: | :----: | ----------: | ------------: | -------------: | --: |
-| Home | Mobile | 100 | 100 | 92 | 100 |
-| My code | Mobile | 98 | 100 | 92 | 100 |
-| More about me | Mobile | 97 | 100 | 92 | 100 |
-| Home | Desktop | 99 | 100 | 100 | 100 |
+| Home | Mobile | 98 | 100 | 100 | 100 |
+| My code | Mobile | 100 | 100 | 100 | 100 |
+| More about me | Mobile | 97 | 100 | 100 | 100 |
+| Home | Desktop | 95 | 100 | 100 | 100 |
 | My code | Desktop | 100 | 100 | 100 | 100 |
-| More about me | Desktop | 99 | 100 | 100 | 100 |
+| More about me | Desktop | 98 | 100 | 100 | 100 |
 
 ## Deployments
 To see the old design, which I’ve kept on the [before-2020-redesign](https://github.com/DuncanRitchie/DuncanRitchie.github.io/tree/before-2020-redesign) branch, go to [old.duncanritchie.co.uk](https://old.duncanritchie.co.uk/).
