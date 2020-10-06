@@ -88,15 +88,30 @@ if (!!textWrapGuide) {
         }
     }
 
-    function updateScrollWithTimeout() {
-        window.setTimeout(updateScroll, 100);
+    //// Prevents `callback` from being called more than once in `window` milliseconds.
+    //// Assumes `callback` has no arguments.
+    function throttle(callback, window) {
+        let waiting = false;
+        return function () {
+            if (!waiting) {
+                callback();
+                waiting = true;
+                setTimeout(function () {
+                    waiting = false;
+                }, window);
+            }
+        }
+    }
+
+    function updateScrollWithThrottle() {
+        throttle(updateScroll, 50)();
     }
     
     //// Listen for `scroll` event to update anything that can change after scrolling.
-    window.addEventListener("scroll", updateScrollWithTimeout);
+    window.addEventListener("scroll", updateScrollWithThrottle);
     //// Update scroll position on page load.
     window.addEventListener("load", updateScroll);
     //// Also do scroll-related things on window resize.
-    window.onresize = updateScrollWithTimeout;
+    window.onresize = updateScrollWithThrottle;
 }
 
