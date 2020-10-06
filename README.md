@@ -36,7 +36,7 @@ I wasn’t entirely satisfied with my site. I had four quibbles remaining.
 
 My design had the afore-mentioned jumbotrons splayed out in front of full-width background photos, with a button to hide or show the jumbotrons to reveal the photos better. This was reasonably good, but I disliked not being able to see both the photo and the text at the same time.
 
-A bigger problem for the aesthetics was that Internet Explorer does not handle Flexbox very well, which messed up the site’s layout.
+A bigger problem for the aesthetics was that Internet Explorer does not handle Flexbox very well, which messed up the site’s layout. (See the screenshot below. Urgh. And yes, I know polyfills exist, but that’s boring.)
 
 ![Screenshot of my old site on Internet Explorer](https://github.com/DuncanRitchie/portfolio-screenshots/blob/main/minified/old-desktop-photobackground-withtext-internetexplorer-home__small.png)
 
@@ -59,7 +59,7 @@ On [aboutme.html](https://www.duncanritchie.co.uk/aboutme.html), there are sever
 
 The photos, however, do not affect the layout of the text — their fixed position puts them outside of the document flow. To make the text fit against the diagonal edge, even when the page is scrolled, I needed an empty `<div>` in the HTML (`id="text-wrap-guide"`), with appropriate `width`, `height`, and `shape-outside` properties. [JavaScript](https://github.com/DuncanRitchie/DuncanRitchie.github.io/blob/master/js/scroll.js) is used to make the values change when the viewport is scrolled or resized. A CSS transition on `shape-outside` makes the text move more smoothly.
 
-On [code.html](https://www.duncanritchie.co.uk/code.html), my showcase of projects meant that I couldn’t have the diagonal layout: I want the showcase to take up the width of the screen, instead of being squashed into the right side. I’ve therefore made a more rectangular layout with narrower photos; the images are less relevant to the page anyway.
+On [code.html](https://www.duncanritchie.co.uk/code.html), my showcase of projects meant that I couldn’t have the diagonal layout: I want the showcase to take up the width of the screen, instead of being squashed into the right side. I’ve therefore made a more rectangular layout with narrower photos; the photos are less relevant to the page anyway.
 
 ![Screenshot of my showcase of projects, on desktop Firefox](https://github.com/DuncanRitchie/portfolio-screenshots/blob/main/minified/new-desktop-projectshowcase-firefox-javascript__small.png)
 
@@ -80,12 +80,14 @@ I’ve improved the site’s responsiveness to screen-size by:
 * creating a `grid` layout for the navbar on mobile.
 
 ### Browser differences
-It is also crucial to consider browser differences. I’ve mentioned that Edge does not support polygonal `clip-path` or `shape-outside` values. I mainly use Firefox in developing this site, but from the start of the redesign process I have also looked at the site in JavaScript-less Internet Explorer, as well as modern versions of Chrome, Opera, and Edge.
+It is also crucial to consider browser differences. I mainly use Firefox in developing this site, but from the start of the redesign process I have also looked at the site in JavaScript-less Internet Explorer, as well as modern versions of Chrome, Edge, and Opera.
 
 Some examples of how I’ve kept the site looking decent across browsers:
 * Browsers that don’t support intersection observers can’t do the scrolling effects on the photos and text-wrapping, so on such browsers I’ve made the photos float statically beside the text.
 * Browsers that don’t support the WebP image format get Jpeg and PNG fallbacks.
 * One of my favourite things about my original site, and it’s true for the redesign too, is that everything appears even if you don’t have JavaScript. In fact, the redesign works better without JavaScript than the original did, because there are no longer any buttons (such as for toggling nav menus) that need the scripting. This is in contrast with all the web projects I’ve showcased on code.html — especially the React work, which doesn’t even display without JavaScript!
+
+Here is a screenshot without JavaScript:
 
 ![Screenshot of the redesigned site in Internet Explorer, without JavaScript](https://github.com/DuncanRitchie/portfolio-screenshots/blob/main/minified/new-desktop-withoutcaption-internetexplorer-home__small.png)
 
