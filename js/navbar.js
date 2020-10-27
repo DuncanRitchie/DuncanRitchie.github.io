@@ -95,3 +95,11 @@ for (let i = 0; i < navSubmenuItems.length; i++) {
         }
     });
 }
+
+//// Set aria-expanded on each menu when its state changes.
+for (let i = 0; i < navTickboxes.length; i++) {
+    navTickboxes[i].addEventListener("change", ()=>{
+        const newAriaExpanded = navLabels[i].getAttribute("aria-expanded") !== "true";
+        navLabels[i].setAttribute("aria-expanded", newAriaExpanded);
+    })
+}
