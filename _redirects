@@ -7,7 +7,7 @@
 /countdown-timer/*         https://duncan-countdown.netlify.app/:splat          200
 /geolocation-demo          https://duncan-geolocation.netlify.app/index.html    200
 /geolocation-demo/*        https://duncan-geolocation.netlify.app/:splat        200
-/js-challenges             https://duncan-js-challenges.netlify.appindex.html   200
+/js-challenges             https://duncan-js-challenges.netlify.app/index.html   200
 /js-challenges/*           https://duncan-js-challenges.netlify.app/:splat      200
 /jsChallenges              https://duncan-js-challenges.netlify.appindex.html   200
 /jsChallenges/*            https://duncan-js-challenges.netlify.app/:splat      200
