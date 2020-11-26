@@ -11,8 +11,8 @@
 /js-challenges/*           https://duncan-js-challenges.netlify.app/:splat      200
 /jsChallenges              https://duncan-js-challenges.netlify.app             200
 /jsChallenges/*            https://duncan-js-challenges.netlify.app/:splat      200
-/Portfolio                 /                                                    200
-/Portfolio/*               /:splat                                              200
+/Portfolio                 /                                                    200!
+/Portfolio/*               /:splat                                              200!
 /quiz                      https://duncan-quiz.netlify.app/                     200
 /quiz/*                    https://duncan-quiz.netlify.app/:splat               200
 /react-demo                https://duncan-react-demo.netlify.app/               200
