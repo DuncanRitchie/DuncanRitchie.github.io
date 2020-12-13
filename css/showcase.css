@@ -68,7 +68,7 @@
     }
 
     .showcase-head h2 {
-        background: -webkit-linear-gradient(top, #d6e9ff /* --colour2 */, #b8c5af /* --colour3 */);
+        background: -webkit-linear-gradient(top, #dfeeff /* --colour2 */, #c2ceb9 /* --colour3 */);
         -webkit-background-clip: text;
         background-clip: text;
         -webkit-text-fill-color: transparent;
