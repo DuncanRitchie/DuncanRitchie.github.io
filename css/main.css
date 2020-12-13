@@ -102,6 +102,18 @@ nav {
     text-decoration: none;
 }
 
+/* Blur the background of nav */
+nav::before {
+    position: absolute;
+    z-index: -1;
+    content: '';
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    backdrop-filter: blur(4px) brightness(105%);
+}
+
 nav a {
     color: inherit;
     text-decoration: inherit;
