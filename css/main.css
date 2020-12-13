@@ -49,6 +49,10 @@ body :focus {
     outline: dashed 2px #76027a /* --visited-text */;
 }
 
+section:not(.showcase-group) {
+    line-height: 1.5;
+}
+
 section:not(.showcase-group) a {
     text-decoration: underline;
 }
