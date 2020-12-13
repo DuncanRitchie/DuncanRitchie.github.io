@@ -7,8 +7,8 @@ html,body {
     hyphens: manual;
     font-family: "Alegreya", serif;
     font-size: 24px;
-    /* font-size: calc(19px + (28px - 19px) * ((100vw - 360px) / (2400px - 360px))); */
-    font-size: calc(19px + 9 * ((100vw - 360px) / 2040));
+    /* font-size: calc(19px + (28px - 19px) * ((100vw - 360px) / (2800px - 360px))); */
+    font-size: calc(19px + 9 * ((100vw - 360px) / 2440));
 }
 
 html {
