@@ -111,4 +111,4 @@ My most recent scores are in the table. My old site was ranked slightly worse.
 ## Deployments
 To see the old design, which I’ve kept on the [before-2020-redesign](https://github.com/DuncanRitchie/DuncanRitchie.github.io/tree/before-2020-redesign) branch, go to [old.duncanritchie.co.uk](https://old.duncanritchie.co.uk/).
 
-Since 31st May 2020 the new design has been live on the [master](https://github.com/DuncanRitchie/DuncanRitchie.github.io/tree/master) branch at [www.duncanritchie.co.uk](https://www.duncanritchie.co.uk/).
+Since 31st May 2020 the new design has been live at [www.duncanritchie.co.uk](https://www.duncanritchie.co.uk/). It is on the [main](https://github.com/DuncanRitchie/DuncanRitchie.github.io/tree/main) branch.
