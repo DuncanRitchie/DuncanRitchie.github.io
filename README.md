@@ -57,7 +57,7 @@ In a similar way, my redesign of www.duncanritchie.co.uk started with me choosin
 ### Considerations about different pages
 On [aboutme.html](https://www.duncanritchie.co.uk/aboutme.html), there are several sections, with a photo for each. On wide enough screens, the photos (`class="main-image"`) are fixed in position to the viewport, so they all take up the left side of the screen; the Intersection Observer API is used in the [JavaScript](https://github.com/DuncanRitchie/DuncanRitchie.github.io/blob/main/js/scroll.js) to control which image is visible, by watching for section headings to come into or out of view. A CSS transition on the `clip-path` property makes the effect look less jarring.
 
-The photos, however, do not affect the layout of the text — their fixed position puts them outside of the document flow. To make the text fit against the diagonal edge, even when the page is scrolled, I needed an empty `<div>` in the HTML (`id="text-wrap-guide"`), with appropriate `width`, `height`, and `shape-outside` properties. [JavaScript](https://github.com/DuncanRitchie/DuncanRitchie.github.io/blob/master/js/scroll.js) is used to make the values change when the viewport is scrolled or resized. A CSS transition on `shape-outside` makes the text move more smoothly.
+The photos, however, do not affect the layout of the text — their fixed position puts them outside of the document flow. To make the text fit against the diagonal edge, even when the page is scrolled, I needed an empty `<div>` in the HTML (`id="text-wrap-guide"`), with appropriate `width`, `height`, and `shape-outside` properties. [JavaScript](https://github.com/DuncanRitchie/DuncanRitchie.github.io/blob/main/js/scroll.js) is used to make the values change when the viewport is scrolled or resized. A CSS transition on `shape-outside` makes the text move more smoothly.
 
 On [code.html](https://www.duncanritchie.co.uk/code.html), my showcase of projects meant that I couldn’t have the diagonal layout: I want the showcase to take up the width of the screen, instead of being squashed into the right side. I’ve therefore made a more rectangular layout with narrower photos; the photos are less relevant to the page anyway.
 
@@ -71,7 +71,7 @@ Accessibility is something I’ve improved in several ways.
 * All elements are ordered in the HTML (and therefore in the tab-order) in the order displayed on screen.
 * Screenreader-only text appears next to the GitHub icons on my project showcase.
 
-(Still to do — allow the navigation menus to be toggled without either JavaScript or a mouse.)
+(Still to do — allow the navigation menus to be toggled without either JavaScript or a mouse. I also want visitors to be able to toggle the on-scroll transitions, since people that prefer reduced motion might not like how the photos are revealed and hidden and how the text is re-flowed against the diagonal.)
 
 ### Screen-size
 I’ve improved the site’s responsiveness to screen-size by:
