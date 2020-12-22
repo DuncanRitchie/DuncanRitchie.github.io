@@ -10,7 +10,7 @@ It is hosted by GitHub Pages, to let me publish other repos to subfolders, eg ww
 
 Font icons (all three of them) are from Font Awesome. The non-icon font is Alegreya.
 
-The little downward arrowhead used on the navbar is an SVG I made in Inkscape and minified. Actually it’s two SVGs — a green version appears on mouse (h)over.
+The little downward arrowhead used on the navbar is an SVG I made in Inkscape and minified. Actually, for Internet Explorer it’s two SVGs — a green version appears on mouse (h)over — but modern browsers can change the colour with CSS.
 
 Images are hosted by Cloudinary, and I’m making use of its facility for serving pictures with different sizes and formats (WebP/Jpeg for photos, WebP/PNG for screenshots).
 
@@ -85,6 +85,7 @@ It is also crucial to consider browser differences. I mainly use Firefox in deve
 Some examples of how I’ve kept the site looking decent across browsers:
 * Browsers that don’t support intersection observers can’t do the scrolling effects on the photos and text-wrapping, so on such browsers I’ve made the photos float statically beside the text.
 * Browsers that don’t support the WebP image format get Jpeg and PNG fallbacks.
+* The downward arrow next to the nav menus changes colour on hover. For modern browsers, this is achieved through CSS masking; but for older browsers (ie, IE) I’m swapping a separate image in.
 * One of my favourite things about my original site, and it’s true for the redesign too, is that everything appears even if you don’t have JavaScript. In fact, the redesign works better without JavaScript than the original did, because there are no longer any buttons (such as for toggling nav menus) that need the scripting. This is in contrast with all the web projects I’ve showcased on code.html — especially the React work, which doesn’t even display without JavaScript!
 
 Here is a screenshot without JavaScript:
@@ -92,7 +93,7 @@ Here is a screenshot without JavaScript:
 ![Screenshot of the redesigned site in Internet Explorer, without JavaScript](https://github.com/DuncanRitchie/portfolio-screenshots/blob/main/minified/new-desktop-withoutcaption-internetexplorer-home__small.png)
 
 ### Current state
-There are minor improvements remaining to be done. But overall, I’m delighted with what I’ve made. It looks good (to me, at least); and I’ve learnt more about HTML, CSS, and JavaScript: eg, the `<picture>` tag, `rem` units, the `shape-outside` property, and intersection observers.
+There are minor improvements remaining to be done. But overall, I’m delighted with what I’ve made. It looks good (to me, at least); and I’ve learnt more about HTML, CSS, and JavaScript: eg, the `<picture>` tag, `rem` units, the `shape-outside` property, `@supports` queries, and intersection observers.
 
 ## Lighthouse scores
 The Lighthouse profiling tool now gives my site 100% scores on Accessibility, SEO, and Best Practices on desktop and mobile on all three pages. Performance fluctuates between 95% and 100%.
