@@ -28,7 +28,7 @@ html {
 
 body {
     min-height: 100vh;
-    background-color: #d6e9ff /* --colour2 */;
+    background-color: #718b3f /* --colour6 */;
     /* Browsers that don’t do gradients will use the jpeg background. */
     background-image: url(../images/gradient-background.jpg);
     background-size: 100% 100%;
