@@ -183,6 +183,18 @@ nav ul ul {
     clip-path: polygon(0 0, 90% 0, 100% 100%, 0 100%);
 }
 
+/* Blur the background of nav submenus */
+nav ul ul::before {
+    position: absolute;
+    z-index: -1;
+    content: '';
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    backdrop-filter: blur(3px) brightness(103%);
+}
+
 nav label {
     cursor: pointer;
     padding: 12px 18px;
