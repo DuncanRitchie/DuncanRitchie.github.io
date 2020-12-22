@@ -232,7 +232,7 @@ nav label:hover::after {
         -webkit-mask-size: contain;
         mask-size: contain;
         background: unset;
-        background-color: #111111 /* --body-text */;
+        background-color: #333333 /* --nav-text */;
     }
     
     nav label:hover::after {
