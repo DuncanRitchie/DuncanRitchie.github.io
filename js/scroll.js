@@ -88,6 +88,11 @@ if (!!textWrapGuide) {
         }
     }
 
+    function resizeDocument() {
+        moveTextWrapGuide(0, 0, 0, 0);
+        updateScroll();
+    };
+
     //// Prevents `callback` from being called more than once in `window` milliseconds.
     //// Assumes `callback` has no arguments.
     function throttle(callback, window) {
@@ -111,7 +116,7 @@ if (!!textWrapGuide) {
     window.addEventListener("scroll", updateScrollWithThrottle);
     //// Update scroll position on page load.
     window.addEventListener("load", updateScroll);
-    //// Also do scroll-related things on window resize.
-    window.onresize = updateScrollWithThrottle;
+    //// Also do some scroll-related things on window resize.
+    window.onresize = resizeDocument;
 }
 
