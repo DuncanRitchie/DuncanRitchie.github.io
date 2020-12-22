@@ -202,19 +202,19 @@ nav label {
 }
 
 nav label::after {
-    content: "⮟";
-    font-size: 0;
-    font-size: 0.6667rem;
-    color: transparent;
-    /* width: 16px; */
-    background-image: url(../images/arrow-down.svg);
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
+    width: 0.95em;
+    height: 0.5em;
+    display: inline-block;
+    content: '';
+    -webkit-mask: url(../images/arrow-down.svg) no-repeat 50% 50%;
+    mask: url(../images/arrow-down.svg) no-repeat 50% 50%;
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    background-color: #111111 /* --body-text */;
 }
 
 nav label:hover::after {
-    background-image: url(../images/arrow-down-hover.svg);
+    background-color: #718b3f /* --colour6 */;
 }
 
 nav :checked ~ label {
