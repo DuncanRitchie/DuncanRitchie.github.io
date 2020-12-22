@@ -201,20 +201,44 @@ nav label {
     padding: 0.5rem 0.75rem;
 }
 
+/* These rules are for Internet Explorer to display the down arrow for the nav menus correctly.
+For the hover state to be a different colour to the non-hover state, IE needs a different image.
+Modern browsers are capable of colouring the SVG with CSS if the SVG is applied as a mask, 
+so that’s what we do in the @supports query, which over-rides the IE rules. */
 nav label::after {
-    width: 0.95em;
-    height: 0.5em;
-    display: inline-block;
-    content: '';
-    -webkit-mask: url(../images/arrow-down.svg) no-repeat 50% 50%;
-    mask: url(../images/arrow-down.svg) no-repeat 50% 50%;
-    -webkit-mask-size: contain;
-    mask-size: contain;
-    background-color: #111111 /* --body-text */;
+    content: "⮟";
+    font-size: 16px;
+    font-size: 0.6667rem;
+    color: transparent;
+    background-image: url(../images/arrow-down.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
 }
 
 nav label:hover::after {
-    background-color: #718b3f /* --colour6 */;
+    background-image: url(../images/arrow-down-hover.svg); /* Only IE needs this. */
+}
+
+/* In modern browsers, this over-rides the previous code for displaying the nav menu arrow. */
+@supports (mask-size: contain) or (-webkit-mask-size: contain) {
+    nav label::after {
+        width: 0.95em;
+        height: 0.5em;
+        display: inline-block;
+        content: '';
+        -webkit-mask: url(../images/arrow-down.svg) no-repeat 50% 50%;
+        mask: url(../images/arrow-down.svg) no-repeat 50% 50%;
+        -webkit-mask-size: contain;
+        mask-size: contain;
+        background: unset;
+        background-color: #111111 /* --body-text */;
+    }
+    
+    nav label:hover::after {
+        background: unset;
+        background-color: #718b3f /* --colour6 */;
+    }
 }
 
 nav :checked ~ label {
