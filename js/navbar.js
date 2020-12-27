@@ -111,11 +111,3 @@ for (let i = 0; i < navTickboxes.length; i++) {
     setAriaExpanded();
     navTickboxes[i].addEventListener("change", setAriaExpanded)
 }
-
-const allElements = document.querySelectorAll("*")
-
-for (let i = 0; i < allElements.length; i++) {
-    allElements[i].addEventListener("focus", (e) => {
-        console.log(allElements[i]);
-    });
-}
