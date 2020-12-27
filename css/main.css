@@ -160,7 +160,19 @@ nav ul li label:hover,a:hover {
 }
 
 nav ul input {
-    display: none;
+    position: absolute;
+    top: -3.6px;
+    top: -0.15rem;
+    border: 60px solid transparent;
+    border: 2.5rem solid transparent;
+    width: 5rem;
+    height: 0;
+    z-index: -2;
+    opacity: 0;
+}
+
+nav ul input:focus + label {
+    outline: dashed 2px #76027a /* --visited-text */;
 }
 
 nav ul li a,label {
