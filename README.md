@@ -68,10 +68,12 @@ Accessibility is something I’ve improved in several ways.
 * I’ve increased the font sizes.
 * Text is no longer on top of pictures, except for the headings, which now have a background gradient (and the heading text has an outline on supporting browsers).
 * All images (except inline icons) are represented by `<img>` tags with `alt` text instead of `<div>` with `background-image`.
-* All elements are ordered in the HTML (and therefore in the tab-order) in the order displayed on screen.
+* On desktop, all elements are ordered in the HTML — and therefore in the tab-order — in the order displayed on screen.
+(On mobile, the GitHub/LinkedIn links in the navbar create the one exception to this.)
 * Screenreader-only text appears next to the GitHub icons on my project showcase.
+* The navigation menus can be toggled even if you have neither a mouse nor JavaScript.
 
-(Still to do — allow the navigation menus to be toggled without either JavaScript or a mouse. I also want visitors to be able to toggle the on-scroll transitions, since people that prefer reduced motion might not like how the photos are revealed and hidden and how the text is re-flowed against the diagonal.)
+(Still to do — I want visitors to be able to toggle the on-scroll transitions, since people that prefer reduced motion might not like how the photos are revealed and hidden and how the text is re-flowed against the diagonal.)
 
 ### Screen-size
 I’ve improved the site’s responsiveness to screen-size by:
