@@ -98,6 +98,7 @@ nav {
     font-size: 0.7917rem;
     background-color: #bfd4ef;
     background-color: #ffffff7f;
+    background-image: linear-gradient(180deg, #ffffff33, #ffffff66, #ffffff33);
     color: #333333 /* --nav-text */;
     text-decoration: none;
 }
