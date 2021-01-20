@@ -556,7 +556,7 @@ by the text & font. The min-width is the threshold between “mobile” and “d
 @media (max-width: 624px) {
     nav {
         display: grid;
-        grid-template-columns: max-content 1fr;
+        grid-template-columns: 1fr 2fr;
         grid-template-areas: 
             "icon socials"
             "icon main";
@@ -568,9 +568,9 @@ by the text & font. The min-width is the threshold between “mobile” and “d
     nav #nav-icon-a {
         grid-area: icon;
         display: flex;
-        justify-content: center;
-        padding: 6px;
-        padding: 0.25rem;
+        justify-content: start;
+        padding: 12px;
+        padding: 0.5rem;
         height: calc(100% - 12px);
         height: calc(100% - 0.5rem);
     }
@@ -667,6 +667,9 @@ by the text & font. The min-width is the threshold between “mobile” and “d
 
 @media (max-width: 355px) {
     nav #nav-icon-a {
+        justify-content: center;
+        padding: 6px;
+        padding: 0.25rem;
         flex-direction: column;
         align-items: center;
     }
