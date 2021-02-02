@@ -13,6 +13,7 @@ const mainImages = document.getElementsByClassName("main-image");
 if (!!window.IntersectionObserver) {
     //// Find which mainImage should be displayed, then change styling on mainImages accordingly.
     const sections =  document.getElementsByTagName("section");
+    const mainImageFigures = document.getElementsByClassName("main-image-figure");
     const scrollCallback = (entries, observer) => {
         if (isViewportBigEnoughForScrollBehaviour()) {
             //// Find which mainImage should be displayed by finding which section is intersecting with screen.
@@ -36,14 +37,17 @@ if (!!window.IntersectionObserver) {
                     if (i < indexOfSectionVisible) {
                         mainImages[i].classList.add("hidden");
                         mainImages[i].style.zIndex = 1;
+                        mainImageFigures[i].classList.add("with-caption");
                     }
                     else if (i == indexOfSectionVisible) {
                         mainImages[i].classList.remove("hidden");
                         mainImages[i].style.zIndex = 0;
+                        mainImageFigures[i].classList.remove("with-caption");
                     }
                     else {
                         mainImages[i].classList.add("hidden");
                         mainImages[i].style.zIndex = 0;
+                        mainImageFigures[i].classList.remove("with-caption");
                     }
                 }
             }

@@ -292,16 +292,21 @@ nav #socials-list {
     display: none;
 }
 
-.main-image-picture::after {
+/* IE gives a margin by default, which we don’t want. */
+figure {
+    margin: 0;
+}
+
+.main-image-figure figcaption {
     transition: clip-path 0.6s 0.6s, opacity 0.6s 0.6s;
     clip-path: polygon(0 0, 0 0, 0.25rem 100%, 0.25rem 100%);
-    content: attr(title);
-    z-index: 1;
+    /* z-index: 1; */
     position: absolute;
     max-width: calc(80% - 2rem);
     left: 1rem;
+    /* bottom: 1rem; */
     transform: translateY(-100%);
-    height: 2rem;
+    /* min-height: 2rem; */
     font-size: 0.8rem;
     color: #111111 /* --body-text */;
     background-color: #ccf18d /* --colour5 */;
@@ -309,10 +314,9 @@ nav #socials-list {
     padding: 0.25rem 3rem 0.25rem 1rem;
     display: flex;
     align-items: end;
-    opacity: 0;
 }
 
-.main-image-picture.with-caption::after {
+.main-image-figure.with-caption figcaption {
     clip-path: polygon(0 0, calc(100% - 0.25rem) 0, 100% 100%, 0.25rem 100%);
     opacity: 100%;
 }
@@ -380,15 +384,16 @@ section .img-container img {
     display: none;
 }
 
-.no-intersection-observer .main-image-picture::after {
-    display: none;
+.no-intersection-observer .main-image-figure figcaption {
+    transform: translateY(51vw);
+    padding-right: 1rem;
 }
 
 .no-intersection-observer .main-image {
     position: relative;
     float: left;
     width: 50vw;
-    min-height: 36vw;
+    height: 50vw;
     padding: 42px 0 24px 0;
     padding: 1.75rem 0 1rem 0;
 }
@@ -419,11 +424,21 @@ section .img-container img {
 /* CSS for browsers that support intersection observers. */
 
 @media screen and (min-width: 625px) {
-    .has-intersection-observer .main-image-picture::after {
+    .has-intersection-observer .main-image-figure figcaption {
         position: fixed;
-        width: 40%;
+        max-width: 40%;
+        width: 33.3vw;
         left: 1rem;
-        bottom: 1.5rem;
+        bottom: 0;
+        color: white;
+        color: #e1f1c3;
+        background: -webkit-linear-gradient(top, #111007 -33%, #58522c);
+        background: linear-gradient(180deg, #111007 -33%, #58522c);
+        opacity: 0;
+    }
+
+    .has-intersection-observer .main-image-figure.with-caption figcaption {
+        opacity: 0.9;
     }
 
     .has-intersection-observer section:not(.showcase-group) {
@@ -738,7 +753,7 @@ by the text & font. The min-width is the threshold between “mobile” and “d
         display: none;
     }
 
-    .main-image-picture:not(.default-main-image-picture)::after {
+    .main-image-figure:not(.default-main-image-figure) figcaption {
         position: absolute;
         top: initial;
         z-index: 3;
