@@ -435,6 +435,7 @@ section .img-container img {
         background: -webkit-linear-gradient(top, #111007 -33%, #58522c);
         background: linear-gradient(180deg, #111007 -33%, #58522c);
         opacity: 0;
+        z-index: 1;
     }
 
     .has-intersection-observer .main-image-figure.with-caption figcaption {

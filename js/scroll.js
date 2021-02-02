@@ -34,7 +34,12 @@ if (!!window.IntersectionObserver) {
             //// indexOfSectionVisible will still be -1 if the observer has fired, but not reported an intersection.
             if (indexOfSectionVisible > -1) {
                 for (let i = 0; i <= sections.length; i++) {
-                    if (i < indexOfSectionVisible) {
+                    if (i < indexOfSectionVisible - 1) {
+                        mainImages[i].classList.add("hidden");
+                        mainImages[i].style.zIndex = 1;
+                        mainImageFigures[i].classList.remove("with-caption");
+                    }
+                    else if (i == indexOfSectionVisible - 1) {
                         mainImages[i].classList.add("hidden");
                         mainImages[i].style.zIndex = 1;
                         mainImageFigures[i].classList.add("with-caption");
