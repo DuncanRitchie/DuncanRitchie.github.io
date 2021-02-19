@@ -544,7 +544,6 @@ section .img-container img {
     /* Styles for code.html, which doesn’t have the diagonal layout. */
     #code-body .main-image-figure {
         display: contents;
-        /* padding: 0; */
     }
     
     #code-body.has-intersection-observer .main-image-figure {
@@ -562,6 +561,16 @@ section .img-container img {
             position: sticky;
             bottom: -2rem;
             top: calc(100vh - 100% - 4rem);
+        }
+
+        /* The sticky figcaptions take up space and push the sections down;
+        this needs to be counteracted. */
+        #code-section {
+            margin-top: -1.75rem;
+        }
+
+        #velut-section {
+            margin-top: -2.75rem;
         }
     }
 
