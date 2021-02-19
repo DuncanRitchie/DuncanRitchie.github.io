@@ -387,6 +387,8 @@ section .img-container img {
 .no-intersection-observer .main-image-figure figcaption {
     transform: translateY(51vw);
     padding-right: 1rem;
+    max-width: 42vw;
+    max-width: calc(43vw - 36px);
 }
 
 .no-intersection-observer .main-image {
