@@ -435,7 +435,6 @@ section .img-container img {
         background: -webkit-linear-gradient(top, #111007 -33%, #58522c);
         background: linear-gradient(180deg, #111007 -33%, #58522c);
         opacity: 0;
-        z-index: 1;
     }
 
     .has-intersection-observer .main-image-figure.with-caption figcaption {
@@ -538,6 +537,35 @@ section .img-container img {
         width: 53%;
         shape-outside: polygon(0 0, 100% 0, 100% 0, 90% 0, 90% 0, 100% 100%, 100% 100%, 0 100%);
         transition: shape-outside 1s;
+    }
+
+    /* Styles for code.html, which doesn’t have the diagonal layout. */
+    #code-body .main-image-figure {
+        display: contents;
+        /* padding: 0; */
+    }
+    
+    #code-body.has-intersection-observer .main-image-figure {
+        float: none;
+    }
+
+    /* Won’t apply to IE. */
+    @supports (position: sticky) {
+        #code-body .main-image-figure figcaption {
+            width: 30%;
+            left: 0.5rem;
+            clip-path: initial;
+            padding: 0.25rem 0.5rem;
+            transform: translateY(100vh);
+            position: sticky;
+            bottom: -2rem;
+            top: calc(100vh - 100% - 4rem);
+        }
+    }
+
+    /* Without the translateX, the figcaption would be flush against the right edge of the image. */
+    #velut ~ .main-image-figure figcaption {
+        transform: translateY(100vh) translateX(calc(-40vw + 2rem));
     }
 }
 

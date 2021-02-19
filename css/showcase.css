@@ -18,6 +18,7 @@
     background-color: #002712 /* --showcase-background-opaque */;
     background-color: #001409c2 /* --showcase-background */;
     background-position: absolute;
+    position: sticky;
 }
 
 .showcase-group :focus {
