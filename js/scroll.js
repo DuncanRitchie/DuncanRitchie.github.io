@@ -34,10 +34,14 @@ if (!!window.IntersectionObserver) {
             //// indexOfSectionVisible will still be -1 if the observer has fired, but not reported an intersection.
             if (indexOfSectionVisible > -1) {
                 for (let i = 0; i <= sections.length; i++) {
+                    //// Pre-emptively hide all captions.
+                    if (i < sections.length) {
+                        mainImageFigures[i].classList.remove("with-caption");
+                    }
+                    //// Hide and change z-index of images according to which section should be visible.
                     if (i < indexOfSectionVisible - 1) {
                         mainImages[i].classList.add("hidden");
                         mainImages[i].style.zIndex = 1;
-                        mainImageFigures[i].classList.remove("with-caption");
                     }
                     else if (i == indexOfSectionVisible - 1) {
                         mainImages[i].classList.add("hidden");
@@ -47,16 +51,10 @@ if (!!window.IntersectionObserver) {
                     else if (i == indexOfSectionVisible) {
                         mainImages[i].classList.remove("hidden");
                         mainImages[i].style.zIndex = 0;
-                        if (i < sections.length) {
-                            mainImageFigures[i].classList.remove("with-caption");
-                        }
                     }
                     else {
                         mainImages[i].classList.add("hidden");
                         mainImages[i].style.zIndex = 0;
-                        if (i < sections.length) {
-                            mainImageFigures[i].classList.remove("with-caption");
-                        }
                     }
                 }
             }
