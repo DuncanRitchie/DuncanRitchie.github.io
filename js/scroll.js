@@ -47,12 +47,16 @@ if (!!window.IntersectionObserver) {
                     else if (i == indexOfSectionVisible) {
                         mainImages[i].classList.remove("hidden");
                         mainImages[i].style.zIndex = 0;
-                        mainImageFigures[i].classList.remove("with-caption");
+                        if (i < sections.length) {
+                            mainImageFigures[i].classList.remove("with-caption");
+                        }
                     }
                     else {
                         mainImages[i].classList.add("hidden");
                         mainImages[i].style.zIndex = 0;
-                        mainImageFigures[i].classList.remove("with-caption");
+                        if (i < sections.length) {
+                            mainImageFigures[i].classList.remove("with-caption");
+                        }
                     }
                 }
             }
