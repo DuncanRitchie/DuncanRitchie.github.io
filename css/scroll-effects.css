@@ -1,0 +1,100 @@
+/* CSS for browsers that support intersection observers. */
+
+@media screen and (min-width: 625px) {
+    .has-intersection-observer .main-image-figure figcaption {
+        position: fixed;
+        max-width: 40%;
+        width: 33.3vw;
+        left: 1rem;
+        bottom: 0;
+        color: white;
+        color: #e1f1c3;
+        background: -webkit-linear-gradient(top, #111007 -33%, #58522c);
+        background: linear-gradient(180deg, #111007 -33%, #58522c);
+        opacity: 0;
+    }
+
+    .has-intersection-observer .main-image-figure.with-caption figcaption {
+        opacity: 0.9;
+    }
+
+    .has-intersection-observer section:not(.showcase-group) {
+        min-height: calc(100vh - 1.5rem);
+    }
+
+
+
+    .has-intersection-observer .main-image {
+        z-index: -1;
+        position: fixed;
+        left: 0;
+        top: 0;
+        height: 100vh;
+        width: 53%;
+        object-fit: cover;
+        clip-path: polygon(-10% 0, 85% 0, 95% 100%, 0 100%);
+        transition: clip-path 0.6s 0s;
+    }
+
+    .has-intersection-observer .main-image.hidden {
+        clip-path: polygon(85% 0, 85% 0, 95% 100%, 95% 100%);
+        transition: clip-path 0.6s 0.6s, width 0.6s 0.6s;
+    }
+
+    .has-intersection-observer #text-wrap-guide {
+        float: left;
+        left: 0;
+        top: 0;
+        min-height: 100vh;
+        width: 53%;
+        shape-outside: polygon(0 0, 100% 0, 100% 0, 90% 0, 90% 0, 100% 100%, 100% 100%, 0 100%);
+        transition: shape-outside 1s;
+    }    
+}
+
+/* When headings wrap onto two lines, the paragraphs following them need to be moved down
+explicitly because the headings are positioned absolutely and are therefore out of flow. 
+The max-width values here are defined by where wrapping occurs (in Firefox), determined 
+by the text & font. The min-width is the threshold between “mobile” and “desktop” view. */
+@media screen and (min-width: 625px) and (max-width: 722px) {
+    .has-intersection-observer #home-section h2 + p {
+        padding-top: 11.5rem;
+    }
+}
+@media screen and (min-width: 625px) and (max-width: 1200px) {
+    .has-intersection-observer #velut-section h2 + p {
+        padding-top: 11.5rem;
+    }
+}
+@media screen and (min-width: 625px) and (max-width: 928px) {
+    .has-intersection-observer #tiq-section h2 + p {
+        padding-top: 11.5rem;
+    }
+}
+
+
+
+.main-image-figure figcaption {
+    transition: clip-path 0.6s 0.6s, opacity 0.6s 0.6s;
+    clip-path: polygon(0 0, 0 0, 0.25rem 100%, 0.25rem 100%);
+    /* z-index: 1; */
+    position: absolute;
+    max-width: calc(80% - 2rem);
+    left: 1rem;
+    bottom: 1rem;
+    transform: translateY(-100%);
+    /* min-height: 2rem; */
+    font-size: 0.8rem;
+    color: #111111 /* --body-text */;
+    background-color: #ccf18d /* --colour5 */;
+    background-image: linear-gradient(#ccf18d /* --colour5 */, #718b3f /* --colour6 */);
+    padding: 0.25rem 3rem 0.25rem 1rem;
+    display: flex;
+    align-items: end;
+}
+
+.main-image-figure.with-caption figcaption {
+    clip-path: polygon(0 0, calc(100% - 0.25rem) 0, 100% 100%, 0.25rem 100%);
+    opacity: 100%;
+}
+
