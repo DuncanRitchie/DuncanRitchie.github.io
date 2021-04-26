@@ -869,6 +869,10 @@ by the text & font. The min-width is the threshold between “mobile” and “d
     margin-bottom: -2rem;
 }
 
+#four-o-four-section h2::before {
+    background-image: none;
+}
+
 #four-o-four-section p {
     padding-top: 0.5rem; padding-left: 0.75rem; padding-right: 0.75rem; 
 }
