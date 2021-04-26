@@ -16,13 +16,14 @@
     padding-bottom: 24px;
     padding-bottom: 1rem;
     background-color: #002712 /* --showcase-background-opaque */;
-    background-color: #001409c0 /* --showcase-background */;
+    background-color: #001409c2 /* --showcase-background */;
     background-position: absolute;
+    position: sticky;
 }
 
 .showcase-group :focus {
     outline-color: #002712 /* --showcase-background-opaque */;
-    outline-color: #001409c0 /* --showcase-background */;
+    outline-color: #001409c2 /* --showcase-background */;
 }
 
 .showcase-group#csharp-projects {
@@ -68,7 +69,7 @@
     }
 
     .showcase-head h2 {
-        background: -webkit-linear-gradient(top, #d6e9ff /* --colour2 */, #b8c5af /* --colour3 */);
+        background: -webkit-linear-gradient(top, #dfeeff /* --colour2 */, #c2ceb9 /* --colour3 */);
         -webkit-background-clip: text;
         background-clip: text;
         -webkit-text-fill-color: transparent;

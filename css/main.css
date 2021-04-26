@@ -7,19 +7,19 @@ html,body {
     hyphens: manual;
     font-family: "Alegreya", serif;
     font-size: 24px;
-    /* font-size: calc(19px + (28px - 19px) * ((100vw - 360px) / (2400px - 360px))); */
-    font-size: calc(19px + 9 * ((100vw - 360px) / 2040));
+    /* font-size: calc(19px + (28px - 19px) * ((100vw - 360px) / (2460px - 360px))); */
+    font-size: calc(19px + 9 * ((100vw - 360px) / 2100));
 }
 
 html {
     height: 100%;
     /* CSS variables are not used on this site, but I find having the colour-scheme here convenient.  */
-    --colour1: #73a3e2 /* --colour1 */;
-    --colour2: #d6e9ff /* --colour2 */;
-    --colour3: #b8c5af /* --colour3 */;
-    --colour4: #a9cc36 /* --colour4 */;
-    --colour5: #bde972 /* --colour5 */;
-    --colour6: #698830 /* --colour6 */;
+    --colour1: #81aee9 /* --colour1 */;
+    --colour2: #dfeeff /* --colour2 */;
+    --colour3: #c2ceb9 /* --colour3 */;
+    --colour4: #bedd5a /* --colour4 */;
+    --colour5: #ccf18d /* --colour5 */;
+    --colour6: #718b3f /* --colour6 */;
     --nav-text: #333333 /* --nav-text */;
     --body-text: #111111 /* --body-text */;
     --unvisited-text: #00465c /* --unvisited-text */;
@@ -28,18 +28,17 @@ html {
 
 body {
     min-height: 100vh;
-    background-color: #d6e9ff /* --colour2 */;
+    background-color: #718b3f /* --colour6 */;
     /* Browsers that don’t do gradients will use the jpeg background. */
     background-image: url(../images/gradient-background.jpg);
     background-size: 100% 100%;
-    /* Browsers that don’t do CSS variables will use the hex values. */
     background-image: linear-gradient(
-        #73a3e2 /* --colour1 */,
-        #d6e9ff /* --colour2 */,
-        #b8c5af /* --colour3 */,
-        #a9cc36 /* --colour4 */,
-        #bde972 /* --colour5 */,
-        #698830 /* --colour6 */
+        #81aee9 /* --colour1 */,
+        #dfeeff /* --colour2 */,
+        #c2ceb9 /* --colour3 */,
+        #bedd5a /* --colour4 */,
+        #ccf18d /* --colour5 */,
+        #718b3f /* --colour6 */
     );
     background-attachment: fixed;
     background-size: 100% 100vh;
@@ -48,6 +47,10 @@ body {
 
 body :focus {
     outline: dashed 2px #76027a /* --visited-text */;
+}
+
+section:not(.showcase-group) {
+    line-height: 1.5;
 }
 
 section:not(.showcase-group) a {
@@ -67,13 +70,13 @@ section:not(.showcase-group) a:visited {
 }
 
 section:not(.showcase-group) a:hover {
-    color: #698830 /* --colour6 */;
+    color: #718b3f /* --colour6 */;
     text-decoration: none;
     border-bottom: 1px thin;
 }
 
 section:not(.showcase-group) :hover:focus {
-    outline-color: #698830 /* --colour6 */;
+    outline-color: #718b3f /* --colour6 */;
 }
 
 /* Styles for the navbar. */
@@ -95,8 +98,21 @@ nav {
     font-size: 0.7917rem;
     background-color: #bfd4ef;
     background-color: #ffffff7f;
+    background-image: linear-gradient(180deg, #ffffff33, #ffffff66, #ffffff33);
     color: #333333 /* --nav-text */;
     text-decoration: none;
+}
+
+/* Blur the background of nav */
+nav::before {
+    position: absolute;
+    z-index: -1;
+    content: '';
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    backdrop-filter: blur(4px) brightness(103%);
 }
 
 nav a {
@@ -140,12 +156,24 @@ nav ul li a:not(#nav-icon-a),label {
 }
 
 nav ul li label:hover,a:hover {
-    color: #698830 /* --colour6 */;
+    color: #718b3f /* --colour6 */;
     background-image: linear-gradient(#ffffff00, #ffffff00, #ffffff00, #2d4a1b4f);
 }
 
 nav ul input {
-    display: none;
+    position: absolute;
+    top: -3.6px;
+    top: -0.15rem;
+    border: 60px solid transparent;
+    border: 2.5rem solid transparent;
+    width: 5rem;
+    height: 0;
+    z-index: -2;
+    opacity: 0;
+}
+
+nav ul input:focus + label {
+    outline: dashed 2px #76027a /* --visited-text */;
 }
 
 nav ul li a,label {
@@ -168,18 +196,33 @@ nav ul ul {
     clip-path: polygon(0 0, 90% 0, 100% 100%, 0 100%);
 }
 
+/* Blur the background of nav submenus */
+nav ul ul::before {
+    position: absolute;
+    z-index: -1;
+    content: '';
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    backdrop-filter: blur(3px) brightness(103%);
+}
+
 nav label {
     cursor: pointer;
     padding: 12px 18px;
     padding: 0.5rem 0.75rem;
 }
 
+/* These rules are for Internet Explorer to display the down arrow for the nav menus correctly.
+For the hover state to be a different colour to the non-hover state, IE needs a different image.
+Modern browsers are capable of colouring the SVG with CSS if the SVG is applied as a mask, 
+so that’s what we do in the @supports query, which over-rides the IE rules. */
 nav label::after {
     content: "⮟";
-    font-size: 0;
+    font-size: 16px;
     font-size: 0.6667rem;
     color: transparent;
-    /* width: 16px; */
     background-image: url(../images/arrow-down.svg);
     background-repeat: no-repeat;
     background-size: contain;
@@ -187,7 +230,28 @@ nav label::after {
 }
 
 nav label:hover::after {
-    background-image: url(../images/arrow-down-hover.svg);
+    background-image: url(../images/arrow-down-hover.svg); /* Only IE needs this. */
+}
+
+/* In modern browsers, this over-rides the previous code for displaying the nav menu arrow. */
+@supports (mask-size: contain) or (-webkit-mask-size: contain) {
+    nav label::after {
+        width: 0.95em;
+        height: 0.5em;
+        display: inline-block;
+        content: '';
+        -webkit-mask: url(../images/arrow-down.svg) no-repeat 50% 50%;
+        mask: url(../images/arrow-down.svg) no-repeat 50% 50%;
+        -webkit-mask-size: contain;
+        mask-size: contain;
+        background: unset;
+        background-color: #333333 /* --nav-text */;
+    }
+    
+    nav label:hover::after {
+        background: unset;
+        background-color: #718b3f /* --colour6 */;
+    }
 }
 
 nav :checked ~ label {
@@ -228,27 +292,31 @@ nav #socials-list {
     display: none;
 }
 
-.main-image-picture::after {
+/* IE gives a margin by default, which we don’t want. */
+figure {
+    margin: 0;
+}
+
+.main-image-figure figcaption {
     transition: clip-path 0.6s 0.6s, opacity 0.6s 0.6s;
     clip-path: polygon(0 0, 0 0, 0.25rem 100%, 0.25rem 100%);
-    content: attr(title);
-    z-index: 1;
+    /* z-index: 1; */
     position: absolute;
     max-width: calc(80% - 2rem);
     left: 1rem;
+    /* bottom: 1rem; */
     transform: translateY(-100%);
-    height: 2rem;
+    /* min-height: 2rem; */
     font-size: 0.8rem;
     color: #111111 /* --body-text */;
-    background-color: #bde972 /* --colour5 */;
-    background-image: linear-gradient(#bde972 /* --colour5 */, #698830 /* --colour6 */);
+    background-color: #ccf18d /* --colour5 */;
+    background-image: linear-gradient(#ccf18d /* --colour5 */, #718b3f /* --colour6 */);
     padding: 0.25rem 3rem 0.25rem 1rem;
     display: flex;
     align-items: end;
-    opacity: 0;
 }
 
-.main-image-picture.with-caption::after {
+.main-image-figure.with-caption figcaption {
     clip-path: polygon(0 0, calc(100% - 0.25rem) 0, 100% 100%, 0.25rem 100%);
     opacity: 100%;
 }
@@ -316,15 +384,18 @@ section .img-container img {
     display: none;
 }
 
-.no-intersection-observer .main-image-picture::after {
-    display: none;
+.no-intersection-observer .main-image-figure figcaption {
+    transform: translateY(51vw);
+    padding-right: 1rem;
+    max-width: 42vw;
+    max-width: calc(43vw - 36px);
 }
 
 .no-intersection-observer .main-image {
     position: relative;
     float: left;
     width: 50vw;
-    min-height: 36vw;
+    height: 50vw;
     padding: 42px 0 24px 0;
     padding: 1.75rem 0 1rem 0;
 }
@@ -355,11 +426,21 @@ section .img-container img {
 /* CSS for browsers that support intersection observers. */
 
 @media screen and (min-width: 625px) {
-    .has-intersection-observer .main-image-picture::after {
+    .has-intersection-observer .main-image-figure figcaption {
         position: fixed;
-        width: 40%;
+        max-width: 40%;
+        width: 33.3vw;
         left: 1rem;
-        bottom: 1.5rem;
+        bottom: 0;
+        color: white;
+        color: #e1f1c3;
+        background: -webkit-linear-gradient(top, #111007 -33%, #58522c);
+        background: linear-gradient(180deg, #111007 -33%, #58522c);
+        opacity: 0;
+    }
+
+    .has-intersection-observer .main-image-figure.with-caption figcaption {
+        opacity: 0.9;
     }
 
     .has-intersection-observer section:not(.showcase-group) {
@@ -375,7 +456,7 @@ section .img-container img {
         position: absolute;
         /* Browsers that don’t understand background-clip will show white text on a gradient-filled rectangle. */
         color: white;
-        background: -webkit-linear-gradient(top, #111007,#58522c 33%);
+        background: -webkit-linear-gradient(top, #111007, #58522c 33%);
         background: linear-gradient(180deg, #111007, #58522c 33%);
         /* The height of the gradient fill is not dependent on the height of the h2. */
         background-size: 100% 9.45rem;
@@ -395,7 +476,7 @@ section .img-container img {
         max-width: 100vw;
         right: 0;
         height: calc(100% - 1em) /* The -1em is because of ::after adding an excess line that must be removed. */;
-        background-image: linear-gradient(180deg, rgba(255, 255, 255, 0), rgba(214, 233, 255, 0.6), rgba(214, 233, 255, 0.7) 80%, rgba(214, 233, 255, 0));
+        background-image: linear-gradient(180deg, rgba(255, 255, 255, 0), rgba(223, 238, 255, 0.6), rgba(223, 238, 255, 0.7) 80%, rgba(223, 238, 255, 0));
         z-index: 0;
         transform: translateX(0.35em);
         padding: 0 0.4em;
@@ -459,6 +540,44 @@ section .img-container img {
         shape-outside: polygon(0 0, 100% 0, 100% 0, 90% 0, 90% 0, 100% 100%, 100% 100%, 0 100%);
         transition: shape-outside 1s;
     }
+
+    /* Styles for code.html, which doesn’t have the diagonal layout. */
+    #code-body .main-image-figure {
+        display: contents;
+    }
+    
+    #code-body.has-intersection-observer .main-image-figure {
+        float: none;
+    }
+
+    /* Won’t apply to IE. */
+    @supports (position: sticky) {
+        #code-body .main-image-figure figcaption {
+            width: 30%;
+            left: 0.5rem;
+            clip-path: initial;
+            padding: 0.25rem 0.5rem;
+            transform: translateY(100vh);
+            position: sticky;
+            bottom: -2rem;
+            top: calc(100vh - 100% - 4rem);
+        }
+
+        /* The sticky figcaptions take up space and push the sections down;
+        this needs to be counteracted. */
+        #code-section {
+            margin-top: -1.75rem;
+        }
+
+        #velut-section {
+            margin-top: -2.75rem;
+        }
+    }
+
+    /* Without the translateX, the figcaption would be flush against the right edge of the image. */
+    #velut ~ .main-image-figure figcaption {
+        transform: translateY(100vh) translateX(calc(-40vw + 2rem));
+    }
 }
 
 /* When headings wrap onto two lines, the paragraphs following them need to be moved down
@@ -492,7 +611,7 @@ by the text & font. The min-width is the threshold between “mobile” and “d
 @media (max-width: 624px) {
     nav {
         display: grid;
-        grid-template-columns: max-content 1fr;
+        grid-template-columns: 1fr 2fr;
         grid-template-areas: 
             "icon socials"
             "icon main";
@@ -504,9 +623,9 @@ by the text & font. The min-width is the threshold between “mobile” and “d
     nav #nav-icon-a {
         grid-area: icon;
         display: flex;
-        justify-content: center;
-        padding: 6px;
-        padding: 0.25rem;
+        justify-content: start;
+        padding: 12px;
+        padding: 0.5rem;
         height: calc(100% - 12px);
         height: calc(100% - 0.5rem);
     }
@@ -581,7 +700,7 @@ by the text & font. The min-width is the threshold between “mobile” and “d
     }
 
     body:not(#code-body) section:not(:last-of-type) {
-        border-bottom: 2px solid #698830 /* --colour6 */;
+        border-bottom: 2px solid #718b3f /* --colour6 */;
     }
 
     h2 {
@@ -603,6 +722,9 @@ by the text & font. The min-width is the threshold between “mobile” and “d
 
 @media (max-width: 355px) {
     nav #nav-icon-a {
+        justify-content: center;
+        padding: 6px;
+        padding: 0.25rem;
         flex-direction: column;
         align-items: center;
     }
@@ -671,7 +793,7 @@ by the text & font. The min-width is the threshold between “mobile” and “d
         display: none;
     }
 
-    .main-image-picture:not(.default-main-image-picture)::after {
+    .main-image-figure:not(.default-main-image-figure) figcaption {
         position: absolute;
         top: initial;
         z-index: 3;
@@ -682,7 +804,7 @@ by the text & font. The min-width is the threshold between “mobile” and “d
         transform: translateX(1rem) translateY(calc(0.5rem));
         margin: 0;
         background: none;
-        border: 1px solid #698830 /* --colour6 */;
+        border: 1px solid #718b3f /* --colour6 */;
         border-bottom: none;
     }
 
@@ -730,3 +852,32 @@ by the text & font. The min-width is the threshold between “mobile” and “d
         width: calc(50vw - 6rem - 2px);
     }
 }
+
+/* CSS for the 404 page. */
+
+#four-o-four-section {
+    margin: unset;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 56rem;
+    min-height: unset;
+}
+
+#four-o-four-section h2 {
+    position: relative;
+    margin-top: 3rem;
+    margin-bottom: -2rem;
+}
+
+#four-o-four-section h2::before {
+    background-image: none;
+}
+
+#four-o-four-section p {
+    padding-left: 0.75rem; padding-right: 0.75rem; 
+}
+
+#four-o-four-section p:first-of-type {
+    padding-top: 0.5rem;
+}
+

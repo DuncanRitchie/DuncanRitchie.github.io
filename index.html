@@ -22,8 +22,8 @@
         </a>
         <ul id="nav-main-list">
             <li>
-                <input type="checkbox" id="code-nav-tickbox" />
-                <label for="code-nav-tickbox" title="Show or hide menu for my code" tabindex="0" aria-haspopup="true">
+                <input type="checkbox" id="code-nav-tickbox" title="Show or hide menu for my code" aria-haspopup="true" />
+                <label for="code-nav-tickbox">
                     My code
                 </label>
                 <ul>
@@ -56,8 +56,9 @@
                     </li>
                 </ul>
             </li>
-            <li><input type="checkbox" id="about-me-nav-tickbox" />
-                <label for="about-me-nav-tickbox" title="Show or hide menu for more about me" tabindex="0" aria-haspopup="true">
+            <li>
+                <input type="checkbox" id="about-me-nav-tickbox" title="Show or hide menu for more about me" aria-haspopup="true" />
+                <label for="about-me-nav-tickbox">
                     More about me
                 </label>
                 <ul>
@@ -82,16 +83,24 @@
                         </a>
                     </li>
                     <li>
-                        <a href="aboutme.html#tiq" title="Theatre in the Quarter — Duncan Ritchie’s portfolio">Theatre
-                            in the Quarter</a></li>
+                        <a href="aboutme.html#tiq" title="Theatre in the Quarter — Duncan Ritchie’s portfolio">
+                            Theatre in the Quarter
+                        </a>
+                    </li>
                 </ul>
             </li>
         </ul>
         <ul id="socials-list">
-            <li><a href="https://github.com/DuncanRitchie/" title="Duncan Ritchie — GitHub"><i
-                        class="fab fa-github"></i> GitHub</a></li>
-            <li><a href="https://www.linkedin.com/in/duncan-ritchie-uk/" title="Duncan Ritchie — LinkedIn"><i
-                        class="fab fa-linkedin"></i> LinkedIn</a></li>
+            <li>
+                <a href="https://github.com/DuncanRitchie/" title="Duncan Ritchie — GitHub">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+            </li>
+            <li>
+                <a href="https://www.linkedin.com/in/duncan-ritchie-uk/" title="Duncan Ritchie — LinkedIn">
+                    <i class="fab fa-linkedin"></i> LinkedIn
+                </a>
+            </li>
         </ul>
     </nav>
 
@@ -100,29 +109,34 @@
     <h1 class="screenreader-only">Duncan Ritchie’s homepage</h1>
 
     <!-- Default main image, shown immediately on navigating onto page -->
-    <picture class="main-image-picture default-main-image-picture" title="Duncan on Caer Caradoc in Shropshire">
+    <picture class="main-image-picture default-main-image-picture" aria-hidden="true">
         <source media="(min-width:601px)"
             srcset="https://res.cloudinary.com/duncanritchie/image/upload/c_fill,g_west,h_1000,w_1000,x_358/q_auto:eco/q_auto:eco/v1581894718/site/DuncanOnCaerCaradoc.webp">
         <source media="(min-width:481px)"
             srcset="https://res.cloudinary.com/duncanritchie/image/upload/c_fill,g_west,h_600,w_600,x_358/q_auto:eco/v1581894718/site/DuncanOnCaerCaradoc.webp">
         <source media="(min-width:0px)"
             srcset="https://res.cloudinary.com/duncanritchie/image/upload/c_fill,g_west,h_480,w_480,x_358/q_auto:eco/v1581894718/site/DuncanOnCaerCaradoc.webp">
-        <img class="main-image default-main-image" alt="Duncan on Caer Caradoc in Shropshire"
+        <img class="main-image default-main-image" alt=""
             src="https://res.cloudinary.com/duncanritchie/image/upload/c_fill,g_west,h_1000,w_1000,x_358/q_auto:eco/q_auto:eco/v1581894718/site/DuncanOnCaerCaradoc.jpg" />
     </picture>
 
-    <a class="anchor" id="home"></a>
-    <!-- Main image for first (only) section. Same as default image. -->
-    <picture class="main-image-picture" title="Duncan on Caer Caradoc in Shropshire">
-        <source media="(min-width:601px)"
-            srcset="https://res.cloudinary.com/duncanritchie/image/upload/c_fill,g_west,h_1000,w_1000,x_358/q_auto:eco/q_auto:eco/v1581894718/site/DuncanOnCaerCaradoc.webp">
-        <source media="(min-width:481px)"
-            srcset="https://res.cloudinary.com/duncanritchie/image/upload/c_fill,g_west,h_600,w_600,x_358/q_auto:eco/v1581894718/site/DuncanOnCaerCaradoc.webp">
-        <source media="(min-width:0px)"
-            srcset="https://res.cloudinary.com/duncanritchie/image/upload/c_fill,g_west,h_480,w_480,x_358/q_auto:eco/v1581894718/site/DuncanOnCaerCaradoc.webp">
-        <img class="main-image" alt="Duncan on Caer Caradoc in Shropshire"
-            src="https://res.cloudinary.com/duncanritchie/image/upload/c_fill,g_west,h_1000,w_1000,x_358/q_auto:eco/q_auto:eco/v1581894718/site/DuncanOnCaerCaradoc.jpg" />
-    </picture>
+    <a class="anchor" name="home" id="home"></a>
+    <!-- Main image for first (only) section. Same as default image, but wrapped in a <figure> with a <figcaption>. -->
+    <figure class="main-image-figure with-caption">
+        <picture class="main-image-picture">
+            <source media="(min-width:601px)"
+                srcset="https://res.cloudinary.com/duncanritchie/image/upload/c_fill,g_west,h_1000,w_1000,x_358/q_auto:eco/q_auto:eco/v1581894718/site/DuncanOnCaerCaradoc.webp">
+            <source media="(min-width:481px)"
+                srcset="https://res.cloudinary.com/duncanritchie/image/upload/c_fill,g_west,h_600,w_600,x_358/q_auto:eco/v1581894718/site/DuncanOnCaerCaradoc.webp">
+            <source media="(min-width:0px)"
+                srcset="https://res.cloudinary.com/duncanritchie/image/upload/c_fill,g_west,h_480,w_480,x_358/q_auto:eco/v1581894718/site/DuncanOnCaerCaradoc.webp">
+            <img class="main-image" alt="Duncan Ritchie smiling while holding his camera, surrounded by sunlit hills"
+                src="https://res.cloudinary.com/duncanritchie/image/upload/c_fill,g_west,h_1000,w_1000,x_358/q_auto:eco/q_auto:eco/v1581894718/site/DuncanOnCaerCaradoc.jpg" />
+        </picture>
+        <figcaption>
+            Duncan on Caer Caradoc in Shropshire
+        </figcaption>
+    </figure>
     <!-- First (only) section -->
     <section id="home-section">
         <h2>
@@ -140,7 +154,7 @@
             and maintain a Latin <a href="./code.html#velut" title="velut, a Latin rhyming dictionary — Duncan Ritchie’s portfolio">rhyming dictionary</a>.
         </p>
         <p>
-            My interests include coding, <a href="./aboutme.html#photos" title="Photography — Duncan Ritchie’s portfolio">photography</a>, birdwatching, writing verse,
+            My interests include coding, <a href="./aboutme.html#photos" title="Photography — Duncan Ritchie’s portfolio">photography</a>, birdwatching (my logo is a fulmar),
             and <a href="./aboutme.html#dog" title="My dog — Duncan Ritchie’s portfolio">walking my dog</a>.
         </p>
         <p>

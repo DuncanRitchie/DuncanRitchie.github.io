@@ -13,6 +13,7 @@ const mainImages = document.getElementsByClassName("main-image");
 if (!!window.IntersectionObserver) {
     //// Find which mainImage should be displayed, then change styling on mainImages accordingly.
     const sections =  document.getElementsByTagName("section");
+    const mainImageFigures = document.getElementsByClassName("main-image-figure");
     const scrollCallback = (entries, observer) => {
         if (isViewportBigEnoughForScrollBehaviour()) {
             //// Find which mainImage should be displayed by finding which section is intersecting with screen.
@@ -33,9 +34,19 @@ if (!!window.IntersectionObserver) {
             //// indexOfSectionVisible will still be -1 if the observer has fired, but not reported an intersection.
             if (indexOfSectionVisible > -1) {
                 for (let i = 0; i <= sections.length; i++) {
-                    if (i < indexOfSectionVisible) {
+                    //// Pre-emptively hide all captions.
+                    if (i < sections.length) {
+                        mainImageFigures[i].classList.remove("with-caption");
+                    }
+                    //// Hide and change z-index of images according to which section should be visible.
+                    if (i < indexOfSectionVisible - 1) {
                         mainImages[i].classList.add("hidden");
                         mainImages[i].style.zIndex = 1;
+                    }
+                    else if (i == indexOfSectionVisible - 1) {
+                        mainImages[i].classList.add("hidden");
+                        mainImages[i].style.zIndex = 1;
+                        mainImageFigures[i].classList.add("with-caption");
                     }
                     else if (i == indexOfSectionVisible) {
                         mainImages[i].classList.remove("hidden");
@@ -88,6 +99,11 @@ if (!!textWrapGuide) {
         }
     }
 
+    function resizeDocument() {
+        moveTextWrapGuide(0, 0, 0, 0);
+        updateScroll();
+    };
+
     //// Prevents `callback` from being called more than once in `window` milliseconds.
     //// Assumes `callback` has no arguments.
     function throttle(callback, window) {
@@ -111,7 +127,7 @@ if (!!textWrapGuide) {
     window.addEventListener("scroll", updateScrollWithThrottle);
     //// Update scroll position on page load.
     window.addEventListener("load", updateScroll);
-    //// Also do scroll-related things on window resize.
-    window.onresize = updateScrollWithThrottle;
+    //// Also do some scroll-related things on window resize.
+    window.onresize = resizeDocument;
 }
 

@@ -23,8 +23,8 @@
         </a>
         <ul id="nav-main-list">
             <li>
-                <input type="checkbox" id="code-nav-tickbox" />
-                <label for="code-nav-tickbox" title="Show or hide menu for my code" tabindex="0" aria-haspopup="true">
+                <input type="checkbox" id="code-nav-tickbox" title="Show or hide menu for my code" aria-haspopup="true" />
+                <label for="code-nav-tickbox">
                     My code
                 </label>
                 <ul>
@@ -34,7 +34,8 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#javascript-projects" title="JavaScript projects — Duncan Ritchie’s portfolio">
+                        <a href="#javascript-projects"
+                            title="JavaScript projects — Duncan Ritchie’s portfolio">
                             JavaScript projects
                         </a>
                     </li>
@@ -49,14 +50,16 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#velut" title="velut, a Latin rhyming dictionary — Duncan Ritchie’s portfolio">
+                        <a href="#velut"
+                            title="velut, a Latin rhyming dictionary — Duncan Ritchie’s portfolio">
                             Latin dictionary
                         </a>
                     </li>
                 </ul>
             </li>
-            <li><input type="checkbox" id="about-me-nav-tickbox" />
-                <label for="about-me-nav-tickbox" title="Show or hide menu for more about me" tabindex="0" aria-haspopup="true">
+            <li>
+                <input type="checkbox" id="about-me-nav-tickbox" title="Show or hide menu for more about me" aria-haspopup="true" />
+                <label for="about-me-nav-tickbox">
                     More about me
                 </label>
                 <ul>
@@ -81,16 +84,24 @@
                         </a>
                     </li>
                     <li>
-                        <a href="aboutme.html#tiq" title="Theatre in the Quarter — Duncan Ritchie’s portfolio">Theatre
-                            in the Quarter</a></li>
+                        <a href="aboutme.html#tiq" title="Theatre in the Quarter — Duncan Ritchie’s portfolio">
+                            Theatre in the Quarter
+                        </a>
+                    </li>
                 </ul>
             </li>
         </ul>
         <ul id="socials-list">
-            <li><a href="https://github.com/DuncanRitchie/" title="Duncan Ritchie — GitHub"><i
-                        class="fab fa-github"></i> GitHub</a></li>
-            <li><a href="https://www.linkedin.com/in/duncan-ritchie-uk/" title="Duncan Ritchie — LinkedIn"><i
-                        class="fab fa-linkedin"></i> LinkedIn</a></li>
+            <li>
+                <a href="https://github.com/DuncanRitchie/" title="Duncan Ritchie — GitHub">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+            </li>
+            <li>
+                <a href="https://www.linkedin.com/in/duncan-ritchie-uk/" title="Duncan Ritchie — LinkedIn">
+                    <i class="fab fa-linkedin"></i> LinkedIn
+                </a>
+            </li>
         </ul>
     </nav>
 
@@ -98,19 +109,24 @@
     <!-- <div id="text-wrap-guide"></div> -->
 
     <!-- Main images and sections. -->
-    <a class="anchor" id="code"></a>
+    <a class="anchor" name="code" id="code"></a>
     <h1 class="screenreader-only">My code</h1>
 
-    <picture class="main-image-picture" title="Duncan on Caer Caradoc in Shropshire">
-        <source media="(min-width:601px)"
-            srcset="https://res.cloudinary.com/duncanritchie/image/upload/c_fill,g_west,h_1000,w_1000,x_358/q_auto:eco/v1581894718/site/DuncanOnCaerCaradoc.webp">
-        <source media="(min-width:481px)"
-            srcset="https://res.cloudinary.com/duncanritchie/image/upload/c_fill,g_west,h_600,w_600,x_358/q_auto:eco/v1581894718/site/DuncanOnCaerCaradoc.webp">
-        <source media="(min-width:0px)"
-            srcset="https://res.cloudinary.com/duncanritchie/image/upload/c_fill,g_west,h_480,w_480,x_358/q_auto:eco/v1581894718/site/DuncanOnCaerCaradoc.webp">
-        <img class="main-image" alt="Duncan on Caer Caradoc in Shropshire"
-            src="https://res.cloudinary.com/duncanritchie/image/upload/c_fill,g_west,h_1000,w_1000,x_358/q_auto:eco/v1581894718/site/DuncanOnCaerCaradoc.jpg" />
-    </picture>
+    <figure class="main-image-figure with-caption">
+        <picture class="main-image-picture">
+            <source media="(min-width:601px)"
+                srcset="https://res.cloudinary.com/duncanritchie/image/upload/c_fill,g_west,h_1000,w_1000,x_358/q_auto:eco/v1581894718/site/DuncanOnCaerCaradoc.webp">
+            <source media="(min-width:481px)"
+                srcset="https://res.cloudinary.com/duncanritchie/image/upload/c_fill,g_west,h_600,w_600,x_358/q_auto:eco/v1581894718/site/DuncanOnCaerCaradoc.webp">
+            <source media="(min-width:0px)"
+                srcset="https://res.cloudinary.com/duncanritchie/image/upload/c_fill,g_west,h_480,w_480,x_358/q_auto:eco/v1581894718/site/DuncanOnCaerCaradoc.webp">
+            <img class="main-image" alt="Duncan Ritchie smiling while holding his camera, surrounded by sunlit hills"
+                src="https://res.cloudinary.com/duncanritchie/image/upload/c_fill,g_west,h_1000,w_1000,x_358/q_auto:eco/v1581894718/site/DuncanOnCaerCaradoc.jpg" />
+        </picture>
+        <figcaption>
+            Duncan on Caer Caradoc in Shropshire
+        </figcaption>
+    </figure>
 
     <section id="code-section">
         <h2>
@@ -148,8 +164,10 @@
             Information&nbsp;Catalyst’s usual language — and MySql.
         </p>
         <p>
-            Since October 2019, however, I’ve been collaborating on a C# endeavour, using Windows Forms
-            and the MS Office Interop API to process Word documents. I’m very much enjoying it!
+            Since October 2019, however, I’ve been making a Windows Forms program that uses C# and the MS Office Interop API to process Word documents. I’m very much enjoying it!
+        </p>
+        <p>
+            More recently, I’ve resumed my Java and MySql learning, because I’m now also collaborating on a system for managing factory processes. Another exciting challenge!
         </p>
     </section>
 
@@ -859,20 +877,24 @@
         <!-- End of last C# project -->
     </section>
 
-    <a class="anchor" id="velut"></a>
+    <a class="anchor" name="velut" id="velut"></a>
     <!-- velut main image -->
-    <picture class="main-image-picture"
-        title="Fulmar landing on a cliff, because I use a photo of a fulmar for my logo">
-        <source media="(min-width:601px)"
-            srcset="https://res.cloudinary.com/duncanritchie/image/upload/c_fill,g_center,h_1000,w_1000,x_358/q_auto:eco/q_auto:eco/v1590423024/site/FulmarLanding.webp">
-        <source media="(min-width:481px)"
-            srcset="https://res.cloudinary.com/duncanritchie/image/upload/c_fill,g_center,h_600,w_600,x_358/q_auto:eco/v1590423024/site/FulmarLanding.webp">
-        <source media="(min-width:0px)"
-            srcset="https://res.cloudinary.com/duncanritchie/image/upload/c_fill,g_center,h_480,w_480,x_358/q_auto:eco/v1590423024/site/FulmarLanding.webp">
-        <img id="velut-main-image" class="main-image"
-            alt="Fulmar landing on a cliff, because I use a photo of a fulmar for my logo"
-            src="https://res.cloudinary.com/duncanritchie/image/upload/c_fill,g_center,h_1000,w_1000,x_358/q_auto:eco/v1590423024/site/FulmarLanding.jpg" />
-    </picture>
+    <figure class="main-image-figure with-caption">
+        <picture class="main-image-picture">
+            <source media="(min-width:601px)"
+                srcset="https://res.cloudinary.com/duncanritchie/image/upload/c_fill,g_center,h_1000,w_1000,x_358/q_auto:eco/q_auto:eco/v1590423024/site/FulmarLanding.webp">
+            <source media="(min-width:481px)"
+                srcset="https://res.cloudinary.com/duncanritchie/image/upload/c_fill,g_center,h_600,w_600,x_358/q_auto:eco/v1590423024/site/FulmarLanding.webp">
+            <source media="(min-width:0px)"
+                srcset="https://res.cloudinary.com/duncanritchie/image/upload/c_fill,g_center,h_480,w_480,x_358/q_auto:eco/v1590423024/site/FulmarLanding.webp">
+            <img id="velut-main-image" class="main-image"
+                alt="Fulmar landing on a cliff"
+                src="https://res.cloudinary.com/duncanritchie/image/upload/c_fill,g_center,h_1000,w_1000,x_358/q_auto:eco/v1590423024/site/FulmarLanding.jpg" />
+        </picture>
+        <figcaption>
+            I designed the visuals of velut around the photo of a fulmar I use for my logo
+        </figcaption>
+    </figure>
     <!-- velut section -->
     <section id="velut-section">
         <h2>

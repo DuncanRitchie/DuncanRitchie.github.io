@@ -10,7 +10,7 @@ It is hosted by GitHub Pages, to let me publish other repos to subfolders, eg ww
 
 Font icons (all three of them) are from Font Awesome. The non-icon font is Alegreya.
 
-The little downward arrowhead used on the navbar is an SVG I made in Inkscape and minified. Actually it’s two SVGs — a green version appears on mouse (h)over.
+The little downward arrowhead used on the navbar is an SVG I made in Inkscape and minified. Actually, for Internet Explorer it’s two SVGs — a green version appears on mouse (h)over — but modern browsers can change the colour with CSS.
 
 Images are hosted by Cloudinary, and I’m making use of its facility for serving pictures with different sizes and formats (WebP/Jpeg for photos, WebP/PNG for screenshots).
 
@@ -57,7 +57,7 @@ In a similar way, my redesign of www.duncanritchie.co.uk started with me choosin
 ### Considerations about different pages
 On [aboutme.html](https://www.duncanritchie.co.uk/aboutme.html), there are several sections, with a photo for each. On wide enough screens, the photos (`class="main-image"`) are fixed in position to the viewport, so they all take up the left side of the screen; the Intersection Observer API is used in the [JavaScript](https://github.com/DuncanRitchie/DuncanRitchie.github.io/blob/main/js/scroll.js) to control which image is visible, by watching for section headings to come into or out of view. A CSS transition on the `clip-path` property makes the effect look less jarring.
 
-The photos, however, do not affect the layout of the text — their fixed position puts them outside of the document flow. To make the text fit against the diagonal edge, even when the page is scrolled, I needed an empty `<div>` in the HTML (`id="text-wrap-guide"`), with appropriate `width`, `height`, and `shape-outside` properties. [JavaScript](https://github.com/DuncanRitchie/DuncanRitchie.github.io/blob/master/js/scroll.js) is used to make the values change when the viewport is scrolled or resized. A CSS transition on `shape-outside` makes the text move more smoothly.
+The photos, however, do not affect the layout of the text — their fixed position puts them outside of the document flow. To make the text fit against the diagonal edge, even when the page is scrolled, I needed an empty `<div>` in the HTML (`id="text-wrap-guide"`), with appropriate `width`, `height`, and `shape-outside` properties. [JavaScript](https://github.com/DuncanRitchie/DuncanRitchie.github.io/blob/main/js/scroll.js) is used to make the values change when the viewport is scrolled or resized. A CSS transition on `shape-outside` makes the text move more smoothly.
 
 On [code.html](https://www.duncanritchie.co.uk/code.html), my showcase of projects meant that I couldn’t have the diagonal layout: I want the showcase to take up the width of the screen, instead of being squashed into the right side. I’ve therefore made a more rectangular layout with narrower photos; the photos are less relevant to the page anyway.
 
@@ -68,10 +68,12 @@ Accessibility is something I’ve improved in several ways.
 * I’ve increased the font sizes.
 * Text is no longer on top of pictures, except for the headings, which now have a background gradient (and the heading text has an outline on supporting browsers).
 * All images (except inline icons) are represented by `<img>` tags with `alt` text instead of `<div>` with `background-image`.
-* All elements are ordered in the HTML (and therefore in the tab-order) in the order displayed on screen.
+* On desktop, all elements are ordered in the HTML — and therefore in the tab-order — in the order displayed on screen.
+(On mobile, the GitHub/LinkedIn links in the navbar create the one exception to this.)
 * Screenreader-only text appears next to the GitHub icons on my project showcase.
+* The navigation menus can be toggled even if you have neither a mouse nor JavaScript.
 
-(Still to do — allow the navigation menus to be toggled without either JavaScript or a mouse.)
+(Still to do — I want visitors to be able to toggle the on-scroll transitions, since people that prefer reduced motion might not like how the photos are revealed and hidden and how the text is re-flowed against the diagonal.)
 
 ### Screen-size
 I’ve improved the site’s responsiveness to screen-size by:
@@ -85,6 +87,7 @@ It is also crucial to consider browser differences. I mainly use Firefox in deve
 Some examples of how I’ve kept the site looking decent across browsers:
 * Browsers that don’t support intersection observers can’t do the scrolling effects on the photos and text-wrapping, so on such browsers I’ve made the photos float statically beside the text.
 * Browsers that don’t support the WebP image format get Jpeg and PNG fallbacks.
+* The downward arrow next to the nav menus changes colour on hover. For modern browsers, this is achieved through CSS masking; but for older browsers (ie, IE) I’m swapping a separate image in.
 * One of my favourite things about my original site, and it’s true for the redesign too, is that everything appears even if you don’t have JavaScript. In fact, the redesign works better without JavaScript than the original did, because there are no longer any buttons (such as for toggling nav menus) that need the scripting. This is in contrast with all the web projects I’ve showcased on code.html — especially the React work, which doesn’t even display without JavaScript!
 
 Here is a screenshot without JavaScript:
@@ -92,7 +95,7 @@ Here is a screenshot without JavaScript:
 ![Screenshot of the redesigned site in Internet Explorer, without JavaScript](https://github.com/DuncanRitchie/portfolio-screenshots/blob/main/minified/new-desktop-withoutcaption-internetexplorer-home__small.png)
 
 ### Current state
-There are minor improvements remaining to be done. But overall, I’m delighted with what I’ve made. It looks good (to me, at least); and I’ve learnt more about HTML, CSS, and JavaScript: eg, the `<picture>` tag, `rem` units, the `shape-outside` property, and intersection observers.
+There are minor improvements remaining to be done. But overall, I’m delighted with what I’ve made. It looks good (to me, at least); and I’ve learnt more about HTML, CSS, and JavaScript: eg, the `<picture>` tag, `rem` units, the `shape-outside` property, `@supports` queries, and intersection observers.
 
 ## Lighthouse scores
 The Lighthouse profiling tool now gives my site 100% scores on Accessibility, SEO, and Best Practices on desktop and mobile on all three pages. Performance fluctuates between 95% and 100%.
@@ -111,4 +114,4 @@ My most recent scores are in the table. My old site was ranked slightly worse.
 ## Deployments
 To see the old design, which I’ve kept on the [before-2020-redesign](https://github.com/DuncanRitchie/DuncanRitchie.github.io/tree/before-2020-redesign) branch, go to [old.duncanritchie.co.uk](https://old.duncanritchie.co.uk/).
 
-Since 31st May 2020 the new design has been live on the [master](https://github.com/DuncanRitchie/DuncanRitchie.github.io/tree/master) branch at [www.duncanritchie.co.uk](https://www.duncanritchie.co.uk/).
+Since 31st May 2020 the new design has been live at [www.duncanritchie.co.uk](https://www.duncanritchie.co.uk/). It is on the [main](https://github.com/DuncanRitchie/DuncanRitchie.github.io/tree/main) branch.
