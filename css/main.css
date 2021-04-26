@@ -874,6 +874,10 @@ by the text & font. The min-width is the threshold between “mobile” and “d
 }
 
 #four-o-four-section p {
-    padding-top: 0.5rem; padding-left: 0.75rem; padding-right: 0.75rem; 
+    padding-left: 0.75rem; padding-right: 0.75rem; 
+}
+
+#four-o-four-section p:first-of-type {
+    padding-top: 0.5rem;
 }
 
