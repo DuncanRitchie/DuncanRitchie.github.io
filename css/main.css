@@ -852,3 +852,24 @@ by the text & font. The min-width is the threshold between “mobile” and “d
         width: calc(50vw - 6rem - 2px);
     }
 }
+
+/* CSS for the 404 page. */
+
+#four-o-four-section {
+    margin: unset;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 56rem;
+    min-height: unset;
+}
+
+#four-o-four-section h2 {
+    position: relative;
+    margin-top: 3rem;
+    margin-bottom: -2rem;
+}
+
+#four-o-four-section p {
+    padding-top: 0.5rem; padding-left: 0.75rem; padding-right: 0.75rem; 
+}
+
