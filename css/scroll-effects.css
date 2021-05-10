@@ -22,8 +22,6 @@
         min-height: calc(100vh - 1.5rem);
     }
 
-
-
     .has-intersection-observer .main-image {
         z-index: -1;
         position: fixed;
@@ -49,26 +47,16 @@
         width: 53%;
         shape-outside: polygon(0 0, 100% 0, 100% 0, 90% 0, 90% 0, 100% 100%, 100% 100%, 0 100%);
         transition: shape-outside 1s;
-    }    
-}
+    }
 
-/* When headings wrap onto two lines, the paragraphs following them need to be moved down
-explicitly because the headings are positioned absolutely and are therefore out of flow. 
-The max-width values here are defined by where wrapping occurs (in Firefox), determined 
-by the text & font. The min-width is the threshold between “mobile” and “desktop” view. */
-@media screen and (min-width: 625px) and (max-width: 722px) {
-    .has-intersection-observer #home-section h2 + p {
-        padding-top: 11.5rem;
+    .has-intersection-observer section:not(.showcase-group) h2 + p {
+        padding-top: 228px;
+        padding-top: 9.5rem;
     }
-}
-@media screen and (min-width: 625px) and (max-width: 1200px) {
-    .has-intersection-observer #velut-section h2 + p {
-        padding-top: 11.5rem;
-    }
-}
-@media screen and (min-width: 625px) and (max-width: 928px) {
-    .has-intersection-observer #tiq-section h2 + p {
-        padding-top: 11.5rem;
+
+    .has-intersection-observer section:not(.showcase-group) p {
+        padding: 0 0.75rem 0.75rem 40%;
+        margin: 0;
     }
 }
 

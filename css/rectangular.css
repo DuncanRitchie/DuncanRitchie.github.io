@@ -106,11 +106,6 @@ figure {
         border-top: 2.5rem solid transparent;
     }
     
-    .has-intersection-observer section:not(.showcase-group) h2 + p {
-        padding-top: 228px;
-        padding-top: 9.5rem;
-    }
-    
     .has-intersection-observer .main-image-figure figcaption {
         color: white;
         color: #e1f1c3;
