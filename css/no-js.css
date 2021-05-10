@@ -22,6 +22,8 @@
     padding-right: 1rem;
     max-width: 42vw;
     max-width: calc(43vw - 36px);
+    position: absolute;
+    bottom: auto;
 }
 
 .no-intersection-observer section:not(.showcase-group) {
