@@ -7,7 +7,7 @@
     display: none;
 }
 
-#code-body .main-image-figure {
+figure {
     display: contents;
 }
 
@@ -17,13 +17,13 @@
 
 @media screen and (min-width: 625px) {
     .has-intersection-observer .main-image {
-        z-index: -1;
-        position: fixed;
+        position: sticky;
         left: 0;
         top: 0;
         height: 100vh;
         width: 40%;
         object-fit: cover;
+        float: left;
     }
     
     .has-intersection-observer section:not(.showcase-group) {
@@ -46,11 +46,18 @@
             clip-path: initial;
             padding: 0.25rem 0.5rem;
             transform: translateY(100vh);
-            /* transform: translateY(calc(100vh - 4rem)); */
             position: sticky;
             bottom: -2rem;
             top: calc(100vh - 100% - 4rem);
-            /* top: calc(100vh - 100%); */
+            transform: translateY(100vh) translateX(calc(-40vw + 2rem));
+        }
+
+        #aboutme-body.has-intersection-observer .main-image figcaption {
+            top: calc(100vh - 500% - 4rem);
+        }
+
+        .has-intersection-observer section:not(.showcase-group) {
+            min-height: calc(100vh + 8rem);
         }
     
         /* The sticky figcaptions take up space and push the sections down;
