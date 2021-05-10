@@ -6,7 +6,8 @@
         max-width: 40%;
         width: 33.3vw;
         left: 1rem;
-        bottom: 0;
+        bottom: -1rem;
+        transform: translateY(calc(-4rem + 50%));
         color: white;
         color: #e1f1c3;
         background: -webkit-linear-gradient(top, #111007 -33%, #58522c);
@@ -69,7 +70,6 @@
     position: absolute;
     max-width: calc(80% - 2rem);
     left: 1rem;
-    bottom: 1rem;
     transform: translateY(-100%);
     /* min-height: 2rem; */
     font-size: 0.8rem;

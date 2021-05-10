@@ -112,6 +112,7 @@
         position: absolute;
         max-width: calc(80% - 2rem);
         left: 1rem;
+        bottom: auto;
         transform: translateY(-100%);
         font-size: 0.8rem;
         color: #111111 /* --body-text */;
