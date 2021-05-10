@@ -46,18 +46,21 @@
     }
 
     .main-image-figure:not(.default-main-image-figure) figcaption {
-        position: absolute;
-        top: initial;
+        position: relative;
+        top: unset;
+        left: calc(1rem - 320px);
+        bottom: unset;
         z-index: 3;
-        display: initial;
+        display: inline-block;
         clip-path: none;
         opacity: 100%;
         width: calc(320px - 6rem - 2px);
-        transform: translateX(1rem) translateY(calc(0.5rem));
+        transform: translateY(calc(320px + 3rem - 100%));
         margin: 0;
-        background: none;
+        padding: 0.25rem 0.5rem;
+        background: white;
         border: 1px solid #718b3f /* --colour6 */;
-        border-bottom: none;
+        border-top: none;
     }
 
     .has-intersection-observer .main-image.rectangular {
@@ -67,20 +70,26 @@
     .main-image {
         width: 320px;
         float: left;
-        margin-top: 3rem;
+        margin-top: 1.5rem;
         margin-right: 2.5%;
+        margin-bottom: 1.5rem;
         padding-top: 0;
         height: initial;
     }
 
     section {
         height: initial;
-        min-height: calc(13rem - 2px);
-        min-height: max(calc(13rem - 2px), 50vw);
+        min-height: calc(320px + 1rem);
+        /* min-height: max(320px + 1rem, 50vw); */
+        padding-bottom: 1rem;
     }
 
     body:not(#code-body) section:not(:last-of-type) {
         border: none;
+    }
+
+    h2 {
+        margin: 0;
     }
     
     /* This selector is for adding the href after external links inside sections. */
