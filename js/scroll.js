@@ -2,10 +2,12 @@
 //// The code to change text-wrap-guide does not.
 
 const textWrapGuide = document.getElementById("text-wrap-guide");
+const body = document.getElementsByTagName("body")[0];
 
 const isViewportBigEnoughForScrollBehaviour = () => {
     //// The number also appears in main.css media queries for screenwidth above and below.
-    return document.documentElement.clientWidth > 624;
+    return document.documentElement.clientWidth > 624
+        && body.classList.contains("diagonal");
 }
 
 const mainImages = document.getElementsByClassName("main-image");

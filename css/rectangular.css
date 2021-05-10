@@ -1,22 +1,22 @@
-/* Styles for code.html, which doesn’t have the diagonal layout. */
-#text-wrap-guide {
+/* Styles for the “rectangular” layout that is used on non-mobile when the diagonal layout is supported (due to support for intersection observers) but unwanted. */
+.rectangular #text-wrap-guide {
     display: none;
 }
 
-.default-main-image-picture {
+.rectangular .default-main-image-picture {
     display: none;
 }
 
-figure {
+.rectangular figure {
     display: contents;
 }
 
-.has-intersection-observer .main-image-figure {
+.has-intersection-observer.rectangular .main-image-figure {
     float: none;
 }
 
 @media screen and (min-width: 625px) {
-    .has-intersection-observer .main-image {
+    .has-intersection-observer.rectangular .main-image {
         position: sticky;
         left: 0;
         top: 0;
@@ -26,21 +26,25 @@ figure {
         float: left;
     }
     
-    .has-intersection-observer section:not(.showcase-group) {
+    .has-intersection-observer.rectangular section:not(.showcase-group) {
         min-height: 100vh;
     }
     
-    .has-intersection-observer section:not(.showcase-group) p {
+    .has-intersection-observer.rectangular section:not(.showcase-group) p {
         margin: 0;
-        padding: 0 18px 18px 40%;
-        padding: 0 0.75rem 0.75rem 40%;
+        padding-right: 18px;
+        padding-bottom: 18px;
+        padding-left: 40%;
+        padding-right: 0.75rem;
+        padding-bottom: 0.75rem;
+        padding-left: 40%;
         z-index: 1;
         position: relative;
     }
     
     /* Won’t apply to IE. */
     @supports (position: sticky) {
-        body .main-image-figure figcaption {
+        body.rectangular .main-image-figure figcaption {
             width: 30%;
             left: 0.5rem;
             clip-path: initial;
@@ -52,26 +56,26 @@ figure {
             transform: translateY(100vh) translateX(calc(-40vw + 2rem));
         }
 
-        #aboutme-body.has-intersection-observer .main-image figcaption {
+        #aboutme-body.has-intersection-observer.rectangular .main-image figcaption {
             top: calc(100vh - 500% - 4rem);
         }
 
-        .has-intersection-observer section:not(.showcase-group) {
+        .has-intersection-observer.rectangular section:not(.showcase-group) {
             min-height: calc(100vh + 8rem);
         }
     
         /* The sticky figcaptions take up space and push the sections down;
         this needs to be counteracted. */
-        section:not(.showcase-group) {
+        .rectangular section:not(.showcase-group) {
             margin-top: -1.75rem;
         }
     
-        #velut-section {
+        .rectangular #velut-section {
             margin-top: -2.75rem;
         }
     }
     
-    .main-image-figure figcaption {
+    .rectangular .main-image-figure figcaption {
         position: absolute;
         max-width: calc(80% - 2rem);
         left: 1rem;
@@ -85,52 +89,52 @@ figure {
         align-items: end;
     }
 
-    .has-intersection-observer .main-image-figure figcaption {
+    .has-intersection-observer.rectangular .main-image-figure figcaption {
         bottom: 1rem;
     }
 
-    .has-intersection-observer .main-image-figure.with-caption figcaption {
+    .has-intersection-observer.rectangular .main-image-figure.with-caption figcaption {
         opacity: 0.9;
     }
     
     
     /* Without the translateX, the figcaption would be flush against the right edge of the image. */
     /* body .main-image-figure figcaption { */
-    #velut ~ .main-image-figure figcaption {
+    .rectangular #velut ~ .main-image-figure figcaption {
         transform: translateY(100vh) translateX(calc(-40vw + 2rem));
     }
     
-    .has-intersection-observer #velut-section h2 {
+    .has-intersection-observer.rectangular #velut-section h2 {
         /* The border adds spacing but does not affect the gradient-filled background like padding would. */
         border-top: 60px solid transparent;
         border-top: 2.5rem solid transparent;
     }
     
-    .has-intersection-observer .main-image-figure figcaption {
+    .has-intersection-observer.rectangular .main-image-figure figcaption {
         color: white;
         color: #e1f1c3;
         background: -webkit-linear-gradient(top, #111007 -33%, #58522c);
         background: linear-gradient(180deg, #111007 -33%, #58522c);
     }
 
-    .has-intersection-observer .main-image {
+    .has-intersection-observer.rectangular .main-image {
         clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
         width: calc(40% - 36px);
         width: calc(40% - 1.5rem);
     }
 
-    .has-intersection-observer #code-section {
+    .has-intersection-observer.rectangular #code-section {
         padding-bottom: 84px;
         padding-bottom: 3.5rem;
     }
 
-    .has-intersection-observer .main-image#velut-main-image {
+    .has-intersection-observer.rectangular .main-image#velut-main-image {
         z-index: 0;
         position: sticky;
         float: left;
     }
 
-    .has-intersection-observer section#velut-section h2 {
+    .has-intersection-observer.rectangular section#velut-section h2 {
         margin-top: 12px;
         margin-top: 0.5rem;
     }
