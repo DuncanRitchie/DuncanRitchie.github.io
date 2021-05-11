@@ -137,7 +137,7 @@ nav label {
 For the hover state to be a different colour to the non-hover state, IE needs a different image.
 Modern browsers are capable of colouring the SVG with CSS if the SVG is applied as a mask, 
 so that’s what we do in the @supports query, which over-rides the IE rules. */
-nav label::after {
+#nav-main-list label::after {
     content: "⮟";
     font-size: 16px;
     font-size: 0.6667rem;
@@ -148,13 +148,13 @@ nav label::after {
     background-position: center;
 }
 
-nav label:hover::after {
+#nav-main-list label:hover::after {
     background-image: url(../images/arrow-down-hover.svg); /* Only IE needs this. */
 }
 
 /* In modern browsers, this over-rides the previous code for displaying the nav menu arrow. */
 @supports (mask-size: contain) or (-webkit-mask-size: contain) {
-    nav label::after {
+    #nav-main-list label::after {
         width: 0.95em;
         height: 0.5em;
         display: inline-block;
@@ -167,17 +167,17 @@ nav label:hover::after {
         background-color: #333333 /* --nav-text */;
     }
     
-    nav label:hover::after {
+    #nav-main-list label:hover::after {
         background: unset;
         background-color: #718b3f /* --colour6 */;
     }
 }
 
-nav :checked ~ label {
+#nav-main-list :checked ~ label {
     background-color: #ffffffdf;
 }
 
-nav :checked ~ ul {
+#nav-main-list :checked ~ ul {
     display: block;
 }
 

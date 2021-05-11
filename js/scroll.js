@@ -3,6 +3,7 @@
 
 const textWrapGuide = document.getElementById("text-wrap-guide");
 const body = document.getElementsByTagName("body")[0];
+const layoutToggle = document.getElementById("layout-toggle");
 
 const isViewportBigEnoughForScrollBehaviour = () => {
     //// The number also appears in main.css media queries for screenwidth above and below.
@@ -131,5 +132,23 @@ if (!!textWrapGuide) {
     window.addEventListener("load", updateScroll);
     //// Also do some scroll-related things on window resize.
     window.onresize = resizeDocument;
+
+
+    function setStylesFromToggle() {
+        if (layoutToggle.checked) {
+            body.classList.add("diagonal");
+            body.classList.remove("rectangular");
+            updateScroll();
+        }
+        else {
+            body.classList.add("rectangular");
+            body.classList.remove("diagonal");
+        }
+    }
+
+    //// Toggle the layout when the layout-toggle checkbox is toggled.
+    layoutToggle.addEventListener("click", setStylesFromToggle)
+    //// Ensure the layout matches the toggle on page-load, because Firefox persists the checked state across page-loads.
+    window.addEventListener("load", setStylesFromToggle);
 }
 
