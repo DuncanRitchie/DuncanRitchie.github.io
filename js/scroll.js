@@ -85,83 +85,83 @@ if (!!window.IntersectionObserver) {
         }
     }
 
-//// Code to move text-wrap-guide. It uses scroll position, but not Intersection Observer.
+    //// Code to move text-wrap-guide. It uses scroll position, but not Intersection Observer.
 
-if (!!textWrapGuide) {
-    //// Make the section text flow correctly against the diagonal by moving #text-wrap-guide.
-    function moveTextWrapGuide (windowHeight, distanceScrolled, startOfTextWrapping, endOfTextWrapping) {
-        const newLowerEdge = windowHeight + distanceScrolled;
-        const newShapeOutside = "polygon(0 " + startOfTextWrapping + ", 90% 0, 90% "+(distanceScrolled/2)+"px, 90% "+distanceScrolled+"px, 90% "+distanceScrolled+"px, 100% "+newLowerEdge+"px, 100% "+endOfTextWrapping+"px, 0 "+endOfTextWrapping+"px)";
+    if (!!textWrapGuide) {
+        //// Make the section text flow correctly against the diagonal by moving #text-wrap-guide.
+        function moveTextWrapGuide (windowHeight, distanceScrolled, startOfTextWrapping, endOfTextWrapping) {
+            const newLowerEdge = windowHeight + distanceScrolled;
+            const newShapeOutside = "polygon(0 " + startOfTextWrapping + ", 90% 0, 90% "+(distanceScrolled/2)+"px, 90% "+distanceScrolled+"px, 90% "+distanceScrolled+"px, 100% "+newLowerEdge+"px, 100% "+endOfTextWrapping+"px, 0 "+endOfTextWrapping+"px)";
 
-        textWrapGuide.style.height = endOfTextWrapping + "px";
-        textWrapGuide.style.shapeOutside = newShapeOutside;
-    }
-
-    function updateScroll() {
-        if (isViewportBigEnoughForScrollBehaviour()) {   
-            textWrapGuide.classList.remove("hidden");         
-            const windowHeight = document.documentElement.clientHeight;
-            const distanceScrolled = window.scrollY || window.pageYOffset;
-            const startOfTextWrapping = 0;
-            const endOfTextWrapping = Math.max(windowHeight, document.documentElement.offsetHeight, document.documentElement.scrollHeight);
-            moveTextWrapGuide(windowHeight, distanceScrolled, startOfTextWrapping, endOfTextWrapping);
+            textWrapGuide.style.height = endOfTextWrapping + "px";
+            textWrapGuide.style.shapeOutside = newShapeOutside;
         }
-    }
 
-    function resizeDocument() {
-        moveTextWrapGuide(0, 0, 0, 0);
-        updateScroll();
-    };
-
-    //// Prevents `callback` from being called more than once in `window` milliseconds.
-    //// Assumes `callback` has no arguments.
-    function throttle(callback, window) {
-        let waiting = false;
-        return function () {
-            if (!waiting) {
-                callback();
-                waiting = true;
-                setTimeout(function () {
-                    waiting = false;
-                }, window);
+        function updateScroll() {
+            if (isViewportBigEnoughForScrollBehaviour()) {   
+                textWrapGuide.classList.remove("hidden");         
+                const windowHeight = document.documentElement.clientHeight;
+                const distanceScrolled = window.scrollY || window.pageYOffset;
+                const startOfTextWrapping = 0;
+                const endOfTextWrapping = Math.max(windowHeight, document.documentElement.offsetHeight, document.documentElement.scrollHeight);
+                moveTextWrapGuide(windowHeight, distanceScrolled, startOfTextWrapping, endOfTextWrapping);
             }
         }
-    }
 
-    function updateScrollWithThrottle() {
-        throttle(updateScroll, 50)();
-    }
-    
-    //// Listen for `scroll` event to update anything that can change after scrolling.
-    window.addEventListener("scroll", updateScrollWithThrottle);
-    //// Update scroll position on page load.
-    window.addEventListener("load", updateScroll);
-    //// Also do some scroll-related things on window resize.
-    window.onresize = resizeDocument;
-
-
-    function setStylesFromToggle() {
-        if (layoutToggle.ariaPressed === "true") {
-            body.classList.add("diagonal");
-            body.classList.remove("rectangular");
-            layoutToggle.ariaPressed = "false";
-            layoutToggle.title="Switch to a layout that doesn’t have text and photos sliding horizontally";
+        function resizeDocument() {
+            moveTextWrapGuide(0, 0, 0, 0);
             updateScroll();
-            displayDiagonalImages();
-        }
-        else {
-            body.classList.add("rectangular");
-            body.classList.remove("diagonal");
-            layoutToggle.ariaPressed = "true";
-            layoutToggle.title="Switch to a layout with text and photos sliding in on scroll";
-            resetRectangularLayout();
-        }
-    }
+        };
 
-    //// Toggle the layout when the layout-toggle button is toggled.
-    layoutToggle.addEventListener("click", setStylesFromToggle)
-    //// Ensure the layout matches the toggle on page-load, because Firefox persists the checked state across page-loads.
-    window.addEventListener("load", setStylesFromToggle);
-}
+        //// Prevents `callback` from being called more than once in `window` milliseconds.
+        //// Assumes `callback` has no arguments.
+        function throttle(callback, window) {
+            let waiting = false;
+            return function () {
+                if (!waiting) {
+                    callback();
+                    waiting = true;
+                    setTimeout(function () {
+                        waiting = false;
+                    }, window);
+                }
+            }
+        }
+
+        function updateScrollWithThrottle() {
+            throttle(updateScroll, 50)();
+        }
+        
+        //// Listen for `scroll` event to update anything that can change after scrolling.
+        window.addEventListener("scroll", updateScrollWithThrottle);
+        //// Update scroll position on page load.
+        window.addEventListener("load", updateScroll);
+        //// Also do some scroll-related things on window resize.
+        window.onresize = resizeDocument;
+
+
+        function setStylesFromToggle() {
+            if (layoutToggle.ariaPressed === "true") {
+                body.classList.add("diagonal");
+                body.classList.remove("rectangular");
+                layoutToggle.ariaPressed = "false";
+                layoutToggle.title="Switch to a layout that doesn’t have text and photos sliding horizontally";
+                updateScroll();
+                displayDiagonalImages();
+            }
+            else {
+                body.classList.add("rectangular");
+                body.classList.remove("diagonal");
+                layoutToggle.ariaPressed = "true";
+                layoutToggle.title="Switch to a layout with text and photos sliding in on scroll";
+                resetRectangularLayout();
+            }
+        }
+
+        //// Toggle the layout when the layout-toggle button is toggled.
+        layoutToggle.addEventListener("click", setStylesFromToggle)
+        //// Ensure the layout matches the toggle on page-load, because Firefox persists the checked state across page-loads.
+        window.addEventListener("load", setStylesFromToggle);
+    }
 
 }
