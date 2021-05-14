@@ -61,7 +61,7 @@
         }
 
         .has-intersection-observer.rectangular section:not(.showcase-group) {
-            min-height: calc(100vh + 8rem);
+            min-height: calc(100vh + 3rem);
         }
     
         /* The sticky figcaptions take up space and push the sections down;
