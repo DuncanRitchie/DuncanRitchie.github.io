@@ -74,7 +74,7 @@ nav ul li a:not(#nav-icon-a),label {
     padding: 0.5rem;
 }
 
-nav ul li label:hover,a:hover {
+nav ul li label:hover, nav ul li a:hover, nav button:hover {
     color: #718b3f /* --colour6 */;
     background-image: linear-gradient(#ffffff00, #ffffff00, #ffffff00, #2d4a1b4f);
 }
@@ -201,32 +201,20 @@ nav #layout-toggle-div {
     flex-grow: 1;
 }
 
-@media (max-width: 720px) {
-    nav #layout-toggle-div {
-        flex-grow: 0;
-    }
-
-    nav #layout-toggle-label {
-        padding: 0;
-    }
-
-    /* nav ul li a, nav ul li label {
-        padding-left: 0;
-        padding-right: 0;
-    } */
+nav #layout-toggle {
+    font-family: inherit;
+    font-size: inherit;
+    background-color: transparent;
+    box-shadow: none;
+    border: none;
+    cursor: pointer;
+    min-height: 2rem;
 }
 
-@media (max-width: 725px) {
+@media (max-width: 685px) {
     nav #about-me-hidden-text {
         display: none;
     }
-
-    /* nav #layout-toggle-div {
-        position: absolute;
-        right: 27vw;
-        top: -0.75rem;
-        width: unset;
-    } */
 }
 
 nav #socials-list {

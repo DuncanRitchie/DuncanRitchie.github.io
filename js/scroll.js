@@ -135,18 +135,22 @@ if (!!textWrapGuide) {
 
 
     function setStylesFromToggle() {
-        if (layoutToggle.checked) {
+        if (layoutToggle.ariaPressed === "true") {
             body.classList.add("diagonal");
             body.classList.remove("rectangular");
+            layoutToggle.ariaPressed = "false";
+            layoutToggle.title="Switch to a layout that doesn’t have text and photos sliding horizontally";
             updateScroll();
         }
         else {
             body.classList.add("rectangular");
             body.classList.remove("diagonal");
+            layoutToggle.ariaPressed = "true";
+            layoutToggle.title="Switch to a layout with text and photos sliding in on scroll";
         }
     }
 
-    //// Toggle the layout when the layout-toggle checkbox is toggled.
+    //// Toggle the layout when the layout-toggle button is toggled.
     layoutToggle.addEventListener("click", setStylesFromToggle)
     //// Ensure the layout matches the toggle on page-load, because Firefox persists the checked state across page-loads.
     window.addEventListener("load", setStylesFromToggle);
