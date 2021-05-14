@@ -1,0 +1,115 @@
+/* Media query for printing. */
+
+@media print {
+
+    html,body {
+        min-height: initial;
+        background: none;
+        font-size: 16px;
+    }
+
+    a:not(#nav-icon-a)::after {
+        content: attr(href);
+        padding-left: 0.25rem;
+        vertical-align: super;
+        font-size: 80%;
+        padding-left: 3.6pt;
+        padding-left: 0.15rem;
+        outline: none;
+        text-decoration: none;
+        outline: none;
+        text-decoration: none;
+        clip-path: inset(90% 100%);
+    }
+
+    nav {
+        position: static;
+        margin-top: 1rem;
+        margin-bottom: 2.5rem;
+    }
+
+    #nav-main-list a::after {
+        content: none;
+    }
+
+    #socials-list a::after {
+        position: absolute;
+        transform: translateX(-100%) translateY(100%);
+    }
+
+    #socials-list li:first-of-type a::after {
+        transform: translateX(-130%) translateY(100%);
+    }
+
+    #text-wrap-guide,.default-main-image {
+        display: none;
+    }
+
+    .main-image-figure:not(.default-main-image-figure) figcaption {
+        position: relative;
+        top: unset;
+        left: calc(1rem - 320px);
+        bottom: unset;
+        z-index: 3;
+        display: inline-block;
+        clip-path: none;
+        opacity: 100%;
+        width: calc(320px - 6rem - 2px);
+        transform: translateY(calc(320px + 3rem - 100%));
+        margin: 0;
+        padding: 0.25rem 0.5rem;
+        background: white;
+        border: 1px solid #718b3f /* --colour6 */;
+        border-top: none;
+    }
+
+    .has-intersection-observer .main-image.rectangular {
+        width: 320px;
+    }
+
+    .main-image {
+        width: 320px;
+        float: left;
+        margin-top: 1.5rem;
+        margin-right: 2.5%;
+        margin-bottom: 1.5rem;
+        padding-top: 0;
+        height: initial;
+    }
+
+    section {
+        height: initial;
+        min-height: calc(320px + 1rem);
+        /* min-height: max(320px + 1rem, 50vw); */
+        padding-bottom: 1rem;
+    }
+
+    body:not(#code-body) section:not(:last-of-type) {
+        border: none;
+    }
+
+    h2 {
+        margin: 0;
+    }
+    
+    /* This selector is for adding the href after external links inside sections. */
+    section p:not(.img-container) a[href^="http"]:not([href*="duncanritchie.co.uk"])::after {
+        content: attr(href);
+        padding-left: 0.25rem;
+    }
+
+    p.img-container a::after {
+        position: absolute;
+        transform: translateX(-100%) translateY(-100%);
+    }
+}
+
+@media print and (max-width: 624px) {
+    nav #socials-list {
+        padding-bottom: 2.5rem;
+    }
+
+    .main-image-picture:not(.default-main-image-picture)::after {
+        width: calc(50vw - 6rem - 2px);
+    }
+}

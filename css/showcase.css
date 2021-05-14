@@ -191,35 +191,6 @@
     color: dodgerblue;
 }
 
-/* CSS for browsers that support intersection observers. */
-
-@media screen and (min-width: 625px) {
-
-    .has-intersection-observer .main-image.rectangular {
-        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-        width: calc(40% - 36px);
-        width: calc(40% - 1.5rem);
-    }
-
-    .has-intersection-observer #code-section {
-        padding-bottom: 84px;
-        padding-bottom: 3.5rem;
-    }
-
-    .has-intersection-observer .main-image#velut-main-image {
-        z-index: 0;
-        position: sticky;
-        float: left;
-    }
-
-    .has-intersection-observer section#velut-section h2 {
-        margin-top: 12px;
-        margin-top: 0.5rem;
-    }
-}
-
-
-
 /* Media query for mobile/tablet */
 
 @media (max-width:767px) {

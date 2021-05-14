@@ -1,0 +1,145 @@
+/* Styles for the “rectangular” layout that is used on non-mobile when the diagonal layout is supported (due to support for intersection observers) but unwanted. */
+.rectangular #text-wrap-guide {
+    display: none;
+}
+
+.rectangular .default-main-image-picture {
+    display: none;
+}
+
+.rectangular figure {
+    display: contents;
+}
+
+.has-intersection-observer.rectangular .main-image-figure {
+    float: none;
+}
+
+@media screen and (min-width: 625px) {
+    .has-intersection-observer.rectangular .main-image {
+        position: sticky;
+        left: 0;
+        top: 0;
+        height: 100vh;
+        width: 40%;
+        object-fit: cover;
+        float: left;
+    }
+    
+    .has-intersection-observer.rectangular section:not(.showcase-group) {
+        min-height: 100vh;
+    }
+    
+    .has-intersection-observer.rectangular section:not(.showcase-group) p {
+        margin: 0;
+        padding-right: 18px;
+        padding-bottom: 18px;
+        padding-left: 40%;
+        padding-right: 0.75rem;
+        padding-bottom: 0.75rem;
+        padding-left: 40%;
+        z-index: 1;
+        position: relative;
+    }
+    
+    /* Won’t apply to IE. */
+    @supports (position: sticky) {
+        body.rectangular .main-image-figure figcaption {
+            width: 30%;
+            left: 0.5rem;
+            clip-path: initial;
+            padding: 0.25rem 0.5rem;
+            transform: translateY(100vh);
+            position: sticky;
+            bottom: -2rem;
+            top: calc(100vh - 100% - 4rem);
+            transform: translateY(100vh) translateX(calc(-40vw + 2rem));
+        }
+
+        #aboutme-body.has-intersection-observer.rectangular .main-image figcaption {
+            top: calc(100vh - 500% - 4rem);
+        }
+
+        .has-intersection-observer.rectangular section:not(.showcase-group) {
+            min-height: calc(100vh + 3rem);
+        }
+    
+        /* The sticky figcaptions take up space and push the sections down;
+        this needs to be counteracted. */
+        .rectangular section:not(.showcase-group) {
+            margin-top: -1.75rem;
+        }
+    
+        .rectangular #velut-section {
+            margin-top: -2.75rem;
+        }
+    }
+    
+    .rectangular .main-image-figure figcaption {
+        position: absolute;
+        max-width: calc(80% - 2rem);
+        left: 1rem;
+        font-size: 0.8rem;
+        color: #111111 /* --body-text */;
+        background-color: #ccf18d /* --colour5 */;
+        background-image: linear-gradient(#ccf18d /* --colour5 */, #718b3f /* --colour6 */);
+        padding: 0.25rem 3rem 0.25rem 1rem;
+        display: flex;
+        align-items: end;
+    }
+
+    .has-intersection-observer .main-image-figure figcaption {
+        transform: translateY(-100%);
+    }
+
+    .has-intersection-observer.rectangular .main-image-figure figcaption {
+        bottom: 1rem;
+    }
+
+    .has-intersection-observer.rectangular .main-image-figure.with-caption figcaption {
+        opacity: 0.9;
+    }
+    
+    
+    /* Without the translateX, the figcaption would be flush against the right edge of the image. */
+    /* body .main-image-figure figcaption { */
+    .rectangular #velut ~ .main-image-figure figcaption {
+        transform: translateY(100vh) translateX(calc(-40vw + 2rem));
+    }
+    
+    .has-intersection-observer.rectangular #velut-section h2 {
+        /* The border adds spacing but does not affect the gradient-filled background like padding would. */
+        border-top: 60px solid transparent;
+        border-top: 2.5rem solid transparent;
+    }
+    
+    .has-intersection-observer.rectangular .main-image-figure figcaption {
+        color: white;
+        color: #e1f1c3;
+        background: -webkit-linear-gradient(top, #111007 -33%, #58522c);
+        background: linear-gradient(180deg, #111007 -33%, #58522c);
+    }
+
+    .has-intersection-observer.rectangular .main-image {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+        width: calc(40% - 36px);
+        width: calc(40% - 1.5rem);
+    }
+
+    .has-intersection-observer.rectangular #code-section {
+        padding-bottom: 84px;
+        padding-bottom: 3.5rem;
+    }
+
+    .has-intersection-observer.rectangular .main-image#velut-main-image {
+        z-index: 0;
+        position: sticky;
+        float: left;
+    }
+
+    .has-intersection-observer.rectangular section#velut-section h2 {
+        margin-top: 12px;
+        margin-top: 0.5rem;
+    }
+}
+

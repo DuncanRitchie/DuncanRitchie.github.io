@@ -1,0 +1,51 @@
+/* CSS for browsers that don’t support intersection observers. */
+
+.no-intersection-observer .anchor {
+    width: 100%;
+}
+
+.no-intersection-observer .default-main-image-picture {
+    display: none;
+}
+
+.no-intersection-observer .main-image {
+    position: relative;
+    float: left;
+    width: 50vw;
+    height: 50vw;
+    padding: 42px 0 24px 0;
+    padding: 1.75rem 0 1rem 0;
+}
+
+.no-intersection-observer .main-image-figure figcaption {
+    transform: translateY(51vw);
+    padding-right: 1rem;
+    max-width: 42vw;
+    max-width: calc(43vw - 36px);
+    position: absolute;
+    bottom: auto;
+}
+
+.no-intersection-observer section:not(.showcase-group) {
+    float: left;
+    width: 45vw;
+    width: calc(47vw - 24px);
+    width: calc(47vw - 1rem);
+    padding: 84px 2vw 24px 1vw;
+    padding: 3.5rem 2vw 1rem 1vw;
+}
+
+.no-intersection-observer h2 {
+    margin: 0;
+}
+
+.no-intersection-observer .main-image:last-of-type {
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.no-intersection-observer section:last-of-type {
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
