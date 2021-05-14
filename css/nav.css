@@ -194,6 +194,26 @@ nav ul ul li a {
     width: 100%;
 }
 
+nav #layout-toggle-div {
+    display: none;
+    flex-grow: 1;
+}
+
+@media (max-width: 840px) {
+    nav #layout-toggle-label {
+        padding: 0 0.5rem;
+        /* position: absolute; */
+        text-align: center;
+        width: 3rem;
+        right: 10.5rem;
+        /* top: 1.25rem; */
+    }
+
+    /* nav ul li a,label {
+        padding-right: 0;
+    } */
+}
+
 nav #socials-list {
     flex-grow: 0;
 }

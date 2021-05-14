@@ -1,6 +1,10 @@
 /* CSS for browsers that support intersection observers where the user wants the diagonal layout (with scroll effects). */
 
 @media screen and (min-width: 625px) {
+    .has-intersection-observer nav #layout-toggle-div {
+        display: initial;
+    }
+
     .has-intersection-observer.diagonal .main-image-figure figcaption {
         position: fixed;
         max-width: 40%;
