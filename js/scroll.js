@@ -17,7 +17,7 @@ if (!!window.IntersectionObserver) {
     //// Find which mainImage should be displayed, then change styling on mainImages accordingly.
     const sections =  document.getElementsByTagName("section");
     const mainImageFigures = document.getElementsByClassName("main-image-figure");
-    const scrollCallback = (entries, observer) => {
+    const displayDiagonalImages = (entries, observer) => {
         if (isViewportBigEnoughForScrollBehaviour()) {
             //// Find which mainImage should be displayed by finding which section is intersecting with screen.
             //// If two sections are on the screen, indexOfSectionVisible will be set to the first section
@@ -71,13 +71,19 @@ if (!!window.IntersectionObserver) {
         }
     }
 
-    const intersectionObserver = new IntersectionObserver(scrollCallback, {threshold: [0.1, 0.9]});
+    const intersectionObserver = new IntersectionObserver(displayDiagonalImages, {threshold: [0.1, 0.9]});
 
     for (let i = 0; i < sections.length; i++) {
         // console.log(`Observing Section ${i}: ${sections[i].id}`)
         intersectionObserver.observe(sections[i]);
     }
-}
+
+    function resetRectangularLayout() {
+        for (let i = 0; i <= sections.length; i++) {
+            mainImages[i].classList.remove("hidden");
+            mainImages[i].style.zIndex = 0;
+        }
+    }
 
 //// Code to move text-wrap-guide. It uses scroll position, but not Intersection Observer.
 
@@ -141,12 +147,14 @@ if (!!textWrapGuide) {
             layoutToggle.ariaPressed = "false";
             layoutToggle.title="Switch to a layout that doesn’t have text and photos sliding horizontally";
             updateScroll();
+            displayDiagonalImages();
         }
         else {
             body.classList.add("rectangular");
             body.classList.remove("diagonal");
             layoutToggle.ariaPressed = "true";
             layoutToggle.title="Switch to a layout with text and photos sliding in on scroll";
+            resetRectangularLayout();
         }
     }
 
@@ -156,3 +164,4 @@ if (!!textWrapGuide) {
     window.addEventListener("load", setStylesFromToggle);
 }
 
+}
