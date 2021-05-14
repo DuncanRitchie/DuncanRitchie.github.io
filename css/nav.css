@@ -196,21 +196,36 @@ nav ul ul li a {
 
 nav #layout-toggle-div {
     display: none;
+    width: 3rem;
+    text-align: center;
     flex-grow: 1;
 }
 
-@media (max-width: 840px) {
-    nav #layout-toggle-label {
-        padding: 0 0.5rem;
-        /* position: absolute; */
-        text-align: center;
-        width: 3rem;
-        right: 10.5rem;
-        /* top: 1.25rem; */
+@media (max-width: 720px) {
+    nav #layout-toggle-div {
+        flex-grow: 0;
     }
 
-    /* nav ul li a,label {
+    nav #layout-toggle-label {
+        padding: 0;
+    }
+
+    /* nav ul li a, nav ul li label {
+        padding-left: 0;
         padding-right: 0;
+    } */
+}
+
+@media (max-width: 725px) {
+    nav #about-me-hidden-text {
+        display: none;
+    }
+
+    /* nav #layout-toggle-div {
+        position: absolute;
+        right: 27vw;
+        top: -0.75rem;
+        width: unset;
     } */
 }
 
