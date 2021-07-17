@@ -41,6 +41,10 @@
         z-index: 1;
         position: relative;
     }
+
+    .has-intersection-observer.rectangular section:not(.showcase-group) p:last-of-type {
+        padding-bottom: 2rem;
+    }
     
     /* Won’t apply to IE. */
     @supports (position: sticky) {
@@ -127,8 +131,8 @@
     }
 
     .has-intersection-observer.rectangular #code-section {
-        padding-bottom: 84px;
-        padding-bottom: 3.5rem;
+        padding-bottom: 54px;
+        padding-bottom: 2.25rem;
     }
 
     .has-intersection-observer.rectangular .main-image#velut-main-image {

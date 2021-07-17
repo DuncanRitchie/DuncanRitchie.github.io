@@ -100,7 +100,7 @@
         padding-bottom: 2rem;
     }
 
-    body:not(#code-body) section:not(:last-of-type) {
+    section:not(:last-of-type):not(#code-section):not(.showcase-group) {
         border-bottom: 2px solid #718b3f /* --colour6 */;
     }
 
