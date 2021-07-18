@@ -145,5 +145,10 @@
         margin-top: 12px;
         margin-top: 0.5rem;
     }
+
+    .has-intersection-observer.rectangular section#website-development-section h2 {
+        margin-top: 36px;
+        margin-top: 1.5rem;
+    }
 }
 

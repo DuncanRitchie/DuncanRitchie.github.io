@@ -219,6 +219,11 @@ by the text & font. The min-width is the threshold between “mobile” and “d
         padding-top: 11.5rem;
     }
 }
+@media screen and (min-width: 625px) and (max-width: 744px) {
+    .has-intersection-observer #website-development-section h2 + p {
+        padding-top: 11.5rem;
+    }
+}
 @media screen and (min-width: 625px) and (max-width: 928px) {
     .has-intersection-observer #tiq-section h2 + p {
         padding-top: 11.5rem;
