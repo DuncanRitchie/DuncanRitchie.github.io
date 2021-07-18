@@ -42,8 +42,18 @@
         position: relative;
     }
 
-    .has-intersection-observer.rectangular section:not(.showcase-group) p:last-of-type {
+    .has-intersection-observer.rectangular section:not(.showcase-group) p:last-of-type:not(.img-container) {
         padding-bottom: 2rem;
+    }
+
+    /* Remove the space caused by wrapping an <img> in a <p>. */
+    .has-intersection-observer.rectangular section:not(.showcase-group) p.img-container:last-of-type {
+        line-height: 0;
+    }
+
+    /* The alt text on the <img> should have line-height, though! */
+    .has-intersection-observer.rectangular section:not(.showcase-group) p.img-container:last-of-type img {
+        line-height: 1;
     }
     
     /* Won’t apply to IE. */
