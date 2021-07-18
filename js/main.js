@@ -22,9 +22,9 @@ if (!!window.IntersectionObserver) {
 //// Having this JavaScript makes the padding-top more accurate,
 //// especially at the breakpoints where the headings wrap onto two lines.
 const setPaddingAfterAbsolutelyPositionedHeadings = () => {
+    const elementsToAddPaddingTo = document.querySelectorAll("section:not(.showcase-group) h2 + *");
     if (document.documentElement.clientWidth > 624) {
         const fullWidthElements = document.querySelectorAll("section:not(.showcase-group) h2");
-        const elementsToAddPaddingTo = document.querySelectorAll("section:not(.showcase-group) h2 + *");
 
         for (let i = 0; i < fullWidthElements.length; i++) {
             const borderTopWidthAsText = getComputedStyle(fullWidthElements[i]).borderTopWidth //// Eg, "52.8px"
@@ -35,7 +35,12 @@ const setPaddingAfterAbsolutelyPositionedHeadings = () => {
             elementsToAddPaddingTo[i].style.paddingTop = `${paddingNeeded}px`;
         }
     }
+    else {
+        for (let i = 0; i < elementsToAddPaddingTo.length; i++) {
+            elementsToAddPaddingTo[i].style.paddingTop = `0px`;
+        }
+    }
 }
 
-window.resize = setPaddingAfterAbsolutelyPositionedHeadings
 window.addEventListener("load", setPaddingAfterAbsolutelyPositionedHeadings)
+window.addEventListener("resize", setPaddingAfterAbsolutelyPositionedHeadings)
