@@ -113,14 +113,7 @@
     .has-intersection-observer.rectangular .main-image-figure.with-caption figcaption {
         opacity: 0.9;
     }
-    
-    
-    /* Without the translateX, the figcaption would be flush against the right edge of the image. */
-    /* body .main-image-figure figcaption { */
-    .rectangular #velut ~ .main-image-figure figcaption {
-        transform: translateY(100vh) translateX(calc(-40vw + 2rem));
-    }
-    
+
     .has-intersection-observer.rectangular #velut-section h2 {
         /* The border adds spacing but does not affect the gradient-filled background like padding would. */
         border-top: 60px solid transparent;
@@ -143,12 +136,6 @@
     .has-intersection-observer.rectangular #code-section {
         padding-bottom: 54px;
         padding-bottom: 2.25rem;
-    }
-
-    .has-intersection-observer.rectangular .main-image#velut-main-image {
-        z-index: 0;
-        position: sticky;
-        float: left;
     }
 
     .has-intersection-observer.rectangular section#velut-section h2 {
