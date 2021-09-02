@@ -137,7 +137,7 @@ if (!!window.IntersectionObserver) {
         //// Update scroll position on page load.
         window.addEventListener("load", updateScroll);
         //// Also do some scroll-related things on window resize.
-        window.onresize = resizeDocument;
+        window.addEventListener("resize", resizeDocument);
 
 
         function setStylesFromToggle() {
