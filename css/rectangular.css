@@ -34,10 +34,9 @@
         margin: 0;
         padding-right: 18px;
         padding-bottom: 18px;
-        padding-left: 40%;
+        margin-left: 40%;
         padding-right: 0.75rem;
         padding-bottom: 0.75rem;
-        padding-left: 40%;
         z-index: 1;
         position: relative;
     }
