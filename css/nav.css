@@ -74,7 +74,7 @@ nav ul li a:not(#nav-icon-a),label {
     padding: 0.5rem;
 }
 
-nav ul li label:hover, nav ul li a:hover, nav button:hover {
+nav label:hover, nav a:hover, nav button:hover {
     color: #718b3f /* --colour6 */;
     background-image: linear-gradient(#ffffff00, #ffffff00, #ffffff00, #2d4a1b4f);
 }
