@@ -157,6 +157,10 @@ if (!!window.IntersectionObserver) {
                 layoutToggle.title="Switch to a layout with text and photos sliding in on scroll";
                 resetRectangularLayout();
             }
+        }
+
+        function setStylesAndLocalStorageFromToggle() {
+            setStylesFromToggle();
             setLocalStorageFromLayout();
         }
 
@@ -187,7 +191,7 @@ if (!!window.IntersectionObserver) {
         }
 
         //// Toggle the layout when the layout-toggle button is toggled.
-        layoutToggle.addEventListener("click", setStylesFromToggle)
+        layoutToggle.addEventListener("click", setStylesAndLocalStorageFromToggle)
 
         //// Ensure the layout matches the toggle on page-load, because Firefox persists the checked state across page-loads.
         window.addEventListener("load", setLayoutFromLocalStorage);
