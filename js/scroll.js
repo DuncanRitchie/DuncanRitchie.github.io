@@ -141,7 +141,7 @@ if (!!window.IntersectionObserver) {
         window.addEventListener("resize", resizeDocument);
 
 
-        function setStylesFromToggle() {
+        function setLayoutFromToggle() {
             if (layoutToggle.ariaPressed === "true") {
                 body.classList.add("diagonal");
                 body.classList.remove("rectangular");
@@ -159,8 +159,8 @@ if (!!window.IntersectionObserver) {
             }
         }
 
-        function setStylesAndLocalStorageFromToggle() {
-            setStylesFromToggle();
+        function setLayoutAndLocalStorageFromToggle() {
+            setLayoutFromToggle();
             setLocalStorageFromLayout();
         }
 
@@ -180,7 +180,7 @@ if (!!window.IntersectionObserver) {
 
             layoutToggle.ariaPressed = layout === "diagonal" ? "true" : "false";
 
-            setStylesFromToggle();
+            setLayoutFromToggle();
         }
 
         prefersReducedMotionQuery.addEventListener('change', setLayoutFromLocalStorage);
@@ -191,7 +191,7 @@ if (!!window.IntersectionObserver) {
         }
 
         //// Toggle the layout when the layout-toggle button is toggled.
-        layoutToggle.addEventListener("click", setStylesAndLocalStorageFromToggle)
+        layoutToggle.addEventListener("click", setLayoutAndLocalStorageFromToggle)
 
         //// Ensure the layout matches the toggle on page-load, because Firefox persists the checked state across page-loads.
         window.addEventListener("load", setLayoutFromLocalStorage);
