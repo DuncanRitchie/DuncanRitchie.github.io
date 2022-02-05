@@ -157,10 +157,42 @@ if (!!window.IntersectionObserver) {
                 layoutToggle.title="Switch to a layout with text and photos sliding in on scroll";
                 resetRectangularLayout();
             }
+            setLocalStorageFromLayout();
+        }
+
+        const prefersReducedMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+        prefersReducedMotionQuery.matches;
+
+        function setLayoutFromLocalStorage() {
+                = window.localStorage && window.localStorage.getItem('layout');
+
+            const layout
+                = storedLayout === 'rectangular' || storedLayout === 'diagonal'
+                ? storedLayout
+                : prefersReducedMotionQuery.matches
+                  ? 'rectangular'
+                  : 'diagonal';
+
+            layoutToggle.ariaPressed = layout === "rectangular" ? "true" : "false";
+
+            setStylesFromToggle();
+        }
+
+        prefersReducedMotionQuery.addEventListener('change', setLayoutFromLocalStorage);
+
+        function setLocalStorageFromLayout() {
+            const layout = body.classList.contains("diagonal") ? "diagonal" : "rectangular";
+            window.localStorage && window.localStorage.setItem('layout', layout);
+
+            const storedLayout
+                = window.localStorage && window.localStorage.getItem('layout');
         }
 
         //// Toggle the layout when the layout-toggle button is toggled.
         layoutToggle.addEventListener("click", setStylesFromToggle)
+
+        window.addEventListener("load", setLayoutFromLocalStorage);
+
         //// Ensure the layout matches the toggle on page-load, because Firefox persists the checked state across page-loads.
         window.addEventListener("load", setStylesFromToggle);
     }
