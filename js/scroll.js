@@ -174,7 +174,7 @@ if (!!window.IntersectionObserver) {
                   ? 'rectangular'
                   : 'diagonal';
 
-            layoutToggle.ariaPressed = layout === "rectangular" ? "true" : "false";
+            layoutToggle.ariaPressed = layout === "diagonal" ? "true" : "false";
 
             setStylesFromToggle();
         }
@@ -189,10 +189,8 @@ if (!!window.IntersectionObserver) {
         //// Toggle the layout when the layout-toggle button is toggled.
         layoutToggle.addEventListener("click", setStylesFromToggle)
 
-        window.addEventListener("load", setLayoutFromLocalStorage);
-
         //// Ensure the layout matches the toggle on page-load, because Firefox persists the checked state across page-loads.
-        window.addEventListener("load", setStylesFromToggle);
+        window.addEventListener("load", setLayoutFromLocalStorage);
     }
 
 }
