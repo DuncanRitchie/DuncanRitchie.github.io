@@ -19,45 +19,46 @@ if (!!window.IntersectionObserver) {
     const mainImageFigures = document.getElementsByClassName("main-image-figure");
     const displayDiagonalImages = (entries, observer) => {
         if (isViewportBigEnoughForScrollBehaviour()) {
-            //// Find which mainImage should be displayed by finding which section is intersecting with screen.
-            //// If two sections are on the screen, indexOfSectionVisible will be set to the first section
-            //// in one loop iteration and then set to the second section in another loop iteration, so 
-            //// it will be the second section that will determine which mainImage is displayed.
-            let indexOfSectionVisible = -1;
-            for (let i = 0; i < entries.length; i++) {
-                for (let j = 0; j < sections.length; j++) {
-                    if (entries[i].target.id === sections[j].id
-                        && entries[i].intersectionRatio > 0.1) {
-                        indexOfSectionVisible = j + 1;
-                        
-                        // console.log(mainImages[indexOfSectionVisible])
+            if (entries) {
+                //// Find which mainImage should be displayed by finding which section is intersecting with screen.
+                //// If two sections are on the screen, indexOfSectionVisible will be set to the first section
+                //// in one loop iteration and then set to the second section in another loop iteration, so
+                //// it will be the second section that will determine which mainImage is displayed.
+                let indexOfSectionVisible = -1;
+                for (let i = 0; i < entries.length; i++) {
+                    for (let j = 0; j < sections.length; j++) {
+                        if (entries[i].target.id === sections[j].id
+                            && entries[i].intersectionRatio > 0.1) {
+                            indexOfSectionVisible = j + 1;
+                            // console.log(mainImages[indexOfSectionVisible])
+                        }
                     }
                 }
-            }
-            //// indexOfSectionVisible will still be -1 if the observer has fired, but not reported an intersection.
-            if (indexOfSectionVisible > -1) {
-                for (let i = 0; i <= sections.length; i++) {
-                    //// Pre-emptively hide all captions.
-                    if (i < sections.length) {
-                        mainImageFigures[i].classList.remove("with-caption");
-                    }
-                    //// Hide and change z-index of images according to which section should be visible.
-                    if (i < indexOfSectionVisible - 1) {
-                        mainImages[i].classList.add("hidden");
-                        mainImages[i].style.zIndex = 1;
-                    }
-                    else if (i == indexOfSectionVisible - 1) {
-                        mainImages[i].classList.add("hidden");
-                        mainImages[i].style.zIndex = 1;
-                        mainImageFigures[i].classList.add("with-caption");
-                    }
-                    else if (i == indexOfSectionVisible) {
-                        mainImages[i].classList.remove("hidden");
-                        mainImages[i].style.zIndex = 0;
-                    }
-                    else {
-                        mainImages[i].classList.add("hidden");
-                        mainImages[i].style.zIndex = 0;
+                //// indexOfSectionVisible will still be -1 if the observer has fired, but not reported an intersection.
+                if (indexOfSectionVisible > -1) {
+                    for (let i = 0; i <= sections.length; i++) {
+                        //// Pre-emptively hide all captions.
+                        if (i < sections.length) {
+                            mainImageFigures[i].classList.remove("with-caption");
+                        }
+                        //// Hide and change z-index of images according to which section should be visible.
+                        if (i < indexOfSectionVisible - 1) {
+                            mainImages[i].classList.add("hidden");
+                            mainImages[i].style.zIndex = 1;
+                        }
+                        else if (i == indexOfSectionVisible - 1) {
+                            mainImages[i].classList.add("hidden");
+                            mainImages[i].style.zIndex = 1;
+                            mainImageFigures[i].classList.add("with-caption");
+                        }
+                        else if (i == indexOfSectionVisible) {
+                            mainImages[i].classList.remove("hidden");
+                            mainImages[i].style.zIndex = 0;
+                        }
+                        else {
+                            mainImages[i].classList.add("hidden");
+                            mainImages[i].style.zIndex = 0;
+                        }
                     }
                 }
             }
