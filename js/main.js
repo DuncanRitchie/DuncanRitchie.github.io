@@ -9,8 +9,8 @@ if (!!window.IntersectionObserver) {
 //// the heading, rather than under it.
 //// To fix this, we set the padding-top of the element immediately
 //// after the heading to be equal to the height of the heading.
-//// At least one heading has a border-top; this width needs to be
-//// subtracted from the padding-top.
+//// At least one heading has a border-top; this width (the thickness of
+//// the border) needs to be subtracted from the padding-top.
 //// For some reason we also need to subtract 1rem (24px) from the
 //// padding in the “Developing this website” section.
 //// The padding-top is also defined in the CSS, with breakpoints for
