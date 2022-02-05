@@ -164,6 +164,7 @@ if (!!window.IntersectionObserver) {
         prefersReducedMotionQuery.matches;
 
         function setLayoutFromLocalStorage() {
+            const storedLayout
                 = window.localStorage && window.localStorage.getItem('layout');
 
             const layout
