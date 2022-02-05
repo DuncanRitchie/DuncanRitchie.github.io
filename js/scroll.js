@@ -183,9 +183,6 @@ if (!!window.IntersectionObserver) {
         function setLocalStorageFromLayout() {
             const layout = body.classList.contains("diagonal") ? "diagonal" : "rectangular";
             window.localStorage && window.localStorage.setItem('layout', layout);
-
-            const storedLayout
-                = window.localStorage && window.localStorage.getItem('layout');
         }
 
         //// Toggle the layout when the layout-toggle button is toggled.
