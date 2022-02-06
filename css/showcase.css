@@ -44,6 +44,13 @@
     color: inherit;
 }
 
+@media screen and (min-width: 625px) {
+    .showcase-head h2 {
+        margin-bottom: -54px;
+        margin-bottom: -2.25rem;
+    }
+}
+
 .no-intersection-observer .showcase-head h2 {
     padding-right: 36px;
     padding-right: 1.5rem;

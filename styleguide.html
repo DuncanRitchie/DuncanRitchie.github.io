@@ -4,48 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="Description" content="404 (Page Not Found) page of Duncan Ritchie, a junior web developer in Chester, England.">
-    <title>404 — Duncan Ritchie’s portfolio</title>
-    <!-- Comment out the following in development: -->
-    <link rel="stylesheet" href="https://www.duncanritchie.co.uk/css/main.css">
-    <link rel="stylesheet" href="https://www.duncanritchie.co.uk/css/no-js.css">
-    <link rel="stylesheet" media="print" href="https://www.duncanritchie.co.uk/css/print.css">
-    <!-- Uncomment the following in development: -->
-    <!-- <link rel="stylesheet" href="./css/main.css">
+    <meta name="Description" content="Home-page of Duncan Ritchie, a junior web developer in Chester, England.">
+    <title>Style-guide — Duncan Ritchie’s portfolio</title>
+
+    <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="./css/no-js.css">
-    <link rel="stylesheet" media="print" href="./css/print.css"> -->
+    <link rel="stylesheet" media="print" href="./css/print.css">
     <link rel="icon" href="https://www.duncanritchie.co.uk/favicon.ico" type="image/x-icon" />
     <link rel="icon" href="https://www.duncanritchie.co.uk/favicon-96x96.png" type="image/png" />
-    <style>
-        #four-o-four-section {
-            margin: unset;
-            margin-left: auto;
-            margin-right: auto;
-            max-width: 56rem;
-            min-height: unset;
-        }
-
-        #four-o-four-section h2 {
-            position: relative;
-            margin-top: 3rem;
-            margin-bottom: -2rem;
-        }
-
-        #four-o-four-section h2::before {
-            background-image: none;
-        }
-
-        #four-o-four-section p {
-            padding-left: 0.75rem; padding-right: 0.75rem; 
-        }
-
-        #four-o-four-section p:first-of-type {
-            padding-top: 0.5rem;
-        }
-    </style>
 </head>
 
-<body class="no-intersection-observer" id="four-o-four-body">
+<body class="no-intersection-observer" id="index-body">
     <nav>
         <a id="nav-icon-a" href="https://www.duncanritchie.co.uk/index.html" title="Home — Duncan Ritchie’s portfolio">
             <picture>
@@ -139,21 +108,107 @@
     </nav>
 
     <!-- <main> -->
-    <h1 class="screenreader-only">404 error page</h1>
+    <h1 class="screenreader-only">Style-guide</h1>
 
-    <a class="anchor" name="home" id="home"></a>
-    <section id="four-o-four-section">
-        <h2>
-            Page not found <small>(404 error)</small>.
-        </h2>
+    <a class="anchor" name="styleguide" id="styleguide"></a>
+    <section id="styleguide-section">
+        <h1>
+            Style-guide.
+        </h1>
         <p>
-            The page you wanted doesn’t exist. I may have moved or deleted it, so sorry about that!
+            Inspired by the style-guides of <a href="https://chenhuijing.com/styleguide/">Chen Hui Jing</a>, <a href="https://danabyerly.com/style-guide/">Dana Byerly</a>, and <a href="https://poormansstyleguide.com/">Bryan Braun</a>, this page illustrates how <abbr title="HyperText Markup Language, which defines the content of a webpage">HTML</abbr> elements are displayed on DuncanRitchie.co.uk with my <abbr title="Cascading StyleSheets, the rules of how a website should look">CSS</abbr>.
         </p>
         <p>
-            You might like to go back to <a href="https://www.duncanritchie.co.uk" title="Duncan Ritchie’s portfolio">my homepage</a>,
-            visit <a href="https://www.velut.co.uk" title="velut — a Latin rhyming dictionary">my Latin vocabulary website</a>,
-            or browse <a href="https://www.github.com/DuncanRitchie/" title="Duncan Ritchie — GitHub">my GitHub profile</a>.
+            Elements look worse here than on other pages, which suggests that I should simplify my CSS so it’s easier to keep the styles of my website consistent! Elements that are not used on this site are simply taking on your browser’s default styles — but the defaults also apply to first-level headings, because outside of this page <code>&lt;h1&gt;</code> elements are visually hidden, shown only to screen-reading software.
         </p>
+        <p>
+            This is a paragraph.
+        </p>
+
+        <h2>Lists</h2>
+        <ul>
+            <li>Unordered list item</li>
+            <li>Unordered list item</li>
+            <li>Unordered list item</li>
+            <li>Unordered list item</li>
+        </ul>
+        <ol>
+            <li>Ordered list item</li>
+            <li>Ordered list item</li>
+            <li>Ordered list item</li>
+            <li>Ordered list item</li>
+        </ol>
+        <dl>
+            <dt>Description term</dt>
+            <dd>Description definition</dd>
+            <dt>Description term</dt>
+            <dd>Description definition</dd>
+            <dt>Description term</dt>
+            <dd>Description definition</dd>
+            <dt>Description term</dt>
+            <dd>Description definition</dd>
+        </dl>
+
+
+
+        <h2>Inline elements</h2>
+        <p>
+            A paragraph may contain:<br>
+            an <a href="./" title="Duncan Ritchie’s homepage">a</a> element linking internally,<br>
+            an <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a" title="The anchor element, on MDN docs">a</a> element linking to an external site,<br>
+            an <abbr title="abbreviation">abbr</abbr> element,<br>
+            a <b>b</b> element,<br>
+            a <cite>cite</cite> element,<br>
+            a <code>code</code> element,<br>
+            a <del>del</del> element,<br>
+            a <em>em</em> element,<br>
+            a <dfn title="I didn’t realise &lt;dfn&gt; was an element">dfn</dfn> element,<br>
+            an <i>i</i> element,<br>
+            an <ins>ins</ins> element,<br>
+            a <kbd>kbd</kbd> element,<br>
+            a <mark>mark</mark> element,<br>
+            a <q>q</q> element,<br>
+            a <q>q element with a <q>q</q> element inside it</q>,<br>
+            an <s>s</s> element,<br>
+            a <samp>samp</samp> element,<br>
+            a <small>small</small> element,<br>
+            a <span>span</span> element,<br>
+            a <strong>strong</strong> element,<br>
+            a <sub>sub</sub> element,<br>
+            a <sup>sup</sup> element,<br>
+            a <u>u</u> element,<br>
+            a <var>var</var> element,<br>
+        </p>
+        
+        <h2>Block elements</h2>
+        <h3>A picture</h3>
+        <picture>
+            <img src="favicon-96x96.png" alt="My fulmar icon"/>
+        </picture>
+        <h3>A figure containing a picture and figcaption</h3>
+        <figure>
+            <picture>
+                <img src="favicon-96x96.png" alt="Head of a fulmar on a sky-blue background"/>
+            </picture>
+            <figcaption>
+                My fulmar icon
+            </figcaption>
+        </figure>
+
+        <h3>A blockquote</h3>
+        <blockquote>
+            I sing of weapons and the man who first from the shores at Troy...
+        </blockquote>
+        <h3>Preformatted</h3>
+        <pre>
+            This is something in a &lt;pre&gt; element.
+        </pre>
+
+        <h2>Headings</h2>
+        <h1>First-level heading</h1>
+        <h2>Second-level heading</h2>
+        <h3>Third-level heading</h3>
+        <h4>Fourth-level heading</h4>
     </section>
 
     <!-- </main> -->

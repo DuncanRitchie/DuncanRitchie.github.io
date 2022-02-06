@@ -34,12 +34,25 @@
         margin: 0;
         padding-right: 18px;
         padding-bottom: 18px;
-        padding-left: 40%;
+        margin-left: 40%;
         padding-right: 0.75rem;
         padding-bottom: 0.75rem;
-        padding-left: 40%;
         z-index: 1;
         position: relative;
+    }
+
+    .has-intersection-observer.rectangular section:not(.showcase-group) p:last-of-type:not(.img-container) {
+        padding-bottom: 2rem;
+    }
+
+    /* Remove the space caused by wrapping an <img> in a <p>. */
+    .has-intersection-observer.rectangular section:not(.showcase-group) p.img-container:last-of-type {
+        line-height: 0;
+    }
+
+    /* The alt text on the <img> should have line-height, though! */
+    .has-intersection-observer.rectangular section:not(.showcase-group) p.img-container:last-of-type img {
+        line-height: 1;
     }
     
     /* Won’t apply to IE. */
@@ -99,14 +112,7 @@
     .has-intersection-observer.rectangular .main-image-figure.with-caption figcaption {
         opacity: 0.9;
     }
-    
-    
-    /* Without the translateX, the figcaption would be flush against the right edge of the image. */
-    /* body .main-image-figure figcaption { */
-    .rectangular #velut ~ .main-image-figure figcaption {
-        transform: translateY(100vh) translateX(calc(-40vw + 2rem));
-    }
-    
+
     .has-intersection-observer.rectangular #velut-section h2 {
         /* The border adds spacing but does not affect the gradient-filled background like padding would. */
         border-top: 60px solid transparent;
@@ -127,19 +133,18 @@
     }
 
     .has-intersection-observer.rectangular #code-section {
-        padding-bottom: 84px;
-        padding-bottom: 3.5rem;
-    }
-
-    .has-intersection-observer.rectangular .main-image#velut-main-image {
-        z-index: 0;
-        position: sticky;
-        float: left;
+        padding-bottom: 54px;
+        padding-bottom: 2.25rem;
     }
 
     .has-intersection-observer.rectangular section#velut-section h2 {
         margin-top: 12px;
         margin-top: 0.5rem;
+    }
+
+    .has-intersection-observer.rectangular section#website-development-section h2 {
+        margin-top: 36px;
+        margin-top: 1.5rem;
     }
 }
 

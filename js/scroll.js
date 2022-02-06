@@ -19,45 +19,46 @@ if (!!window.IntersectionObserver) {
     const mainImageFigures = document.getElementsByClassName("main-image-figure");
     const displayDiagonalImages = (entries, observer) => {
         if (isViewportBigEnoughForScrollBehaviour()) {
-            //// Find which mainImage should be displayed by finding which section is intersecting with screen.
-            //// If two sections are on the screen, indexOfSectionVisible will be set to the first section
-            //// in one loop iteration and then set to the second section in another loop iteration, so 
-            //// it will be the second section that will determine which mainImage is displayed.
-            let indexOfSectionVisible = -1;
-            for (let i = 0; i < entries.length; i++) {
-                for (let j = 0; j < sections.length; j++) {
-                    if (entries[i].target.id === sections[j].id
-                        && entries[i].intersectionRatio > 0.1) {
-                        indexOfSectionVisible = j + 1;
-                        
-                        // console.log(mainImages[indexOfSectionVisible])
+            if (entries) {
+                //// Find which mainImage should be displayed by finding which section is intersecting with screen.
+                //// If two sections are on the screen, indexOfSectionVisible will be set to the first section
+                //// in one loop iteration and then set to the second section in another loop iteration, so
+                //// it will be the second section that will determine which mainImage is displayed.
+                let indexOfSectionVisible = -1;
+                for (let i = 0; i < entries.length; i++) {
+                    for (let j = 0; j < sections.length; j++) {
+                        if (entries[i].target.id === sections[j].id
+                            && entries[i].intersectionRatio > 0.1) {
+                            indexOfSectionVisible = j + 1;
+                            // console.log(mainImages[indexOfSectionVisible])
+                        }
                     }
                 }
-            }
-            //// indexOfSectionVisible will still be -1 if the observer has fired, but not reported an intersection.
-            if (indexOfSectionVisible > -1) {
-                for (let i = 0; i <= sections.length; i++) {
-                    //// Pre-emptively hide all captions.
-                    if (i < sections.length) {
-                        mainImageFigures[i].classList.remove("with-caption");
-                    }
-                    //// Hide and change z-index of images according to which section should be visible.
-                    if (i < indexOfSectionVisible - 1) {
-                        mainImages[i].classList.add("hidden");
-                        mainImages[i].style.zIndex = 1;
-                    }
-                    else if (i == indexOfSectionVisible - 1) {
-                        mainImages[i].classList.add("hidden");
-                        mainImages[i].style.zIndex = 1;
-                        mainImageFigures[i].classList.add("with-caption");
-                    }
-                    else if (i == indexOfSectionVisible) {
-                        mainImages[i].classList.remove("hidden");
-                        mainImages[i].style.zIndex = 0;
-                    }
-                    else {
-                        mainImages[i].classList.add("hidden");
-                        mainImages[i].style.zIndex = 0;
+                //// indexOfSectionVisible will still be -1 if the observer has fired, but not reported an intersection.
+                if (indexOfSectionVisible > -1) {
+                    for (let i = 0; i <= sections.length; i++) {
+                        //// Pre-emptively hide all captions.
+                        if (i < sections.length) {
+                            mainImageFigures[i].classList.remove("with-caption");
+                        }
+                        //// Hide and change z-index of images according to which section should be visible.
+                        if (i < indexOfSectionVisible - 1) {
+                            mainImages[i].classList.add("hidden");
+                            mainImages[i].style.zIndex = 1;
+                        }
+                        else if (i == indexOfSectionVisible - 1) {
+                            mainImages[i].classList.add("hidden");
+                            mainImages[i].style.zIndex = 1;
+                            mainImageFigures[i].classList.add("with-caption");
+                        }
+                        else if (i == indexOfSectionVisible) {
+                            mainImages[i].classList.remove("hidden");
+                            mainImages[i].style.zIndex = 0;
+                        }
+                        else {
+                            mainImages[i].classList.add("hidden");
+                            mainImages[i].style.zIndex = 0;
+                        }
                     }
                 }
             }
@@ -137,10 +138,10 @@ if (!!window.IntersectionObserver) {
         //// Update scroll position on page load.
         window.addEventListener("load", updateScroll);
         //// Also do some scroll-related things on window resize.
-        window.onresize = resizeDocument;
+        window.addEventListener("resize", resizeDocument);
 
 
-        function setStylesFromToggle() {
+        function setLayoutFromToggle() {
             if (layoutToggle.ariaPressed === "true") {
                 body.classList.add("diagonal");
                 body.classList.remove("rectangular");
@@ -158,10 +159,42 @@ if (!!window.IntersectionObserver) {
             }
         }
 
+        function setLayoutAndLocalStorageFromToggle() {
+            setLayoutFromToggle();
+            setLocalStorageFromLayout();
+        }
+
+        const prefersReducedMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+        prefersReducedMotionQuery.matches;
+
+        function setLayoutFromLocalStorage() {
+            const storedLayout
+                = window.localStorage && window.localStorage.getItem('layout');
+
+            const layout
+                = storedLayout === 'rectangular' || storedLayout === 'diagonal'
+                ? storedLayout
+                : prefersReducedMotionQuery.matches
+                  ? 'rectangular'
+                  : 'diagonal';
+
+            layoutToggle.ariaPressed = layout === "diagonal" ? "true" : "false";
+
+            setLayoutFromToggle();
+        }
+
+        prefersReducedMotionQuery.addEventListener('change', setLayoutFromLocalStorage);
+
+        function setLocalStorageFromLayout() {
+            const layout = body.classList.contains("diagonal") ? "diagonal" : "rectangular";
+            window.localStorage && window.localStorage.setItem('layout', layout);
+        }
+
         //// Toggle the layout when the layout-toggle button is toggled.
-        layoutToggle.addEventListener("click", setStylesFromToggle)
+        layoutToggle.addEventListener("click", setLayoutAndLocalStorageFromToggle)
+
         //// Ensure the layout matches the toggle on page-load, because Firefox persists the checked state across page-loads.
-        window.addEventListener("load", setStylesFromToggle);
+        window.addEventListener("load", setLayoutFromLocalStorage);
     }
 
 }

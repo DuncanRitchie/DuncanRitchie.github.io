@@ -219,37 +219,406 @@ by the text & font. The min-width is the threshold between “mobile” and “d
         padding-top: 11.5rem;
     }
 }
+@media screen and (min-width: 625px) and (max-width: 744px) {
+    .has-intersection-observer #website-development-section h2 + p {
+        padding-top: 11.5rem;
+    }
+}
 @media screen and (min-width: 625px) and (max-width: 928px) {
     .has-intersection-observer #tiq-section h2 + p {
         padding-top: 11.5rem;
     }
 }
 
-/* CSS for the 404 page. */
+/* Styles for the navbar. */
 
-#four-o-four-section {
-    margin: unset;
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 56rem;
-    min-height: unset;
+nav {
+    position: fixed;
+    display: flex;
+    z-index: 2;
+    width: calc(100% - 36px);
+    width: calc(100% - 1.5rem);
+    justify-content: space-between;
+    align-items: center;
+    top: 24px;
+    top: 1rem;
+    margin: 0;
+    padding: 0 18px;
+    padding: 0 0.75rem;
+    font-size: 19px;
+    font-size: 0.7917rem;
+    background-color: #bfd4ef;
+    background-color: #ffffff7f;
+    background-image: linear-gradient(180deg, #ffffff33, #ffffff66, #ffffff33);
+    color: #333333 /* --nav-text */;
+    text-decoration: none;
 }
 
-#four-o-four-section h2 {
-    position: relative;
-    margin-top: 3rem;
-    margin-bottom: -2rem;
+/* Blur the background of nav */
+nav::before {
+    position: absolute;
+    z-index: -1;
+    content: '';
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    backdrop-filter: blur(4px) brightness(103%);
 }
 
-#four-o-four-section h2::before {
-    background-image: none;
+nav a {
+    color: inherit;
+    text-decoration: inherit;
 }
 
-#four-o-four-section p {
-    padding-left: 0.75rem; padding-right: 0.75rem; 
+nav #nav-icon-a {
+    display: flex;
+    align-items: center;
+    padding: 0 12px 0 6px;
+    padding: 0 0.5rem 0 0.25rem;
 }
 
-#four-o-four-section p:first-of-type {
-    padding-top: 0.5rem;
+nav #nav-icon {
+    width: 36px;
+    width: 1.5rem;
+    height: 36px;
+    height: 1.5rem;
+    margin-top: 6px;
+    margin-top: 0.25rem;
+    margin-right: 12px;
+    margin-right: 0.5rem;
+    padding: 0;
+    background-color: initial;
 }
+
+nav ul {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+    flex-basis: max-content;
+    flex-grow: 1;
+}
+
+nav ul li a:not(#nav-icon-a),label {
+    padding: 12px;
+    padding: 0.5rem;
+}
+
+nav label:hover, nav a:hover, nav button:hover {
+    color: #718b3f /* --colour6 */;
+    background-image: linear-gradient(#ffffff00, #ffffff00, #ffffff00, #2d4a1b4f);
+}
+
+nav ul input {
+    position: absolute;
+    top: -3.6px;
+    top: -0.15rem;
+    border: 60px solid transparent;
+    border: 2.5rem solid transparent;
+    width: 5rem;
+    height: 0;
+    z-index: -2;
+    opacity: 0;
+}
+
+nav ul input:focus + label {
+    outline: dashed 2px #76027a /* --visited-text */;
+}
+
+nav ul li a,label {
+    padding-left: 9px;
+    padding-right: 9px;
+    padding-left: 0.375rem;
+    padding-right: 0.375rem;
+}
+
+nav ul ul {
+    position: absolute;
+    flex-direction: column;
+    display: none;
+    font-size: 20px;
+    font-size: 0.8333rem;
+    margin-top: 12px;
+    margin-top: 0.5rem;
+    background-color: #9ebee7;
+    background-color: #ffffffcf;
+    clip-path: polygon(0 0, 90% 0, 100% 100%, 0 100%);
+}
+
+/* Blur the background of nav submenus */
+nav ul ul::before {
+    position: absolute;
+    z-index: -1;
+    content: '';
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    backdrop-filter: blur(3px) brightness(103%);
+}
+
+nav label {
+    cursor: pointer;
+    padding: 12px 18px;
+    padding: 0.5rem 0.75rem;
+}
+
+/* These rules are for Internet Explorer to display the down arrow for the nav menus correctly.
+For the hover state to be a different colour to the non-hover state, IE needs a different image.
+Modern browsers are capable of colouring the SVG with CSS if the SVG is applied as a mask, 
+so that’s what we do in the @supports query, which over-rides the IE rules. */
+#nav-main-list label::after {
+    content: "⮟";
+    font-size: 16px;
+    font-size: 0.6667rem;
+    color: transparent;
+    background-image: url(../images/arrow-down.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+#nav-main-list label:hover::after {
+    background-image: url(../images/arrow-down-hover.svg); /* Only IE needs this. */
+}
+
+/* In modern browsers, this over-rides the previous code for displaying the nav menu arrow. */
+@supports (mask-size: contain) or (-webkit-mask-size: contain) {
+    #nav-main-list label::after {
+        width: 0.95em;
+        height: 0.5em;
+        display: inline-block;
+        content: '';
+        -webkit-mask: url(../images/arrow-down.svg) no-repeat 50% 50%;
+        mask: url(../images/arrow-down.svg) no-repeat 50% 50%;
+        -webkit-mask-size: contain;
+        mask-size: contain;
+        background: unset;
+        background-color: #333333 /* --nav-text */;
+    }
+    
+    #nav-main-list label:hover::after {
+        background: unset;
+        background-color: #718b3f /* --colour6 */;
+    }
+}
+
+#nav-main-list :checked ~ label {
+    background-color: #ffffffdf;
+}
+
+#nav-main-list :checked ~ ul {
+    display: block;
+}
+
+nav ul ul li {
+    padding: 6px 12px 0 0;
+    padding: 0.25rem 0.5rem 0 0;
+    width: 100%;
+}
+
+nav ul ul li a {
+    display: inline-block;
+    padding: 6px 12px 6px 18px;
+    padding: 0.25rem 0.5rem 0.25rem 0.75rem;
+    width: 100%;
+}
+
+nav #layout-toggle-div {
+    display: none;
+    width: 3rem;
+    text-align: center;
+    flex-grow: 1;
+}
+
+nav #layout-toggle {
+    font-family: inherit;
+    font-size: inherit;
+    background-color: transparent;
+    box-shadow: none;
+    border: none;
+    cursor: pointer;
+    min-height: 2rem;
+}
+
+@media (max-width: 685px) {
+    nav #about-me-hidden-text {
+        display: none;
+    }
+}
+
+nav #socials-list {
+    flex-grow: 0;
+}
+
+
+
+/* CSS for mobile. */
+@media (max-width: 660px) {
+    nav #nav-icon-a {
+        padding-right: 0;
+    }
+}
+
+@media (max-width: 624px) {
+    nav {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        grid-template-areas: 
+            "icon socials"
+            "icon main";
+        padding: 0 12px 0 9px;
+        padding: 0 0.5rem 0 0.375rem;
+        width: calc(100% - 0.875rem);
+    }
+
+    nav #nav-icon-a {
+        grid-area: icon;
+        display: flex;
+        justify-content: start;
+        padding: 12px;
+        padding: 0.5rem;
+        height: calc(100% - 12px);
+        height: calc(100% - 0.5rem);
+    }
+
+    nav #nav-icon {
+        margin: 0 9px 0 0;
+        margin: 0 0.375rem 0 0;
+    }
+
+    nav a, nav label {
+        display: inline-block;
+        text-align: center;
+    }
+
+    nav #nav-main-list {
+        width: 100%;
+        grid-area: main;
+        justify-content: space-between;
+        border-top: 1px solid #333333 /* --nav-text */;
+    }
+
+    nav #about-me-hidden-text {
+        display: unset;
+    }
+    
+    nav #socials-list {
+        grid-area: socials;
+        justify-content: end;
+        margin-left: auto;
+        margin-right: 12px;
+        margin-right: 0.5rem;
+    }
+
+    nav ul ul {
+        clip-path: unset;
+        margin: 0;
+        padding: 0.25rem 0.5rem 0 0;
+    }
+
+    nav #socials-list li a {
+        padding: 0.5rem;
+        width: 100%;
+        text-align: center;
+    }
+
+    #socials-list li {
+        padding: 0 12px 0;
+        padding: 0 0.5rem 0;
+    }
+
+    #nav-main-list li a {
+        text-align: left;
+        width: calc(100% - 0.5rem);
+    }
+
+    .main-image {
+        width: 100%;
+        height: 75vw;
+        object-fit: cover;
+        padding-top: 93px;
+        padding-top: 3.875rem;
+    }
+
+    .default-main-image,.text-wrap-guide {
+        display: none;
+    }
+
+    section:not(.showcase-group) {
+        padding: 18px 12px 96px;
+        padding: 0.75rem 0.5rem 4rem;
+    }
+
+    section:not(.showcase-group):last-of-type {
+        padding-bottom: 48px;
+        padding-bottom: 2rem;
+    }
+
+    section:not(:last-of-type):not(#code-section):not(.showcase-group) {
+        border-bottom: 2px solid #718b3f /* --colour6 */;
+    }
+
+    h2 {
+        padding: 0 24px;
+        padding: 0 1rem;
+        margin: 0;
+        font-size: 72px;
+        font-size: 3rem;
+    }
+
+    .main-image-figure figcaption {
+        position: absolute;
+        max-width: calc(80% - 2rem);
+        left: 1rem;
+        bottom: auto;
+        transform: translateY(-100%);
+        font-size: 0.8rem;
+        color: #111111 /* --body-text */;
+        background-color: #ccf18d /* --colour5 */;
+        background-image: linear-gradient(#ccf18d /* --colour5 */, #718b3f /* --colour6 */);
+        padding: 0.25rem 3rem 0.25rem 1rem;
+        display: flex;
+        align-items: end;
+        clip-path: polygon(0 0, calc(100% - 0.25rem) 0, 100% 100%, 0.25rem 100%);
+        opacity: 100%;
+    }
+}
+
+/* CSS for smaller mobiles. */
+
+@media (max-width: 424px) {
+    nav {
+        grid-template-columns: min-content 1fr;
+    }
+}
+
+@media (max-width: 355px) {
+    nav #nav-icon-a {
+        justify-content: center;
+        padding: 6px;
+        padding: 0.25rem;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav #nav-icon {
+        margin-right: 0;
+    }
+
+    .main-image {
+        padding-top: 96px;
+        padding-top: 4rem;
+    }
+}
+
+@media (max-width: 316px) {
+    .main-image {
+        padding-top: 120px;
+        padding-top: 5rem;
+    }
+}
+
 
