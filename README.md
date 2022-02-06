@@ -63,6 +63,8 @@ On [code.html](https://www.duncanritchie.co.uk/code.html), my showcase of projec
 
 ![Screenshot of my showcase of projects, on desktop Firefox](https://github.com/DuncanRitchie/portfolio-screenshots/blob/main/minified/new-desktop-projectshowcase-firefox-javascript__small.png)
 
+I then applied the “rectangular” layout to the other two pages, and added a button in the navbar to toggle between the two layouts (rectangular/diagonal). Local Storage is used to remember which layout you want.
+
 ### Accessibility
 Accessibility is something I’ve improved in several ways.
 * I’ve increased the font sizes.
@@ -72,8 +74,7 @@ Accessibility is something I’ve improved in several ways.
 (On mobile, the GitHub/LinkedIn links in the navbar create the one exception to this.)
 * Screenreader-only text appears next to the GitHub icons on my project showcase.
 * The navigation menus can be toggled even if you have neither a mouse nor JavaScript.
-
-(Still to do — I want visitors to be able to toggle the on-scroll transitions, since people that prefer reduced motion might not like how the photos are revealed and hidden and how the text is re-flowed against the diagonal.)
+* If the user has enabled the  `prefers-reduced-motion` setting in their browser, they do not see transitions or animations by default. However, the new “diagonal” layout (with its on-scroll transitions to reveal photos and to keep the text aligned with the diagonal edge) can still be turned on and off via the “Toggle layout” button.
 
 ### Screen-size
 I’ve improved the site’s responsiveness to screen-size by:
@@ -95,21 +96,23 @@ Here is a screenshot without JavaScript:
 ![Screenshot of the redesigned site in Internet Explorer, without JavaScript](https://github.com/DuncanRitchie/portfolio-screenshots/blob/main/minified/new-desktop-withcaption-internetexplorer-home__small.png)
 
 ### Current state
-There are minor improvements remaining to be done. But overall, I’m delighted with what I’ve made. It looks good (to me, at least); and I’ve learnt more about HTML, CSS, and JavaScript: eg, the `<picture>` tag, `rem` units, the `shape-outside` property, `@supports` queries, and intersection observers.
+There are minor improvements remaining to be done. But overall, I’m delighted with what I’ve made. It looks good (to me, at least); and I’ve learnt more about HTML, CSS, and JavaScript: eg, the `<picture>` tag, `rem` units, the `shape-outside` property, `@supports` queries, intersection observers, Local Storage, and the `prefers-reduced-motion` setting.
 
 ## Lighthouse scores
 The Lighthouse profiling tool now gives my site 100% scores on Accessibility, SEO, and Best Practices on desktop and mobile on all three pages. Performance fluctuates between 95% and 100%.
 
-My most recent scores are in the table. My old site was ranked slightly worse.
+My most recent scores are in the table. My old site ranked about the same.
 
-| Page | Device | Performance | Accessibility | Best Practices | SEO |
-| :--: | :----: | ----------: | ------------: | -------------: | --: |
-| Home | Mobile | 98 | 100 | 100 | 100 |
-| My code | Mobile | 100 | 100 | 100 | 100 |
-| More about me | Mobile | 97 | 100 | 100 | 100 |
-| Home | Desktop | 95 | 100 | 100 | 100 |
-| My code | Desktop | 100 | 100 | 100 | 100 |
-| More about me | Desktop | 98 | 100 | 100 | 100 |
+| Page          | Device  | Performance | Accessibility | Best Practices | SEO |
+| :-----------: | :-----: | ----------: | ------------: | -------------: | --: |
+| Home          | Mobile  |          84 |            91 |            100 | 100 |
+| My code       | Mobile  |          99 |            91 |            100 | 100 |
+| More about me | Mobile  |          81 |            91 |            100 | 100 |
+| Home          | Desktop |          85 |            92 |            100 | 100 |
+| My code       | Desktop |          87 |            91 |            100 | 100 |
+| More about me | Desktop |          89 |            92 |            100 | 100 |
+
+Deploying my site on Netlify (instead of GitHub Pages) would improve the Performance figures.
 
 ## Deployments
 To see the old design, which I’ve kept on the [before-2020-redesign](https://github.com/DuncanRitchie/DuncanRitchie.github.io/tree/before-2020-redesign) branch, go to [old.duncanritchie.co.uk](https://old.duncanritchie.co.uk/).
