@@ -26,7 +26,7 @@
         </a>
         <ul id="nav-main-list">
             <li>
-                <input type="checkbox" id="code-nav-tickbox" title="Show or hide menu for my code" aria-haspopup="true" />
+                <input type="checkbox" id="code-nav-tickbox" title="Show or hide menu for my code" />
                 <label for="code-nav-tickbox">
                     My code
                 </label>
@@ -67,7 +67,7 @@
                 </ul>
             </li>
             <li>
-                <input type="checkbox" id="about-me-nav-tickbox" title="Show or hide menu for more about me" aria-haspopup="true" />
+                <input type="checkbox" id="about-me-nav-tickbox" title="Show or hide menu for more about me" />
                 <label for="about-me-nav-tickbox">
                     More <span id="about-me-hidden-text">about me</span>
                 </label>
@@ -153,8 +153,8 @@
         </figcaption>
     </figure>
     <!-- First (only) section -->
-    <section id="home-section">
-        <h2>
+    <section id="home-section" aria-labelledby="home-heading">
+        <h2 id="home-heading">
             Hi. I’m Duncan Ritchie.
         </h2>
         <p>

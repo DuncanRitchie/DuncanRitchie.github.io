@@ -26,7 +26,7 @@
         </a>
         <ul id="nav-main-list">
             <li>
-                <input type="checkbox" id="code-nav-tickbox" title="Show or hide menu for my code" aria-haspopup="true" />
+                <input type="checkbox" id="code-nav-tickbox" title="Show or hide menu for my code" />
                 <label for="code-nav-tickbox">
                     My code
                 </label>
@@ -67,7 +67,7 @@
                 </ul>
             </li>
             <li>
-                <input type="checkbox" id="about-me-nav-tickbox" title="Show or hide menu for more about me" aria-haspopup="true" />
+                <input type="checkbox" id="about-me-nav-tickbox" title="Show or hide menu for more about me" />
                 <label for="about-me-nav-tickbox">
                     More about me
                 </label>
@@ -137,8 +137,8 @@
         </figcaption>
     </figure>
 
-    <section id="code-section">
-        <h2>
+    <section id="code-section" aria-labelledby="code-heading">
+        <h2 id="code-heading">
             My coding story.
         </h2>
         <p>
@@ -184,10 +184,10 @@
         </p>
     </section>
 
-    <section class="showcase-group" id="javascript-projects">
+    <section class="showcase-group" id="javascript-projects" aria-labelledby="javascript-projects-heading">
         <!-- JavaScript heading -->
         <div class="showcase-head">
-            <h2>
+            <h2 id="javascript-projects-heading">
                 Java&shy;Script projects.
             </h2>
             <p>
@@ -671,10 +671,10 @@
         <!-- End of last JavaScript project -->
     </section>
 
-    <section class="showcase-group" id="java-projects">
+    <section class="showcase-group" id="java-projects" aria-labelledby="java-projects-heading">
         <!-- Java heading -->
         <div class="showcase-head">
-            <h2>
+            <h2 id="java-projects-heading">
                 Java projects.
             </h2>
             <p>
@@ -792,10 +792,10 @@
         <!-- End of last Java project -->
     </section>
 
-    <section class="showcase-group" id="csharp-projects">
+    <section class="showcase-group" id="csharp-projects" aria-labelledby="csharp-projects-heading">
         <!-- C# heading -->
         <div class="showcase-head">
-            <h2>
+            <h2 id="csharp-projects-heading">
                 C# projects.
             </h2>
             <p>
@@ -910,7 +910,7 @@
         </figcaption>
     </figure>
     <!-- DuncanRitchie.co.uk development section -->
-    <section id="website-development-section">
+    <section id="website-development-section" aria-labelledby="website-development-heading">
         <h2 id="website-development-heading">
             Developing this website.
         </h2>
@@ -953,8 +953,8 @@
         </figcaption>
     </figure>
     <!-- velut section -->
-    <section id="velut-section">
-        <h2>
+    <section id="velut-section" aria-labelledby="velut-heading">
+        <h2 id="velut-heading">
             velut — a Latin rhyming diction&shy;ary.
         </h2>
         <p>
