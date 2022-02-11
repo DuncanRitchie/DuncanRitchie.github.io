@@ -1,4 +1,4 @@
-/* The @font-face rule below was generated on google-webfonts-helper.herokuapp.com */
+/* The @font-face rules below were generated on google-webfonts-helper.herokuapp.com */
 /* alegreya-regular - latin */
 @font-face {
     font-family: 'Alegreya';
@@ -12,7 +12,21 @@
          url('../fonts/alegreya-v26-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
          url('../fonts/alegreya-v26-latin-regular.svg#Alegreya') format('svg'); /* Legacy iOS */
   }
-  
+
+  /* alegreya-600 - latin */
+  @font-face {
+    font-family: 'Alegreya';
+    font-style: normal;
+    font-weight: 600;
+    src: url('../fonts/alegreya-v26-latin-600.eot'); /* IE9 Compat Modes */
+    src: local(''),
+         url('../fonts/alegreya-v26-latin-600.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('../fonts/alegreya-v26-latin-600.woff2') format('woff2'), /* Super Modern Browsers */
+         url('../fonts/alegreya-v26-latin-600.woff') format('woff'), /* Modern Browsers */
+         url('../fonts/alegreya-v26-latin-600.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('../fonts/alegreya-v26-latin-600.svg#Alegreya') format('svg'); /* Legacy iOS */
+  }
+
 
 html,body {
     margin: 0;
