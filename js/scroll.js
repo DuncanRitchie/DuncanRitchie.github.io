@@ -195,6 +195,27 @@ if (!!window.IntersectionObserver) {
 
         //// Ensure the layout matches the toggle on page-load, because Firefox persists the checked state across page-loads.
         window.addEventListener("load", setLayoutFromLocalStorage);
+
+        //// CSS transitions should not happen when the page loads, but are nice afterwards.
+        function setCssTransitions() {
+            const style = document.createElement('style');
+            style.innerHTML =
+                `.has-intersection-observer.diagonal .main-image {
+                    transition: clip-path 0.6s 0s;
+                }
+        
+                .has-intersection-observer.diagonal .main-image.hidden {
+                    transition: clip-path 0.6s 0.6s, width 0.6s 0.6s;
+                };
+                
+                .diagonal .main-image-figure figcaption {
+                    transition: clip-path 0.6s 0.6s, opacity 0.6s 0.6s;
+                }`
+    
+            const firstScriptTag = document.querySelector('script');
+            firstScriptTag.parentNode.insertBefore(style, firstScriptTag);
+        }
+        window.setTimeout(setCssTransitions, 150);
     }
 
 }
