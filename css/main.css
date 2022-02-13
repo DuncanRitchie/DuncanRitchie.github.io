@@ -1,4 +1,32 @@
-@import url('https://fonts.googleapis.com/css?family=Alegreya');
+/* The @font-face rules below were generated on google-webfonts-helper.herokuapp.com */
+/* alegreya-regular - latin */
+@font-face {
+    font-family: 'Alegreya';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/alegreya-v26-latin-regular.eot'); /* IE9 Compat Modes */
+    src: local(''),
+         url('../fonts/alegreya-v26-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('../fonts/alegreya-v26-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+         url('../fonts/alegreya-v26-latin-regular.woff') format('woff'), /* Modern Browsers */
+         url('../fonts/alegreya-v26-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('../fonts/alegreya-v26-latin-regular.svg#Alegreya') format('svg'); /* Legacy iOS */
+  }
+
+  /* alegreya-600 - latin */
+  @font-face {
+    font-family: 'Alegreya';
+    font-style: normal;
+    font-weight: 600;
+    src: url('../fonts/alegreya-v26-latin-600.eot'); /* IE9 Compat Modes */
+    src: local(''),
+         url('../fonts/alegreya-v26-latin-600.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('../fonts/alegreya-v26-latin-600.woff2') format('woff2'), /* Super Modern Browsers */
+         url('../fonts/alegreya-v26-latin-600.woff') format('woff'), /* Modern Browsers */
+         url('../fonts/alegreya-v26-latin-600.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('../fonts/alegreya-v26-latin-600.svg#Alegreya') format('svg'); /* Legacy iOS */
+  }
+
 
 html,body {
     margin: 0;
@@ -170,6 +198,9 @@ section .img-container img {
         -webkit-text-fill-color: transparent;
         -webkit-text-stroke: 0.02rem rgba(214, 233, 255, 0.8) /* --colour2 */;
         z-index: 1;
+        /* If pointer-events were allowed, you would not be able to click on text in
+           the first paragraph following the h2, because the ::after sits on top of it. */
+        pointer-events: none;
     }
 
     /* Gradient behind headings so their overlap over main images doesn’t cause a contrast problem. */
@@ -197,6 +228,8 @@ section .img-container img {
         content: "\00000a ";
         white-space: pre;
         white-space: pre-wrap;
+        line-height: 0;
+        font-size: 0.5em;
     }
 
     .has-intersection-observer section:not(.showcase-group) h2 + p {
