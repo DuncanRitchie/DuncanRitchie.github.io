@@ -62,12 +62,14 @@ for (let i = 0; i < navTickboxes.length; i++) {
     });
 }
 
-//// Assumes a submenu is open.
+//// Does nothing if no submenu is open.
 const closeCurrentSubmenu = () => {
     const currentSubmenuTickbox = document.querySelector("nav input:checked");
-    currentSubmenuTickbox.checked = false;
-    currentSubmenuTickbox.setAttribute("aria-expanded", false);
-    currentSubmenuTickbox.focus();
+    if (currentSubmenuTickbox) {
+        currentSubmenuTickbox.checked = false;
+        currentSubmenuTickbox.setAttribute("aria-expanded", false);
+        currentSubmenuTickbox.focus();
+    }
 }
 
 //// Keyboard events on nav submenu items.
@@ -111,3 +113,12 @@ for (let i = 0; i < navTickboxes.length; i++) {
     setAriaExpanded();
     navTickboxes[i].addEventListener("change", setAriaExpanded)
 }
+
+//// Close nav menus when a click happens outside the nav.
+const nav = document.querySelector("nav");
+document.addEventListener('click', function (event) {
+    const isClickedOutside = !nav.contains(event.target);
+    if (isClickedOutside) {
+        closeCurrentSubmenu();
+    }
+});
