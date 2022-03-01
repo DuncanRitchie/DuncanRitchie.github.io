@@ -9,9 +9,11 @@
 /Portfolio/*               /:splat                                              304
 /quiz/*                    https://duncan-quiz.netlify.app/:splat               200
 /react-demo/*              https://duncan-react-demo.netlify.app/:splat         200
-/roomme/*                  https://roomme.netlify.app/:splat                    200
+/room-me/*                 https://roomme.netlify.app/:splat                    200
 /snake/*                   https://duncan-snake.netlify.app/:splat              200
 /spring-weather/json location=:loc https://spring-weather.herokuapp.com/json?location=:loc 200
 /spring-weather/*          https://spring-weather.herokuapp.com/:splat          200
 /tiq-oeuvre/*              https://duncan-tiq-oeuvre.netlify.app/:splat         200
 /train-times/*             https://cn-train-app.herokuapp.com/:splat            200
+/velut-json-generator/*    https://velut-json-generator.netlify.app/:splat      200
+/velut-dictionary-links/*  https://velut-dictionary-links.netlify.app/:splat    200
