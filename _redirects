@@ -1,6 +1,7 @@
 /                          /index.html                                          200
 /code                      /code.html                                           200
 /aboutme                   /aboutme.html                                        200
+/styleguide                /styleguide.html                                     200
 /calculator/*              https://duncan-calculator.netlify.app/:splat         200
 /countdown-timer/*         https://duncan-countdown.netlify.app/:splat          200
 /geolocation-demo/*        https://duncan-geolocation.netlify.app/:splat        200
