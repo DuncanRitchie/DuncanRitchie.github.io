@@ -6,7 +6,7 @@ I’m a junior dev in Chester, UK, and this is my site.
 ## Assets
 This is a static site with three HTML pages: [index.html](https://www.duncanritchie.co.uk/), [code.html](https://www.duncanritchie.co.uk/code.html), and [aboutme.html](https://www.duncanritchie.co.uk/aboutme.html). For three pages, there’s quite a lot going on.
 
-It is hosted by GitHub Pages, to let me publish other repos to subfolders, eg www.duncanritchie.co.uk/calculator/ and www.duncanritchie.co.uk/snake/ .
+It is hosted by Netlify. Other repos of mine are published to subfolders, eg www.duncanritchie.co.uk/calculator/ and www.duncanritchie.co.uk/snake/ .
 
 Font icons (all three of them) are from Font Awesome. The non-icon font is Alegreya, self-hosted.
 
@@ -99,20 +99,26 @@ Here is a screenshot without JavaScript:
 There are minor improvements remaining to be done. But overall, I’m delighted with what I’ve made. It looks good (to me, at least); and I’ve learnt more about HTML, CSS, and JavaScript: eg, the `<picture>` tag, `rem` units, the `shape-outside` property, `@supports` queries, intersection observers, Local Storage, and the `prefers-reduced-motion` setting.
 
 ## Lighthouse scores
-The Lighthouse profiling tool now gives my site 100% scores on Accessibility, SEO, and Best Practices on desktop and mobile on all three pages. Performance fluctuates between 95% and 100%.
+The Lighthouse profiling tool now gives my site 100% scores on Accessibility, SEO, and Best Practices on desktop and mobile on all three pages. Performance fluctuates between 95% and 100%. I’m aiming for 100% across Accessibility, Best Practices, and SEO.
 
 My most recent scores are in the table. My old site ranked about the same.
 
 | Page          | Device  | Performance | Accessibility | Best Practices | SEO |
 | :-----------: | :-----: | ----------: | ------------: | -------------: | --: |
-| Home          | Mobile  |          84 |            91 |            100 | 100 |
-| My code       | Mobile  |          99 |            91 |            100 | 100 |
-| More about me | Mobile  |          81 |            91 |            100 | 100 |
+| Home          | Mobile  |          85 |            91 |            100 | 100 |
+| My code       | Mobile  |          82 |            82 |             92 | 100 |
+| More about me | Mobile  |          80 |            91 |            100 | 100 |
 | Home          | Desktop |          85 |            92 |            100 | 100 |
-| My code       | Desktop |          87 |            91 |            100 | 100 |
-| More about me | Desktop |          89 |            92 |            100 | 100 |
+| My code       | Desktop |          87 |            82 |            100 | 100 |
+| More about me | Desktop |          85 |            92 |            100 | 100 |
 
-Deploying my site on Netlify (instead of GitHub Pages) would improve the Performance figures.
+Accessibility is not yet at 100% for two reasons:
+1. I’ve got duplicate IDs on elements on code.html
+2. The nav menus are opened and closed by a hidden checkbox (the “checkbox hack”), which is semantically wrong and confusing.
+
+Best Practices is below 100% on code.html because I’ve not yet configured Cloudinary to return a Webp for a picture.
+
+These are pretty easy mistakes to fix.
 
 ## Deployments
 To see the old design, which I’ve kept on the [before-2020-redesign](https://github.com/DuncanRitchie/DuncanRitchie.github.io/tree/before-2020-redesign) branch, go to [old.duncanritchie.co.uk](https://old.duncanritchie.co.uk/).
