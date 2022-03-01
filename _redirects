@@ -18,20 +18,3 @@
 /train-times/*             https://cn-train-app.herokuapp.com/:splat            200
 /velut-json-generator/*    https://velut-json-generator.netlify.app/:splat      200
 /velut-dictionary-links/*  https://velut-dictionary-links.netlify.app/:splat    200
-
-# Enforce trailing slashes
-/calculator                /calculator/                                         301
-/countdown-timer           /countdown-timer/                                    301
-/geolocation-demo          /geolocation-demo/                                   301
-/js-challenges             /js-challenges/                                      301
-/jsChallenges              /js-challenges/                                      301
-/Portfolio                 /                                                    301
-/quiz                      /quiz/                                               301
-/react-demo                /react-demo/                                         301
-/room-me                   /room-me/                                            301
-/snake                     /snake/                                              301
-/spring-weather            /spring-weather/                                     301
-/tiq-oeuvre                /tiq-oeuvre/                                         301
-/train-times               /train-times/                                        301
-/velut-json-generator      /velut-json-generator/                               301
-/velut-dictionary-links    /velut-dictionary-links/                             301
