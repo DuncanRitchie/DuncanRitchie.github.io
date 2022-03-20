@@ -108,12 +108,48 @@
 /* This contains the GitHub logo from Font Awesome. */
 .github-div {
     position: absolute;
-    right: 6px;
-    right: 0.25rem;
-    bottom: -6px;
-    bottom: -0.25rem;
+    right: -3px;
+    right: -0.125rem;
+    bottom: -3px;
+    bottom: -0.125rem;
     font-size: 42px;
     font-size: 1.75rem;
+    line-height: 1.25em;
+}
+
+.github-div a::before {
+    content: 'Code';
+    color: transparent;
+    background-color: #006168;
+    background-image: url(../images/github.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.github-div a:hover::before {
+    background-color: dodgerblue;
+}
+
+/* In modern browsers, this over-rides the previous code for displaying the GitHub logo. */
+@supports (mask-size: contain) or (-webkit-mask-size: contain) {
+    .github-div a::before {
+        width: 1em;
+        height: 1em;
+        display: inline-block;
+        content: '';
+        -webkit-mask: url(../images/github-square.svg) no-repeat 50% 50%;
+        mask: url(../images/github-square.svg) no-repeat 50% 50%;
+        -webkit-mask-size: contain;
+        mask-size: contain;
+        margin: 6px;
+        margin: 0.25rem;
+        transform: translateY(12px);
+        transform: translateY(0.5rem);
+        background-image: unset;
+        background-position: unset;
+        background-size: unset;
+    }
 }
 
 .project-link-a {

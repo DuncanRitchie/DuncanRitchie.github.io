@@ -417,7 +417,21 @@ so that’s what we do in the @supports query, which over-rides the IE rules. */
     background-image: url(../images/arrow-down-hover.svg); /* Only IE needs this. */
 }
 
-/* In modern browsers, this over-rides the previous code for displaying the nav menu arrow. */
+#socials-list a::before {
+    content: '';
+    font-size: 16px;
+    font-size: 0.6667rem;
+    color: transparent;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+/* #socials-list #nav-github::before {
+    background-image: url(../images/github.svg);
+} */
+
+/* In modern browsers, this over-rides the previous code for displaying the nav menu arrow & GitHub/LinkedIn logos. */
 @supports (mask-size: contain) or (-webkit-mask-size: contain) {
     #nav-main-list label::after {
         width: 0.95em;
@@ -435,6 +449,37 @@ so that’s what we do in the @supports query, which over-rides the IE rules. */
     #nav-main-list label:hover::after {
         background: unset;
         background-color: #718b3f /* --colour6 */;
+    }
+
+    #socials-list a::before {
+        width: 1.2em;
+        height: 1.2em;
+        display: inline-block;
+        content: '';
+        /* -webkit-mask: url(../images/github.svg) no-repeat 50% 50%;
+        mask: url(../images/github.svg) no-repeat 50% 50%; */
+        -webkit-mask-size: contain;
+        mask-size: contain;
+        background: unset;
+        background-color: #333333 /* --nav-text */;
+    }
+    
+    #socials-list a:hover::before {
+        background: unset;
+        background-color: #718b3f /* --colour6 */;
+    }
+
+    #socials-list #nav-github::before {
+        -webkit-mask: url(../images/github.svg) no-repeat 50% 50%;
+        mask: url(../images/github.svg) no-repeat 50% 50%;
+        margin-bottom: -0.15em;
+        margin-right: 0.1em;
+    }
+
+    #socials-list #nav-linkedin::before {
+        -webkit-mask: url(../images/linkedin.svg) no-repeat 50% 50%;
+        mask: url(../images/linkedin.svg) no-repeat 50% 50%;
+        margin-bottom: -0.15em;
     }
 }
 
