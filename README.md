@@ -8,7 +8,7 @@ This is a static site with three HTML pages: [index.html](https://www.duncanritc
 
 It is hosted by Netlify. Other repos of mine are published to subfolders, eg www.duncanritchie.co.uk/calculator/ and www.duncanritchie.co.uk/snake/ .
 
-Font icons (all three of them) are from Font Awesome. The non-icon font is Alegreya, self-hosted.
+The font is Alegreya, self-hosted. I’m also self-hosting the logos of GitHub and LinkedIn as SVGs, which are from Font Awesome.
 
 The little downward arrowhead used on the navbar is an SVG I made in Inkscape and minified. Actually, for Internet Explorer it’s two SVGs — a green version appears on mouse (h)over — but modern browsers can change the colour with CSS.
 
