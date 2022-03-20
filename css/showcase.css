@@ -118,7 +118,7 @@
 }
 
 .github-div a::before {
-    content: 'Code';
+    content: 'Git';
     color: transparent;
     background-color: #006168;
     background-image: url(../images/github.svg);
