@@ -90,15 +90,18 @@
     
     .rectangular .main-image-figure figcaption {
         position: absolute;
-        max-width: calc(80% - 2rem);
         left: 1rem;
         font-size: 0.8rem;
         color: #111111 /* --body-text */;
         background-color: #ccf18d /* --colour5 */;
         background-image: linear-gradient(#ccf18d /* --colour5 */, #718b3f /* --colour6 */);
-        padding: 0.25rem 3rem 0.25rem 1rem;
+        padding: 0.25rem 1rem 0.25rem;
         display: flex;
         align-items: end;
+    }
+
+    .has-intersection-observer.rectangular .main-image-figure figcaption {
+        max-width: calc(80% - 2rem);
     }
 
     .has-intersection-observer .main-image-figure figcaption {
