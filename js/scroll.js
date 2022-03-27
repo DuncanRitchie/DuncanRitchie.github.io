@@ -29,16 +29,16 @@ if (!!window.IntersectionObserver) {
                     for (let j = 0; j < sections.length; j++) {
                         if (entries[i].target.id === sections[j].id
                             && entries[i].intersectionRatio > 0.1) {
-                            indexOfSectionVisible = j + 1;
+                            indexOfSectionVisible = j;
                             // console.log(mainImages[indexOfSectionVisible])
                         }
                     }
                 }
                 //// indexOfSectionVisible will still be -1 if the observer has fired, but not reported an intersection.
                 if (indexOfSectionVisible > -1) {
-                    for (let i = 0; i <= sections.length; i++) {
+                    for (let i = 0; i < sections.length; i++) {
                         //// Pre-emptively hide all captions.
-                        if (i < sections.length) {
+                        if (i >= indexOfSectionVisible) {
                             mainImageFigures[i].classList.remove("with-caption");
                         }
                         //// Hide and change z-index of images according to which section should be visible.
@@ -46,13 +46,14 @@ if (!!window.IntersectionObserver) {
                             mainImages[i].classList.add("hidden");
                             mainImages[i].style.zIndex = 1;
                         }
-                        else if (i == indexOfSectionVisible - 1) {
-                            mainImages[i].classList.add("hidden");
+                        else if (i == indexOfSectionVisible) {
+                            mainImages[i].classList.remove("hidden");
                             mainImages[i].style.zIndex = 1;
                             mainImageFigures[i].classList.add("with-caption");
                         }
-                        else if (i == indexOfSectionVisible) {
-                            mainImages[i].classList.remove("hidden");
+                        else if (i == indexOfSectionVisible + 1
+                            && i < sections.length - 1) {
+                            mainImages[i].classList.add("hidden");
                             mainImages[i].style.zIndex = 0;
                         }
                         else {
@@ -63,9 +64,7 @@ if (!!window.IntersectionObserver) {
                 }
             }
         }
-        //// There was a bug in that the default main image would appear, when making the viewport small.
         else {
-            document.getElementsByClassName("default-main-image")[0].classList.add("hidden");
             if (!!textWrapGuide) {
                 textWrapGuide.classList.add("hidden");
             }
@@ -80,7 +79,7 @@ if (!!window.IntersectionObserver) {
     }
 
     function resetRectangularLayout() {
-        for (let i = 0; i <= sections.length; i++) {
+        for (let i = 0; i < sections.length; i++) {
             mainImages[i].classList.remove("hidden");
             mainImages[i].style.zIndex = 0;
         }

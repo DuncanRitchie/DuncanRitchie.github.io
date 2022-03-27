@@ -4,10 +4,6 @@
     width: 100%;
 }
 
-.no-intersection-observer .default-main-image-picture {
-    display: none;
-}
-
 .no-intersection-observer .main-image {
     position: relative;
     float: left;

@@ -3,10 +3,6 @@
     display: none;
 }
 
-.rectangular .default-main-image-picture {
-    display: none;
-}
-
 .rectangular figure {
     display: contents;
 }

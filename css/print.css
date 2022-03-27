@@ -41,11 +41,11 @@
         transform: translateX(-130%) translateY(100%);
     }
 
-    #text-wrap-guide,.default-main-image {
+    #text-wrap-guide {
         display: none;
     }
 
-    .main-image-figure:not(.default-main-image-figure) figcaption {
+    .main-image-figure figcaption {
         position: relative;
         top: unset;
         left: calc(1rem - 320px);
@@ -109,7 +109,7 @@
         padding-bottom: 2.5rem;
     }
 
-    .main-image-picture:not(.default-main-image-picture)::after {
+    .main-image-picture::after {
         width: calc(50vw - 6rem - 2px);
     }
 }
