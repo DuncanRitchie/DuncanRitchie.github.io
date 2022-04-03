@@ -117,6 +117,7 @@ section:not(.showcase-group) :hover:focus {
 }
 
 button {
+    color: inherit;
     cursor: pointer;
 }
 
