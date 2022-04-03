@@ -9,20 +9,18 @@ for (let i = 0; i < navTickboxes.length; i++) {
 
     const newButton = document.createElement('button');
     newButton.type = 'button';
+    newButton.id = label.id;
     newButton.textContent = label.textContent;
     newButton.title = tickbox.title;
+    newButton.setAttribute('aria-controls', tickbox.getAttribute('aria-controls'));
     newButton.setAttribute('aria-expanded', 'false');
-    newButton.setAttribute('aria-has-popup', 'true');
-    newButton.setAttribute('aria-pressed', 'false');
     newButton.addEventListener('click', (_) => {
         const newState = newButton.getAttribute('aria-expanded') === 'true' ? 'false' : 'true';
         const buttons = [...document.querySelectorAll('nav [aria-expanded="true"]')];
         buttons.map(button => {
             button.setAttribute('aria-expanded', 'false');
-            button.setAttribute('aria-pressed', 'false');
         });
         newButton.setAttribute('aria-expanded', newState);
-        newButton.setAttribute('aria-pressed', newState);
     });
 
     tickbox.parentNode.replaceChild(newButton, tickbox);
