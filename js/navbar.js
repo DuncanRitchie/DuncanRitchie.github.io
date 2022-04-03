@@ -66,7 +66,7 @@ navSubmenuItems.map(item => {
     });
 })
 
-//// Keyboard events on nav tickboxes.
+//// Keyboard events on nav toggle buttons.
 //// When a nav tickbox is focused, keypresses should have the effect of clicks (of opening/hiding the submenu)
 //// When opening the submenu, the first item receives focus,
 //// except on Arrow Up, in which case the last item receives focus.
@@ -77,11 +77,11 @@ getAllSubmenuButtons().map(button => {
         if (e.keyCode == 38) {
             //// If the current submenu is open, close it.
             if (isSubmenuOpen(button)) {
-                button.click();
+                closeAllSubmenus();
             }
             //// Otherwise, open the menu and focus the last item.
             else {
-                button.click();
+                openSubmenu(button);
                 document.querySelector("nav .nav-menu-toggle:focus ~ ul li:last-child a").focus();
             }
             return;
@@ -94,12 +94,12 @@ getAllSubmenuButtons().map(button => {
         //// On any key other than Arrow Up, but not Tab or Enter or Shift or Space.
         if (e.keyCode !== 9 && e.keyCode !== 16 && e.keyCode !== 32) {
             //// If the current submenu is open, close it.
-            if (isSubmenuOpen(button)) {
-                button.click();
+            if (isSubmenuOpen(button) && e.keyCode !== 40) {
+                closeAllSubmenus();
             }
             //// Otherwise, open the menu and focus the first item.
             else {
-                button.click();
+                openSubmenu(button);
                 document.querySelector("nav .nav-menu-toggle:focus ~ ul li:first-child a").focus();
             }
             return;
