@@ -116,6 +116,10 @@ section:not(.showcase-group) :hover:focus {
     transform: translateY(calc(2px - 1rem));
 }
 
+button {
+    cursor: pointer;
+}
+
 *:not(.main-image).hidden {
     display: none;
 }
@@ -360,7 +364,7 @@ nav ul input:focus + label {
     outline: dashed 2px #76027a /* --visited-text */;
 }
 
-nav ul li a,label {
+nav ul li a,button,label {
     padding-left: 9px;
     padding-right: 9px;
     padding-left: 0.375rem;
@@ -373,8 +377,6 @@ nav ul ul {
     display: none;
     font-size: 20px;
     font-size: 0.8333rem;
-    margin-top: 12px;
-    margin-top: 0.5rem;
     background-color: #9ebee7;
     background-color: #ffffffcf;
     clip-path: polygon(0 0, 90% 0, 100% 100%, 0 100%);
@@ -402,7 +404,7 @@ nav label {
 For the hover state to be a different colour to the non-hover state, IE needs a different image.
 Modern browsers are capable of colouring the SVG with CSS if the SVG is applied as a mask, 
 so that’s what we do in the @supports query, which over-rides the IE rules. */
-#nav-main-list label::after {
+#nav-main-list label::after, #nav-main-list button::after {
     content: "⮟";
     font-size: 16px;
     font-size: 0.6667rem;
@@ -413,7 +415,7 @@ so that’s what we do in the @supports query, which over-rides the IE rules. */
     background-position: center;
 }
 
-#nav-main-list label:hover::after {
+#nav-main-list label:hover::after, #nav-main-list button:hover::after {
     background-image: url(../images/arrow-down-hover.svg); /* Only IE needs this. */
 }
 
@@ -433,7 +435,7 @@ so that’s what we do in the @supports query, which over-rides the IE rules. */
 
 /* In modern browsers, this over-rides the previous code for displaying the nav menu arrow & GitHub/LinkedIn logos. */
 @supports (mask-size: contain) or (-webkit-mask-size: contain) {
-    #nav-main-list label::after {
+    #nav-main-list label::after, #nav-main-list button::after {
         width: 0.95em;
         height: 0.5em;
         display: inline-block;
@@ -446,7 +448,7 @@ so that’s what we do in the @supports query, which over-rides the IE rules. */
         background-color: #333333 /* --nav-text */;
     }
     
-    #nav-main-list label:hover::after {
+    #nav-main-list label:hover::after, #nav-main-list button:hover::after {
         background: unset;
         background-color: #718b3f /* --colour6 */;
     }
@@ -483,7 +485,7 @@ so that’s what we do in the @supports query, which over-rides the IE rules. */
     }
 }
 
-#nav-main-list :checked ~ label {
+#nav-main-list :checked ~ label, #nav-main-list button[aria-expanded="true"] {
     background-color: #ffffffdf;
 }
 
@@ -515,13 +517,12 @@ nav #layout-toggle-div {
     flex-grow: 1;
 }
 
-nav #layout-toggle {
+nav button {
     font-family: inherit;
     font-size: inherit;
     background-color: transparent;
     box-shadow: none;
     border: none;
-    cursor: pointer;
     min-height: 2rem;
 }
 
@@ -571,7 +572,7 @@ nav #socials-list {
         margin: 0 0.375rem 0 0;
     }
 
-    nav a, nav label {
+    nav a, nav button, nav label {
         display: inline-block;
         text-align: center;
     }

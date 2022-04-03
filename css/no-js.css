@@ -1,5 +1,10 @@
 /* CSS for browsers that don’t support intersection observers. */
 
+.no-intersection-observer nav ul ul {
+    margin-top: 12px;
+    margin-top: 0.5rem;
+}
+
 .no-intersection-observer .anchor {
     width: 100%;
 }
