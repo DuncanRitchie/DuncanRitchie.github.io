@@ -2,6 +2,34 @@
 //// This results in no more than one nav submenu being open at a time.
 const navLabels = document.querySelectorAll("nav ul label");
 const navTickboxes = document.querySelectorAll("nav ul input");
+
+for (let i = 0; i < navTickboxes.length; i++) {
+    const tickbox = navTickboxes[i];
+    const label = navLabels[i];
+
+    const newButton = document.createElement('button');
+    newButton.type = 'button';
+    newButton.textContent = label.textContent;
+    newButton.title = tickbox.title;
+    newButton.setAttribute('aria-expanded', 'false');
+    newButton.setAttribute('aria-has-popup', 'true');
+    newButton.setAttribute('aria-pressed', 'false');
+    newButton.addEventListener('click', (_) => {
+        const newState = newButton.getAttribute('aria-expanded') === 'true' ? 'false' : 'true';
+        const buttons = [...document.querySelectorAll('nav [aria-expanded="true"]')];
+        buttons.map(button => {
+            button.setAttribute('aria-expanded', 'false');
+            button.setAttribute('aria-pressed', 'false');
+        });
+        newButton.setAttribute('aria-expanded', newState);
+        newButton.setAttribute('aria-pressed', newState);
+    });
+
+    tickbox.parentNode.replaceChild(newButton, tickbox);
+    label.remove();
+}
+
+
 for (let i = 0; i < navTickboxes.length; i++) {
     navTickboxes[i].addEventListener("click", (e)=>{
         for (let j = 0; j < navTickboxes.length; j++) {
