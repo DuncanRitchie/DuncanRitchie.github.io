@@ -1,5 +1,6 @@
-//// Allow no more than one nav tickbox to be ticked at a time.
-//// This results in no more than one nav submenu being open at a time.
+//// Initially, the nav HTML contains a tickbox and a label to toggle each submenu
+//// (the “checkbox hack”). This works okay, but it needs to be replaced
+//// with something more semantically correct if JavaScript is available.
 const navLabels = document.querySelectorAll("nav ul label");
 const navTickboxes = document.querySelectorAll("nav ul input");
 
@@ -7,6 +8,7 @@ for (let i = 0; i < navTickboxes.length; i++) {
     const tickbox = navTickboxes[i];
     const label = navLabels[i];
 
+    //// Create a <button> element with attributes from tickbox & label.
     const newButton = document.createElement('button');
     newButton.type = 'button';
     newButton.id = label.id;
@@ -14,6 +16,9 @@ for (let i = 0; i < navTickboxes.length; i++) {
     newButton.title = tickbox.title;
     newButton.setAttribute('aria-controls', tickbox.getAttribute('aria-controls'));
     newButton.setAttribute('aria-expanded', 'false');
+
+    //// On click, make it close all submenus except the one that should be open.
+    //// There should never be more than one submenu open.
     newButton.addEventListener('click', (_) => {
         const newState = newButton.getAttribute('aria-expanded') === 'true' ? 'false' : 'true';
         const buttons = [...document.querySelectorAll('nav [aria-expanded="true"]')];
@@ -23,6 +28,7 @@ for (let i = 0; i < navTickboxes.length; i++) {
         newButton.setAttribute('aria-expanded', newState);
     });
 
+    //// Replace the tickbox & label in the Dom.
     tickbox.parentNode.replaceChild(newButton, tickbox);
     label.remove();
 }
