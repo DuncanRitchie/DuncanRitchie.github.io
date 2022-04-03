@@ -41,6 +41,9 @@ for (let i = 0; i < navSubmenuItems.length; i++) {
     });
 }
 
+//// TO DO: Update all code below to use the buttons created above, instead of the checkbox hack;
+//// eg, button[aria-expanded="true"] instead of input:checked
+
 //// Keyboard events on nav tickboxes.
 //// When a nav tickbox is focused, keypresses should have the effect of clicks (of opening/hiding the submenu)
 //// When opening the submenu, the first item receives focus,
