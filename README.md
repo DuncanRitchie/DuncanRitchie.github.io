@@ -73,7 +73,7 @@ Accessibility is something I’ve improved in several ways.
 * On desktop, all elements are ordered in the HTML — and therefore in the tab-order — in the order displayed on screen.
 (On mobile, the GitHub/LinkedIn links in the navbar create the one exception to this.)
 * Screenreader-only text appears next to the GitHub icons on my project showcase.
-* The navigation menus can be toggled even if you have neither a mouse nor JavaScript.
+* The navigation menus can be toggled even if you have neither a mouse nor JavaScript. This is achieved through the “checkbox hack”: where the state of a hidden tickbox determines whether a menu is displayed, and a visible `<label>` controls the tickbox. If you have JavaScript (as nearly everyone does), the tickbox is replaced with a `<button>` with Aria attributes, which is more semantically appropriate.
 * If the user has enabled the  `prefers-reduced-motion` setting in their browser, they do not see transitions or animations by default. However, the new “diagonal” layout (with its on-scroll transitions to reveal photos and to keep the text aligned with the diagonal edge) can still be turned on and off via the “Toggle layout” button.
 
 ### Screen-size
@@ -96,25 +96,23 @@ Here is a screenshot without JavaScript:
 ![Screenshot of the redesigned site in Internet Explorer, without JavaScript](https://github.com/DuncanRitchie/portfolio-screenshots/blob/main/minified/new-desktop-withcaption-internetexplorer-home__small.png)
 
 ### Current state
-There are minor improvements remaining to be done. But overall, I’m delighted with what I’ve made. It looks good (to me, at least); and I’ve learnt more about HTML, CSS, and JavaScript: eg, the `<picture>` tag, `rem` units, the `shape-outside` property, `@supports` queries, intersection observers, Local Storage, and the `prefers-reduced-motion` setting.
+There are minor improvements remaining to be done. But overall, I’m delighted with what I’ve made. It looks good (to me, at least); and I’ve learnt more about HTML, Aria, CSS, and JavaScript: eg, the `<picture>` tag, `rem` units, the `shape-outside` property, `@supports` queries, intersection observers, Local Storage, and the `prefers-reduced-motion` setting.
 
 ## Lighthouse scores
-The Lighthouse profiling tool now gives my site 100% scores on Accessibility, SEO, and Best Practices on desktop and mobile on all three pages. Performance fluctuates between 95% and 100%. I’m aiming for 100% across Accessibility, Best Practices, and SEO.
+The Lighthouse profiling tool now gives my site 100% scores on Accessibility, SEO, and Best Practices on desktop and mobile on two of the three pages. Performance fluctuates between 86% and 97%. I’m aiming for 100% across Accessibility, Best Practices, and SEO.
 
 My most recent scores are in the table. My old site ranked about the same.
 
 | Page          | Device  | Performance | Accessibility | Best Practices | SEO |
 | :-----------: | :-----: | ----------: | ------------: | -------------: | --: |
-| Home          | Mobile  |          85 |            91 |            100 | 100 |
-| My code       | Mobile  |          82 |            82 |             92 | 100 |
-| More about me | Mobile  |          80 |            91 |            100 | 100 |
-| Home          | Desktop |          85 |            92 |            100 | 100 |
-| My code       | Desktop |          87 |            82 |            100 | 100 |
-| More about me | Desktop |          85 |            92 |            100 | 100 |
+| Home          | Mobile  |          86 |           100 |            100 | 100 |
+| My code       | Mobile  |          88 |            91 |             92 | 100 |
+| More about me | Mobile  |          97 |           100 |            100 | 100 |
+| Home          | Desktop |          90 |           100 |            100 | 100 |
+| My code       | Desktop |          95 |            91 |             92 | 100 |
+| More about me | Desktop |          87 |           100 |            100 | 100 |
 
-Accessibility is not yet at 100% for two reasons:
-1. I’ve got duplicate IDs on elements on code.html
-2. The nav menus are opened and closed by a hidden checkbox (the “checkbox hack”), which is semantically wrong and confusing.
+Accessibility is not yet at 100% on code.html because I’ve got duplicate IDs on elements. Oops.
 
 Best Practices is below 100% on code.html because I’ve not yet configured Cloudinary to return a Webp for a picture.
 
