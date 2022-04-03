@@ -90,10 +90,9 @@ for (let i = 0; i < navTickboxes.length; i++) {
 
 //// Does nothing if no submenu is open.
 const closeCurrentSubmenu = () => {
-    const currentSubmenuTickbox = document.querySelector("nav input:checked");
+    const currentSubmenuTickbox = document.querySelector('nav button[aria-expanded="true"]');
     if (currentSubmenuTickbox) {
-        currentSubmenuTickbox.checked = false;
-        currentSubmenuTickbox.setAttribute("aria-expanded", false);
+        currentSubmenuTickbox.setAttribute("aria-expanded", 'false');
         currentSubmenuTickbox.focus();
     }
 }
