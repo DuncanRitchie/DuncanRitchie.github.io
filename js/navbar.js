@@ -72,10 +72,6 @@ navSubmenuItems.map(item => {
 //// except on Arrow Up, in which case the last item receives focus.
 getAllSubmenuButtons().map(button => {
     button.addEventListener("keydown", (e)=>{
-        //// Tab or Shift or Space.
-        if (e.keyCode == 9 || e.keyCode == 16 || e.keyCode == 32) {
-            return;
-        }
         //// On Escape.
         if (e.keyCode == 27) {
             closeAllSubmenus();
