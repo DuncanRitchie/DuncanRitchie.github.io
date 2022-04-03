@@ -11,6 +11,7 @@ for (let i = 0; i < navTickboxes.length; i++) {
     //// Create a <button> element with attributes from tickbox & label.
     const newButton = document.createElement('button');
     newButton.type = 'button';
+    newButton.classList.add('nav-menu-toggle');
     newButton.id = label.id;
     newButton.textContent = label.textContent;
     newButton.title = tickbox.title;
@@ -20,12 +21,12 @@ for (let i = 0; i < navTickboxes.length; i++) {
     //// On click, make it close all submenus except the one that should be open.
     //// There should never be more than one submenu open.
     newButton.addEventListener('click', (_) => {
-        const newState = newButton.getAttribute('aria-expanded') === 'true' ? 'false' : 'true';
-        const buttons = [...document.querySelectorAll('nav [aria-expanded="true"]')];
-        buttons.map(button => {
-            button.setAttribute('aria-expanded', 'false');
-        });
-        newButton.setAttribute('aria-expanded', newState);
+        if (isSubmenuOpen(newButton)) {
+            closeAllSubmenus();
+        }
+        else {
+            openSubmenu(newButton);
+        }
     });
 
     //// Replace the tickbox & label in the Dom.
@@ -33,33 +34,55 @@ for (let i = 0; i < navTickboxes.length; i++) {
     label.remove();
 }
 
-//// Hide nav submenus after an item has been clicked.
-const navSubmenuItems = document.querySelectorAll("nav ul ul li a");
-for (let i = 0; i < navSubmenuItems.length; i++) {
-    navSubmenuItems[i].addEventListener("click", (e)=>{
-        closeCurrentSubmenu();
+function isSubmenuOpen(toggleButton) {
+    return toggleButton.getAttribute('aria-expanded') === 'true';
+}
+
+function getAllSubmenuButtons() {
+    return [...document.querySelectorAll('.nav-menu-toggle')];
+}
+
+function getOpenSubmenuButton() {
+    return getAllSubmenuButtons().find(button=>isSubmenuOpen(button));
+}
+
+function closeAllSubmenus() {
+    const buttons = getAllSubmenuButtons();
+    buttons.map(button => {
+        button.setAttribute('aria-expanded', 'false');
     });
 }
 
-//// TO DO: Update all code below to use the buttons created above, instead of the checkbox hack;
-//// eg, button[aria-expanded="true"] instead of input:checked
+function openSubmenu(toggleButton) {
+    closeAllSubmenus();
+    toggleButton.setAttribute('aria-expanded', 'true');
+}
+
+//// Hide nav submenus after an item has been clicked.
+const navSubmenuItems = [...document.querySelectorAll("nav ul ul li a")];
+navSubmenuItems.map(item => {
+    item.addEventListener("click", (e)=>{
+        closeCurrentSubmenu();
+    });
+})
 
 //// Keyboard events on nav tickboxes.
 //// When a nav tickbox is focused, keypresses should have the effect of clicks (of opening/hiding the submenu)
 //// When opening the submenu, the first item receives focus,
 //// except on Arrow Up, in which case the last item receives focus.
-for (let i = 0; i < navTickboxes.length; i++) {
-    navTickboxes[i].addEventListener("keydown", (e)=>{
+getAllSubmenuButtons().map(button => {
+    button.addEventListener("keydown", (e)=>{
+        console.log('Submenu button keydown')
         //// On Arrow Up.
         if (e.keyCode == 38) {
             //// If the current submenu is open, close it.
-            if (document.querySelector("nav input:checked ~ label:focus")) {
-                navLabels[i].click();
+            if (isSubmenuOpen(button)) {
+                button.click();
             }
             //// Otherwise, open the menu and focus the last item.
             else {
-                navLabels[i].click();
-                document.querySelector("nav input:focus ~ ul li:last-child a").focus();
+                button.click();
+                document.querySelector("nav .nav-menu-toggle:focus ~ ul li:last-child a").focus();
             }
             return;
         }
@@ -71,18 +94,18 @@ for (let i = 0; i < navTickboxes.length; i++) {
         //// On any key other than Arrow Up, but not Tab or Enter or Shift or Space.
         if (e.keyCode !== 9 && e.keyCode !== 16 && e.keyCode !== 32) {
             //// If the current submenu is open, close it.
-            if (document.querySelector("nav input:checked ~ label:focus")) {
-                navLabels[i].click();
+            if (isSubmenuOpen(button)) {
+                button.click();
             }
             //// Otherwise, open the menu and focus the first item.
             else {
-                navLabels[i].click();
-                document.querySelector("nav input:focus ~ ul li:first-child a").focus();
+                button.click();
+                document.querySelector("nav .nav-menu-toggle:focus ~ ul li:first-child a").focus();
             }
             return;
         }
     });
-}
+});
 
 //// Does nothing if no submenu is open.
 const closeCurrentSubmenu = () => {
