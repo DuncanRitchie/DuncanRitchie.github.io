@@ -72,7 +72,6 @@ navSubmenuItems.map(item => {
 //// except on Arrow Up, in which case the last item receives focus.
 getAllSubmenuButtons().map(button => {
     button.addEventListener("keydown", (e)=>{
-        console.log('Submenu button keydown')
         //// On Arrow Up.
         if (e.keyCode == 38) {
             //// If the current submenu is open, close it.
