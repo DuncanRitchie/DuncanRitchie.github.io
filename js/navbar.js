@@ -91,6 +91,11 @@ getAllSubmenuButtons().map(button => {
         if (e.keyCode === 13) {
             e.preventDefault();
         }
+        //// On Escape.
+        if (e.keyCode == 27) {
+            closeAllSubmenus();
+            return;
+        }
         //// On any key other than Arrow Up, but not Tab or Enter or Shift or Space.
         if (e.keyCode !== 9 && e.keyCode !== 16 && e.keyCode !== 32) {
             //// If the current submenu is open, close it.
@@ -120,7 +125,11 @@ const closeCurrentSubmenu = () => {
 for (let i = 0; i < navSubmenuItems.length; i++) {
     navSubmenuItems[i].addEventListener("keydown", (e)=>{
         switch (e.keyCode) {
-            /// Arrow Up.
+            //// Escape.
+            case 27:
+                closeAllSubmenus();
+                break;
+            //// Arrow Up.
             case 38:
                 //// If the item is the first in its submenu (assuming 2 submenus), close the submenu.
                 if (i==0 || i==document.querySelectorAll("nav ul *:first-child li").length) {
