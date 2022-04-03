@@ -37,9 +37,7 @@ for (let i = 0; i < navTickboxes.length; i++) {
 const navSubmenuItems = document.querySelectorAll("nav ul ul li a");
 for (let i = 0; i < navSubmenuItems.length; i++) {
     navSubmenuItems[i].addEventListener("click", (e)=>{
-        for (let j = 0; j < navTickboxes.length; j++) {
-            navTickboxes[j].checked = false;
-        }
+        closeCurrentSubmenu();
     });
 }
 
