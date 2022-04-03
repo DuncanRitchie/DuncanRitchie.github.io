@@ -72,40 +72,31 @@ navSubmenuItems.map(item => {
 //// except on Arrow Up, in which case the last item receives focus.
 getAllSubmenuButtons().map(button => {
     button.addEventListener("keydown", (e)=>{
-        //// On Arrow Up.
-        if (e.keyCode == 38) {
-            //// If the current submenu is open, close it.
-            if (isSubmenuOpen(button)) {
-                closeAllSubmenus();
-            }
-            //// Otherwise, open the menu and focus the last item.
-            else {
-                openSubmenu(button);
-                document.querySelector("nav .nav-menu-toggle:focus ~ ul li:last-child a").focus();
-            }
+        //// Tab or Shift or Space.
+        if (e.keyCode == 9 || e.keyCode == 16 || e.keyCode == 32) {
             return;
         }
         //// Default behaviour on Enter is to follow the first link in the menu.
         //// We don’t want this; we want to open or close the menu.
-        if (e.keyCode === 13) {
+        if (e.keyCode == 13) {
             e.preventDefault();
+            return;
         }
         //// On Escape.
         if (e.keyCode == 27) {
             closeAllSubmenus();
             return;
         }
-        //// On any key other than Arrow Up, but not Tab or Enter or Shift or Space.
-        if (e.keyCode !== 9 && e.keyCode !== 16 && e.keyCode !== 32) {
-            //// If the current submenu is open, close it.
-            if (isSubmenuOpen(button) && e.keyCode !== 40) {
-                closeAllSubmenus();
-            }
-            //// Otherwise, open the menu and focus the first item.
-            else {
-                openSubmenu(button);
-                document.querySelector("nav .nav-menu-toggle:focus ~ ul li:first-child a").focus();
-            }
+        //// On Arrow Up, open the menu and focus the last item.
+        if (e.keyCode == 38) {
+            openSubmenu(button);
+            document.querySelector("nav .nav-menu-toggle:focus ~ ul li:last-child a").focus();
+            return;
+        }
+        //// On Arrow Down, open the menu and focus the first item.
+        if (e.keyCode == 40) {
+            openSubmenu(button);
+            document.querySelector("nav .nav-menu-toggle:focus ~ ul li:first-child a").focus();
             return;
         }
     });
