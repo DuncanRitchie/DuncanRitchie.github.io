@@ -76,12 +76,6 @@ getAllSubmenuButtons().map(button => {
         if (e.keyCode == 9 || e.keyCode == 16 || e.keyCode == 32) {
             return;
         }
-        //// Default behaviour on Enter is to follow the first link in the menu.
-        //// We don’t want this; we want to open or close the menu.
-        if (e.keyCode == 13) {
-            e.preventDefault();
-            return;
-        }
         //// On Escape.
         if (e.keyCode == 27) {
             closeAllSubmenus();
