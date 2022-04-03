@@ -27,17 +27,6 @@ for (let i = 0; i < navTickboxes.length; i++) {
     label.remove();
 }
 
-
-for (let i = 0; i < navTickboxes.length; i++) {
-    navTickboxes[i].addEventListener("click", (e)=>{
-        for (let j = 0; j < navTickboxes.length; j++) {
-            if (i !== j) {
-                navTickboxes[j].checked = false;
-            }
-        }
-    });
-}
-
 //// Hide nav submenus after an item has been clicked.
 const navSubmenuItems = document.querySelectorAll("nav ul ul li a");
 for (let i = 0; i < navSubmenuItems.length; i++) {
@@ -127,16 +116,6 @@ for (let i = 0; i < navSubmenuItems.length; i++) {
                 break;
         }
     });
-}
-
-//// Set aria-expanded on each menu on load, and when its state changes.
-for (let i = 0; i < navTickboxes.length; i++) {
-    const setAriaExpanded = () => {
-        const newAriaExpanded = navTickboxes[i].getAttribute("aria-expanded") === "false";
-        navTickboxes[i].setAttribute("aria-expanded", newAriaExpanded);
-    }
-    setAriaExpanded();
-    navTickboxes[i].addEventListener("change", setAriaExpanded)
 }
 
 //// Close nav menus when a click happens outside the nav.
