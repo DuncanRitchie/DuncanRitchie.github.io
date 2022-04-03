@@ -53,18 +53,19 @@ function closeAllSubmenus() {
     });
 }
 
+//// Does nothing if no submenu is open.
+const closeCurrentSubmenu = () => {
+    const currentSubmenuTickbox = document.querySelector('nav button[aria-expanded="true"]');
+    if (currentSubmenuTickbox) {
+        currentSubmenuTickbox.setAttribute("aria-expanded", 'false');
+        currentSubmenuTickbox.focus();
+    }
+}
+
 function openSubmenu(toggleButton) {
     closeAllSubmenus();
     toggleButton.setAttribute('aria-expanded', 'true');
 }
-
-//// Hide nav submenus after an item has been clicked.
-const navSubmenuItems = [...document.querySelectorAll("nav ul ul li a")];
-navSubmenuItems.map(item => {
-    item.addEventListener("click", (e)=>{
-        closeCurrentSubmenu();
-    });
-})
 
 //// Keyboard events on nav toggle buttons.
 getAllSubmenuButtons().map(button => {
@@ -85,18 +86,15 @@ getAllSubmenuButtons().map(button => {
     });
 });
 
-//// Does nothing if no submenu is open.
-const closeCurrentSubmenu = () => {
-    const currentSubmenuTickbox = document.querySelector('nav button[aria-expanded="true"]');
-    if (currentSubmenuTickbox) {
-        currentSubmenuTickbox.setAttribute("aria-expanded", 'false');
-        currentSubmenuTickbox.focus();
-    }
-}
+const navSubmenuItems = [...document.querySelectorAll("nav ul ul li a")];
+navSubmenuItems.map((item, i) => {
+    //// Hide nav submenus after an item has been clicked.
+    item.addEventListener("click", (e)=>{
+        closeCurrentSubmenu();
+    });
 
-//// Keyboard events on nav submenu items.
-for (let i = 0; i < navSubmenuItems.length; i++) {
-    navSubmenuItems[i].addEventListener("keydown", (e)=>{
+    //// Keyboard events on nav submenu items.
+    item.addEventListener("keydown", (e)=>{
         switch (e.keyCode) {
             //// Escape.
             case 27:
@@ -128,7 +126,7 @@ for (let i = 0; i < navSubmenuItems.length; i++) {
                 break;
         }
     });
-}
+});
 
 //// Close nav menus when a click happens outside the nav.
 const nav = document.querySelector("nav");
