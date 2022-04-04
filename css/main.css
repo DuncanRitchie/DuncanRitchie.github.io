@@ -178,11 +178,6 @@ section .img-container {
     text-align: right;
 }
 
-section .img-container img {
-    width: 240px;
-    width: 10rem;
-}
-
 @media screen and (min-width: 625px) {
     .has-intersection-observer h2 {
         padding-top: 12px;
