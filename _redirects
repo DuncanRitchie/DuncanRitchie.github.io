@@ -18,4 +18,4 @@
 /train-times/*             https://cn-train-app.herokuapp.com/:splat            200
 /velut-json-generator/*    https://velut-json-generator.netlify.app/:splat      200
 /velut-dictionary-links/*  https://velut-dictionary-links.netlify.app/:splat    200
-/latinitas-recens/*        https://latinitas-recens.netlify.app/latinitas-recens:splat 200
+/latinitas-recens*        https://latinitas-recens.netlify.app/latinitas-recens:splat 200
