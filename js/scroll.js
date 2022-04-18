@@ -17,6 +17,38 @@ if (!!window.IntersectionObserver) {
     //// Find which mainImage should be displayed, then change styling on mainImages accordingly.
     const sections =  document.getElementsByTagName("section");
     const mainImageFigures = document.getElementsByClassName("main-image-figure");
+
+    const displayDiagonalImageFromIndex = (indexOfSectionVisible) => {
+        //// indexOfSectionVisible will be -1 if the observer has fired, but not reported an intersection.
+        if (indexOfSectionVisible > -1) {
+            for (let i = 0; i < sections.length; i++) {
+                //// Pre-emptively hide all captions.
+                if (i >= indexOfSectionVisible) {
+                    mainImageFigures[i].classList.remove("with-caption");
+                }
+                //// Hide and change z-index of images according to which section should be visible.
+                if (i < indexOfSectionVisible - 1) {
+                    mainImages[i].classList.add("hidden");
+                    mainImages[i].style.zIndex = 1;
+                }
+                else if (i == indexOfSectionVisible) {
+                    mainImages[i].classList.remove("hidden");
+                    mainImages[i].style.zIndex = 1;
+                    mainImageFigures[i].classList.add("with-caption");
+                }
+                else if (i == indexOfSectionVisible + 1
+                    && i < sections.length - 1) {
+                    mainImages[i].classList.add("hidden");
+                    mainImages[i].style.zIndex = 0;
+                }
+                else {
+                    mainImages[i].classList.add("hidden");
+                    mainImages[i].style.zIndex = 0;
+                }
+            }
+        }
+    }
+
     const displayDiagonalImages = (entries, observer) => {
         if (isViewportBigEnoughForScrollBehaviour()) {
             if (entries) {
@@ -34,34 +66,7 @@ if (!!window.IntersectionObserver) {
                         }
                     }
                 }
-                //// indexOfSectionVisible will still be -1 if the observer has fired, but not reported an intersection.
-                if (indexOfSectionVisible > -1) {
-                    for (let i = 0; i < sections.length; i++) {
-                        //// Pre-emptively hide all captions.
-                        if (i >= indexOfSectionVisible) {
-                            mainImageFigures[i].classList.remove("with-caption");
-                        }
-                        //// Hide and change z-index of images according to which section should be visible.
-                        if (i < indexOfSectionVisible - 1) {
-                            mainImages[i].classList.add("hidden");
-                            mainImages[i].style.zIndex = 1;
-                        }
-                        else if (i == indexOfSectionVisible) {
-                            mainImages[i].classList.remove("hidden");
-                            mainImages[i].style.zIndex = 1;
-                            mainImageFigures[i].classList.add("with-caption");
-                        }
-                        else if (i == indexOfSectionVisible + 1
-                            && i < sections.length - 1) {
-                            mainImages[i].classList.add("hidden");
-                            mainImages[i].style.zIndex = 0;
-                        }
-                        else {
-                            mainImages[i].classList.add("hidden");
-                            mainImages[i].style.zIndex = 0;
-                        }
-                    }
-                }
+                displayDiagonalImageFromIndex(indexOfSectionVisible);
             }
         }
         else {
@@ -147,7 +152,6 @@ if (!!window.IntersectionObserver) {
                 layoutToggle.ariaPressed = "false";
                 layoutToggle.title="Switch to a layout that doesn’t have text and photos sliding horizontally";
                 updateScroll();
-                displayDiagonalImages();
             }
             else {
                 body.classList.add("rectangular");
@@ -194,6 +198,24 @@ if (!!window.IntersectionObserver) {
 
         //// Ensure the layout matches the toggle on page-load, because Firefox persists the checked state across page-loads.
         window.addEventListener("load", setLayoutFromLocalStorage);
+
+        //// When navigating to a page with a :target in the URL (eg from the homepage to code.html#latin), sometimes the diagonal layout is applied after the navigation and the intersection observer might not fire. (This happens in Firefox, but seemingly not Chromium.)
+        //// This would result in the page scrolling to somewhere several pixels above or below the :target, and possibly the wrong main image displaying (or no main image at all).
+        //// To counter this, we force the page to scroll to the :target and we display the correct main image for the :target.
+        const scrollToElementInUrl = () => {
+            const elementToScrollTo = document.querySelector(':target');
+            if (elementToScrollTo) {
+                const sectionVisible = document.querySelector(':target ~ section');
+                const indexOfSectionVisible = [...sections].findIndex(el=>el.id===sectionVisible.id);
+                //// The timeout allows transitions to complete.
+                window.setTimeout(()=>{
+                    displayDiagonalImageFromIndex(indexOfSectionVisible);
+                    elementToScrollTo.scrollIntoView(true);
+                }, 500);
+            }
+        }
+
+        window.addEventListener("load", scrollToElementInUrl);
 
         //// CSS transitions should not happen when the page loads, but are nice afterwards.
         function setCssTransitions() {
