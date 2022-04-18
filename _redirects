@@ -19,3 +19,4 @@
 /velut-json-generator/*    https://velut-json-generator.netlify.app/:splat      200
 /velut-dictionary-links/*  https://velut-dictionary-links.netlify.app/:splat    200
 /latinitas-recens/*        https://latinitas-recens.netlify.app/:splat          200
+/blog/*                    https://duncan-eleventy-blog.netlify.app/:splat      200
