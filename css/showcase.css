@@ -212,8 +212,7 @@
     color: #222222;
 }
 
-.project-finish-date,
-.project-reason-no-demo {
+time,.project-reason-no-demo {
     color: #606060;
     font-weight: normal;
     font-size: 20px;
