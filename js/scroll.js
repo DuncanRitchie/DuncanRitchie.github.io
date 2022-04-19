@@ -205,13 +205,18 @@ if (!!window.IntersectionObserver) {
         const scrollToElementInUrl = () => {
             const elementToScrollTo = document.querySelector(':target');
             if (elementToScrollTo) {
-                const sectionVisible = document.querySelector(':target ~ section');
-                const indexOfSectionVisible = [...sections].findIndex(el=>el.id===sectionVisible.id);
-                //// The timeout allows transitions to complete.
-                window.setTimeout(()=>{
-                    displayDiagonalImageFromIndex(indexOfSectionVisible);
-                    elementToScrollTo.scrollIntoView(true);
-                }, 500);
+                const sectionVisible = document.querySelector(':target section');
+                if (sectionVisible) {
+                    const indexOfSectionVisible = [...sections].findIndex(el=>el.id===sectionVisible.id);
+                    //// The timeout allows transitions to complete.
+                    window.setTimeout(()=>{
+                        displayDiagonalImageFromIndex(indexOfSectionVisible);
+                        elementToScrollTo.scrollIntoView(true);
+                    }, 500);
+                }
+                else {
+                    console.log(`No section in :target ${elementToScrollTo.id}`);
+                }
             }
         }
 
