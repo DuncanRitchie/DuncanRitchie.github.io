@@ -5,8 +5,11 @@
     margin-top: 0.5rem;
 }
 
+/* Without this the figcaptions would overlap! */
 .no-intersection-observer .anchor {
     width: 100%;
+    position: relative;
+    display: inline-block;
 }
 
 .no-intersection-observer .main-image {

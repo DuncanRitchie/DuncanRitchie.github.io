@@ -80,6 +80,7 @@ body :focus {
 }
 
 section:not(.showcase-group) {
+    padding-top: 1rem;
     line-height: 1.5;
 }
 
@@ -110,12 +111,7 @@ section:not(.showcase-group) :hover:focus {
 }
 
 .anchor {
-    display: inline-block;
-    width: 0;
-    height: 0;
-    line-height: 0;
-    transform: translateY(-22px);
-    transform: translateY(calc(2px - 1rem));
+    position: absolute;
 }
 
 button {
