@@ -99,20 +99,18 @@ Here is a screenshot without JavaScript:
 There are minor improvements remaining to be done. But overall, I’m delighted with what I’ve made. It looks good (to me, at least); and I’ve learnt more about HTML, Aria, CSS, and JavaScript: eg, the `<picture>` tag, `rem` units, the `shape-outside` property, `@supports` queries, intersection observers, Local Storage, and the `prefers-reduced-motion` setting.
 
 ## Lighthouse scores
-The Lighthouse profiling tool now gives my site 100% scores on Accessibility, SEO, and Best Practices on desktop and mobile on two of the three pages. Performance fluctuates between 83% and 87%. I’m aiming for 100% across Accessibility, Best Practices, and SEO.
+The Lighthouse profiling tool now gives my site 100% scores on Accessibility, SEO, and Best Practices on desktop and mobile on all three pages. Performance fluctuates between 79% and 94%..
 
 My most recent scores are in the table. My old site ranked about the same for performance.
 
 | Page          | Device  | Performance | Accessibility | Best Practices | SEO |
 | :-----------: | :-----: | ----------: | ------------: | -------------: | --: |
-| Home          | Mobile  |          87 |           100 |            100 | 100 |
-| My code       | Mobile  |          85 |           100 |             92 | 100 |
-| More about me | Mobile  |          83 |           100 |            100 | 100 |
+| Home          | Mobile  |          84 |           100 |            100 | 100 |
+| My code       | Mobile  |          79 |           100 |            100 | 100 |
+| More about me | Mobile  |          94 |           100 |            100 | 100 |
 | Home          | Desktop |          85 |           100 |            100 | 100 |
 | My code       | Desktop |          87 |           100 |            100 | 100 |
-| More about me | Desktop |          84 |           100 |            100 | 100 |
-
-Best Practices is below 100% on code.html because I’ve not yet configured Cloudinary to return a Webp for a picture. This is a pretty easy mistake to fix.
+| More about me | Desktop |          85 |           100 |            100 | 100 |
 
 ## Deployments
 To see the old design, which I’ve kept on the [before-2020-redesign](https://github.com/DuncanRitchie/DuncanRitchie.github.io/tree/before-2020-redesign) branch, go to [old.duncanritchie.co.uk](https://old.duncanritchie.co.uk/).
