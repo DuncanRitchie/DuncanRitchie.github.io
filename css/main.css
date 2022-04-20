@@ -79,34 +79,34 @@ body :focus {
     outline: dashed 2px #76027a /* --visited-text */;
 }
 
-section:not(.showcase-group) {
+article:not(.showcase-group) {
     padding-top: 1rem;
     line-height: 1.5;
 }
 
-section:not(.showcase-group) a {
+article:not(.showcase-group) a {
     text-decoration: underline;
 }
 
-section:not(.showcase-group) a:link {
+article:not(.showcase-group) a:link {
     color: #00465c /* --unvisited-text */;
 }
 
-section:not(.showcase-group) :not(:visited):focus {
+article:not(.showcase-group) :not(:visited):focus {
     outline-color: #00465c /* --unvisited-text */;
 }
 
-section:not(.showcase-group) a:visited {
+article:not(.showcase-group) a:visited {
     color: #76027a /* --visited-text */;
 }
 
-section:not(.showcase-group) a:hover {
+article:not(.showcase-group) a:hover {
     color: #718b3f /* --colour6 */;
     text-decoration: none;
     border-bottom: 1px thin;
 }
 
-section:not(.showcase-group) :hover:focus {
+article:not(.showcase-group) :hover:focus {
     outline-color: #718b3f /* --colour6 */;
 }
 
@@ -141,7 +141,7 @@ Taken from https://webaim.org/techniques/css/invisiblecontent/ */
     overflow: hidden;
 }
 
-section {
+article {
     padding: 0;
     margin: 0;
 }
@@ -156,8 +156,8 @@ h2 {
     color: #3c381d; /* Overruled if intersection observer exists, or in showcase. */
 }
 
-/* This selector is for adding an arrow after external links inside sections. */
-section p:not(.img-container) a[href^="http"]:not([href*="duncanritchie.co.uk"])::after {
+/* This selector is for adding an arrow after external links inside articles. */
+article p:not(.img-container) a[href^="http"]:not([href*="duncanritchie.co.uk"])::after {
     content: "↗";
     vertical-align: super;
     font-size: 60%;
@@ -170,7 +170,7 @@ section p:not(.img-container) a[href^="http"]:not([href*="duncanritchie.co.uk"])
     a line-break to appear before the pseudo-element. */
 }
 
-section .img-container {
+article .img-container {
     padding-top: 24px;
     padding-top: 1rem;
     text-align: right;
@@ -202,7 +202,7 @@ section .img-container {
     }
 
     /* Gradient behind headings so their overlap over main images doesn’t cause a contrast problem. */
-    .has-intersection-observer section:not(.showcase-group) h2::before {
+    .has-intersection-observer article:not(.showcase-group) h2::before {
         content: "";
         position: absolute;
         width: 100%;
@@ -230,7 +230,7 @@ section .img-container {
         font-size: 0.5em;
     }
 
-    .has-intersection-observer section:not(.showcase-group) h2 + p {
+    .has-intersection-observer article:not(.showcase-group) h2 + p {
         padding-top: 228px;
         padding-top: 9.5rem;
     }
@@ -241,22 +241,22 @@ explicitly because the headings are positioned absolutely and are therefore out 
 The max-width values here are defined by where wrapping occurs (in Firefox), determined
 by the text & font. The min-width is the threshold between “mobile” and “desktop” view. */
 @media screen and (min-width: 625px) and (max-width: 722px) {
-    .has-intersection-observer #home-section h2 + p {
+    .has-intersection-observer #home-article h2 + p {
         padding-top: 11.5rem;
     }
 }
 @media screen and (min-width: 625px) and (max-width: 1200px) {
-    .has-intersection-observer #velut-section h2 + p {
+    .has-intersection-observer #velut-article h2 + p {
         padding-top: 11.5rem;
     }
 }
 @media screen and (min-width: 625px) and (max-width: 744px) {
-    .has-intersection-observer #website-development-section h2 + p {
+    .has-intersection-observer #website-development-article h2 + p {
         padding-top: 11.5rem;
     }
 }
 @media screen and (min-width: 625px) and (max-width: 928px) {
-    .has-intersection-observer #tiq-section h2 + p {
+    .has-intersection-observer #tiq-article h2 + p {
         padding-top: 11.5rem;
     }
 }
@@ -624,17 +624,17 @@ nav #socials-list {
         display: none;
     }
 
-    section:not(.showcase-group) {
+    article:not(.showcase-group) {
         padding: 18px 12px 96px;
         padding: 0.75rem 0.5rem 4rem;
     }
 
-    section:not(.showcase-group):last-of-type {
+    article:not(.showcase-group):last-of-type {
         padding-bottom: 48px;
         padding-bottom: 2rem;
     }
 
-    section:not(:last-of-type):not(#code-section):not(.showcase-group) {
+    article:not(:last-of-type):not(#code-article):not(.showcase-group) {
         border-bottom: 2px solid #718b3f /* --colour6 */;
     }
 

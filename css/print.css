@@ -77,14 +77,14 @@
         height: initial;
     }
 
-    section {
+    article {
         height: initial;
         min-height: calc(320px + 1rem);
         /* min-height: max(320px + 1rem, 50vw); */
         padding-bottom: 1rem;
     }
 
-    body:not(#code-body) section:not(:last-of-type) {
+    body:not(#code-body) article:not(:last-of-type) {
         border: none;
     }
 
@@ -92,8 +92,8 @@
         margin: 0;
     }
     
-    /* This selector is for adding the href after external links inside sections. */
-    section p:not(.img-container) a[href^="http"]:not([href*="duncanritchie.co.uk"])::after {
+    /* This selector is for adding the href after external links inside articles. */
+    article p:not(.img-container) a[href^="http"]:not([href*="duncanritchie.co.uk"])::after {
         content: attr(href);
         padding-left: 0.25rem;
     }

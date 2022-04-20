@@ -30,7 +30,7 @@
     bottom: auto;
 }
 
-.no-intersection-observer section:not(.showcase-group) {
+.no-intersection-observer article:not(.showcase-group) {
     float: left;
     width: 45vw;
     width: calc(47vw - 24px);
@@ -48,7 +48,7 @@
     border-bottom: none;
 }
 
-.no-intersection-observer section:last-of-type {
+.no-intersection-observer article:last-of-type {
     padding-bottom: 0;
     margin-bottom: 0;
 }

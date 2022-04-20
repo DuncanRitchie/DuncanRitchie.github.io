@@ -12,7 +12,7 @@ if (!!window.IntersectionObserver) {
 //// At least one heading has a border-top; this width (the thickness of
 //// the border) needs to be subtracted from the padding-top.
 //// For some reason we also need to subtract 1rem (24px) from the
-//// padding in the “Developing this website” section.
+//// padding in the “Developing this website” article.
 //// The padding-top is also defined in the CSS, with breakpoints for
 //// where more padding is needed because the heading is wrapping onto
 //// a second line. If the padding-top were not defined in the CSS,
@@ -22,15 +22,15 @@ if (!!window.IntersectionObserver) {
 //// Having this JavaScript makes the padding-top more accurate,
 //// especially at the breakpoints where the headings wrap onto two lines.
 const setPaddingAfterAbsolutelyPositionedHeadings = () => {
-    const elementsToAddPaddingTo = document.querySelectorAll("section:not(.showcase-group) h2 + *");
+    const elementsToAddPaddingTo = document.querySelectorAll("article:not(.showcase-group) h2 + *");
     if (document.documentElement.clientWidth > 624) {
-        const fullWidthElements = document.querySelectorAll("section:not(.showcase-group) h2");
+        const fullWidthElements = document.querySelectorAll("article:not(.showcase-group) h2");
 
         for (let i = 0; i < fullWidthElements.length; i++) {
             const borderTopWidthAsText = getComputedStyle(fullWidthElements[i]).borderTopWidth //// Eg, "52.8px"
             const borderTopWidth = +borderTopWidthAsText.substr(0, borderTopWidthAsText.length - 2); //// Remove the "px" and convert to number
-            const isDevelopmentSection = fullWidthElements[i].id === "website-development-heading" //// Hack to give one section less padding
-            const paddingNeeded = fullWidthElements[i].offsetHeight - borderTopWidth - (isDevelopmentSection ? 24 : 0);
+            const isDevelopmentArticle = fullWidthElements[i].id === "website-development-heading" //// Hack to give one article less padding
+            const paddingNeeded = fullWidthElements[i].offsetHeight - borderTopWidth - (isDevelopmentArticle ? 24 : 0);
 
             elementsToAddPaddingTo[i].style.paddingTop = `${paddingNeeded}px`;
         }
@@ -42,7 +42,7 @@ const setPaddingAfterAbsolutelyPositionedHeadings = () => {
     }
 }
 
-//// In Firefox, when navigating to a section on a different page
+//// In Firefox, when navigating to a article on a different page
 //// (eg to code.html#velut from a page that isn’t code.html),
 //// the navigation seems to occur before `setPaddingAfterAbsolutelyPositionedHeadings`
 //// is run. This means that the location that is moved to in the page

@@ -132,8 +132,8 @@
     <!-- <div id="text-wrap-guide"></div> -->
     <h1 class="screenreader-only">My code</h1>
 
-    <!-- Main images and sections. -->
-    <article id="employment">
+    <!-- Sections: each section contains a figure and one or more articles. -->
+    <section id="employment">
     <figure class="main-image-figure with-caption">
         <!-- https://res.cloudinary.com/duncanritchie/image/upload/v1644766583/site/InformationCatalyst.jpg -->
         <picture class="main-image-picture">
@@ -173,7 +173,7 @@
         </figcaption>
     </figure>
 
-    <section id="employment-section" aria-labelledby="employment-heading">
+    <article id="employment-article" aria-labelledby="employment-heading">
         <h2 id="employment-heading">
             My employ&shy;ment.
         </h2>
@@ -189,11 +189,11 @@
         <p>
             In my first 21 months at Information Catalyst, I completed a Level 4 Software Developer apprenticeship.
         </p>
-    </section>
     </article>
+    </section>
 
-    <article id="website-development">
-    <!-- Main image for DuncanRitchie.co.uk development section -->
+    <section id="website-development">
+    <!-- Main image for DuncanRitchie.co.uk development article -->
     <figure class="main-image-figure with-caption">
         <picture class="main-image-picture">
             <source media="(min-width:601px)"
@@ -211,8 +211,8 @@
             Duncansby Stacks in Scotland — DuncanRitchie&#8203;.co.uk’s tech stack is HTML, CSS, JavaScript
         </figcaption>
     </figure>
-    <!-- DuncanRitchie.co.uk development section -->
-    <section id="website-development-section" aria-labelledby="website-development-heading">
+    <!-- DuncanRitchie.co.uk development article -->
+    <article id="website-development-article" aria-labelledby="website-development-heading">
         <h2 id="website-development-heading">
             Develop&shy;ing this website.
         </h2>
@@ -234,10 +234,10 @@
         <p>
             For all the code, and a readme file giving more detail, see <a href="https://github.com/DuncanRitchie/DuncanRitchie.github.io" title="DuncanRitchie.github.io on GitHub">GitHub</a>.
         </p>
-    </section>
     </article>
+    </section>
 
-    <article id="velut">
+    <section id="velut">
     <!-- velut main image -->
     <figure class="main-image-figure with-caption">
         <picture class="main-image-picture">
@@ -255,8 +255,8 @@
             I designed the visuals of velut around the photo of a fulmar I use for my logo
         </figcaption>
     </figure>
-    <!-- velut section -->
-    <section id="velut-section" aria-labelledby="velut-heading">
+    <!-- velut article -->
+    <article id="velut-article" aria-labelledby="velut-heading">
         <h2 id="velut-heading">
             velut — a Latin rhyming diction&shy;ary.
         </h2>
@@ -290,9 +290,9 @@
                 </picture>
             </a>
         </p>
-    </section>
+    </article>
 
-    <section class="showcase-group" id="velut-projects" aria-labelledby="velut-projects-heading">
+    <article class="showcase-group" id="velut-projects" aria-labelledby="velut-projects-heading">
         <!-- velut-projects heading -->
         <div class="showcase-head">
             <h2 id="velut-projects-heading">
@@ -400,10 +400,10 @@
                 </a>
             </div>
         </div>
-    </section>
     </article>
+    </section>
 
-    <article id="code">
+    <section id="code">
     <figure class="main-image-figure with-caption">
         <!-- https://res.cloudinary.com/duncanritchie/image/upload/v1590424686/site/RubberDuckAtCodeNation.jpg -->
         <!-- <picture class="main-image-picture">
@@ -454,7 +454,7 @@
         </figcaption>
     </figure>
 
-    <section id="code-section" aria-labelledby="code-heading">
+    <article id="code-article" aria-labelledby="code-heading">
         <h2 id="code-heading">
             How I got into coding
         </h2>
@@ -476,9 +476,9 @@
         <p>
             In my spare time, I do more coding. Occasionally I make my own little <a href="#csharp-projects" title="C# projects">C#</a> apps, but I keep embellishing this website and my Latin website.
         </p>
-    </section>
+    </article>
 
-    <section class="showcase-group" id="csharp-projects" aria-labelledby="csharp-projects-heading">
+    <article class="showcase-group" id="csharp-projects" aria-labelledby="csharp-projects-heading">
         <!-- C# heading -->
         <div class="showcase-head">
             <h2 id="csharp-projects-heading">
@@ -573,9 +573,9 @@
             </div>
         </div>
         <!-- End of last C# project -->
-    </section>
+    </article>
 
-    <section class="showcase-group" id="java-projects" aria-labelledby="java-projects-heading">
+    <article class="showcase-group" id="java-projects" aria-labelledby="java-projects-heading">
         <!-- Java heading -->
         <div class="showcase-head">
             <h2 id="java-projects-heading">
@@ -670,9 +670,9 @@
             </div>
         </div>
         <!-- End of last Java project -->
-    </section>
+    </article>
 
-    <section class="showcase-group" id="javascript-projects" aria-labelledby="javascript-projects-heading">
+    <article class="showcase-group" id="javascript-projects" aria-labelledby="javascript-projects-heading">
         <!-- JavaScript heading -->
         <div class="showcase-head">
             <h2 id="javascript-projects-heading">
@@ -869,8 +869,8 @@
         </div>
 
         <!-- End of last JavaScript project -->
-    </section>
     </article>
+    </section>
 
     <!-- </main> -->
     <script src="./js/main.js"></script>

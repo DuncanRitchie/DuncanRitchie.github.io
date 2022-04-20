@@ -15,29 +15,29 @@ const mainImages = document.getElementsByClassName("main-image");
 
 if (!!window.IntersectionObserver) {
     //// Find which mainImage should be displayed, then change styling on mainImages accordingly.
-    const sections =  document.getElementsByTagName("section");
+    const articles =  document.getElementsByTagName("article");
     const mainImageFigures = document.getElementsByClassName("main-image-figure");
 
-    const displayDiagonalImageFromIndex = (indexOfSectionVisible) => {
-        //// indexOfSectionVisible will be -1 if the observer has fired, but not reported an intersection.
-        if (indexOfSectionVisible > -1) {
-            for (let i = 0; i < sections.length; i++) {
+    const displayDiagonalImageFromIndex = (indexOfArticleVisible) => {
+        //// indexOfArticleVisible will be -1 if the observer has fired, but not reported an intersection.
+        if (indexOfArticleVisible > -1) {
+            for (let i = 0; i < articles.length; i++) {
                 //// Pre-emptively hide all captions.
-                if (i >= indexOfSectionVisible) {
+                if (i >= indexOfArticleVisible) {
                     mainImageFigures[i].classList.remove("with-caption");
                 }
-                //// Hide and change z-index of images according to which section should be visible.
-                if (i < indexOfSectionVisible - 1) {
+                //// Hide and change z-index of images according to which article should be visible.
+                if (i < indexOfArticleVisible - 1) {
                     mainImages[i].classList.add("hidden");
                     mainImages[i].style.zIndex = 1;
                 }
-                else if (i == indexOfSectionVisible) {
+                else if (i == indexOfArticleVisible) {
                     mainImages[i].classList.remove("hidden");
                     mainImages[i].style.zIndex = 1;
                     mainImageFigures[i].classList.add("with-caption");
                 }
-                else if (i == indexOfSectionVisible + 1
-                    && i < sections.length - 1) {
+                else if (i == indexOfArticleVisible + 1
+                    && i < articles.length - 1) {
                     mainImages[i].classList.add("hidden");
                     mainImages[i].style.zIndex = 0;
                 }
@@ -52,21 +52,21 @@ if (!!window.IntersectionObserver) {
     const displayDiagonalImages = (entries, observer) => {
         if (isViewportBigEnoughForScrollBehaviour()) {
             if (entries) {
-                //// Find which mainImage should be displayed by finding which section is intersecting with screen.
-                //// If two sections are on the screen, indexOfSectionVisible will be set to the first section
-                //// in one loop iteration and then set to the second section in another loop iteration, so
-                //// it will be the second section that will determine which mainImage is displayed.
-                let indexOfSectionVisible = -1;
+                //// Find which mainImage should be displayed by finding which article is intersecting with screen.
+                //// If two articles are on the screen, indexOfArticleVisible will be set to the first article
+                //// in one loop iteration and then set to the second article in another loop iteration, so
+                //// it will be the second article that will determine which mainImage is displayed.
+                let indexOfArticleVisible = -1;
                 for (let i = 0; i < entries.length; i++) {
-                    for (let j = 0; j < sections.length; j++) {
-                        if (entries[i].target.id === sections[j].id
+                    for (let j = 0; j < articles.length; j++) {
+                        if (entries[i].target.id === articles[j].id
                             && entries[i].intersectionRatio > 0.1) {
-                            indexOfSectionVisible = j;
-                            // console.log(mainImages[indexOfSectionVisible])
+                            indexOfArticleVisible = j;
+                            // console.log(mainImages[indexOfArticleVisible])
                         }
                     }
                 }
-                displayDiagonalImageFromIndex(indexOfSectionVisible);
+                displayDiagonalImageFromIndex(indexOfArticleVisible);
             }
         }
         else {
@@ -78,13 +78,13 @@ if (!!window.IntersectionObserver) {
 
     const intersectionObserver = new IntersectionObserver(displayDiagonalImages, {threshold: [0.1, 0.9]});
 
-    for (let i = 0; i < sections.length; i++) {
-        // console.log(`Observing Section ${i}: ${sections[i].id}`)
-        intersectionObserver.observe(sections[i]);
+    for (let i = 0; i < articles.length; i++) {
+        // console.log(`Observing Article ${i}: ${articles[i].id}`)
+        intersectionObserver.observe(articles[i]);
     }
 
     function resetRectangularLayout() {
-        for (let i = 0; i < sections.length; i++) {
+        for (let i = 0; i < articles.length; i++) {
             mainImages[i].classList.remove("hidden");
             mainImages[i].style.zIndex = 0;
         }
@@ -93,7 +93,7 @@ if (!!window.IntersectionObserver) {
     //// Code to move text-wrap-guide. It uses scroll position, but not Intersection Observer.
 
     if (!!textWrapGuide) {
-        //// Make the section text flow correctly against the diagonal by moving #text-wrap-guide.
+        //// Make the article text flow correctly against the diagonal by moving #text-wrap-guide.
         function moveTextWrapGuide (windowHeight, distanceScrolled, startOfTextWrapping, endOfTextWrapping) {
             const newLowerEdge = windowHeight + distanceScrolled;
             const newShapeOutside = "polygon(0 " + startOfTextWrapping + ", 90% 0, 90% "+(distanceScrolled/2)+"px, 90% "+distanceScrolled+"px, 90% "+distanceScrolled+"px, 100% "+newLowerEdge+"px, 100% "+endOfTextWrapping+"px, 0 "+endOfTextWrapping+"px)";
@@ -205,17 +205,17 @@ if (!!window.IntersectionObserver) {
         const scrollToElementInUrl = () => {
             const elementToScrollTo = document.querySelector(':target');
             if (elementToScrollTo) {
-                const sectionVisible = document.querySelector(':target section');
-                if (sectionVisible) {
-                    const indexOfSectionVisible = [...sections].findIndex(el=>el.id===sectionVisible.id);
+                const articleVisible = document.querySelector(':target article');
+                if (articleVisible) {
+                    const indexOfArticleVisible = [...articles].findIndex(el=>el.id===articleVisible.id);
                     //// The timeout allows transitions to complete.
                     window.setTimeout(()=>{
-                        displayDiagonalImageFromIndex(indexOfSectionVisible);
+                        displayDiagonalImageFromIndex(indexOfArticleVisible);
                         elementToScrollTo.scrollIntoView(true);
                     }, 500);
                 }
                 else {
-                    console.log(`No section in :target ${elementToScrollTo.id}`);
+                    console.log(`No article in :target ${elementToScrollTo.id}`);
                 }
             }
         }
