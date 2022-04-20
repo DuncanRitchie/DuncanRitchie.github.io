@@ -230,6 +230,10 @@ article .img-container {
         padding-top: 228px;
         padding-top: 9.5rem;
     }
+
+    #home .main-image-figure img {
+        object-position: 25% 55%;
+    }
 }
 
 /* When headings wrap onto two lines, the paragraphs following them need to be moved down
