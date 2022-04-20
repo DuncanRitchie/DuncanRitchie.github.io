@@ -110,10 +110,6 @@ article:not(.showcase-group) :hover:focus {
     outline-color: #718b3f /* --colour6 */;
 }
 
-.anchor {
-    position: absolute;
-}
-
 button {
     color: inherit;
     cursor: pointer;
