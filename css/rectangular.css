@@ -50,6 +50,11 @@
     .has-intersection-observer.rectangular article:not(.showcase-group) p.img-container:last-of-type img {
         line-height: 1;
     }
+
+    /* <a> should be same size as image within it. */
+    .has-intersection-observer.rectangular article:not(.showcase-group) p.img-container a {
+        display: inline-block;
+    }
     
     /* Won’t apply to IE. */
     @supports (position: sticky) {
