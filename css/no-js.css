@@ -6,9 +6,7 @@
 }
 
 /* Without this the figcaptions would overlap! */
-.no-intersection-observer .anchor {
-    width: 100%;
-    position: relative;
+.no-intersection-observer section {
     display: inline-block;
 }
 
@@ -26,7 +24,6 @@
     padding-right: 1rem;
     max-width: 42vw;
     max-width: calc(43vw - 36px);
-    position: absolute;
     bottom: auto;
 }
 
