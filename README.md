@@ -105,11 +105,11 @@ My most recent scores are in the table. My old site ranked about the same for pe
 
 | Page          | Device  | Performance | Accessibility | Best Practices | SEO |
 | :-----------: | :-----: | ----------: | ------------: | -------------: | --: |
-| Home          | Mobile  |          84 |           100 |            100 | 100 |
-| My code       | Mobile  |          79 |           100 |            100 | 100 |
-| More about me | Mobile  |          94 |           100 |            100 | 100 |
+| Home          | Mobile  |          92 |           100 |            100 | 100 |
+| My code       | Mobile  |          86 |           100 |            100 | 100 |
+| More about me | Mobile  |          84 |           100 |            100 | 100 |
 | Home          | Desktop |          85 |           100 |            100 | 100 |
-| My code       | Desktop |          87 |           100 |            100 | 100 |
+| My code       | Desktop |          85 |           100 |            100 | 100 |
 | More about me | Desktop |          85 |           100 |            100 | 100 |
 
 ## Deployments
