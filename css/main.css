@@ -54,6 +54,7 @@ html {
     --body-text: #111111 /* --body-text */;
     --unvisited-text: #00465c /* --unvisited-text */;
     --visited-text: #76027a /* --visited-text */;
+    --active-text: #d30035 /* --active-text */;
 }
 
 body {
@@ -104,6 +105,10 @@ article:not(.showcase-group) a:hover {
     color: #718b3f /* --colour6 */;
     text-decoration: none;
     border-bottom: 1px thin;
+}
+
+a:link:active {
+    color: #d30035 /* --active-text */;
 }
 
 article:not(.showcase-group) :hover:focus {
