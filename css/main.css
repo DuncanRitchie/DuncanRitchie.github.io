@@ -177,7 +177,7 @@ article .img-container {
     text-align: right;
 }
 
-@media screen and (min-width: 625px) {
+@media screen and (min-width: 675px) {
     .has-intersection-observer h2 {
         padding-top: 12px;
         padding-top: 0.5rem;
@@ -245,22 +245,22 @@ article .img-container {
 explicitly because the headings are positioned absolutely and are therefore out of flow.
 The max-width values here are defined by where wrapping occurs (in Firefox), determined
 by the text & font. The min-width is the threshold between “mobile” and “desktop” view. */
-@media screen and (min-width: 625px) and (max-width: 722px) {
+@media screen and (min-width: 675px) and (max-width: 722px) {
     .has-intersection-observer #home-article h2 + p {
         padding-top: 11.5rem;
     }
 }
-@media screen and (min-width: 625px) and (max-width: 1200px) {
+@media screen and (min-width: 675px) and (max-width: 1200px) {
     .has-intersection-observer #velut-article h2 + p {
         padding-top: 11.5rem;
     }
 }
-@media screen and (min-width: 625px) and (max-width: 744px) {
+@media screen and (min-width: 675px) and (max-width: 744px) {
     .has-intersection-observer #website-development-article h2 + p {
         padding-top: 11.5rem;
     }
 }
-@media screen and (min-width: 625px) and (max-width: 928px) {
+@media screen and (min-width: 675px) and (max-width: 928px) {
     .has-intersection-observer #tiq-article h2 + p {
         padding-top: 11.5rem;
     }
@@ -538,13 +538,11 @@ nav #socials-list {
 
 
 /* CSS for mobile. */
-@media (max-width: 660px) {
+@media (max-width: 674px) {
     nav #nav-icon-a {
         padding-right: 0;
     }
-}
 
-@media (max-width: 624px) {
     nav {
         display: grid;
         grid-template-columns: 1fr 2fr;

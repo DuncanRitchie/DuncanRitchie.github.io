@@ -23,7 +23,7 @@ if (!!window.IntersectionObserver) {
 //// especially at the breakpoints where the headings wrap onto two lines.
 const setPaddingAfterAbsolutelyPositionedHeadings = () => {
     const elementsToAddPaddingTo = document.querySelectorAll("article:not(.showcase-group) h2 + *");
-    if (document.documentElement.clientWidth > 624) {
+    if (document.documentElement.clientWidth > 674) {
         const fullWidthElements = document.querySelectorAll("article:not(.showcase-group) h2");
 
         for (let i = 0; i < fullWidthElements.length; i++) {

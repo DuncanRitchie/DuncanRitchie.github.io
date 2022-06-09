@@ -7,7 +7,7 @@ const layoutToggle = document.getElementById("layout-toggle");
 
 const isViewportBigEnoughForScrollBehaviour = () => {
     //// The number also appears in main.css media queries for screenwidth above and below.
-    return document.documentElement.clientWidth > 624
+    return document.documentElement.clientWidth > 674
         && body.classList.contains("diagonal");
 }
 

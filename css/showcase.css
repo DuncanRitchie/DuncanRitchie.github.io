@@ -44,7 +44,7 @@
     color: inherit;
 }
 
-@media screen and (min-width: 625px) {
+@media screen and (min-width: 675px) {
     .showcase-head h2 {
         margin-bottom: -54px;
         margin-bottom: -2.25rem;
@@ -248,7 +248,7 @@ time,.project-reason-no-demo {
 
 /* Media query for when the navbar becomes two rows. */
 
-@media (max-width: 624px) {
+@media (max-width: 674px) {
     .showcase-head {
         padding-top: 96px;
         padding-top: 4rem;

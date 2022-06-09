@@ -1,6 +1,6 @@
 /* CSS for browsers that support intersection observers where the user wants the diagonal layout (with scroll effects). */
 
-@media screen and (min-width: 625px) {
+@media screen and (min-width: 675px) {
     .has-intersection-observer nav #layout-toggle-div {
         display: initial;
     }
