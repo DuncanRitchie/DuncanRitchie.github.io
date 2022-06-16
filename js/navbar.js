@@ -13,7 +13,7 @@ for (let i = 0; i < navTickboxes.length; i++) {
     newButton.type = 'button';
     newButton.classList.add('nav-menu-toggle');
     newButton.id = label.id;
-    newButton.textContent = label.textContent;
+    newButton.innerHTML = label.innerHTML;
     newButton.title = tickbox.title;
     newButton.setAttribute('aria-controls', tickbox.getAttribute('aria-controls'));
     newButton.setAttribute('aria-expanded', 'false');

@@ -525,7 +525,7 @@ nav button {
     min-height: 2rem;
 }
 
-@media (max-width: 685px) {
+@media (max-width: 746px) {
     nav #about-me-hidden-text {
         display: none;
     }
@@ -697,15 +697,14 @@ nav #socials-list {
     }
 
     .main-image {
-        padding-top: 96px;
-        padding-top: 4rem;
+        padding-top: 120px;
+        padding-top: 5rem;
     }
 }
 
-@media (max-width: 316px) {
-    .main-image {
-        padding-top: 120px;
-        padding-top: 5rem;
+@media (max-width: 382px) {
+    nav #about-me-hidden-text {
+        display: none;
     }
 }
 
