@@ -683,6 +683,12 @@ nav #socials-list {
     }
 }
 
+@media (max-width: 382px) {
+    nav #about-me-hidden-text {
+        display: none;
+    }
+}
+
 @media (max-width: 355px) {
     nav #nav-icon-a {
         justify-content: center;
@@ -699,12 +705,6 @@ nav #socials-list {
     .main-image {
         padding-top: 120px;
         padding-top: 5rem;
-    }
-}
-
-@media (max-width: 382px) {
-    nav #about-me-hidden-text {
-        display: none;
     }
 }
 
