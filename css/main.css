@@ -44,12 +44,12 @@ html,body {
 html {
     height: 100%;
     /* CSS variables are not used on this site, but I find having the colour-scheme here convenient.  */
-    --colour1: #81aee9 /* --colour1 */;
-    --colour2: #dfeeff /* --colour2 */;
-    --colour3: #c2ceb9 /* --colour3 */;
-    --colour4: #bedd5a /* --colour4 */;
-    --colour5: #ccf18d /* --colour5 */;
-    --colour6: #718b3f /* --colour6 */;
+    --colour1: #89b3ea /* --colour1 */;
+    --colour2: #e1efff /* --colour2 */;
+    --colour3: #c6d1be /* --colour3 */;
+    --colour4: #c2df65 /* --colour4 */;
+    --colour5: #cff295 /* --colour5 */;
+    --colour6: #7a934c /* --colour6 */;
     --nav-text: #333333 /* --nav-text */;
     --body-text: #111111 /* --body-text */;
     --unvisited-text: #00465c /* --unvisited-text */;
@@ -59,17 +59,17 @@ html {
 
 body {
     min-height: 100vh;
-    background-color: #718b3f /* --colour6 */;
+    background-color: #7a934c /* --colour6 */;
     /* Browsers that don’t do gradients will use the jpeg background. */
     background-image: url(../images/gradient-background.jpg);
     background-size: 100% 100%;
     background-image: linear-gradient(
-        #81aee9 /* --colour1 */,
-        #dfeeff /* --colour2 */,
-        #c2ceb9 /* --colour3 */,
-        #bedd5a /* --colour4 */,
-        #ccf18d /* --colour5 */,
-        #718b3f /* --colour6 */
+        #89b3ea /* --colour1 */,
+        #e1efff /* --colour2 */,
+        #c6d1be /* --colour3 */,
+        #c2df65 /* --colour4 */,
+        #cff295 /* --colour5 */,
+        #7a934c /* --colour6 */
     );
     background-attachment: fixed;
     background-size: 100% 100vh;
@@ -102,7 +102,7 @@ article:not(.showcase-group) a:visited {
 }
 
 article:not(.showcase-group) a:hover {
-    color: #718b3f /* --colour6 */;
+    color: #7a934c /* --colour6 */;
     text-decoration: none;
     border-bottom: 1px thin;
 }
@@ -112,7 +112,7 @@ a:link:active {
 }
 
 article:not(.showcase-group) :hover:focus {
-    outline-color: #718b3f /* --colour6 */;
+    outline-color: #7a934c /* --colour6 */;
 }
 
 button {
@@ -343,7 +343,7 @@ nav ul li a:not(#nav-icon-a),label {
 }
 
 nav label:hover, nav a:hover, nav button:hover {
-    color: #718b3f /* --colour6 */;
+    color: #7a934c /* --colour6 */;
     background-image: linear-gradient(#ffffff00, #ffffff00, #ffffff00, #2d4a1b4f);
 }
 
@@ -449,7 +449,7 @@ so that’s what we do in the @supports query, which over-rides the IE rules. */
     
     #nav-main-list label:hover::after, #nav-main-list button:hover::after {
         background: unset;
-        background-color: #718b3f /* --colour6 */;
+        background-color: #7a934c /* --colour6 */;
     }
 
     #socials-list a::before {
@@ -467,7 +467,7 @@ so that’s what we do in the @supports query, which over-rides the IE rules. */
     
     #socials-list a:hover::before {
         background: unset;
-        background-color: #718b3f /* --colour6 */;
+        background-color: #7a934c /* --colour6 */;
     }
 
     #socials-list #nav-github::before {
@@ -646,7 +646,7 @@ nav #socials-list {
     }
 
     section:not(:last-of-type):not(#velut) {
-        border-bottom: 2px solid #718b3f /* --colour6 */;
+        border-bottom: 2px solid #7a934c /* --colour6 */;
     }
 
     h2 {
@@ -665,8 +665,8 @@ nav #socials-list {
         transform: translateY(-100%);
         font-size: 0.8rem;
         color: #111111 /* --body-text */;
-        background-color: #ccf18d /* --colour5 */;
-        background-image: linear-gradient(#ccf18d /* --colour5 */, #718b3f /* --colour6 */);
+        background-color: #cff295 /* --colour5 */;
+        background-image: linear-gradient(#cff295 /* --colour5 */, #7a934c /* --colour6 */);
         padding: 0.25rem 3rem 0.25rem 1rem;
         display: flex;
         align-items: end;
