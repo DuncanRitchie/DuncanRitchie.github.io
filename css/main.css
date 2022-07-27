@@ -43,7 +43,9 @@ html,body {
 
 html {
     height: 100%;
-    /* CSS variables are not used on this site, but I find having the colour-scheme here convenient.  */
+    /* CSS variables are not used in this repo,
+    but these variables are used on other web projects of mine
+    and I find having the colour-scheme here convenient.  */
     --colour1: #89b3ea /* --colour1 */;
     --colour2: #e1efff /* --colour2 */;
     --colour3: #c6d1be /* --colour3 */;
