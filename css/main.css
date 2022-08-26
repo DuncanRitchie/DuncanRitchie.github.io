@@ -179,6 +179,34 @@ article .img-container {
     text-align: right;
 }
 
+code, kbd, samp, pre {
+    font-size: 0.9em;
+    background-color: #33333310;
+    padding: 0 .125em;
+}
+
+kbd {
+    border: 1px solid #333333 /* --nav-text */;
+    border-radius: .125em;
+}
+
+del {
+    text-decoration-color: #d30035 /* --active-text */;
+    background-color: #d3003510;
+}
+
+ins {
+    text-decoration-color: #03aa21;
+    background-color: #03aa2112;
+}
+
+/* My first use of <mark> and this CSS for it was on my Latinitas Recens mirror. */
+mark {
+    background-image: linear-gradient(#89b3ea -25%, #e1efff 50%, #89b3ea 125%);
+    background-image: linear-gradient(var(--colour1) -25%, var(--colour2) 50%, var(--colour1) 125%);
+    border-radius: .125em;
+}
+
 @media screen and (min-width: 675px) {
     .has-intersection-observer h2 {
         padding-top: 12px;
