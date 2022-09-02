@@ -75,6 +75,8 @@ footer {
 footer ul {
 	list-style-type: none;
 	display: flex;
+	flex-wrap: wrap;
 	justify-content: space-between;
-	padding: 0 0 0.25rem;
+	gap: 0.5rem;
+	padding: 0 0.5rem;
 }
