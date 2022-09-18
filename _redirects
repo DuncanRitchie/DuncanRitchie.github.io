@@ -22,3 +22,4 @@
 /tech-stack-creator/*      https://duncan-tech-stacks.netlify.app/:splat        200
 /latinitas-recens/*        https://latinitas-recens.netlify.app/:splat          200
 /blog/*                    https://duncan-eleventy-blog.netlify.app/:splat      200
+/velut-word-data-generator/* https://velut-word-data-generator.netlify.app/:splat 200
