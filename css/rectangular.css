@@ -21,11 +21,11 @@
         object-fit: cover;
         float: left;
     }
-    
+
     .has-intersection-observer.rectangular article:not(.showcase-group) {
         min-height: 100vh;
     }
-    
+
     .has-intersection-observer.rectangular article:not(.showcase-group) p {
         margin: 0;
         padding-right: 18px;
@@ -55,7 +55,7 @@
     .has-intersection-observer.rectangular article:not(.showcase-group) p.img-container a {
         display: inline-block;
     }
-    
+
     /* Won’t apply to IE. */
     @supports (position: sticky) {
         body.rectangular .main-image-figure figcaption {
@@ -77,18 +77,18 @@
         .has-intersection-observer.rectangular article:not(.showcase-group) {
             min-height: calc(100vh + 3rem);
         }
-    
+
         /* The sticky figcaptions take up space and push the articles down;
         this needs to be counteracted. */
         .rectangular article:not(.showcase-group) {
             margin-top: -1.75rem;
         }
-    
+
         .rectangular #velut-article {
             margin-top: -2.75rem;
         }
     }
-    
+
     .rectangular .main-image-figure figcaption {
         position: absolute;
         left: 1rem;
@@ -122,7 +122,7 @@
         border-top: 60px solid transparent;
         border-top: 2.5rem solid transparent;
     }
-    
+
     .has-intersection-observer.rectangular .main-image-figure figcaption {
         color: white;
         color: #e1f1c3;

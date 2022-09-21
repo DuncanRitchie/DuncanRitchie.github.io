@@ -191,7 +191,7 @@ article p:not(.img-container) a[href^="http"]:not([href*="duncanritchie.co.uk"])
     /* Remove the underline. We can’t do `text-decoration: none;` because the underline
     for the entire <a> element would still extend under the ::after pseudo-element. */
     clip-path: polygon(0 0, 100% 0, 100% 76%, 0 76%);
-    /* Aside: `display: inline-block;` would also remove the underline, but would allow 
+    /* Aside: `display: inline-block;` would also remove the underline, but would allow
     a line-break to appear before the pseudo-element. */
 }
 
@@ -459,7 +459,7 @@ nav label {
 
 /* These rules are for Internet Explorer to display the down arrow for the nav menus correctly.
 For the hover state to be a different colour to the non-hover state, IE needs a different image.
-Modern browsers are capable of colouring the SVG with CSS if the SVG is applied as a mask, 
+Modern browsers are capable of colouring the SVG with CSS if the SVG is applied as a mask,
 so that’s what we do in the @supports query, which over-rides the IE rules. */
 #nav-main-list label::after, #nav-main-list button::after {
     content: "⮟";
@@ -504,7 +504,7 @@ so that’s what we do in the @supports query, which over-rides the IE rules. */
         background: unset;
         background-color: #333333 /* --nav-text */;
     }
-    
+
     #nav-main-list label:hover::after, #nav-main-list button:hover::after {
         background: unset;
         background-color: #7a934c /* --colour6 */;
@@ -522,7 +522,7 @@ so that’s what we do in the @supports query, which over-rides the IE rules. */
         background: unset;
         background-color: #333333 /* --nav-text */;
     }
-    
+
     #socials-list a:hover::before {
         background: unset;
         background-color: #7a934c /* --colour6 */;
@@ -604,7 +604,7 @@ nav #socials-list {
     nav {
         display: grid;
         grid-template-columns: 1fr 2fr;
-        grid-template-areas: 
+        grid-template-areas:
             "icon socials"
             "icon main";
         padding: 0 12px 0 9px;
@@ -661,7 +661,7 @@ nav #socials-list {
         margin: 0;
         padding: 0.25rem 0.5rem 0 0;
     }
-    
+
     nav #socials-list {
         grid-area: socials;
         justify-content: end;

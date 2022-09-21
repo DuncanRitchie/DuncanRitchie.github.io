@@ -103,8 +103,8 @@ if (!!window.IntersectionObserver) {
         }
 
         function updateScroll() {
-            if (isViewportBigEnoughForScrollBehaviour()) {   
-                textWrapGuide.classList.remove("hidden");         
+            if (isViewportBigEnoughForScrollBehaviour()) {
+                textWrapGuide.classList.remove("hidden");
                 const windowHeight = document.documentElement.clientHeight;
                 const distanceScrolled = window.scrollY || window.pageYOffset;
                 const startOfTextWrapping = 0;
@@ -136,7 +136,7 @@ if (!!window.IntersectionObserver) {
         function updateScrollWithThrottle() {
             throttle(updateScroll, 50)();
         }
-        
+
         //// Listen for `scroll` event to update anything that can change after scrolling.
         window.addEventListener("scroll", updateScrollWithThrottle);
         //// Update scroll position on page load.
@@ -229,15 +229,15 @@ if (!!window.IntersectionObserver) {
                 `.has-intersection-observer.diagonal .main-image {
                     transition: clip-path 0.6s 0s;
                 }
-        
+
                 .has-intersection-observer.diagonal .main-image.hidden {
                     transition: clip-path 0.6s 0.6s, width 0.6s 0.6s;
                 };
-                
+
                 .diagonal .main-image-figure figcaption {
                     transition: clip-path 0.6s 0.6s, opacity 0.6s 0.6s;
                 }`
-    
+
             const firstScriptTag = document.querySelector('script');
             firstScriptTag.parentNode.insertBefore(style, firstScriptTag);
         }

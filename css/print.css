@@ -91,7 +91,7 @@
     h2 {
         margin: 0;
     }
-    
+
     /* This selector is for adding the href after external links inside articles. */
     article p:not(.img-container) a[href^="http"]:not([href*="duncanritchie.co.uk"])::after {
         content: attr(href);
