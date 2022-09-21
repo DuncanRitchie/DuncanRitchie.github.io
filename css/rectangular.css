@@ -1,154 +1,154 @@
 /* Styles for the “rectangular” layout that is used on non-mobile when the diagonal layout is supported (due to support for intersection observers) but unwanted. */
 .rectangular #text-wrap-guide {
-    display: none;
+	display: none;
 }
 
 .rectangular figure {
-    display: contents;
+	display: contents;
 }
 
 .has-intersection-observer.rectangular .main-image-figure {
-    float: none;
+	float: none;
 }
 
 @media screen and (min-width: 675px) {
-    .has-intersection-observer.rectangular .main-image {
-        position: sticky;
-        left: 0;
-        top: 0;
-        height: 100vh;
-        width: 40%;
-        object-fit: cover;
-        float: left;
-    }
+	.has-intersection-observer.rectangular .main-image {
+		position: sticky;
+		left: 0;
+		top: 0;
+		height: 100vh;
+		width: 40%;
+		object-fit: cover;
+		float: left;
+	}
 
-    .has-intersection-observer.rectangular article:not(.showcase-group) {
-        min-height: 100vh;
-    }
+	.has-intersection-observer.rectangular article:not(.showcase-group) {
+		min-height: 100vh;
+	}
 
-    .has-intersection-observer.rectangular article:not(.showcase-group) p {
-        margin: 0;
-        padding-right: 18px;
-        padding-bottom: 18px;
-        margin-left: 40%;
-        padding-right: 0.75rem;
-        padding-bottom: 0.75rem;
-        z-index: 1;
-        position: relative;
-    }
+	.has-intersection-observer.rectangular article:not(.showcase-group) p {
+		margin: 0;
+		padding-right: 18px;
+		padding-bottom: 18px;
+		margin-left: 40%;
+		padding-right: 0.75rem;
+		padding-bottom: 0.75rem;
+		z-index: 1;
+		position: relative;
+	}
 
-    .has-intersection-observer.rectangular article:not(.showcase-group) p:last-of-type:not(.img-container) {
-        padding-bottom: 2rem;
-    }
+	.has-intersection-observer.rectangular article:not(.showcase-group) p:last-of-type:not(.img-container) {
+		padding-bottom: 2rem;
+	}
 
-    /* Remove the space caused by wrapping an <img> in a <p>. */
-    .has-intersection-observer.rectangular article:not(.showcase-group) p.img-container:last-of-type {
-        line-height: 0;
-    }
+	/* Remove the space caused by wrapping an <img> in a <p>. */
+	.has-intersection-observer.rectangular article:not(.showcase-group) p.img-container:last-of-type {
+		line-height: 0;
+	}
 
-    /* The alt text on the <img> should have line-height, though! */
-    .has-intersection-observer.rectangular article:not(.showcase-group) p.img-container:last-of-type img {
-        line-height: 1;
-    }
+	/* The alt text on the <img> should have line-height, though! */
+	.has-intersection-observer.rectangular article:not(.showcase-group) p.img-container:last-of-type img {
+		line-height: 1;
+	}
 
-    /* <a> should be same size as image within it. */
-    .has-intersection-observer.rectangular article:not(.showcase-group) p.img-container a {
-        display: inline-block;
-    }
+	/* <a> should be same size as image within it. */
+	.has-intersection-observer.rectangular article:not(.showcase-group) p.img-container a {
+		display: inline-block;
+	}
 
-    /* Won’t apply to IE. */
-    @supports (position: sticky) {
-        body.rectangular .main-image-figure figcaption {
-            width: 30%;
-            left: 0.5rem;
-            clip-path: initial;
-            padding: 0.25rem 0.5rem;
-            transform: translateY(100vh);
-            position: sticky;
-            bottom: -2rem;
-            top: calc(100vh - 100% - 4rem);
-            transform: translateY(100vh) translateX(calc(-40vw + 2rem));
-        }
+	/* Won’t apply to IE. */
+	@supports (position: sticky) {
+		body.rectangular .main-image-figure figcaption {
+			width: 30%;
+			left: 0.5rem;
+			clip-path: initial;
+			padding: 0.25rem 0.5rem;
+			transform: translateY(100vh);
+			position: sticky;
+			bottom: -2rem;
+			top: calc(100vh - 100% - 4rem);
+			transform: translateY(100vh) translateX(calc(-40vw + 2rem));
+		}
 
-        #aboutme-body.has-intersection-observer.rectangular .main-image figcaption {
-            top: calc(100vh - 500% - 4rem);
-        }
+		#aboutme-body.has-intersection-observer.rectangular .main-image figcaption {
+			top: calc(100vh - 500% - 4rem);
+		}
 
-        .has-intersection-observer.rectangular article:not(.showcase-group) {
-            min-height: calc(100vh + 3rem);
-        }
+		.has-intersection-observer.rectangular article:not(.showcase-group) {
+			min-height: calc(100vh + 3rem);
+		}
 
-        /* The sticky figcaptions take up space and push the articles down;
-        this needs to be counteracted. */
-        .rectangular article:not(.showcase-group) {
-            margin-top: -1.75rem;
-        }
+		/* The sticky figcaptions take up space and push the articles down;
+		this needs to be counteracted. */
+		.rectangular article:not(.showcase-group) {
+			margin-top: -1.75rem;
+		}
 
-        .rectangular #velut-article {
-            margin-top: -2.75rem;
-        }
-    }
+		.rectangular #velut-article {
+			margin-top: -2.75rem;
+		}
+	}
 
-    .rectangular .main-image-figure figcaption {
-        position: absolute;
-        left: 1rem;
-        font-size: 0.8rem;
-        color: #111111 /* --body-text */;
-        background-color: #cff295 /* --colour5 */;
-        background-image: linear-gradient(#cff295 /* --colour5 */, #7a934c /* --colour6 */);
-        padding: 0.25rem 1rem 0.25rem;
-        display: flex;
-        align-items: end;
-    }
+	.rectangular .main-image-figure figcaption {
+		position: absolute;
+		left: 1rem;
+		font-size: 0.8rem;
+		color: #111111 /* --body-text */;
+		background-color: #cff295 /* --colour5 */;
+		background-image: linear-gradient(#cff295 /* --colour5 */, #7a934c /* --colour6 */);
+		padding: 0.25rem 1rem 0.25rem;
+		display: flex;
+		align-items: end;
+	}
 
-    .has-intersection-observer.rectangular .main-image-figure figcaption {
-        max-width: calc(80% - 2rem);
-    }
+	.has-intersection-observer.rectangular .main-image-figure figcaption {
+		max-width: calc(80% - 2rem);
+	}
 
-    .has-intersection-observer .main-image-figure figcaption {
-        transform: translateY(-100%);
-    }
+	.has-intersection-observer .main-image-figure figcaption {
+		transform: translateY(-100%);
+	}
 
-    .has-intersection-observer.rectangular .main-image-figure figcaption {
-        bottom: 1rem;
-    }
+	.has-intersection-observer.rectangular .main-image-figure figcaption {
+		bottom: 1rem;
+	}
 
-    .has-intersection-observer.rectangular .main-image-figure.with-caption figcaption {
-        opacity: 0.9;
-    }
+	.has-intersection-observer.rectangular .main-image-figure.with-caption figcaption {
+		opacity: 0.9;
+	}
 
-    .has-intersection-observer.rectangular #velut-article h2 {
-        /* The border adds spacing but does not affect the gradient-filled background like padding would. */
-        border-top: 60px solid transparent;
-        border-top: 2.5rem solid transparent;
-    }
+	.has-intersection-observer.rectangular #velut-article h2 {
+		/* The border adds spacing but does not affect the gradient-filled background like padding would. */
+		border-top: 60px solid transparent;
+		border-top: 2.5rem solid transparent;
+	}
 
-    .has-intersection-observer.rectangular .main-image-figure figcaption {
-        color: white;
-        color: #e1f1c3;
-        background: -webkit-linear-gradient(top, #111007 -33%, #58522c);
-        background: linear-gradient(180deg, #111007 -33%, #58522c);
-    }
+	.has-intersection-observer.rectangular .main-image-figure figcaption {
+		color: white;
+		color: #e1f1c3;
+		background: -webkit-linear-gradient(top, #111007 -33%, #58522c);
+		background: linear-gradient(180deg, #111007 -33%, #58522c);
+	}
 
-    .has-intersection-observer.rectangular .main-image {
-        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-        width: calc(40% - 36px);
-        width: calc(40% - 1.5rem);
-    }
+	.has-intersection-observer.rectangular .main-image {
+		clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+		width: calc(40% - 36px);
+		width: calc(40% - 1.5rem);
+	}
 
-    .has-intersection-observer.rectangular #code-article {
-        padding-bottom: 54px;
-        padding-bottom: 2.25rem;
-    }
+	.has-intersection-observer.rectangular #code-article {
+		padding-bottom: 54px;
+		padding-bottom: 2.25rem;
+	}
 
-    .has-intersection-observer.rectangular article#velut-article h2 {
-        margin-top: 12px;
-        margin-top: 0.5rem;
-    }
+	.has-intersection-observer.rectangular article#velut-article h2 {
+		margin-top: 12px;
+		margin-top: 0.5rem;
+	}
 
-    .has-intersection-observer.rectangular article#website-development-article h2 {
-        margin-top: 36px;
-        margin-top: 1.5rem;
-    }
+	.has-intersection-observer.rectangular article#website-development-article h2 {
+		margin-top: 36px;
+		margin-top: 1.5rem;
+	}
 }
 

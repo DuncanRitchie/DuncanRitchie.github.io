@@ -1,6 +1,6 @@
 if (!!window.IntersectionObserver) {
-    document.querySelector("body").classList.remove("no-intersection-observer");
-    document.querySelector("body").classList.add("has-intersection-observer");
+	document.querySelector("body").classList.remove("no-intersection-observer");
+	document.querySelector("body").classList.add("has-intersection-observer");
 }
 
 //// Headings have {position: absolute} on rectangular & diagonal layout.
@@ -22,24 +22,24 @@ if (!!window.IntersectionObserver) {
 //// Having this JavaScript makes the padding-top more accurate,
 //// especially at the breakpoints where the headings wrap onto two lines.
 const setPaddingAfterAbsolutelyPositionedHeadings = () => {
-    const elementsToAddPaddingTo = document.querySelectorAll("article:not(.showcase-group) h2 + *");
-    if (document.documentElement.clientWidth > 674) {
-        const fullWidthElements = document.querySelectorAll("section article:not(.showcase-group) h2");
+	const elementsToAddPaddingTo = document.querySelectorAll("article:not(.showcase-group) h2 + *");
+	if (document.documentElement.clientWidth > 674) {
+		const fullWidthElements = document.querySelectorAll("section article:not(.showcase-group) h2");
 
-        for (let i = 0; i < fullWidthElements.length; i++) {
-            const borderTopWidthAsText = getComputedStyle(fullWidthElements[i]).borderTopWidth //// Eg, "52.8px"
-            const borderTopWidth = +borderTopWidthAsText.substr(0, borderTopWidthAsText.length - 2); //// Remove the "px" and convert to number
-            const isDevelopmentArticle = fullWidthElements[i].id === "website-development-heading" //// Hack to give one article less padding
-            const paddingNeeded = fullWidthElements[i].offsetHeight - borderTopWidth - (isDevelopmentArticle ? 24 : 0);
+		for (let i = 0; i < fullWidthElements.length; i++) {
+			const borderTopWidthAsText = getComputedStyle(fullWidthElements[i]).borderTopWidth //// Eg, "52.8px"
+			const borderTopWidth = +borderTopWidthAsText.substr(0, borderTopWidthAsText.length - 2); //// Remove the "px" and convert to number
+			const isDevelopmentArticle = fullWidthElements[i].id === "website-development-heading" //// Hack to give one article less padding
+			const paddingNeeded = fullWidthElements[i].offsetHeight - borderTopWidth - (isDevelopmentArticle ? 24 : 0);
 
-            elementsToAddPaddingTo[i].style.paddingTop = `${paddingNeeded}px`;
-        }
-    }
-    else {
-        for (let i = 0; i < elementsToAddPaddingTo.length; i++) {
-            elementsToAddPaddingTo[i].style.paddingTop = `0px`;
-        }
-    }
+			elementsToAddPaddingTo[i].style.paddingTop = `${paddingNeeded}px`;
+		}
+	}
+	else {
+		for (let i = 0; i < elementsToAddPaddingTo.length; i++) {
+			elementsToAddPaddingTo[i].style.paddingTop = `0px`;
+		}
+	}
 }
 
 //// In Firefox, when navigating to a article on a different page
@@ -51,6 +51,6 @@ const setPaddingAfterAbsolutelyPositionedHeadings = () => {
 //// I therefore don’t let the function run in Firefox!
 const isNotFirefox = navigator.userAgent.indexOf('irefox') == -1;
 if (isNotFirefox) {
-    window.addEventListener("load", setPaddingAfterAbsolutelyPositionedHeadings);
-    window.addEventListener("resize", setPaddingAfterAbsolutelyPositionedHeadings);
+	window.addEventListener("load", setPaddingAfterAbsolutelyPositionedHeadings);
+	window.addEventListener("resize", setPaddingAfterAbsolutelyPositionedHeadings);
 }

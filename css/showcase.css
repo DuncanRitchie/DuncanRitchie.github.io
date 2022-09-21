@@ -1,258 +1,258 @@
 /* Code Nation (etc) project showcase */
 
 .no-intersection-observer .showcase-group {
-    width: 100%;
+	width: 100%;
 }
 
 .showcase-group {
-    display: flex;
-    flex-flow: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: center;
-    scroll-padding-top: 12px;
-    height: initial;
-    width: 100%;
-    padding-bottom: 24px;
-    padding-bottom: 1rem;
-    background-color: #002712 /* --showcase-background-opaque */;
-    background-color: #001409c2 /* --showcase-background */;
-    background-position: absolute;
-    position: sticky;
+	display: flex;
+	flex-flow: row;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-items: center;
+	scroll-padding-top: 12px;
+	height: initial;
+	width: 100%;
+	padding-bottom: 24px;
+	padding-bottom: 1rem;
+	background-color: #002712 /* --showcase-background-opaque */;
+	background-color: #001409c2 /* --showcase-background */;
+	background-position: absolute;
+	position: sticky;
 }
 
 .showcase-group :focus {
-    outline-color: #002712 /* --showcase-background-opaque */;
-    outline-color: #001409c2 /* --showcase-background */;
+	outline-color: #002712 /* --showcase-background-opaque */;
+	outline-color: #001409c2 /* --showcase-background */;
 }
 
 .showcase-group#velut-projects {
-    padding-bottom: 120px;
-    padding-bottom: 5rem;
+	padding-bottom: 120px;
+	padding-bottom: 5rem;
 }
 
 .showcase-head {
-    width: 100%;
-    padding-top: 60px;
-    padding-top: 2.5rem;
+	width: 100%;
+	padding-top: 60px;
+	padding-top: 2.5rem;
 }
 
 .showcase-head h2 {
-    position: relative;
-    margin: 42px 0 0;
-    margin: 1.75rem 0 0;
-    color: inherit;
+	position: relative;
+	margin: 42px 0 0;
+	margin: 1.75rem 0 0;
+	color: inherit;
 }
 
 @media screen and (min-width: 675px) {
-    .showcase-head h2 {
-        margin-bottom: -54px;
-        margin-bottom: -2.25rem;
-    }
+	.showcase-head h2 {
+		margin-bottom: -54px;
+		margin-bottom: -2.25rem;
+	}
 }
 
 .no-intersection-observer .showcase-head h2 {
-    padding-right: 36px;
-    padding-right: 1.5rem;
-    margin-bottom: 24px;
-    margin-bottom: 1rem;
+	padding-right: 36px;
+	padding-right: 1.5rem;
+	margin-bottom: 24px;
+	margin-bottom: 1rem;
 }
 
 .showcase-head p {
-    color: inherit;
-    text-align: left;
-    margin: 0;
-    padding: 0 18px 18px 40%;
-    padding: 0 0.75rem 0.75rem 40%;
+	color: inherit;
+	text-align: left;
+	margin: 0;
+	padding: 0 18px 18px 40%;
+	padding: 0 0.75rem 0.75rem 40%;
 }
 
 @media screen {
 
-    .showcase-head {
-        width: 100%;
-        padding-top: 60px;
-        padding-top: 2.5rem;
-        color: #d6e9ff /* --colour2 */;
-    }
+	.showcase-head {
+		width: 100%;
+		padding-top: 60px;
+		padding-top: 2.5rem;
+		color: #d6e9ff /* --colour2 */;
+	}
 
-    .showcase-head h2 {
-        background: -webkit-linear-gradient(top, #e1efff /* --colour2 */, #c6d1be /* --colour3 */);
-        -webkit-background-clip: text;
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
+	.showcase-head h2 {
+		background: -webkit-linear-gradient(top, #e1efff /* --colour2 */, #c6d1be /* --colour3 */);
+		-webkit-background-clip: text;
+		background-clip: text;
+		-webkit-text-fill-color: transparent;
+	}
 }
 
 .project {
-    display: flex;
-    margin: 18px 0 9px 0;
-    margin: 0.75rem 0 0.375rem 0;
-    width: 425px;
-    width: 17.7083rem;
-    height: 255px;
-    height: 10.625rem;
-    background-color: azure;
-    text-align: center;
-    font-size: 20px;
-    font-size: 0.8333rem;
-    align-items: center;
-    border: 5px solid teal /* --linked-project-text */;
-    border-width: 0.2083rem;
-    position: relative;
+	display: flex;
+	margin: 18px 0 9px 0;
+	margin: 0.75rem 0 0.375rem 0;
+	width: 425px;
+	width: 17.7083rem;
+	height: 255px;
+	height: 10.625rem;
+	background-color: azure;
+	text-align: center;
+	font-size: 20px;
+	font-size: 0.8333rem;
+	align-items: center;
+	border: 5px solid teal /* --linked-project-text */;
+	border-width: 0.2083rem;
+	position: relative;
 }
 
 .project:not(.project-with-no-demo):hover {
-    background-color: white;
+	background-color: white;
 }
 
 /* This contains the GitHub logo from Font Awesome. */
 .github-div {
-    position: absolute;
-    right: -3px;
-    right: -0.125rem;
-    bottom: -3px;
-    bottom: -0.125rem;
-    font-size: 42px;
-    font-size: 1.75rem;
-    line-height: 1.25em;
+	position: absolute;
+	right: -3px;
+	right: -0.125rem;
+	bottom: -3px;
+	bottom: -0.125rem;
+	font-size: 42px;
+	font-size: 1.75rem;
+	line-height: 1.25em;
 }
 
 .github-div a::before {
-    content: 'Git';
-    color: transparent;
-    background-color: #006168;
-    background-image: url(../images/github.svg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
+	content: 'Git';
+	color: transparent;
+	background-color: #006168;
+	background-image: url(../images/github.svg);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: contain;
 }
 
 .github-div a:hover::before {
-    background-color: dodgerblue;
+	background-color: dodgerblue;
 }
 
 /* In modern browsers, this over-rides the previous code for displaying the GitHub logo. */
 @supports (mask-size: contain) or (-webkit-mask-size: contain) {
-    .github-div a::before {
-        width: 1em;
-        height: 1em;
-        display: inline-block;
-        content: '';
-        -webkit-mask: url(../images/github-square.svg) no-repeat 50% 50%;
-        mask: url(../images/github-square.svg) no-repeat 50% 50%;
-        -webkit-mask-size: contain;
-        mask-size: contain;
-        margin: 6px;
-        margin: 0.25rem;
-        transform: translateY(12px);
-        transform: translateY(0.5rem);
-        background-image: unset;
-        background-position: unset;
-        background-size: unset;
-    }
+	.github-div a::before {
+		width: 1em;
+		height: 1em;
+		display: inline-block;
+		content: '';
+		-webkit-mask: url(../images/github-square.svg) no-repeat 50% 50%;
+		mask: url(../images/github-square.svg) no-repeat 50% 50%;
+		-webkit-mask-size: contain;
+		mask-size: contain;
+		margin: 6px;
+		margin: 0.25rem;
+		transform: translateY(12px);
+		transform: translateY(0.5rem);
+		background-image: unset;
+		background-position: unset;
+		background-size: unset;
+	}
 }
 
 .project-link-a {
-    width: 100%;
-    height: 100%;
-    padding: auto 50px;
-    padding: auto 2.0833rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    text-decoration: none;
-    color: teal /* --linked-project-text */;
-    font-weight: bold;
+	width: 100%;
+	height: 100%;
+	padding: auto 50px;
+	padding: auto 2.0833rem;
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+	text-decoration: none;
+	color: teal /* --linked-project-text */;
+	font-weight: bold;
 }
 
 .project-link-a:hover {
-    color: darkseagreen;
+	color: darkseagreen;
 }
 
 .project-with-no-demo .project-link-a {
-    color: #505050 /* --unlinked-project-text */;
+	color: #505050 /* --unlinked-project-text */;
 }
 
 .project-with-no-demo .project-link-a:hover {
-    color: #505050 /* --unlinked-project-text */;
+	color: #505050 /* --unlinked-project-text */;
 }
 
 .project-link-a picture {
-    line-height: 0;
+	line-height: 0;
 }
 
 .project-screenshot {
-    height: 240px;
-    height: 10rem;
-    width: 136.81px;
-    width: 5.7004rem;
-    margin-left: 4px;
-    margin-left: 0.1667rem;
+	height: 240px;
+	height: 10rem;
+	width: 136.81px;
+	width: 5.7004rem;
+	margin-left: 4px;
+	margin-left: 0.1667rem;
 }
 
 .project-link-a div {
-    width: 250px;
-    width: 10.4167rem;
-    padding: 0 20px;
-    padding: 0 0.8333rem;
+	width: 250px;
+	width: 10.4167rem;
+	padding: 0 20px;
+	padding: 0 0.8333rem;
 }
 
 .project div h3 {
-    font-size: 24px;
-    font-size: 1rem;
-    margin: 3px 0 4px;
-    margin: 0.125rem 0 0.1667rem;
+	font-size: 24px;
+	font-size: 1rem;
+	margin: 3px 0 4px;
+	margin: 0.125rem 0 0.1667rem;
 }
 
 .project-made-with {
-    opacity: 0.85;
-    font-weight: normal;
-    font-size: 20px;
-    font-size: 0.8333rem;
-    color: #222222;
+	opacity: 0.85;
+	font-weight: normal;
+	font-size: 20px;
+	font-size: 0.8333rem;
+	color: #222222;
 }
 
 time,.project-reason-no-demo {
-    color: #606060;
-    font-weight: normal;
-    font-size: 20px;
-    font-size: 0.8333rem;
+	color: #606060;
+	font-weight: normal;
+	font-size: 20px;
+	font-size: 0.8333rem;
 }
 
 .project-with-no-demo {
-    background-color: #dddddd;
-    border: 5px solid #505050 /* --unlinked-project-text */;
-    border-width: 0.2083rem;
+	background-color: #dddddd;
+	border: 5px solid #505050 /* --unlinked-project-text */;
+	border-width: 0.2083rem;
 }
 
 .project a {
-    color: #006168;
+	color: #006168;
 }
 
 .project a:hover {
-    color: dodgerblue;
+	color: dodgerblue;
 }
 
 /* Media query for mobile/tablet */
 
 @media (max-width:767px) {
-    .showcase-group {
-        height: auto;
-        justify-content: space-around;
-    }
+	.showcase-group {
+		height: auto;
+		justify-content: space-around;
+	}
 
-    .project {
-        width: 90vw;
-    }
+	.project {
+		width: 90vw;
+	}
 }
 
 /* Media query for when the navbar becomes two rows. */
 
 @media (max-width: 674px) {
-    .showcase-head {
-        padding-top: 96px;
-        padding-top: 4rem;
-    }
+	.showcase-head {
+		padding-top: 96px;
+		padding-top: 4rem;
+	}
 }
 
 
@@ -260,29 +260,29 @@ time,.project-reason-no-demo {
 
 @media (max-width:375px) {
 
-    .showcase-group {
-        height: auto
-    }
+	.showcase-group {
+		height: auto
+	}
 
-    .project {
-        height: 270px;
-        height: 11.25rem;
-    }
+	.project {
+		height: 270px;
+		height: 11.25rem;
+	}
 
-    .project-link-a {
-        padding: 0;
-        display: flex;
-        align-items: center;
-    }
+	.project-link-a {
+		padding: 0;
+		display: flex;
+		align-items: center;
+	}
 
-    .project-screenshot {
-        transform: translateY(0);
-    }
+	.project-screenshot {
+		transform: translateY(0);
+	}
 
-    .project-link-a div {
-        margin: 0;
-        height: auto;
-    }
+	.project-link-a div {
+		margin: 0;
+		height: auto;
+	}
 }
 
 
@@ -290,48 +290,48 @@ time,.project-reason-no-demo {
 
 @media print {
 
-    #showcase-group,
-    .showcase-head {
-        margin: initial;
-        padding: initial;
-    }
+	#showcase-group,
+	.showcase-head {
+		margin: initial;
+		padding: initial;
+	}
 
-    article.showcase-group {
-        background: none;
-    }
+	article.showcase-group {
+		background: none;
+	}
 
-    .showcase-group a:not(#nav-icon-a)::after {
-        position: absolute;
-        clip-path: none;
-        width: 19rem;
-        transform: translateX(-15rem) translateY(5.25rem);
-    }
+	.showcase-group a:not(#nav-icon-a)::after {
+		position: absolute;
+		clip-path: none;
+		width: 19rem;
+		transform: translateX(-15rem) translateY(5.25rem);
+	}
 
-    .showcase-group a.project-link-a:not(#nav-icon-a)::after {
-        /* display: none; */
-        transform: translateX(0rem) translateY(6.5rem);
-    }
+	.showcase-group a.project-link-a:not(#nav-icon-a)::after {
+		/* display: none; */
+		transform: translateX(0rem) translateY(6.5rem);
+	}
 
-    .github-div a:not(#nav-icon-a)::after {
-        font-size: 0.6rem;
-        width: 18rem;
-        transform: translateX(-17rem) translateY(3.5rem);
-    }
+	.github-div a:not(#nav-icon-a)::after {
+		font-size: 0.6rem;
+		width: 18rem;
+		transform: translateX(-17rem) translateY(3.5rem);
+	}
 
-    .project {
-        border-width: 2px;
-        margin: 18px 0 120px 0;
-        margin: 0.75rem 0 5rem 0;
-    }
+	.project {
+		border-width: 2px;
+		margin: 18px 0 120px 0;
+		margin: 0.75rem 0 5rem 0;
+	}
 }
 
 @media print and (min-width: 425px) {
-    #showcase-group {
-        justify-content: space-between;
-    }
+	#showcase-group {
+		justify-content: space-between;
+	}
 
-    .showcase-link-div {
-        width: 352px;
-        margin: 18px 0 9px 0;
-    }
+	.showcase-link-div {
+		width: 352px;
+		margin: 18px 0 9px 0;
+	}
 }
