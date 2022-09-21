@@ -149,14 +149,36 @@ article {
     margin: 0;
 }
 
-h2 {
-    font-size: 84px;
-    font-size: 3.5rem;
+h1, h2, h3, h4 {
+    color: #3c381d; /* h2 color is overruled if intersection observer exists, or in showcase. */
     font-weight: normal;
     font-weight: 400;
-    z-index: 1;
+    margin-bottom: 0.5rem;
+}
+
+/* <h1> elements without the screenreader-only class should still be visible. */
+h1 {
+	margin: 2.25rem 0 1.25rem 0;
+	font-size: 3rem;
+}
+
+h2 {
+    font-size: 60px;
+    font-size: 2.5rem;
+}
+
+section article h2 {
     text-align: right;
-    color: #3c381d; /* Overruled if intersection observer exists, or in showcase. */
+}
+
+h3 {
+    font-size: 48px;
+    font-size: 2rem;
+}
+
+h4 {
+    font-size: 36px;
+    font-size: 1.5rem;
 }
 
 /* This selector is for adding an arrow after external links inside articles. */
@@ -185,6 +207,10 @@ code, kbd, samp, pre {
     padding: 0 .125em;
 }
 
+pre {
+    overflow-x: auto;
+}
+
 kbd {
     border: 1px solid #333333 /* --nav-text */;
     border-radius: .125em;
@@ -208,7 +234,9 @@ mark {
 }
 
 @media screen and (min-width: 675px) {
-    .has-intersection-observer h2 {
+    .has-intersection-observer section article h2 {
+        font-size: 84px;
+        font-size: 3.5rem;
         padding-top: 12px;
         padding-top: 0.5rem;
         right: 30px;
@@ -233,7 +261,7 @@ mark {
     }
 
     /* Gradient behind headings so their overlap over main images doesn’t cause a contrast problem. */
-    .has-intersection-observer article:not(.showcase-group) h2::before {
+    .has-intersection-observer section article:not(.showcase-group) h2::before {
         content: "";
         position: absolute;
         width: 100%;
@@ -253,7 +281,7 @@ mark {
     /* This would happen when descenders extended beyond the line-height. */
     /* \00000a is a newline, therefore the last line of the h2 is no longer the last line. */
     /* The space after the newline is non-breaking; the newline would be ignored without it. */
-    .has-intersection-observer h2::after {
+    .has-intersection-observer section article h2::after {
         content: "\00000a ";
         white-space: pre;
         white-space: pre-wrap;
@@ -261,7 +289,7 @@ mark {
         font-size: 0.5em;
     }
 
-    .has-intersection-observer article:not(.showcase-group) h2 + p {
+    .has-intersection-observer section article:not(.showcase-group) h2 + p {
         padding-top: 228px;
         padding-top: 9.5rem;
     }

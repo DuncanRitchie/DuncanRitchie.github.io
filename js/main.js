@@ -24,7 +24,7 @@ if (!!window.IntersectionObserver) {
 const setPaddingAfterAbsolutelyPositionedHeadings = () => {
     const elementsToAddPaddingTo = document.querySelectorAll("article:not(.showcase-group) h2 + *");
     if (document.documentElement.clientWidth > 674) {
-        const fullWidthElements = document.querySelectorAll("article:not(.showcase-group) h2");
+        const fullWidthElements = document.querySelectorAll("section article:not(.showcase-group) h2");
 
         for (let i = 0; i < fullWidthElements.length; i++) {
             const borderTopWidthAsText = getComputedStyle(fullWidthElements[i]).borderTopWidth //// Eg, "52.8px"
