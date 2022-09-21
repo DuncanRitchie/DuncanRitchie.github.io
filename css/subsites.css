@@ -25,6 +25,10 @@ label {
 	padding: 0;
 }
 
+input, textarea {
+	font-size: 0.8em;
+}
+
 textarea {
 	padding: 0.5rem;
 	width: calc(100% - 1rem);
