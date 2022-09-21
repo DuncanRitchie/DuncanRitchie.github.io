@@ -87,11 +87,11 @@ article:not(.showcase-group) {
     line-height: 1.5;
 }
 
-article:not(.showcase-group) a {
+a {
     text-decoration: underline;
 }
 
-article:not(.showcase-group) a:link {
+a:link {
     color: #00465c /* --unvisited-text */;
 }
 
@@ -99,11 +99,11 @@ article:not(.showcase-group) :not(:visited):focus {
     outline-color: #00465c /* --unvisited-text */;
 }
 
-article:not(.showcase-group) a:visited {
+a:visited {
     color: #76027a /* --visited-text */;
 }
 
-article:not(.showcase-group) a:hover {
+a:hover {
     color: #7a934c /* --colour6 */;
     text-decoration: none;
     border-bottom: 1px thin;
@@ -332,7 +332,7 @@ nav::before {
     backdrop-filter: blur(4px) brightness(103%);
 }
 
-nav a {
+nav a:link, nav a:visited {
     color: inherit;
     text-decoration: inherit;
 }
