@@ -708,7 +708,7 @@ nav #socials-list {
 		padding-bottom: 2rem;
 	}
 
-	section:not(:last-of-type):not(#velut) {
+	section:not(:last-of-type):not(#velut) article {
 		border-bottom: 2px solid #7a934c /* --colour6 */;
 	}
 
