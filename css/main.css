@@ -238,7 +238,7 @@ mark {
 }
 
 @media screen and (min-width: 675px) {
-	.has-intersection-observer section article h2 {
+	.has-intersection-observer section article:not(.showcase-group) h2 {
 		font-size: 84px;
 		font-size: 3.5rem;
 		padding-top: 12px;
@@ -285,7 +285,7 @@ mark {
 	/* This would happen when descenders extended beyond the line-height. */
 	/* \00000a is a newline, therefore the last line of the h2 is no longer the last line. */
 	/* The space after the newline is non-breaking; the newline would be ignored without it. */
-	.has-intersection-observer section article h2::after {
+	.has-intersection-observer section article:not(.showcase-group) h2::after {
 		content: "\00000a ";
 		white-space: pre;
 		white-space: pre-wrap;

@@ -37,18 +37,13 @@
 	padding-top: 2.5rem;
 }
 
-.showcase-head h2 {
-	position: relative;
-	margin: 42px 0 0;
-	margin: 1.75rem 0 0;
+section article .showcase-head h2 {
+	position: auto;
+	font-size: 84px;
+	font-size: 3.5rem;
+	margin: 42px 0 24px;
+	margin: 1.75rem 0 1rem;
 	color: inherit;
-}
-
-@media screen and (min-width: 675px) {
-	.showcase-head h2 {
-		margin-bottom: -54px;
-		margin-bottom: -2.25rem;
-	}
 }
 
 .no-intersection-observer .showcase-head h2 {
@@ -75,7 +70,7 @@
 		color: #d6e9ff /* --colour2 */;
 	}
 
-	.showcase-head h2 {
+	section article .showcase-head h2 {
 		background: -webkit-linear-gradient(top, #e1efff /* --colour2 */, #c6d1be /* --colour3 */);
 		-webkit-background-clip: text;
 		background-clip: text;
