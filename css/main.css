@@ -163,7 +163,6 @@ h1, h2, h3, h4 {
 
 /* <h1> elements without the screenreader-only class should still be visible. */
 h1 {
-	margin: 2.25rem 0 1.25rem 0;
 	font-size: 3rem;
 }
 
@@ -701,6 +700,12 @@ nav #socials-list {
 		padding: 18px 12px 36px;
 		padding: 0.75rem 0.5rem 1.5rem;
 		padding: 0.75rem max(0.75rem, 4vw) 1.5rem;
+	}
+
+	/* Articles not wrapped in <section>, eg style-guide */
+	nav + article:not(.showcase-group) {
+		padding-top: 72px;
+		padding-top: 3rem;
 	}
 
 	article:not(.showcase-group):last-of-type {
