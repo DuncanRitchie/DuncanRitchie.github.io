@@ -98,6 +98,12 @@ section article .showcase-head h2 {
 
 .project:not(.project-with-no-demo):hover {
 	background-color: white;
+	border-color: #6ae6ff;
+}
+
+.project:not(.project-with-no-demo):hover,
+.project:not(.project-with-no-demo):hover * {
+	color: #00465c /* --unvisited-text */;
 }
 
 /* This contains the GitHub logo from Font Awesome. */
@@ -123,7 +129,7 @@ section article .showcase-head h2 {
 }
 
 .github-div a:hover::before {
-	background-color: dodgerblue;
+	background-color: #01c1e8;
 }
 
 /* In modern browsers, this over-rides the previous code for displaying the GitHub logo. */
@@ -160,18 +166,6 @@ section article .showcase-head h2 {
 	font-weight: bold;
 }
 
-.project-link-a:hover {
-	color: darkseagreen;
-}
-
-.project-with-no-demo .project-link-a {
-	color: #505050 /* --unlinked-project-text */;
-}
-
-.project-with-no-demo .project-link-a:hover {
-	color: #505050 /* --unlinked-project-text */;
-}
-
 .project-link-a picture {
 	line-height: 0;
 }
@@ -204,11 +198,15 @@ section article .showcase-head h2 {
 	font-weight: normal;
 	font-size: 20px;
 	font-size: 0.8333rem;
-	color: #222222;
+	color: black;
+	opacity: 0.87;
+	/* Opacity means color can change on hover without losing tint differences. */
 }
 
-time,.project-reason-no-demo {
-	color: #606060;
+time,
+.project-reason-no-demo {
+	color: black;
+	opacity: 0.62;
 	font-weight: normal;
 	font-size: 20px;
 	font-size: 0.8333rem;
@@ -221,11 +219,11 @@ time,.project-reason-no-demo {
 }
 
 .project a {
-	color: #006168;
+	color: #00465c /* --unvisited-text */;
 }
 
 .project a:hover {
-	color: dodgerblue;
+	color: #7a934c /* --colour6 */;
 }
 
 /* Media query for mobile/tablet */
