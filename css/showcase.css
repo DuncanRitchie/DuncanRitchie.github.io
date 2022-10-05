@@ -213,17 +213,17 @@ time,
 }
 
 .project-with-no-demo {
-	background-color: #dddddd;
+	background-color: #e2e2e2;
 	border: 5px solid #505050 /* --unlinked-project-text */;
 	border-width: 0.2083rem;
 }
 
 .project a {
-	color: #00465c /* --unvisited-text */;
+	color: #001b24 /* much darker than --unvisited-text */;
 }
 
 .project a:hover {
-	color: #7a934c /* --colour6 */;
+	color: teal /* --linked-project-text */;
 }
 
 /* Media query for mobile/tablet */
