@@ -11,7 +11,7 @@
 	float: none;
 }
 
-@media screen and (min-width: calc(674.01rem / 16)) {
+@media screen and (min-width: calc(42.125rem + 0.0001rem)) {
 	.has-intersection-observer.rectangular .main-image {
 		position: sticky;
 		left: 0;
