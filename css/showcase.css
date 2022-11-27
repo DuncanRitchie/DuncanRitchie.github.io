@@ -228,7 +228,7 @@ time,
 
 /* Media query for mobile/tablet */
 
-@media (max-width: 47.9375rem) {
+@media (max-width: 48rem) {
 	.showcase-group {
 		height: auto;
 		justify-content: space-around;
@@ -251,7 +251,7 @@ time,
 
 /* Media query for tiny screens, e.g. Galaxy S5 */
 
-@media (max-width: 23.4375rem) {
+@media (max-width: 24rem) {
 
 	.showcase-group {
 		height: auto
