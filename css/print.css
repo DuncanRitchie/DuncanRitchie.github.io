@@ -104,7 +104,7 @@
 	}
 }
 
-@media print and (max-width: 674px) {
+@media print and (max-width: calc(674rem / 16)) {
 	nav #socials-list {
 		padding-bottom: 2.5rem;
 	}

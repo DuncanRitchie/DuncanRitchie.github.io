@@ -228,7 +228,7 @@ time,
 
 /* Media query for mobile/tablet */
 
-@media (max-width:767px) {
+@media (max-width: calc(767rem / 16)) {
 	.showcase-group {
 		height: auto;
 		justify-content: space-around;
@@ -241,7 +241,7 @@ time,
 
 /* Media query for when the navbar becomes two rows. */
 
-@media (max-width: 674px) {
+@media (max-width: calc(674rem / 16)) {
 	.showcase-head {
 		padding-top: 96px;
 		padding-top: 4rem;
@@ -251,7 +251,7 @@ time,
 
 /* Media query for tiny screens, e.g. Galaxy S5 */
 
-@media (max-width:375px) {
+@media (max-width: calc(375rem / 16)) {
 
 	.showcase-group {
 		height: auto
@@ -318,7 +318,7 @@ time,
 	}
 }
 
-@media print and (min-width: 425px) {
+@media print and (min-width: calc(425rem / 16)) {
 	#showcase-group {
 		justify-content: space-between;
 	}

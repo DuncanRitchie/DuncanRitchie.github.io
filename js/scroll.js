@@ -6,8 +6,10 @@ const body = document.getElementsByTagName("body")[0];
 const layoutToggle = document.getElementById("layout-toggle");
 
 const isViewportBigEnoughForScrollBehaviour = () => {
-	//// The number also appears in main.css media queries for screenwidth above and below.
-	return document.documentElement.clientWidth > 674
+	const rem = parseFloat(getComputedStyle(document.documentElement).fontSize);
+	//// I don’t know where 33.1667 comes from — I got it through trial and error!
+	//// I would have expected 42.125, which is the threshold in rem between mobile & desktop according to main.css media queries.
+	return document.documentElement.clientWidth > (33.1667 * rem)
 		&& body.classList.contains("diagonal");
 }
 

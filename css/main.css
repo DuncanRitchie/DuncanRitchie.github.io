@@ -237,7 +237,7 @@ mark {
 	border-radius: .125em;
 }
 
-@media screen and (min-width: 675px) {
+@media screen and (min-width: calc(674.01rem / 16)) {
 	.has-intersection-observer section article:not(.showcase-group) h2 {
 		font-size: 84px;
 		font-size: 3.5rem;
@@ -307,22 +307,22 @@ mark {
 explicitly because the headings are positioned absolutely and are therefore out of flow.
 The max-width values here are defined by where wrapping occurs (in Firefox), determined
 by the text & font. The min-width is the threshold between “mobile” and “desktop” view. */
-@media screen and (min-width: 675px) and (max-width: 722px) {
+@media screen and (min-width: calc(674.01rem / 16)) and (max-width: calc(722rem / 16)) {
 	.has-intersection-observer #home-article h2 + p {
 		padding-top: 11.5rem;
 	}
 }
-@media screen and (min-width: 675px) and (max-width: 1200px) {
+@media screen and (min-width: calc(674.01rem / 16)) and (max-width: calc(1200rem / 16)) {
 	.has-intersection-observer #velut-article h2 + p {
 		padding-top: 11.5rem;
 	}
 }
-@media screen and (min-width: 675px) and (max-width: 744px) {
+@media screen and (min-width: calc(674.01rem / 16)) and (max-width: calc(744rem / 16)) {
 	.has-intersection-observer #website-development-article h2 + p {
 		padding-top: 11.5rem;
 	}
 }
-@media screen and (min-width: 675px) and (max-width: 928px) {
+@media screen and (min-width: calc(674.01rem / 16)) and (max-width: calc(928rem / 16)) {
 	.has-intersection-observer #tiq-article h2 + p {
 		padding-top: 11.5rem;
 	}
@@ -587,7 +587,7 @@ nav button {
 	min-height: 2rem;
 }
 
-@media (max-width: 746px) {
+@media (max-width: calc(746rem / 16)) {
 	nav #about-me-hidden-text {
 		display: none;
 	}
@@ -600,7 +600,7 @@ nav #socials-list {
 
 
 /* CSS for mobile. */
-@media (max-width: 674px) {
+@media (max-width: calc(674rem / 16)) {
 	nav #nav-icon-a {
 		padding-right: 0;
 	}
@@ -745,19 +745,19 @@ nav #socials-list {
 
 /* CSS for smaller mobiles. */
 
-@media (max-width: 424px) {
+@media (max-width: calc(424rem / 16)) {
 	nav {
 		grid-template-columns: min-content 1fr;
 	}
 }
 
-@media (max-width: 382px) {
+@media (max-width: calc(382rem / 16)) {
 	nav #about-me-hidden-text {
 		display: none;
 	}
 }
 
-@media (max-width: 355px) {
+@media (max-width: calc(355rem / 16)) {
 	nav #nav-icon-a {
 		justify-content: center;
 		padding: 6px;
