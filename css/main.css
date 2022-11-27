@@ -36,12 +36,12 @@ html,body {
 	scroll-behavior: smooth;
 	hyphens: manual;
 	font-family: "Alegreya", serif;
-	font-size: 24px;
-	/* font-size: calc(19px + (28px - 19px) * ((100vw - 360px) / (2460px - 360px))); */
-	font-size: calc(19px + 9 * ((100vw - 360px) / 2100));
 }
 
 html {
+	font-size: 24px;
+	font-size: calc(19px + 9 * ((100vw - 360px) / 2100));
+	font-size: calc(1.1875rem + 9 * ((100vw - 22.5rem) / 2100));
 	height: 100%;
 	/* CSS variables are not used in this repo,
 	but these variables are used on other web projects of mine
