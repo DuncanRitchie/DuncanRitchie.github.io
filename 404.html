@@ -26,21 +26,24 @@
 		}
 
 		#four-o-four-article h2 {
-			position: relative;
+			position: static;
 			margin-top: 3rem;
-			margin-bottom: -2rem;
+			margin-bottom: 0;
+		}
+
+		/* Because navbar is double-decker on mobile/. */
+		@media (max-width: 42.125rem) {
+			#four-o-four-article h2 {
+				margin-top: 4rem;
+			}
 		}
 
 		#four-o-four-article h2::before {
 			background-image: none;
 		}
 
-		#four-o-four-article p {
-			padding-left: 0.75rem;
-			padding-right: 0.75rem;
-		}
-
 		#four-o-four-article p:first-of-type {
+			margin-top: 0;
 			padding-top: 0;
 		}
 	</style>
