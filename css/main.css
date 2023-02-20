@@ -66,6 +66,9 @@ body {
 	background-image: url(../images/gradient-background.jpg);
 	background-size: 100% 100%;
 	background-image: linear-gradient(
+		#ffffff20,
+		#ffffff20 /* Translucent white overlay as a gradient because background-image doesn’t accept a solid colour. */
+	), linear-gradient(
 		#89b3ea /* --colour1 */,
 		#e1efff /* --colour2 */,
 		#c6d1be /* --colour3 */,
