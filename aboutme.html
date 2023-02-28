@@ -86,6 +86,11 @@
 				</label>
 				<ul id="about-me-nav-menu" aria-labelledby="about-me-nav-toggle" aria-current="page">
 					<li>
+						<a href="#blog" title="My blog — Duncan Ritchie’s portfolio">
+							My blog
+						</a>
+					</li>
+					<li>
 						<a href="#dog" title="My dog — Duncan Ritchie’s portfolio">
 							My dog
 						</a>
@@ -136,6 +141,42 @@
 	<h1 class="screenreader-only">More about me</h1>
 
 	<!-- Sections: each section contains a figure & article -->
+
+	<section id="blog" aria-labelledby="blog-heading">
+		<figure class="main-image-figure with-caption">
+			<picture class="main-image-picture">
+				<source media="(min-width:601px)"
+					srcset="https://res.cloudinary.com/duncanritchie/image/upload/t_SquareCentre1000/v1677604067/site/MaleMandarinOnBranch.webp">
+				<source media="(min-width:481px)"
+					srcset="https://res.cloudinary.com/duncanritchie/image/upload/t_SquareCentre600/v1677604067/site/MaleMandarinOnBranch.webp">
+				<source media="(min-width:0px)"
+					srcset="https://res.cloudinary.com/duncanritchie/image/upload/t_SquareCentre480/v1677604067/site/MaleMandarinOnBranch.webp">
+				<img id="blog-main-image" class="main-image"
+					alt="A colourful male mandarin duck standing on a branch"
+					src="https://res.cloudinary.com/duncanritchie/image/upload/t_SquareCentre1000/v1677604067/site/MaleMandarinOnBranch.jpg" />
+			</picture>
+			<figcaption>
+				One of my earliest posts is about mandarin ducks.
+			</figcaption>
+		</figure>
+
+		<article id="blog-article">
+			<h2 id="blog-heading">
+				My blog
+			</h2>
+			<p>
+				I have recently started a <a href="https://www.duncanritchie.co.uk/blog">blog</a>.
+				It might not be the most instructive or comprehensive of blogs, but sometimes I like to make notes to myself about software.
+			</p>
+			<p>
+				It’s also a convenient place for less serious musings of mine.
+				I write a yearly retrospective of nice things happening in my life, and lists of my favourite entries in the Eurovision Song Contest!
+			</p>
+			<p>
+				I made my blog with Astro. Code is on <a href="https://github.com/DuncanRitchie/blog">GitHub</a>.
+			</p>
+		</article>
+	</section>
 
 	<section id="dog" aria-labelledby="dog-heading">
 		<figure class="main-image-figure with-caption">
