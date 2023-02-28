@@ -85,6 +85,10 @@ body :focus {
 	outline: dashed 2px #76027a /* --visited-text */;
 }
 
+* {
+	tab-size: 2;
+}
+
 article:not(.showcase-group) {
 	padding-top: 1rem;
 	line-height: 1.5;
