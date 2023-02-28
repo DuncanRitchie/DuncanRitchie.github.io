@@ -125,6 +125,21 @@ button {
 	cursor: pointer;
 }
 
+table {
+	min-width: 100%;
+}
+
+th,
+td {
+	padding: 2px 4px;
+	padding: 0.125rem 0.25rem;
+}
+
+td {
+	border-bottom: 1px solid #7a934c /* --colour6 */;
+	border-right: 1px solid #7a934c /* --colour6 */;
+}
+
 *:not(.main-image).hidden {
 	display: none;
 }
