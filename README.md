@@ -1,7 +1,7 @@
 # DuncanRitchie.github.io / www.duncanritchie.co.uk
 I’m a junior dev in Chester, UK, and this is my site.
 
-![Screenshot of my website, in desktop Firefox](https://github.com/DuncanRitchie/portfolio-screenshots/blob/main/minified/new-desktop-withcaption-firefox-home__small.png)
+![Screenshot of my website, in desktop Firefox](https://github.com/DuncanRitchie/portfolio-screenshots/blob/main/minified/20230228-desktop-withcaption-firefox-home__small.png)
 
 ## Assets
 This is a static site with three HTML pages: [index.html](https://www.duncanritchie.co.uk/), [code.html](https://www.duncanritchie.co.uk/code.html), and [aboutme.html](https://www.duncanritchie.co.uk/aboutme.html). For three pages, there’s quite a lot going on.
