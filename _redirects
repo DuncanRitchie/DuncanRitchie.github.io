@@ -7,7 +7,7 @@
 /geolocation-demo/*          https://duncan-geolocation.netlify.app/:splat        200
 /js-challenges/*             https://duncan-js-challenges.netlify.app/:splat      200
 /jsChallenges/*              https://duncan-js-challenges.netlify.app/:splat      200
-/Portfolio/*                 /:splat                                              304
+/Portfolio/*                 /:splat                                              301
 /quiz/*                      https://duncan-quiz.netlify.app/:splat               200
 /react-demo/*                https://duncan-react-demo.netlify.app/:splat         200
 /room-me/*                   https://roomme.netlify.app/:splat                    200
