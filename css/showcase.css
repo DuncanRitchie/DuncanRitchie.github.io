@@ -16,14 +16,14 @@
 	padding-bottom: 24px;
 	padding-bottom: 1rem;
 	background-color: #002712 /* --showcase-background-opaque */;
-	background-color: #001409c2 /* --showcase-background */;
+	background-color: #001409cc /* --showcase-background */;
 	background-position: absolute;
 	position: sticky;
 }
 
 .showcase-group :focus {
 	outline-color: #002712 /* --showcase-background-opaque */;
-	outline-color: #001409c2 /* --showcase-background */;
+	outline-color: #001409cc /* --showcase-background */;
 }
 
 .showcase-group#velut-projects {
