@@ -96,8 +96,21 @@ hgroup p {
 	position: relative;
 }
 
+.project:not(.project-with-no-demo) .project-inner-div:focus-within {
+	outline-width: 2px;
+	outline-offset: -3px;		
+	outline-style: dashed;
+	outline-color: #002712 /* --showcase-background-opaque */;
+	outline-color: #001409cc /* --showcase-background */;
+}
+
 .project h3 a {
 	text-decoration: none;
+}
+
+/* Focus styles are on an ancestor div. */
+.project h3 a:focus-within {
+	outline: none;
 }
 
 /* Pseudo-element means any click on the card (the absolutely-positioned ancestor) triggers the link. */
