@@ -117,10 +117,12 @@ hgroup p {
 .project h3 a::after {
 	content: '';
 	position: absolute;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
+	/* These edges are relative to the absolutely-positioned parent. */
+	/* That element’s border is 5px. */
+	top: -5px;
+	right: -5px;
+	bottom: -5px;
+	left: -5px;
 	/* z-index means clicking on non-link text triggers the link, because it’s under it. */
 	z-index: 1;
 }
