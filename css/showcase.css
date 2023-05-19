@@ -31,13 +31,13 @@
 	padding-bottom: 5rem;
 }
 
-.showcase-head {
+hgroup {
 	width: 100%;
 	padding-top: 60px;
 	padding-top: 2.5rem;
 }
 
-section article .showcase-head h2 {
+section article hgroup h2 {
 	position: auto;
 	font-size: 84px;
 	font-size: 3.5rem;
@@ -48,12 +48,12 @@ section article .showcase-head h2 {
 	color: inherit;
 }
 
-.no-intersection-observer .showcase-head h2 {
+.no-intersection-observer hgroup h2 {
 	margin-bottom: 24px;
 	margin-bottom: 1rem;
 }
 
-.showcase-head p {
+hgroup p {
 	color: inherit;
 	text-align: left;
 	margin: 0;
@@ -63,14 +63,14 @@ section article .showcase-head h2 {
 
 @media screen {
 
-	.showcase-head {
+	hgroup {
 		width: 100%;
 		padding-top: 60px;
 		padding-top: 2.5rem;
 		color: #d6e9ff /* --colour2 */;
 	}
 
-	section article .showcase-head h2 {
+	section article hgroup h2 {
 		background: -webkit-linear-gradient(top, #e1efff /* --colour2 */, #c6d1be /* --colour3 */);
 		-webkit-background-clip: text;
 		background-clip: text;
@@ -242,7 +242,7 @@ time,
 /* Media query for when the navbar becomes two rows. */
 
 @media (max-width: 42.125rem) {
-	.showcase-head {
+	hgroup {
 		padding-top: 96px;
 		padding-top: 4rem;
 	}
@@ -284,7 +284,7 @@ time,
 @media print {
 
 	#showcase-group,
-	.showcase-head {
+	hgroup {
 		margin: initial;
 		padding: initial;
 	}
