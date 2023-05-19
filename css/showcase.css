@@ -96,6 +96,22 @@ hgroup p {
 	position: relative;
 }
 
+.project h3 a {
+	text-decoration: none;
+}
+
+/* Pseudo-element means any click on the card (the absolutely-positioned ancestor) triggers the link. */
+.project h3 a::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	/* z-index means clicking on non-link text triggers the link, because it’s under it. */
+	z-index: 1;
+}
+
 .project:not(.project-with-no-demo):hover {
 	background-color: white;
 	border-color: #6ae6ff;
@@ -116,6 +132,8 @@ hgroup p {
 	font-size: 42px;
 	font-size: 1.75rem;
 	line-height: 1.25em;
+	/* Layer the GitHub logo over the heading’s link’s ::after */
+	z-index: 2;
 }
 
 .github-div a::before {
