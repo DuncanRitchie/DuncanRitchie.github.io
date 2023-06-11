@@ -85,6 +85,12 @@ body :focus {
 	outline: dashed 2px #76027a /* --visited-text */;
 }
 
+/* Hide focus outline if the browser supports :focus-visible
+and the element isn’t :focus-visible. */
+body :focus:not(:focus-visible) {
+	outline: none;
+}
+
 * {
 	tab-size: 2;
 }
