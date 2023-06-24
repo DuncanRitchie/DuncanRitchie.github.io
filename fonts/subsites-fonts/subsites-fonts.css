@@ -21,14 +21,14 @@ They exist because subsites can have characters that aren’t found on the main 
   font-display: swap;
 }
 
-@font-face {
+/* @font-face {
   font-family: 'Alegreya Subset';
   src: url('alegreya-medium-subset.woff2') format('woff2'),
     url('alegreya-medium-subset.woff') format('woff');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
-}
+} */
 
 @font-face {
   font-family: 'Alegreya Subset';
