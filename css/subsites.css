@@ -1,7 +1,7 @@
 /* This subsites.css file is not used on DuncanRitchie.co.uk inside this repo. It is, however, imported into projects such as velut-json-generator.  */
 
 /* Subsites have different font-subsetting. */
-@import url('fonts/subsites-fonts/subsites-fonts.css');
+@import url('../fonts/subsites-fonts/subsites-fonts.css');
 
 html, body {
 	margin: 0;
