@@ -3,6 +3,12 @@
 /* Subsites have different font-subsetting. */
 @import url('../fonts/subsites-fonts/subsites-fonts.css');
 
+:root {
+	--page-background:
+		linear-gradient(rgba(255, 255, 255, 0.125), rgba(255, 255, 255, 0.125)),
+		linear-gradient(rgb(137, 179, 234), rgb(225, 239, 255), rgb(198, 209, 190), rgb(194, 223, 101), rgb(207, 242, 149), rgb(122, 147, 76));
+}
+
 html, body {
 	margin: 0;
 	padding: 0;
