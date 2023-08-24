@@ -58,7 +58,14 @@
 		/* Transition is added in JavaScript. */
 	}
 
+	/* Main images before the current image get hidden by transitioning clip-path to the left-hand side */
 	.has-intersection-observer.diagonal .main-image.hidden {
+		clip-path: polygon(-10% 0, -10% 0, 0% 100%, 0% 100%);
+		/* Transition is added in JavaScript. */
+	}
+
+	/* Main images after the current image get hidden by transitioning clip-path to the right-hand side */
+	.has-intersection-observer.diagonal .main-image.hidden.image-after-current {
 		clip-path: polygon(85% 0, 85% 0, 95% 100%, 95% 100%);
 		/* Transition is added in JavaScript. */
 	}
