@@ -32,12 +32,7 @@ if (!!window.IntersectionObserver) {
 				//// The presence/absence of the `image-after-current` class determines which direction the clip-path moves.
 				//// So clip-paths move left when scrolling down (when a later image becomes the current image)
 				//// and right when scrolling up (when an earlier image becomes the current image).
-				if (i < indexOfArticleVisible - 1) {
-					mainImages[i].classList.add("hidden");
-					mainImages[i].classList.remove("image-after-current");
-					mainImages[i].style.zIndex = 0;
-				}
-				else if (i == indexOfArticleVisible - 1) {
+				if (i < indexOfArticleVisible) {
 					mainImages[i].classList.add("hidden");
 					mainImages[i].classList.remove("image-after-current");
 					mainImages[i].style.zIndex = 0;
@@ -46,11 +41,6 @@ if (!!window.IntersectionObserver) {
 					mainImages[i].classList.remove("hidden", "image-after-current");
 					mainImages[i].style.zIndex = 1;
 					mainImageFigures[i].classList.add("with-caption");
-				}
-				else if (i == indexOfArticleVisible + 1
-					&& i < articles.length - 1) {
-					mainImages[i].classList.add("hidden", "image-after-current");
-					mainImages[i].style.zIndex = 0;
 				}
 				else {
 					mainImages[i].classList.add("hidden", "image-after-current");
