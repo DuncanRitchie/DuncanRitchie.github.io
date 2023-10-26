@@ -5,7 +5,7 @@
 	html,body {
 		min-height: initial;
 		background: none;
-		font-size: 16px;
+		font-size: 1rem;
 	}
 
 	a:not(#nav-icon-a)::after {
@@ -80,7 +80,6 @@
 	article {
 		height: initial;
 		min-height: calc(320px + 1rem);
-		/* min-height: max(320px + 1rem, 50vw); */
 		padding-bottom: 1rem;
 	}
 

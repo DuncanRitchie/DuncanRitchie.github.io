@@ -28,8 +28,6 @@
 
 	.has-intersection-observer.rectangular article:not(.showcase-group) p {
 		margin: 0;
-		padding-right: 18px;
-		padding-bottom: 18px;
 		margin-left: 40%;
 		padding-right: 0.75rem;
 		padding-bottom: 0.75rem;
@@ -119,7 +117,6 @@
 
 	.has-intersection-observer.rectangular #velut-article h2 {
 		/* The border adds spacing but does not affect the gradient-filled background like padding would. */
-		border-top: 60px solid transparent;
 		border-top: 2.5rem solid transparent;
 	}
 
@@ -132,22 +129,18 @@
 
 	.has-intersection-observer.rectangular .main-image {
 		clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-		width: calc(40% - 36px);
 		width: calc(40% - 1.5rem);
 	}
 
 	.has-intersection-observer.rectangular #code-article {
-		padding-bottom: 54px;
 		padding-bottom: 2.25rem;
 	}
 
 	.has-intersection-observer.rectangular article#velut-article h2 {
-		margin-top: 12px;
 		margin-top: 0.5rem;
 	}
 
 	.has-intersection-observer.rectangular article#website-development-article h2 {
-		margin-top: 36px;
 		margin-top: 1.5rem;
 	}
 }

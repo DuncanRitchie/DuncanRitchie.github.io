@@ -81,7 +81,6 @@
 	}
 
 	.has-intersection-observer.diagonal article:not(.showcase-group) h2 + p {
-		padding-top: 228px;
 		padding-top: 9.5rem;
 	}
 
