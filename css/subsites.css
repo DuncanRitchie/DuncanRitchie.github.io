@@ -63,8 +63,8 @@ button {
 
 section, footer {
 	margin-top: 2.5rem;
-	border-top: 0.25rem solid #002712 /* --showcase-background-opaque */;
-	border-top: 0.25rem solid #001409c0 /* --showcase-background */;
+	border-top: 0.25rem solid var(--showcase-background-opaque);
+	border-top: 0.25rem solid var(--showcase-background);
 	align-items: center;
 }
 

@@ -43,25 +43,22 @@ html {
 	font-size: calc(19px + 9 * ((100vw - 360px) / 2100));
 	font-size: calc(1.1875rem + 9 * ((100vw - 22.5rem) / 2100));
 	height: 100%;
-	/* CSS variables are not used in this repo,
-	but these variables are used on other web projects of mine
-	and I find having the colour-scheme here convenient.  */
-	--colour1: #89b3ea /* --colour1 */;
-	--colour2: #e1efff /* --colour2 */;
-	--colour3: #c6d1be /* --colour3 */;
-	--colour4: #c2df65 /* --colour4 */;
-	--colour5: #cff295 /* --colour5 */;
-	--colour6: #7a934c /* --colour6 */;
-	--nav-text: #333333 /* --nav-text */;
-	--body-text: #111111 /* --body-text */;
-	--unvisited-text: #00465c /* --unvisited-text */;
-	--visited-text: #76027a /* --visited-text */;
-	--active-text: #d30035 /* --active-text */;
+	--colour1: #89b3ea;
+	--colour2: #e1efff;
+	--colour3: #c6d1be;
+	--colour4: #c2df65;
+	--colour5: #cff295;
+	--colour6: #7a934c;
+	--nav-text: #333333;
+	--body-text: #111111;
+	--unvisited-text: #00465c;
+	--visited-text: #76027a;
+	--active-text: #d30035;
 }
 
 body {
 	min-height: 100vh;
-	background-color: #7a934c /* --colour6 */;
+	background-color: var(--colour6);
 	/* Browsers that don’t do gradients will use the jpeg background. */
 	background-image: url(../images/gradient-background.jpg);
 	background-size: 100% 100%;
@@ -69,20 +66,20 @@ body {
 		#ffffff20,
 		#ffffff20 /* Translucent white overlay as a gradient because background-image doesn’t accept a solid colour. */
 	), linear-gradient(
-		#89b3ea /* --colour1 */,
-		#e1efff /* --colour2 */,
-		#c6d1be /* --colour3 */,
-		#c2df65 /* --colour4 */,
-		#cff295 /* --colour5 */,
-		#7a934c /* --colour6 */
+		var(--colour1),
+		var(--colour2),
+		var(--colour3),
+		var(--colour4),
+		var(--colour5),
+		var(--colour6)
 	);
 	background-attachment: fixed;
 	background-size: 100% 100vh;
-	color: #111111 /* --body-text */;
+	color: var(--body-text);
 }
 
 body :focus {
-	outline: dashed 2px #76027a /* --visited-text */;
+	outline: dashed 2px var(--visited-text);
 }
 
 /* Hide focus outline if the browser supports :focus-visible
@@ -105,29 +102,29 @@ a {
 }
 
 a:link {
-	color: #00465c /* --unvisited-text */;
+	color: var(--unvisited-text);
 }
 
 article:not(.showcase-group) :not(:visited):focus {
-	outline-color: #00465c /* --unvisited-text */;
+	outline-color: var(--unvisited-text);
 }
 
 a:visited {
-	color: #76027a /* --visited-text */;
+	color: var(--visited-text);
 }
 
 a:hover {
-	color: #7a934c /* --colour6 */;
+	color: var(--colour6);
 	text-decoration: none;
 	border-bottom: 1px thin;
 }
 
 a:link:active {
-	color: #d30035 /* --active-text */;
+	color: var(--active-text);
 }
 
 article:not(.showcase-group) :hover:focus {
-	outline-color: #7a934c /* --colour6 */;
+	outline-color: var(--colour6);
 }
 
 button {
@@ -146,8 +143,8 @@ td {
 }
 
 td {
-	border-bottom: 1px solid #7a934c /* --colour6 */;
-	border-right: 1px solid #7a934c /* --colour6 */;
+	border-bottom: 1px solid var(--colour6);
+	border-right: 1px solid var(--colour6);
 }
 
 *:not(.main-image).hidden {
@@ -249,12 +246,12 @@ pre {
 }
 
 kbd {
-	border: 1px solid #333333 /* --nav-text */;
+	border: 1px solid var(--nav-text);
 	border-radius: .125em;
 }
 
 del {
-	text-decoration-color: #d30035 /* --active-text */;
+	text-decoration-color: var(--active-text);
 	background-color: #d3003510;
 }
 
@@ -265,7 +262,6 @@ ins {
 
 /* My first use of <mark> and this CSS for it was on my Latinitas Recens mirror. */
 mark {
-	background-image: linear-gradient(#89b3ea -25%, #e1efff 50%, #89b3ea 125%);
 	background-image: linear-gradient(var(--colour1) -25%, var(--colour2) 50%, var(--colour1) 125%);
 	border-radius: .125em;
 }
@@ -290,7 +286,7 @@ mark {
 		-webkit-background-clip: text;
 		background-clip: text;
 		-webkit-text-fill-color: transparent;
-		-webkit-text-stroke: 0.02rem rgba(214, 233, 255, 0.8) /* --colour2 */;
+		-webkit-text-stroke: 0.02rem var(--colour2);
 		z-index: 1;
 		/* If pointer-events were allowed, you would not be able to click on text in
 		   the first paragraph following the h2, because the ::after sits on top of it. */
@@ -381,7 +377,7 @@ nav {
 	background-color: #bfd4ef;
 	background-color: #ffffff7f;
 	background-image: linear-gradient(180deg, #ffffff33, #ffffff66, #ffffff33);
-	color: #333333 /* --nav-text */;
+	color: var(--nav-text);
 	text-decoration: none;
 }
 
@@ -438,7 +434,7 @@ nav ul li a:not(#nav-icon-a),label {
 }
 
 nav label:hover, nav a:hover, nav button:hover {
-	color: #7a934c /* --colour6 */;
+	color: var(--colour6);
 	background-image: linear-gradient(#ffffff00, #ffffff00, #ffffff00, #2d4a1b4f);
 }
 
@@ -455,7 +451,7 @@ nav ul input {
 }
 
 nav ul input:focus + label {
-	outline: dashed 2px #76027a /* --visited-text */;
+	outline: dashed 2px var(--visited-text);
 }
 
 nav ul li a,button,label {
@@ -539,12 +535,12 @@ so that’s what we do in the @supports query, which over-rides the IE rules. */
 		-webkit-mask-size: contain;
 		mask-size: contain;
 		background: unset;
-		background-color: #333333 /* --nav-text */;
+		background-color: var(--nav-text);
 	}
 
 	#nav-main-list label:hover::after, #nav-main-list button:hover::after {
 		background: unset;
-		background-color: #7a934c /* --colour6 */;
+		background-color: var(--colour6);
 	}
 
 	#socials-list a::before {
@@ -557,12 +553,12 @@ so that’s what we do in the @supports query, which over-rides the IE rules. */
 		-webkit-mask-size: contain;
 		mask-size: contain;
 		background: unset;
-		background-color: #333333 /* --nav-text */;
+		background-color: var(--nav-text);
 	}
 
 	#socials-list a:hover::before {
 		background: unset;
-		background-color: #7a934c /* --colour6 */;
+		background-color: var(--colour6);
 	}
 
 	#socials-list #nav-github::before {
@@ -673,7 +669,7 @@ nav #socials-list {
 		width: 100%;
 		grid-area: main;
 		justify-content: stretch;
-		border-top: 1px solid #333333 /* --nav-text */;
+		border-top: 1px solid var(--nav-text);
 	}
 
 	nav #nav-main-list > li {
@@ -747,7 +743,7 @@ nav #socials-list {
 	}
 
 	section:not(:last-of-type):not(#velut) article {
-		border-bottom: 2px solid #7a934c /* --colour6 */;
+		border-bottom: 2px solid var(--colour6);
 	}
 
 	h2 {
@@ -765,9 +761,9 @@ nav #socials-list {
 		bottom: auto;
 		transform: translateY(-100%);
 		font-size: 0.8rem;
-		color: #111111 /* --body-text */;
-		background-color: #cff295 /* --colour5 */;
-		background-image: linear-gradient(#cff295 /* --colour5 */, #7a934c /* --colour6 */);
+		color: var(--body-text);
+		background-color: var(--colour5);
+		background-image: linear-gradient(var(--colour5), var(--colour6));
 		padding: 0.25rem 3rem 0.25rem 1rem;
 		display: flex;
 		align-items: end;

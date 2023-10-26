@@ -93,9 +93,9 @@
 		position: absolute;
 		left: 1rem;
 		font-size: 0.8rem;
-		color: #111111 /* --body-text */;
-		background-color: #cff295 /* --colour5 */;
-		background-image: linear-gradient(#cff295 /* --colour5 */, #7a934c /* --colour6 */);
+		color: var(--body-text);
+		background-color: var(--colour5);
+		background-image: linear-gradient(var(--colour5), var(--colour6));
 		padding: 0.25rem 1rem 0.25rem;
 		display: flex;
 		align-items: end;

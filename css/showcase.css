@@ -1,5 +1,11 @@
 /* Code Nation (etc) project showcase */
 
+html {
+	--showcase-background-opaque: #002712;
+	--showcase-background: #001409cc;
+	--linked-project-text: teal;
+}
+
 .no-intersection-observer .showcase-group {
 	width: 100%;
 }
@@ -15,15 +21,15 @@
 	width: 100%;
 	padding-bottom: 24px;
 	padding-bottom: 1rem;
-	background-color: #002712 /* --showcase-background-opaque */;
-	background-color: #001409cc /* --showcase-background */;
+	background-color: var(--showcase-background-opaque);
+	background-color: var(--showcase-background);
 	background-position: absolute;
 	position: sticky;
 }
 
 .showcase-group :focus {
-	outline-color: #002712 /* --showcase-background-opaque */;
-	outline-color: #001409cc /* --showcase-background */;
+	outline-color: var(--showcase-background-opaque);
+	outline-color: var(--showcase-background);
 }
 
 .showcase-group#velut-projects {
@@ -67,11 +73,11 @@ hgroup p {
 		width: 100%;
 		padding-top: 60px;
 		padding-top: 2.5rem;
-		color: #d6e9ff /* --colour2 */;
+		color: var(--colour2);
 	}
 
 	section article hgroup h2 {
-		background: -webkit-linear-gradient(top, #e1efff /* --colour2 */, #c6d1be /* --colour3 */);
+		background: -webkit-linear-gradient(top, var(--colour2), var(--colour3));
 		-webkit-background-clip: text;
 		background-clip: text;
 		-webkit-text-fill-color: transparent;
@@ -91,7 +97,7 @@ hgroup p {
 	font-size: 20px;
 	font-size: 0.8333rem;
 	align-items: center;
-	border: 5px solid teal /* --linked-project-text */;
+	border: 5px solid var(--linked-project-text);
 	border-width: 0.2083rem;
 	position: relative;
 }
@@ -100,8 +106,8 @@ hgroup p {
 	outline-width: 2px;
 	outline-offset: -3px;		
 	outline-style: dashed;
-	outline-color: #002712 /* --showcase-background-opaque */;
-	outline-color: #001409cc /* --showcase-background */;
+	outline-color: var(--showcase-background-opaque);
+	outline-color: var(--showcase-background);
 }
 
 .project h3 a {
@@ -134,7 +140,7 @@ hgroup p {
 
 .project:not(.project-with-no-demo):hover,
 .project:not(.project-with-no-demo):hover * {
-	color: #00465c /* --unvisited-text */;
+	color: var(--unvisited-text);
 }
 
 /* This contains the GitHub logo from Font Awesome. */
@@ -195,7 +201,7 @@ hgroup p {
 	align-items: center;
 	justify-content: space-evenly;
 	text-decoration: none;
-	color: teal /* --linked-project-text */;
+	color: var(--linked-project-text);
 	font-weight: bold;
 }
 
@@ -247,7 +253,8 @@ time,
 
 .project-with-no-demo {
 	background-color: #e2e2e2;
-	border: 5px solid #505050 /* --unlinked-project-text */;
+	--unlinked-project-text: #505050;
+	border: 5px solid var(--unlinked-project-text);
 	border-width: 0.2083rem;
 }
 
@@ -256,7 +263,7 @@ time,
 }
 
 .project a:hover {
-	color: teal /* --linked-project-text */;
+	color: var(--linked-project-text);
 }
 
 /* Media query for mobile/tablet */
