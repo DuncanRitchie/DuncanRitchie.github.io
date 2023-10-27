@@ -278,7 +278,7 @@ mark {
 		-webkit-background-clip: text;
 		background-clip: text;
 		-webkit-text-fill-color: transparent;
-		-webkit-text-stroke: 0.02rem var(--colour2);
+		-webkit-text-stroke: 0.75px var(--colour2);
 		z-index: 1;
 		/* If pointer-events were allowed, you would not be able to click on text in
 		   the first paragraph following the h2, because the ::after sits on top of it. */
