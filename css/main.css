@@ -1,34 +1,7 @@
-/* The @font-face rules below were generated on google-webfonts-helper.herokuapp.com */
-/* alegreya-regular - latin */
-@font-face {
-	font-family: 'Alegreya';
-	font-style: normal;
-	font-weight: 400;
-	font-display: swap;
-	src: url('../fonts/alegreya-v26-latin-regular.eot'); /* IE9 Compat Modes */
-	src: local(''),
-		 url('../fonts/alegreya-v26-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-		 url('../fonts/alegreya-v26-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
-		 url('../fonts/alegreya-v26-latin-regular.woff') format('woff'), /* Modern Browsers */
-		 url('../fonts/alegreya-v26-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
-		 url('../fonts/alegreya-v26-latin-regular.svg#Alegreya') format('svg'); /* Legacy iOS */
-  }
-
-/* alegreya-600 - latin */
-@font-face {
-	font-family: 'Alegreya';
-	font-style: normal;
-	font-weight: 600;
-	font-display: swap;
-	src: url('../fonts/alegreya-v26-latin-600.eot'); /* IE9 Compat Modes */
-	src: local(''),
-		 url('../fonts/alegreya-v26-latin-600.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-		 url('../fonts/alegreya-v26-latin-600.woff2') format('woff2'), /* Super Modern Browsers */
-		 url('../fonts/alegreya-v26-latin-600.woff') format('woff'), /* Modern Browsers */
-		 url('../fonts/alegreya-v26-latin-600.ttf') format('truetype'), /* Safari, Android, iOS */
-		 url('../fonts/alegreya-v26-latin-600.svg#Alegreya') format('svg'); /* Legacy iOS */
-}
-
+/* Fonts are not imported in this file, to avoid CORS problems when this file is imported elsewhere.
+  CSS files specifically for fonts need to be imported directly, for example
+	<link rel="stylesheet" href="https://fonts.duncanritchie.co.uk/main.css">
+*/
 
 html,body {
 	margin: 0;
