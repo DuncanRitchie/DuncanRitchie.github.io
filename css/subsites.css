@@ -1,7 +1,9 @@
 /* This subsites.css file is not used on DuncanRitchie.co.uk inside this repo. It is, however, imported into projects such as velut-json-generator.  */
 
-/* Subsites have different font-subsetting. */
-@import url('https://fonts.duncanritchie.co.uk/subsites.css');
+/* Fonts are not imported in this file, to avoid CORS problems when this file is imported.
+  CSS files specifically for fonts need to be imported directly, for example
+	<link rel="stylesheet" href="https://fonts.duncanritchie.co.uk/subsites.css">
+*/
 
 :root {
 	--page-background:
