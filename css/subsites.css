@@ -7,6 +7,8 @@
 	--page-background:
 		linear-gradient(rgba(255, 255, 255, 0.125), rgba(255, 255, 255, 0.125)),
 		linear-gradient(rgb(137, 179, 234), rgb(225, 239, 255), rgb(198, 209, 190), rgb(194, 223, 101), rgb(207, 242, 149), rgb(122, 147, 76));
+	--section-border-opaque: #002712;
+	--section-border: #001409cc;
 }
 
 html, body {
@@ -63,8 +65,8 @@ button {
 
 section, footer {
 	margin-top: 2.5rem;
-	border-top: 0.25rem solid var(--showcase-background-opaque);
-	border-top: 0.25rem solid var(--showcase-background);
+	border-top: 0.25rem solid var(--section-border-opaque);
+	border-top: 0.25rem solid var(--section-border);
 	align-items: center;
 }
 
