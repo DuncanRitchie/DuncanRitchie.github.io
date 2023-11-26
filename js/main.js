@@ -1,4 +1,4 @@
-if (!!window.IntersectionObserver) {
+if (window.IntersectionObserver) {
 	document.querySelector("body").classList.remove("no-intersection-observer");
 	document.querySelector("body").classList.add("has-intersection-observer");
 }
@@ -42,15 +42,6 @@ const setPaddingAfterAbsolutelyPositionedHeadings = () => {
 	}
 }
 
-//// In Firefox, when navigating to a article on a different page
-//// (eg to code.html#velut from a page that isn’t code.html),
-//// the navigation seems to occur before `setPaddingAfterAbsolutelyPositionedHeadings`
-//// is run. This means that the location that is moved to in the page
-//// can be some distance above/below the target element.
-//// (It’s the same behaviour as happens without the CSS.)
-//// I therefore don’t let the function run in Firefox!
-const isNotFirefox = navigator.userAgent.indexOf('irefox') == -1;
-if (isNotFirefox) {
-	window.addEventListener("load", setPaddingAfterAbsolutelyPositionedHeadings);
-	window.addEventListener("resize", setPaddingAfterAbsolutelyPositionedHeadings);
-}
+setPaddingAfterAbsolutelyPositionedHeadings();
+
+window.addEventListener("resize", setPaddingAfterAbsolutelyPositionedHeadings);
