@@ -1,5 +1,5 @@
 # DuncanRitchie.github.io / www.duncanritchie.co.uk
-I’m a junior/mid-level dev in Chester, UK, and this is my site.
+I’m a dev in Chester, UK, and this is my site.
 
 ![Screenshot of my website, in desktop Firefox](https://github.com/DuncanRitchie/portfolio-screenshots/blob/main/minified/20230228-desktop-withcaption-firefox-home__small.png)
 
