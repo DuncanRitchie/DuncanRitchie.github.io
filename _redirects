@@ -25,3 +25,4 @@
 /velut-forms-collator/*      https://velut-forms-collator.netlify.app/:splat      200
 /velut-inflector/*           https://velut-inflector.netlify.app/:splat           200
 /childhood-blog/*            https://duncan-childhood-blog.netlify.app/:splat     200
+/ibis/*                      https://duncan-ibis.netlify.app/:splat               200
