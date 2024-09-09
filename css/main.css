@@ -1,6 +1,7 @@
 /* Fonts are not imported in this file, to avoid CORS problems when this file is imported elsewhere.
   CSS files specifically for fonts need to be imported directly, for example
 	<link rel="stylesheet" href="https://fonts.duncanritchie.co.uk/main.css">
+	That’s a reference to my own Font Server, where custom font subsetting etc is applied.
 */
 
 html,body {
@@ -8,7 +9,7 @@ html,body {
 	padding: 0;
 	scroll-behavior: smooth;
 	hyphens: manual;
-	font-family: "Alegreya", serif;
+	font-family: "Alegreya", "Alegreya Subset", serif;
 }
 
 html {
