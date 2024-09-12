@@ -29,8 +29,12 @@ main, footer ul {
 	max-width: 48rem;
 }
 
+h1,h2,h3,h4 {
+	margin-top: 0.875em;
+}
+
 h2 {
-	font-size: 2.5rem;
+	font-size: 2.375rem;
 }
 
 label {
