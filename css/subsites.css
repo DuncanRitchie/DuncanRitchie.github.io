@@ -94,3 +94,35 @@ footer ul {
 	gap: 0.5rem;
 	padding: 0 0.5rem;
 }
+
+/* CSS for customising the <summary> arrow is adapted from velut. */
+
+/* Hide the <summary>’s default arrow.
+	(This works because <summary> has {display: list-item} by default,
+	which would give the arrow as a ::marker pseudo-element.) */
+summary {
+	display: block;
+}
+
+/* Arrow next to <summary> */
+summary::before {
+	content: '    ';
+	background-image: url(https://www.duncanritchie.co.uk/images/arrow-down.svg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 0.625em;
+	display: inline-block;
+	width: 0.625em;
+	margin-right: 0.625em;
+}
+
+/* Arrow is positioned on the left side of <summary> */
+/* It points right when <details> is closed and rotates to point down on opening. */
+summary::before {
+	transition: transform 0.25s;
+	transform: rotate(-0.25turn);
+}
+
+details[open] summary::before {
+	transform: rotate(0turn);
+}
