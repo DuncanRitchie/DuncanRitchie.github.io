@@ -151,7 +151,7 @@ article:not(section article) {
 	width: calc(100% - 2rem);
 }
 
-h1, h2, h3, h4 {
+h1, h2, h3, h4, h5, h6 {
 	color: #3c381d; /* h2 color is overruled if intersection observer exists, or in showcase. */
 	font-weight: normal;
 	font-weight: 400;
