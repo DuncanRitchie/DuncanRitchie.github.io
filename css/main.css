@@ -227,13 +227,29 @@ kbd {
 	border-radius: .125em;
 }
 
+del,ins {
+	text-decoration-color: transparent;
+}
+
+/* If <del> is the only child of <p> (meaning a deleted paragraph), the <p> gets red formatting, otherwise <del> gets the formatting. */
 del {
 	text-decoration-color: var(--active-text);
 	background-color: #d3003510;
 }
+p:has(> del:first-child:last-child) {
+	border-left: 3px solid var(--active-text);
+	padding-left: 1rem;
+	background-color: #d3003510;
+}
 
-ins {
+/* If <ins> is the only child of <p> (meaning an inserted paragraph), the <p> gets green formatting, otherwise <ins> gets the formatting. */
+ins:not(:first-child), ins:not(:last-child), ins:not(p > ins) {
 	text-decoration-color: #03aa21;
+	background-color: #03aa2112;
+}
+p:has(> ins:first-child:last-child) {
+	border-left: 3px solid #03aa21;
+	padding-left: 1rem;
 	background-color: #03aa2112;
 }
 
