@@ -15,6 +15,8 @@
 /tiq-oeuvre/*                https://duncan-tiq-oeuvre.netlify.app/:splat         200
 /train-times/*               https://cn-train-app.herokuapp.com/:splat            200
 /velut-json-generator/*      https://velut-json-generator.netlify.app/:splat      200
+/velut-decliner/*            https://velut-decliner.netlify.app/:splat            200
+/velut-conjugator/*          https://velut-conjugator.netlify.app/:splat          200
 /velut-dictionary-links/*    https://velut-dictionary-links.netlify.app/:splat    200
 /velut-characters/*          https://velut-characters.netlify.app/:splat          200
 /tech-stack-creator/*        https://duncan-tech-stacks.netlify.app/:splat        200
