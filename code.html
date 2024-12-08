@@ -12,6 +12,7 @@
 	<!-- Showcase CSS is loaded asynchronously; from web.dev/defer-non-critical-css -->
 	<link rel="preload" href="./css/showcase.css" as="style" onload='this.onload=null;this.rel="stylesheet"'>
 	<link rel="stylesheet" media="print" href="./css/print.css">
+	<link rel="stylesheet" href="./css/scroll-effects.css">
   <link rel="stylesheet" href="https://fonts.duncanritchie.co.uk/main.css">
 	<link rel="icon" href="./favicon.ico" type="image/x-icon" />
 	<link rel="icon" href="./favicon-96x96.png" type="image/png" />
@@ -115,6 +116,11 @@
 				</ul>
 			</li>
 		</ul>
+		<div id="layout-toggle-div">
+			<button type="button" id="layout-toggle" title="Switch to a layout with text and photos sliding in on scroll" aria-pressed="false">
+				Toggle layout
+			</button>
+		</div>
 		<ul id="socials-list">
 			<li>
 				<a href="https://github.com/DuncanRitchie/" id="nav-github">
@@ -129,7 +135,7 @@
 		</ul>
 	</nav>
 
-	<!-- <div id="text-wrap-guide"></div> -->
+	<div id="text-wrap-guide"></div>
 	<h1 class="screenreader-only">My code</h1>
 
 	<!-- Sections: each section contains a figure and one or more articles. -->
@@ -203,7 +209,7 @@
 				To keep the site lightweight, I’m serving only one font, serving compressed images in newer formats such as WebP (with fallbacks for older browsers), and not using client-side–rendering libraries such as React.js.
 			</p>
 			<p>
-				To make the site more fun and distinctive, it has two different layouts that can be switched between, if your screen is wide enough and your browser supports intersection observers (and if you’re not on this current page). Both layouts have the picture for each section on the left-hand side, but on one layout the picture has a diagonal edge that the text stays aligned with by shifting to the left or right as you scroll.
+				To make the site more fun and distinctive, it has two different layouts that can be switched between, if your screen is wide enough and your browser supports intersection observers. Both layouts have the picture for each section on the left-hand side, but on one layout the picture has a diagonal edge that the text stays aligned with by shifting to the left or right as you scroll.
 			</p>
 			<p>
 				I have kept it accessible to users of assistive technologies by using semantic HTML, by giving the text a decent font size and contrast, and by ensuring the site can be navigated by keyboard, among other practices.
@@ -301,11 +307,11 @@
 			<div style="display: none" class="project" aria-labelledby="velut-lemmata-collator-heading">
 				<div class="project-inner-div">
 					<picture>
-						<!-- The picture won’t load because the project doesn’t yet exist! -->
-						<source media="(min-width:0px)"
+						<!-- Picture sources are commented out because the project doesn’t yet exist! -->
+						<!-- <source media="(min-width:0px)"
 							srcset="https://res.cloudinary.com/duncanritchie/image/upload/c_scale,w_180/v1684100616/project-screenshots/velut-lemmata-collator.webp">
 						<img src="https://res.cloudinary.com/duncanritchie/image/upload/c_scale,w_180/v1684100616/project-screenshots/velut-lemmata-collator.png"
-							class="project-screenshot" alt="Screenshot of my Word Data Generator" width="180"/>
+							class="project-screenshot" alt="Screenshot of my Word Data Generator" width="180"/> -->
 					</picture>
 					<!-- https://res.cloudinary.com/duncanritchie/image/upload/v1684100616/project-screenshots/velut-lemmata-collator.png -->
 					<div>
@@ -966,6 +972,7 @@
 
 	<script src="./js/main.js"></script>
 	<script src="./js/navbar.js"></script>
+	<script src="./js/scroll.js"></script>
 </body>
 
 </html>

@@ -22,15 +22,23 @@ if (window.IntersectionObserver) {
 //// Having this JavaScript makes the padding-top more accurate,
 //// especially at the breakpoints where the headings wrap onto two lines.
 const setPaddingAfterAbsolutelyPositionedHeadings = () => {
-	const elementsToAddPaddingTo = document.querySelectorAll("article:not(.showcase-group) h2 + *");
+	const elementsToAddPaddingTo = document.querySelectorAll("article h2 + *");
 	if (document.documentElement.clientWidth > 674) {
-		const fullWidthElements = document.querySelectorAll("section article:not(.showcase-group) h2");
+		const fullWidthElements = document.querySelectorAll("section article h2");
 
 		for (let i = 0; i < fullWidthElements.length; i++) {
 			const borderTopWidthAsText = getComputedStyle(fullWidthElements[i]).borderTopWidth //// Eg, "52.8px"
-			const borderTopWidth = +borderTopWidthAsText.substr(0, borderTopWidthAsText.length - 2); //// Remove the "px" and convert to number
-			const isDevelopmentArticle = fullWidthElements[i].id === "website-development-heading" //// Hack to give one article less padding
-			const paddingNeeded = fullWidthElements[i].offsetHeight - borderTopWidth - (isDevelopmentArticle ? 24 : 0);
+			const borderTopWidth = +borderTopWidthAsText.substring(0, borderTopWidthAsText.length - 2); //// Remove the "px" and convert to number
+
+			const marginTopAsText = getComputedStyle(fullWidthElements[i]).marginTop //// Likewise for the margin-top
+			const marginTop = +marginTopAsText.substring(0, marginTopAsText.length - 2);
+
+			const marginBottomAsText = getComputedStyle(fullWidthElements[i]).marginBottom //// Likewise for the margin-bottom
+			const marginBottom = +marginBottomAsText.substring(0, marginBottomAsText.length - 2);
+
+			const isShowcaseHeading = fullWidthElements[i].closest('.showcase-group') ? true : false //// Less padding is needed in the showcases.
+
+			const paddingNeeded = fullWidthElements[i].offsetHeight + marginTop + marginBottom - borderTopWidth - (isShowcaseHeading ? 0 : 48);
 
 			elementsToAddPaddingTo[i].style.paddingTop = `${paddingNeeded}px`;
 		}

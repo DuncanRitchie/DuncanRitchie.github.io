@@ -17,27 +17,42 @@ const mainImages = document.getElementsByClassName("main-image");
 
 if (!!window.IntersectionObserver) {
 	//// Find which mainImage should be displayed, then change styling on mainImages accordingly.
+	const sections = document.getElementsByTagName('section');
 	const articles =  document.getElementsByTagName("article");
 	const mainImageFigures = document.getElementsByClassName("main-image-figure");
+
+	function getIndexOfSectionVisible(indexOfArticleVisible) {
+		const articleVisible = articles[indexOfArticleVisible];
+		const sectionVisible = articleVisible.closest('section');
+		for (let i = 0; i < sections.length; i++) {
+			if (sections[i] === sectionVisible) {
+				return i;
+			}
+		}
+		console.error('Section not found for article with index ', indexOfArticleVisible)
+		return 0;
+	}
 
 	const displayDiagonalImageFromIndex = (indexOfArticleVisible) => {
 		//// indexOfArticleVisible will be -1 if the observer has fired, but not reported an intersection.
 		if (indexOfArticleVisible > -1) {
-			for (let i = 0; i < articles.length; i++) {
+			//// Match the article to the section it’s in.
+			const indexOfSectionVisible = getIndexOfSectionVisible(indexOfArticleVisible);
+			for (let i = 0; i < sections.length; i++) {
 				//// Pre-emptively hide all captions.
-				if (i >= indexOfArticleVisible) {
+				if (i >= indexOfSectionVisible) {
 					mainImageFigures[i].classList.remove("with-caption");
 				}
 				//// Hide and change z-index of images according to which article should be visible.
 				//// The presence/absence of the `image-after-current` class determines which direction the clip-path moves.
 				//// So clip-paths move left when scrolling down (when a later image becomes the current image)
 				//// and right when scrolling up (when an earlier image becomes the current image).
-				if (i < indexOfArticleVisible) {
+				if (i < indexOfSectionVisible) {
 					mainImages[i].classList.add("hidden");
 					mainImages[i].classList.remove("image-after-current");
 					mainImages[i].style.zIndex = 0;
 				}
-				else if (i == indexOfArticleVisible) {
+				else if (i == indexOfSectionVisible) {
 					mainImages[i].classList.remove("hidden", "image-after-current");
 					mainImages[i].style.zIndex = 1;
 					mainImageFigures[i].classList.add("with-caption");
@@ -206,7 +221,9 @@ if (!!window.IntersectionObserver) {
 		const scrollToElementInUrl = () => {
 			const elementToScrollTo = document.querySelector(':target');
 			if (elementToScrollTo) {
-				const articleVisible = document.querySelector(':target article');
+				// The <article> may be inside :target, an ancestor of :target, or :target itself.
+				// .closest catches the latter two possibilities.
+				const articleVisible = document.querySelector(':target article') || elementToScrollTo.closest('article');
 				if (articleVisible) {
 					const indexOfArticleVisible = [...articles].findIndex(el=>el.id===articleVisible.id);
 					//// The timeout allows transitions to complete.

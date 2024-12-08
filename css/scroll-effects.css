@@ -42,7 +42,7 @@
 		z-index: 1;
 	}
 
-	.has-intersection-observer.diagonal article:not(.showcase-group) {
+	.has-intersection-observer.diagonal article {
 		min-height: calc(100vh - 1.5rem);
 	}
 
@@ -80,11 +80,11 @@
 		transition: shape-outside 1s;
 	}
 
-	.has-intersection-observer.diagonal article:not(.showcase-group) h2 + p {
+	.has-intersection-observer.diagonal article h2 + p {
 		padding-top: 9.5rem;
 	}
 
-	.has-intersection-observer.diagonal article:not(.showcase-group) p {
+	.has-intersection-observer.diagonal article p {
 		padding: 0 0.75rem 0.75rem 40%;
 		margin: 0;
 	}
