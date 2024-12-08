@@ -23,10 +23,15 @@ html {
 	content: '';
 	inset: 0;
 	position: absolute;
-	z-index: -1;
 	background-color: var(--showcase-background-opaque);
 	background-color: var(--showcase-background);
 	background-position: absolute;
+}
+.diagonal .showcase-group::before {
+	z-index: -1;
+}
+.rectangular .showcase-group::before {
+	z-index: 1;
 }
 
 .rectangular .showcase-group {
@@ -35,6 +40,10 @@ html {
 	flex-wrap: wrap;
 	justify-content: space-around;
 	align-items: center;
+}
+
+.showcase-group * {
+	z-index: 1;
 }
 
 .showcase-group :focus {

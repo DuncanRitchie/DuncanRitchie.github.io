@@ -100,7 +100,7 @@ if (!!window.IntersectionObserver) {
 	}
 
 	function resetRectangularLayout() {
-		for (let i = 0; i < articles.length; i++) {
+		for (let i = 0; i < sections.length; i++) {
 			mainImages[i].classList.remove("hidden");
 			mainImages[i].style.zIndex = 0;
 		}
