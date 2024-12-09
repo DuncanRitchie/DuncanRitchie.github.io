@@ -42,6 +42,12 @@ html {
 	align-items: center;
 }
 
+/* Background of last showcase should extend to the bottom edge of the page. */
+.diagonal .showcase-group#javascript-projects::before {
+	box-shadow: 0 0 0 100vh var(--showcase-background);
+	clip-path: inset(0 0 -100vh);
+}
+
 .showcase-group * {
 	z-index: 1;
 }
