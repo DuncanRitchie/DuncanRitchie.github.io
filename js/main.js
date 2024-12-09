@@ -9,18 +9,18 @@ if (window.IntersectionObserver) {
 //// the heading, rather than under it.
 //// To fix this, we set the margin-top of the element immediately
 //// after the heading to be equal to the height of the heading.
-//// At least one heading has a border-top; this width (the thickness of
-//// the border) needs to be subtracted from the margin-top.
+//// This includes the heading’s margin-top, margin-bottom, and border-top
+//// (border-bottom is not used on any heading).
 //// The margin-top is also defined in the CSS, with breakpoints for
-//// where more padding is needed because the heading is wrapping onto
+//// where more margin is needed because the heading is wrapping onto
 //// a second line. If the margin-top were not defined in the CSS,
 //// and the user tried to navigate between (eg) code.html#velut and
-//// aboutme.html#latin, the navigation would happen before the padding
+//// aboutme.html#latin, the navigation would happen before the margin
 //// was added, so could be wrong by several dozen pixels up or down.
 //// Having this JavaScript makes the margin-top more accurate,
 //// especially at the breakpoints where the headings wrap onto two lines.
-const setMarginfterAbsolutelyPositionedHeadings = () => {
-	const elementsToAddPaddingTo = document.querySelectorAll("article h2 + *");
+const setMarginAfterAbsolutelyPositionedHeadings = () => {
+	const elementsToAddMarginTo = document.querySelectorAll("article h2 + *");
 	if (document.documentElement.clientWidth > 674) {
 		const fullWidthElements = document.querySelectorAll("section article h2");
 
@@ -36,18 +36,19 @@ const setMarginfterAbsolutelyPositionedHeadings = () => {
 
 			const isShowcaseHeading = fullWidthElements[i].closest('.showcase-group') ? true : false //// More margin is needed in the showcases.
 
-			const paddingNeeded = fullWidthElements[i].offsetHeight + marginTop + marginBottom - borderTopWidth - (isShowcaseHeading ? 0 : 72);
+			const marginNeeded = fullWidthElements[i].offsetHeight + marginTop + marginBottom + borderTopWidth - (isShowcaseHeading ? 0 : 72);
 
-			elementsToAddPaddingTo[i].style.marginTop = `${paddingNeeded}px`;
+			elementsToAddMarginTo[i].style.marginTop = `${marginNeeded}px`;
 		}
 	}
 	else {
-		for (let i = 0; i < elementsToAddPaddingTo.length; i++) {
-			elementsToAddPaddingTo[i].style.marginTop = `0px`;
+		for (let i = 0; i < elementsToAddMarginTo.length; i++) {
+			elementsToAddMarginTo[i].style.marginTop = `0px`;
 		}
 	}
 }
 
-setMarginfterAbsolutelyPositionedHeadings();
+setMarginAfterAbsolutelyPositionedHeadings();
 
-window.addEventListener("resize", setMarginfterAbsolutelyPositionedHeadings);
+window.addEventListener("load", () => setTimeout(setMarginAfterAbsolutelyPositionedHeadings, 100));
+window.addEventListener("resize", setMarginAfterAbsolutelyPositionedHeadings);
