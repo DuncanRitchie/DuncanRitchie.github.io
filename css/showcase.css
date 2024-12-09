@@ -66,20 +66,23 @@ hgroup {
 	padding-top: 2.5rem;
 }
 
-section article hgroup h2 {
-	position: absolute;
-	font-size: 3.5rem;
-	padding-right: 1.5rem;
-	margin: 1.75rem 0 1rem;
-	width: calc(100% - 1.5rem);
-	color: inherit;
-	z-index: 1;
-	filter:
-		drop-shadow(0 0 1px #000)
-		drop-shadow(0 0 1px var(--showcase-background-opaque))
-		drop-shadow(0 0 2px var(--showcase-background-opaque))
-		drop-shadow(0 0 3px var(--showcase-background-opaque))
-		;
+@media screen and (min-width: calc(42.125rem + 0.0001rem)) {
+	section article hgroup h2 {
+		position: absolute;
+		font-size: 3.5rem;
+		padding-right: 1.5rem;
+		margin: 1.75rem 0 1rem;
+		width: calc(100% - 1.5rem);
+		color: inherit;
+		z-index: 1;
+		filter:
+			drop-shadow(0 0 1px #000)
+			drop-shadow(0 0 1px var(--showcase-background-opaque))
+			drop-shadow(0 0 2px var(--showcase-background-opaque))
+			drop-shadow(0 0 3px var(--showcase-background-opaque))
+			drop-shadow(0 0 1em var(--showcase-background-opaque))
+			;
+	}
 }
 
 .no-intersection-observer hgroup h2 {

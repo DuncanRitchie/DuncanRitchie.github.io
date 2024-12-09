@@ -314,10 +314,8 @@ details[open] summary::before {
 			drop-shadow(0 0 1px var(--colour2))
 			drop-shadow(0 0 2px var(--colour2))
 			drop-shadow(0 0 3px var(--colour2))
+			drop-shadow(0 0 1em var(--colour2))
 			;
-		/* If pointer-events were allowed, you would not be able to click on text in
-		   the first paragraph following the h2, because the ::after sits on top of it. */
-		pointer-events: none;
 	}
 
 	/* Hack to stop background-clip cutting off the descenders of the last line of the h2. */
@@ -332,8 +330,13 @@ details[open] summary::before {
 		font-size: 0.5em;
 	}
 
+	.has-intersection-observer section article h2 ~ p {
+		z-index: 1;
+		position: relative;
+	}
+
 	.has-intersection-observer section article:not(.showcase-group) h2 + p {
-		padding-top: 9.5rem;
+		margin-top: 9.5rem;
 	}
 
 	#home .main-image-figure img {
@@ -347,22 +350,22 @@ The max-width values here are defined by where wrapping occurs (in Firefox), det
 by the text & font. The min-width is the threshold between “mobile” and “desktop” view. */
 @media screen and (min-width: calc(42.125rem + 0.0001rem)) and (max-width: 45.125rem) {
 	.has-intersection-observer #home-article h2 + p {
-		padding-top: 11.5rem;
+		margin-top: 11.5rem;
 	}
 }
 @media screen and (min-width: calc(42.125rem + 0.0001rem)) and (max-width: 75rem) {
 	.has-intersection-observer #velut-article h2 + p {
-		padding-top: 11.5rem;
+		margin-top: 11.5rem;
 	}
 }
 @media screen and (min-width: calc(42.125rem + 0.0001rem)) and (max-width: 46.5rem) {
 	.has-intersection-observer #website-development-article h2 + p {
-		padding-top: 11.5rem;
+		margin-top: 11.5rem;
 	}
 }
 @media screen and (min-width: calc(42.125rem + 0.0001rem)) and (max-width: 58rem) {
 	.has-intersection-observer #tiq-article h2 + p {
-		padding-top: 11.5rem;
+		margin-top: 11.5rem;
 	}
 }
 

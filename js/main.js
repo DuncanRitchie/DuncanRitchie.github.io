@@ -7,21 +7,19 @@ if (window.IntersectionObserver) {
 //// This is necessary so that they are superimposed on the main images.
 //// However, it means that text following the heading will sit behind
 //// the heading, rather than under it.
-//// To fix this, we set the padding-top of the element immediately
+//// To fix this, we set the margin-top of the element immediately
 //// after the heading to be equal to the height of the heading.
 //// At least one heading has a border-top; this width (the thickness of
-//// the border) needs to be subtracted from the padding-top.
-//// For some reason we also need to subtract 1rem (24px) from the
-//// padding in the “Developing this website” article.
-//// The padding-top is also defined in the CSS, with breakpoints for
+//// the border) needs to be subtracted from the margin-top.
+//// The margin-top is also defined in the CSS, with breakpoints for
 //// where more padding is needed because the heading is wrapping onto
-//// a second line. If the padding-top were not defined in the CSS,
+//// a second line. If the margin-top were not defined in the CSS,
 //// and the user tried to navigate between (eg) code.html#velut and
 //// aboutme.html#latin, the navigation would happen before the padding
 //// was added, so could be wrong by several dozen pixels up or down.
-//// Having this JavaScript makes the padding-top more accurate,
+//// Having this JavaScript makes the margin-top more accurate,
 //// especially at the breakpoints where the headings wrap onto two lines.
-const setPaddingAfterAbsolutelyPositionedHeadings = () => {
+const setMarginfterAbsolutelyPositionedHeadings = () => {
 	const elementsToAddPaddingTo = document.querySelectorAll("article h2 + *");
 	if (document.documentElement.clientWidth > 674) {
 		const fullWidthElements = document.querySelectorAll("section article h2");
@@ -36,20 +34,20 @@ const setPaddingAfterAbsolutelyPositionedHeadings = () => {
 			const marginBottomAsText = getComputedStyle(fullWidthElements[i]).marginBottom //// Likewise for the margin-bottom
 			const marginBottom = +marginBottomAsText.substring(0, marginBottomAsText.length - 2);
 
-			const isShowcaseHeading = fullWidthElements[i].closest('.showcase-group') ? true : false //// Less padding is needed in the showcases.
+			const isShowcaseHeading = fullWidthElements[i].closest('.showcase-group') ? true : false //// More margin is needed in the showcases.
 
-			const paddingNeeded = fullWidthElements[i].offsetHeight + marginTop + marginBottom - borderTopWidth - (isShowcaseHeading ? 0 : 48);
+			const paddingNeeded = fullWidthElements[i].offsetHeight + marginTop + marginBottom - borderTopWidth - (isShowcaseHeading ? 0 : 72);
 
-			elementsToAddPaddingTo[i].style.paddingTop = `${paddingNeeded}px`;
+			elementsToAddPaddingTo[i].style.marginTop = `${paddingNeeded}px`;
 		}
 	}
 	else {
 		for (let i = 0; i < elementsToAddPaddingTo.length; i++) {
-			elementsToAddPaddingTo[i].style.paddingTop = `0px`;
+			elementsToAddPaddingTo[i].style.marginTop = `0px`;
 		}
 	}
 }
 
-setPaddingAfterAbsolutelyPositionedHeadings();
+setMarginfterAbsolutelyPositionedHeadings();
 
-window.addEventListener("resize", setPaddingAfterAbsolutelyPositionedHeadings);
+window.addEventListener("resize", setMarginfterAbsolutelyPositionedHeadings);
