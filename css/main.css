@@ -291,6 +291,10 @@ details[open] summary::before {
 	transform: rotate(0turn);
 }
 
+address {
+	font-style: unset;
+}
+
 @media screen and (min-width: calc(42.125rem + 0.0001rem)) {
 	.has-intersection-observer section article:not(.showcase-group) h2 {
 		font-size: 3.5rem;
