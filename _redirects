@@ -28,3 +28,4 @@
 /velut-inflector/*           https://velut-inflector.netlify.app/:splat           200
 /childhood-blog/*            https://duncan-childhood-blog.netlify.app/:splat     200
 /ibis/*                      https://duncan-ibis.netlify.app/:splat               200
+/velut-lemmata-collator/*    https://velut-lemmata-collator.netlify.app/:splat    200
