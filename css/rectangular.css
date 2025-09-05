@@ -87,6 +87,14 @@
 		}
 	}
 
+	/* Creates a stacking context so figcaptions appear in front of the image but behind subsequent figures. */
+	.rectangular .main-image-figure {
+		scale: 1.0001;
+	}
+	.rectangular .main-image-figure picture {
+		position: sticky;
+	}
+
 	.rectangular .main-image-figure figcaption {
 		position: absolute;
 		left: 1rem;
