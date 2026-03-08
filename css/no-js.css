@@ -1,6 +1,6 @@
 /* CSS for browsers that don’t support intersection observers. */
 
-.no-intersection-observer nav ul ul {
+.no-intersection-observer .main-site-nav ul ul {
 	margin-top: 0.5rem;
 }
 

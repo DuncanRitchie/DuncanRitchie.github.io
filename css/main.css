@@ -375,7 +375,7 @@ by the text & font. The min-width is the threshold between “mobile” and “d
 
 /* Styles for the navbar. */
 
-nav {
+.main-site-nav {
 	position: fixed;
 	display: flex;
 	z-index: 2;
@@ -394,7 +394,7 @@ nav {
 }
 
 /* Blur the background of nav */
-nav::before {
+.main-site-nav::before {
 	position: absolute;
 	z-index: -1;
 	content: '';
@@ -405,18 +405,18 @@ nav::before {
 	backdrop-filter: blur(4px) brightness(103%);
 }
 
-nav a:link, nav a:visited {
+.main-site-nav a:link, .main-site-nav a:visited {
 	color: inherit;
 	text-decoration: inherit;
 }
 
-nav #nav-icon-a {
+.main-site-nav #nav-icon-a {
 	display: flex;
 	align-items: center;
 	padding: 0 0.5rem 0 0.25rem;
 }
 
-nav #nav-icon {
+.main-site-nav #nav-icon {
 	width: 1.5rem;
 	height: 1.5rem;
 	margin-top: 0.25rem;
@@ -425,7 +425,7 @@ nav #nav-icon {
 	background-color: initial;
 }
 
-nav ul {
+.main-site-nav ul {
 	display: flex;
 	list-style-type: none;
 	margin: 0;
@@ -435,16 +435,16 @@ nav ul {
 	flex-grow: 1;
 }
 
-nav ul li a:not(#nav-icon-a),label {
+.main-site-nav ul li a:not(#nav-icon-a),label {
 	padding: 0.5rem;
 }
 
-nav label:hover, nav a:hover, nav button:hover {
+.main-site-nav label:hover, .main-site-nav a:hover, .main-site-nav button:hover {
 	color: var(--colour6);
 	background-image: linear-gradient(#ffffff00, #ffffff00, #ffffff00, #2d4a1b4f);
 }
 
-nav ul input {
+.main-site-nav ul input {
 	position: absolute;
 	top: -0.15rem;
 	border: 2.5rem solid transparent;
@@ -454,16 +454,16 @@ nav ul input {
 	opacity: 0;
 }
 
-nav ul input:focus + label {
+.main-site-nav ul input:focus + label {
 	outline: dashed 2px var(--visited-text);
 }
 
-nav ul li a,button,label {
+.main-site-nav ul li a,button,label {
 	padding-left: 0.375rem;
 	padding-right: 0.375rem;
 }
 
-nav ul ul {
+.main-site-nav ul ul {
 	position: absolute;
 	flex-direction: column;
 	display: none;
@@ -474,7 +474,7 @@ nav ul ul {
 }
 
 /* Blur the background of nav submenus */
-nav ul ul::before {
+.main-site-nav ul ul::before {
 	position: absolute;
 	z-index: -1;
 	content: '';
@@ -485,7 +485,7 @@ nav ul ul::before {
 	backdrop-filter: blur(3px) brightness(103%);
 }
 
-nav label {
+.main-site-nav label {
 	cursor: pointer;
 	padding: 0.5rem 0.75rem;
 }
@@ -585,25 +585,25 @@ so that’s what we do in the @supports query, which over-rides the IE rules. */
 	display: block;
 }
 
-nav ul ul li {
+.main-site-nav ul ul li {
 	padding: 0.25rem 0.5rem 0 0;
 	width: 100%;
 }
 
-nav ul ul li a {
+.main-site-nav ul ul li a {
 	display: inline-block;
 	padding: 0.25rem 0.5rem 0.25rem 0.75rem;
 	width: 100%;
 }
 
-nav #layout-toggle-div {
+.main-site-nav #layout-toggle-div {
 	display: none;
 	width: 3rem;
 	text-align: center;
 	flex-grow: 1;
 }
 
-nav button {
+.main-site-nav button {
 	font-family: inherit;
 	font-size: inherit;
 	background-color: transparent;
@@ -613,12 +613,12 @@ nav button {
 }
 
 @media (max-width: 46.625rem) {
-	nav #about-me-hidden-text {
+	.main-site-nav #about-me-hidden-text {
 		display: none;
 	}
 }
 
-nav #socials-list {
+.main-site-nav #socials-list {
 	flex-grow: 0;
 }
 
@@ -626,11 +626,11 @@ nav #socials-list {
 
 /* CSS for mobile. */
 @media (max-width: 42.125rem) {
-	nav #nav-icon-a {
+	.main-site-nav #nav-icon-a {
 		padding-right: 0;
 	}
 
-	nav {
+	.main-site-nav {
 		display: grid;
 		grid-template-columns: 1fr 2fr;
 		grid-template-areas:
@@ -640,7 +640,7 @@ nav #socials-list {
 		width: calc(100% - 0.875rem);
 	}
 
-	nav #nav-icon-a {
+	.main-site-nav #nav-icon-a {
 		grid-area: icon;
 		display: flex;
 		justify-content: start;
@@ -648,23 +648,23 @@ nav #socials-list {
 		height: calc(100% - 1rem);
 	}
 
-	nav #nav-icon {
+	.main-site-nav #nav-icon {
 		margin: 0 0.375rem 0 0;
 	}
 
-	nav a, nav button, nav label {
+	.main-site-nav a, .main-site-nav button, .main-site-nav label {
 		display: inline-block;
 		text-align: center;
 	}
 
-	nav #nav-main-list {
+	.main-site-nav #nav-main-list {
 		width: 100%;
 		grid-area: main;
 		justify-content: stretch;
 		border-top: 1px solid var(--nav-text);
 	}
 
-	nav #nav-main-list > li {
+	.main-site-nav #nav-main-list > li {
 		flex: 1 1 0;
 	}
 
@@ -677,17 +677,17 @@ nav #socials-list {
 		width: calc(100% - 0.5rem);
 	}
 
-	nav #about-me-hidden-text {
+	.main-site-nav #about-me-hidden-text {
 		display: unset;
 	}
 
-	nav ul ul {
+	.main-site-nav ul ul {
 		clip-path: unset;
 		margin: 0;
 		padding: 0.25rem 0.5rem 0 0;
 	}
 
-	nav #socials-list {
+	.main-site-nav #socials-list {
 		grid-area: socials;
 		justify-content: end;
 		margin-right: 0.5rem;
@@ -697,7 +697,7 @@ nav #socials-list {
 		flex: 0 1 5rem;
 	}
 
-	nav #socials-list li a {
+	.main-site-nav #socials-list li a {
 		padding: 0.5rem;
 		width: calc(100% - 1rem);
 		display: inline-block;
@@ -721,7 +721,7 @@ nav #socials-list {
 	}
 
 	/* Articles not wrapped in <section>, eg style-guide */
-	nav + article:not(.showcase-group) {
+	.main-site-nav + article:not(.showcase-group) {
 		padding-top: 3rem;
 	}
 
@@ -760,26 +760,26 @@ nav #socials-list {
 /* CSS for smaller mobiles. */
 
 @media (max-width: 26.5rem) {
-	nav {
+	.main-site-nav {
 		grid-template-columns: min-content 1fr;
 	}
 }
 
 @media (max-width: 23.875rem) {
-	nav #about-me-hidden-text {
+	.main-site-nav #about-me-hidden-text {
 		display: none;
 	}
 }
 
 @media (max-width: 22.1875rem) {
-	nav #nav-icon-a {
+	.main-site-nav #nav-icon-a {
 		justify-content: center;
 		padding: 0.25rem;
 		flex-direction: column;
 		align-items: center;
 	}
 
-	nav #nav-icon {
+	.main-site-nav #nav-icon {
 		margin-right: 0;
 	}
 

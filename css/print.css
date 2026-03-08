@@ -22,7 +22,7 @@
 		clip-path: inset(90% 100%);
 	}
 
-	nav {
+	.main-site-nav {
 		position: static;
 		margin-top: 1rem;
 		margin-bottom: 2.5rem;
@@ -104,7 +104,7 @@
 }
 
 @media print and (max-width: 42.125rem) {
-	nav #socials-list {
+	.main-site-nav #socials-list {
 		padding-bottom: 2.5rem;
 	}
 
