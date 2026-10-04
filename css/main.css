@@ -287,7 +287,7 @@ summary::before {
 	transform: rotate(-0.25turn);
 }
 
-details[open] summary::before {
+details[open] > summary::before {
 	transform: rotate(0turn);
 }
 
