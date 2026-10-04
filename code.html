@@ -133,845 +133,848 @@
 	</nav>
 
 	<div id="text-wrap-guide"></div>
-	<h1 class="screenreader-only">My code</h1>
 
-	<!-- Sections: each section contains a figure and one or more articles. -->
-	<section id="employment" aria-labelledby="employment-heading">
-		<figure class="main-image-figure with-caption">
-			<!-- https://res.cloudinary.com/duncanritchie/image/upload/v1644766563/site/BeestonCastle.jpg -->
-			<picture class="main-image-picture">
-				<source media="(min-width:601px)"
-					srcset="https://res.cloudinary.com/duncanritchie/image/upload/t_SquareCentre1000/v1644766563/site/BeestonCastle.webp">
-				<source media="(min-width:481px)"
-					srcset="https://res.cloudinary.com/duncanritchie/image/upload/t_SquareCentre600/v1644766563/site/BeestonCastle.webp">
-				<source media="(min-width:0px)"
-					srcset="https://res.cloudinary.com/duncanritchie/image/upload/t_SquareCentre480/v1644766563/site/BeestonCastle.webp">
-				<img class="main-image" alt="A castle on top of a wooded hill with green fields around"
-					src="https://res.cloudinary.com/duncanritchie/image/upload/t_SquareCentre1000/v1644766563/site/BeestonCastle.jpg" />
-			</picture>
-			<figcaption>
-				Beeston Castle, which I passed on my commute
-			</figcaption>
-		</figure>
+	<main>
+		<h1 class="screenreader-only">My code</h1>
 
-		<article id="employment-article">
-			<h2 id="employment-heading">
-				My employ&shy;ment
-			</h2>
-			<p>
-				<a href="https://www.informationcatalyst.com/">Information&nbsp;Catalyst</a> was my most recent employer — a small-ish software company in Cheshire. We did a range of activities, mainly towards European Commission R&D initiatives.
-			</p>
-			<p>
-				I collaborated on a system for managing factory processes, for which I used front-end web technologies, TypeScript, and some PostgreSql, Java, and MySql. The TypeScript I wrote is for four OpenAPI-compliant collections of web endpoints using Nest.js, and for a front-end (my first Angular project) that calls two of those APIs. It’s been an exciting challenge!
-			</p>
-			<p>
-				I also developed a Windows Forms program that uses C# and the MS Office Interop API to process Word documents. This helped keep my company’s reports looking professional, I found the work enjoyable, and I’ve learnt a lot through it!
-			</p>
-			<p>
-				In my first 21 months at Information Catalyst, I completed a Level 4 Software Developer apprenticeship.
-			</p>
-			<p>
-				<em>Do you have a role I could fill? You can contact me on <a href="https://www.linkedin.com/in/duncan-ritchie-uk/">LinkedIn</a>!</em>
-			</p>
-		</article>
-	</section>
+		<!-- Sections: each section contains a figure and one or more articles. -->
+		<section id="employment" aria-labelledby="employment-heading">
+			<figure class="main-image-figure with-caption">
+				<!-- https://res.cloudinary.com/duncanritchie/image/upload/v1644766563/site/BeestonCastle.jpg -->
+				<picture class="main-image-picture">
+					<source media="(min-width:601px)"
+						srcset="https://res.cloudinary.com/duncanritchie/image/upload/t_SquareCentre1000/v1644766563/site/BeestonCastle.webp">
+					<source media="(min-width:481px)"
+						srcset="https://res.cloudinary.com/duncanritchie/image/upload/t_SquareCentre600/v1644766563/site/BeestonCastle.webp">
+					<source media="(min-width:0px)"
+						srcset="https://res.cloudinary.com/duncanritchie/image/upload/t_SquareCentre480/v1644766563/site/BeestonCastle.webp">
+					<img class="main-image" alt="A castle on top of a wooded hill with green fields around"
+						src="https://res.cloudinary.com/duncanritchie/image/upload/t_SquareCentre1000/v1644766563/site/BeestonCastle.jpg" />
+				</picture>
+				<figcaption>
+					Beeston Castle, which I passed on my commute
+				</figcaption>
+			</figure>
 
-	<section id="website-development" aria-labelledby="website-development-heading">
-		<figure class="main-image-figure with-caption">
-			<picture class="main-image-picture">
-				<source media="(min-width:601px)"
-					srcset="https://res.cloudinary.com/duncanritchie/image/upload/t_SquareCentre1000/v1626531009/site/DuncansbyStacks.webp">
-				<source media="(min-width:481px)"
-					srcset="https://res.cloudinary.com/duncanritchie/image/upload/t_SquareCentre600/v1626531009/site/DuncansbyStacks.webp">
-				<source media="(min-width:0px)"
-					srcset="https://res.cloudinary.com/duncanritchie/image/upload/t_SquareCentre480/v1626531009/site/DuncansbyStacks.webp">
-				<img id="website-development-main-image" class="main-image"
-					alt="View of a coastline with rock stacks and cliffs"
-					src="https://res.cloudinary.com/duncanritchie/image/upload/t_SquareCentre1000/v1626531009/site/DuncansbyStacks.jpg" />
-			</picture>
-			<figcaption>
-				<!-- &#8203; is a zero-width space. -->
-				Duncansby Stacks in Scotland — DuncanRitchie&#8203;.co.uk’s tech stack is HTML, CSS, JavaScript.
-			</figcaption>
-		</figure>
-
-		<article id="website-development-article">
-			<h2 id="website-development-heading">
-				Develop&shy;ing this website
-			</h2>
-			<p>
-				DuncanRitchie.co.uk is a handcoded static site written in vanilla HTML, CSS, and JavaScript.
-			</p>
-			<p>
-				To keep the site lightweight, I’m serving only one font, serving compressed images in newer formats such as WebP (with fallbacks for older browsers), and not using client-side–rendering libraries such as React.js.
-			</p>
-			<p>
-				To make the site more fun and distinctive, it has two different layouts that can be switched between, if your screen is wide enough and your browser supports intersection observers. Both layouts have the picture for each section on the left-hand side, but on one layout the picture has a diagonal edge that the text stays aligned with by shifting to the left or right as you scroll.
-			</p>
-			<p>
-				I have kept it accessible to users of assistive technologies by using semantic HTML, by giving the text a decent font size and contrast, and by ensuring the site can be navigated by keyboard, among other practices.
-			</p>
-			<p>
-				There are still improvements I want to make to this site, but so far I think it’s looking pretty good. I’ve learnt a lot in developing it.
-			</p>
-			<p>
-				For all the code, and a readme file giving more detail, see <a href="https://github.com/DuncanRitchie/DuncanRitchie.github.io">GitHub</a>.
-			</p>
-			<p class="img-container">
-				<img src="https://app.greenweb.org/api/v3/greencheckimage/www.duncanritchie.co.uk?nocache=true" alt="This website sometimes runs on green hosting - verified by thegreenwebfoundation.org" width="200px" height="95px" />
-			</p>
-			<p>
-				(My site is hosted on Netlify, which has a mix of mostly eco-friendly servers. Sometimes it’s not a green server running my site.)
-			</p>
-		</article>
-	</section>
-
-	<section id="velut" aria-labelledby="velut-heading">
-		<figure class="main-image-figure with-caption">
-			<picture class="main-image-picture">
-				<source media="(min-width:601px)"
-					srcset="https://res.cloudinary.com/duncanritchie/image/upload/t_SquareCentre1000/v1590423024/site/FulmarLanding.webp">
-				<source media="(min-width:481px)"
-					srcset="https://res.cloudinary.com/duncanritchie/image/upload/t_SquareCentre600/v1590423024/site/FulmarLanding.webp">
-				<source media="(min-width:0px)"
-					srcset="https://res.cloudinary.com/duncanritchie/image/upload/t_SquareCentre480/v1590423024/site/FulmarLanding.webp">
-				<img id="velut-main-image" class="main-image"
-					alt="Fulmar landing on a cliff"
-					src="https://res.cloudinary.com/duncanritchie/image/upload/t_SquareCentre1000/v1590423024/site/FulmarLanding.jpg" />
-			</picture>
-			<figcaption>
-				I designed the visuals of velut around the photo of a fulmar I use for my logo.
-			</figcaption>
-		</figure>
-
-		<article id="velut-article">
-			<h2 id="velut-heading">
-				velut — a Latin rhyming diction&shy;ary
-			</h2>
-			<p>
-				If you know Latin and you’re interested in writing rhyming poetry or lyrics in that language
-				(and who isn’t???), you might just be interested in a website I started in the summer of 2019.
-			</p>
-			<p>
-				Go to <a href="https://www.velut.co.uk">velut.co.uk</a>,
-				type in a Latin word, click “Search!”, and you’ll be returned rhymes (or other word lists),
-				information about the lemmata that the word is a form of, and links to other online dictionaries.
-				There are other features, too, such as an “Advanced” search that returns words that match a given sequence of letters or syllable lengths.
-			</p>
-			<p>
-				I started collecting the data during my time at uni, where I was <a href="aboutme.html#latin">studying Latin</a>.
-				It began as an Excel file to store Latin words and return detailed information on them, including definitions, cognates, anagrams, and rhymes.
-				The formulae got very complex.
-			</p>
-			<p>
-				After I learnt to code with web languages, I made a website for it.
-				It became my first project integrating with any sort of database (I chose MongoDB).
-				The front-end uses React.js, now within the Next.js framework.
-				Details can be found on <a href="https://www.velut.co.uk/about">velut’s about page</a> and <a href="https://github.com/DuncanRitchie/velut#readme">velut’s “readme” file</a>, and the <a href="https://github.com/DuncanRitchie/velut">code for the velut website </a> is on GitHub.
-			</p>
-			<p>
-				Excel is no longer part of the project, because I’ve created <a href="#velut-projects">scripts</a> that replicate the Excel file’s functionality.
-				(And the data are now in Json files.)
-				This was a very ambitious undertaking, due to both the number of Latin words I’ve collected and the breadth of velut’s capabilities.
-				Please see my <a href="https://www.duncanritchie.co.uk/blog/deexcellation-of-velut">blog for more on the migration</a>!
-			</p>
-			<p class="img-container">
-				<img src="https://app.greenweb.org/api/v3/greencheckimage/www.velut.co.uk?nocache=true" alt="This website (velut.co.uk) runs on green hosting - verified by thegreenwebfoundation.org" width="200px" height="95px" />
-			</p>
-			<p class="img-container">
-				<a href="https://www.velut.co.uk">
-					<picture>
-						<source media="(min-width:481px)"
-							srcset="https://res.cloudinary.com/duncanritchie/image/upload/c_scale,w_270/v1678649338/project-screenshots/velut.webp">
-						<source media="(min-width:0px)"
-							srcset="https://res.cloudinary.com/duncanritchie/image/upload/c_scale,w_180/v1678649338/project-screenshots/velut.webp">
-						<img src="https://res.cloudinary.com/duncanritchie/image/upload/c_scale,w_270/v1678649338/project-screenshots/velut.png"
-							alt="Screenshot of my Latin website" width="227" height="400" />
-					</picture>
-					<!-- https://res.cloudinary.com/duncanritchie/image/upload/v1678649338/project-screenshots/velut.png -->
-				</a>
-			</p>
-		</article>
-
-		<article class="showcase-group" id="velut-projects" aria-labelledby="velut-projects-heading">
-			<hgroup>
-				<h2 id="velut-projects-heading">
-					Ancillary projects for velut
+			<article id="employment-article">
+				<h2 id="employment-heading">
+					My employ&shy;ment
 				</h2>
 				<p>
-					These are scripts, webpages, and a pair of Windows keyboard layouts that I made to help me maintain my Latin dictionary.
-					The GitHub logo links to the source code.
+					<a href="https://www.informationcatalyst.com/">Information&nbsp;Catalyst</a> was my most recent employer — a small-ish software company in Cheshire. We did a range of activities, mainly towards European Commission R&D initiatives.
 				</p>
 				<p>
-					To update the information in velut, I edit a Json file of source data and run a private Batch script, which executes the Inflector, Lemmata Collator, and Word Data Generator and inserts the output into MongoDB.
+					I collaborated on a system for managing factory processes, for which I used front-end web technologies, TypeScript, and some PostgreSql, Java, and MySql. The TypeScript I wrote is for four OpenAPI-compliant collections of web endpoints using Nest.js, and for a front-end (my first Angular project) that calls two of those APIs. It’s been an exciting challenge!
 				</p>
-			</hgroup>
+				<p>
+					I also developed a Windows Forms program that uses C# and the MS Office Interop API to process Word documents. This helped keep my company’s reports looking professional, I found the work enjoyable, and I’ve learnt a lot through it!
+				</p>
+				<p>
+					In my first 21 months at Information Catalyst, I completed a Level 4 Software Developer apprenticeship.
+				</p>
+				<p>
+					<em>Do you have a role I could fill? You can contact me on <a href="https://www.linkedin.com/in/duncan-ritchie-uk/">LinkedIn</a>!</em>
+				</p>
+			</article>
+		</section>
 
-			<!-- velut Lemmata Collator -->
-			<div class="project" aria-labelledby="velut-lemmata-collator-heading">
-				<div class="project-inner-div">
-					<picture>
-						<source media="(min-width:0px)"
-							srcset="https://res.cloudinary.com/duncanritchie/image/upload/c_scale,w_180/v1750697091/project-screenshots/velut-lemmata-collator.webp">
-						<img src="https://res.cloudinary.com/duncanritchie/image/upload/c_scale,w_180/v1750697091/project-screenshots/velut-lemmata-collator.png"
-							class="project-screenshot" alt="Screenshot of my Word Data Generator" width="180"/>
-					</picture>
-					<!-- https://res.cloudinary.com/duncanritchie/image/upload/v1750697091/project-screenshots/velut-lemmata-collator.png -->
-					<div>
-						<h3 id="velut-lemmata-collator-heading">
-							<a href="https://www.duncanritchie.co.uk/velut-lemmata-collator/">
-								Lemmata collator
-							</a>
-						</h3>
-						<span class="project-made-with">
-							converts the Inflector’s output into the format for the Word Data Generator<br>
-						</span>
-						<time datetime="2025-06-23">(finished 2025 Jun 23)</time>
-					</div>
-				</div>
-				<div class="github-div">
-					<a href="https://github.com/DuncanRitchie/velut-lemmata-collator">
-						<span class="screenreader-only">Lemmata collator code</span>
-					</a>
-				</div>
-			</div>
-			<!-- velut Inflector -->
-			<div class="project" aria-labelledby="velut-inflector-heading">
-				<div class="project-inner-div">
-					<picture>
-						<source media="(min-width:0px)"
-							srcset="https://res.cloudinary.com/duncanritchie/image/upload/c_scale,w_180/v1684100616/project-screenshots/velut-inflector.webp">
-						<img src="https://res.cloudinary.com/duncanritchie/image/upload/c_scale,w_180/v1684100616/project-screenshots/velut-inflector.png"
-							class="project-screenshot" alt="Screenshot of my Word Data Generator" />
-					</picture>
-					<!-- https://res.cloudinary.com/duncanritchie/image/upload/v1684100616/project-screenshots/velut-inflector.png -->
-					<div>
-						<h3 id="velut-inflector-heading">
-							<a href="https://www.duncanritchie.co.uk/velut-inflector/">
-								Inflector
-							</a>
-						</h3>
-						<span class="project-made-with">
-							generates inflected forms from lemma objects<br>
-						</span>
-						<time datetime="2023-05-14">(finished 2023 May 14)</time>
-					</div>
-				</div>
-				<div class="github-div">
-					<a href="https://github.com/DuncanRitchie/velut-inflector">
-						<span class="screenreader-only">Inflector code</span>
-					</a>
-				</div>
-			</div>
-			<!-- velut Word Data Generator -->
-			<div class="project" aria-labelledby="velut-word-data-generator-heading">
-				<div class="project-inner-div">
-					<picture>
-						<source media="(min-width:0px)"
-							srcset="https://res.cloudinary.com/duncanritchie/image/upload/c_scale,w_180/v1678657435/project-screenshots/velut-word-data-generator.webp">
-						<img src="https://res.cloudinary.com/duncanritchie/image/upload/c_scale,w_180/v1678657435/project-screenshots/velut-word-data-generator.png"
-							class="project-screenshot" alt="Screenshot of my Word Data Generator" />
-					</picture>
-					<!-- https://res.cloudinary.com/duncanritchie/image/upload/v1678657435/project-screenshots/velut-word-data-generator.png -->
-					<div>
-						<h3 id="velut-word-data-generator-heading">
-							<a href="https://www.duncanritchie.co.uk/velut-word-data-generator/">
-								Word data generator
-							</a>
-						</h3>
-						<span class="project-made-with">
-							from a list of words with their lemmata, generates other data used in velut<br>
-						</span>
-						<time datetime="2022-09-29">(finished 2022 Sep 29)</time>
-					</div>
-				</div>
-				<div class="github-div">
-					<a href="https://github.com/DuncanRitchie/velut-word-data-generator">
-						<span class="screenreader-only">Word Data Generator code</span>
-					</a>
-				</div>
-			</div>
-			<!-- Latinitas Recens -->
-			<div class="project" aria-labelledby="latinitas-recens-heading">
-				<div class="project-inner-div">
-					<picture>
-						<source media="(min-width:0px)"
-							srcset="https://res.cloudinary.com/duncanritchie/image/upload/c_scale,w_180/v1678657435/project-screenshots/latinitas-recens.webp">
-						<img src="https://res.cloudinary.com/duncanritchie/image/upload/c_scale,w_180/v1678657435/project-screenshots/latinitas-recens.png"
-							class="project-screenshot" alt="Screenshot of my mirror of Latinitas Recens, showing a search for “computer”" />
-					</picture>
-					<!-- https://res.cloudinary.com/duncanritchie/image/upload/v1678657435/project-screenshots/latinitas-recens.png -->
-					<div>
-						<h3 id="latinitas-recens-heading">
-							<a href="https://www.duncanritchie.co.uk/latinitas-recens/">
-								Mirror of a Neo-Latin lexicon
-							</a>
-						</h3>
-						<span class="project-made-with">
-							made with Next.js, TypeScript, and archived data<br>
-						</span>
-						<time datetime="2022-03-13">(finished 2022 Mar 13)</time>
-					</div>
-				</div>
-				<div class="github-div">
-					<a href="https://github.com/DuncanRitchie/latinitas-recens">
-						<span class="screenreader-only">Latinitas Recens code</span>
-					</a>
-				</div>
-			</div>
-			<!-- Keyboard layouts -->
-			<div class="project project-with-no-demo" aria-labelledby="keyboard-layouts-heading">
-				<div class="project-inner-div">
-					<picture>
-						<source media="(min-width:0px)"
-							srcset="https://res.cloudinary.com/duncanritchie/image/upload/c_scale,w_180/v1679766578/project-screenshots/keyboard-layouts.webp">
-						<img src="https://res.cloudinary.com/duncanritchie/image/upload/c_scale,w_180/v1679766578/project-screenshots/keyboard-layouts.png"
-							class="project-screenshot" alt="Vowels with macron, vowels with breve, and quotation marks" />
-					</picture>
-					<!-- https://res.cloudinary.com/duncanritchie/image/upload/v1679766578/project-screenshots/keyboard-layouts.png -->
-					<div>
-						<h3 id="keyboard-layouts-heading">
-							Keyboard layouts
-						</h3>
-						<span class="project-made-with">
-							not really code: made with Microsoft Keyboard Layout Creator<br>
-						</span>
-						<span class="project-reason-no-demo">
-							(no live demo, but you can download setup.exe files from GitHub)<br />
-						</span>
-						<time datetime="2022-01-16">(finished 2022 Jan 16)</time>
-					</div>
-				</div>
-				<div class="github-div">
-					<a href="https://github.com/DuncanRitchie/KeyboardLayouts">
-						<span class="screenreader-only">Keyboard layouts code</span>
-					</a>
-				</div>
-			</div>
-			<!-- velut dictionary links -->
-			<div class="project" aria-labelledby="velut-dictionary-links-heading">
-				<div class="project-inner-div">
-					<picture>
-						<source media="(min-width:0px)"
-							srcset="https://res.cloudinary.com/duncanritchie/image/upload/c_scale,w_180/v1678657435/project-screenshots/velut-dictionary-links.webp">
-						<img src="https://res.cloudinary.com/duncanritchie/image/upload/c_scale,w_180/v1678657435/project-screenshots/velut-dictionary-links.png"
-							class="project-screenshot" alt="Screenshot of my page linking to online dictionaries" />
-					</picture>
-					<!-- https://res.cloudinary.com/duncanritchie/image/upload/v1678657435/project-screenshots/velut-dictionary-links.png -->
-					<div>
-						<h3 id="velut-dictionary-links-heading">
-							<a href="https://www.duncanritchie.co.uk/velut-dictionary-links/">
-								Links to online dictionaries
-							</a>
-						</h3>
-						<span class="project-made-with">
-							dynamically creates an &lt;a&gt; element that opens a different page on each click<br>
-						</span>
-						<time datetime="2021-09-11">(finished 2021 Sep 11)</time>
-					</div>
-				</div>
-				<div class="github-div">
-					<a href="https://github.com/DuncanRitchie/velut-dictionary-links">
-						<span class="screenreader-only">Dictionary links code</span>
-					</a>
-				</div>
-			</div>
-			<!-- velut Json generator -->
-			<div class="project" aria-labelledby="velut-json-generator-heading">
-				<div class="project-inner-div">
-					<picture>
-						<source media="(min-width:0px)"
-							srcset="https://res.cloudinary.com/duncanritchie/image/upload/c_scale,w_180/v1678657435/project-screenshots/velut-json-generator.webp">
-						<img src="https://res.cloudinary.com/duncanritchie/image/upload/c_scale,w_180/v1678657435/project-screenshots/velut-json-generator.png"
-							class="project-screenshot" alt="Screenshot of my Json generator" />
-					</picture>
-					<!-- https://res.cloudinary.com/duncanritchie/image/upload/v1678657435/project-screenshots/velut-json-generator.png -->
-					<div>
-						<h3 id="velut-json-generator-heading">
-							<a href="https://www.duncanritchie.co.uk/velut-json-generator/">
-								Json generator
-							</a>
-						</h3>
-						<span class="project-made-with">
-							for tab-delimited data<br>
-						</span>
-						<time datetime="2020-12-20">(finished 2020 Dec 20)</time>
-					</div>
-				</div>
-				<div class="github-div">
-					<a href="https://github.com/DuncanRitchie/velut-json-generator">
-						<span class="screenreader-only">Json generator code</span>
-					</a>
-				</div>
-			</div>
-		</article>
-	</section>
+		<section id="website-development" aria-labelledby="website-development-heading">
+			<figure class="main-image-figure with-caption">
+				<picture class="main-image-picture">
+					<source media="(min-width:601px)"
+						srcset="https://res.cloudinary.com/duncanritchie/image/upload/t_SquareCentre1000/v1626531009/site/DuncansbyStacks.webp">
+					<source media="(min-width:481px)"
+						srcset="https://res.cloudinary.com/duncanritchie/image/upload/t_SquareCentre600/v1626531009/site/DuncansbyStacks.webp">
+					<source media="(min-width:0px)"
+						srcset="https://res.cloudinary.com/duncanritchie/image/upload/t_SquareCentre480/v1626531009/site/DuncansbyStacks.webp">
+					<img id="website-development-main-image" class="main-image"
+						alt="View of a coastline with rock stacks and cliffs"
+						src="https://res.cloudinary.com/duncanritchie/image/upload/t_SquareCentre1000/v1626531009/site/DuncansbyStacks.jpg" />
+				</picture>
+				<figcaption>
+					<!-- &#8203; is a zero-width space. -->
+					Duncansby Stacks in Scotland — DuncanRitchie&#8203;.co.uk’s tech stack is HTML, CSS, JavaScript.
+				</figcaption>
+			</figure>
 
-	<section id="code" aria-labelledby="code-heading">
-		<figure class="main-image-figure with-caption">
-			<!-- https://res.cloudinary.com/duncanritchie/image/upload/v1644769537/site/CodeNation2.jpg -->
-			<picture class="main-image-picture">
-				<source media="(min-width:601px)"
-					srcset="https://res.cloudinary.com/duncanritchie/image/upload/t_SquareCentre1000/v1644769537/site/CodeNation2.webp">
-				<source media="(min-width:481px)"
-					srcset="https://res.cloudinary.com/duncanritchie/image/upload/t_SquareCentre600/v1644769537/site/CodeNation2.webp">
-				<source media="(min-width:0px)"
-					srcset="https://res.cloudinary.com/duncanritchie/image/upload/t_SquareCentre480/v1644769537/site/CodeNation2.webp">
-				<img class="main-image" alt="A room with desks and computers"
-					src="https://res.cloudinary.com/duncanritchie/image/upload/t_SquareCentre1000/v1644769537/site/CodeNation2.jpg" />
-			</picture>
-			<figcaption>
-				The class-room I studied in at Code Nation
-			</figcaption>
-		</figure>
-
-		<article id="code-article">
-			<h2 id="code-heading">
-				How I got into coding
-			</h2>
-			<p>
-				I have always been interested in getting computers to do neat stuff.
-			</p>
-			<p>
-				I taught myself a lot of advanced MS Excel functionality, in the development of sophisticated personal projects, including a <a href="#velut">Latin rhyming dictionary</a> which I mentioned above.
-			</p>
-			<p>
-				My formal education in the field began in January 2019, when I enrolled at <a href="https://wearecodenation.com/">Code&nbsp;Nation</a> &mdash; a twelve-week bootcamp where I learnt HTML, CSS, and JavaScript, including React.js, Node.js, and Express.js.
-				For instance, I <a href="#website-development">designed and built</a> this site, though it looked a lot different then.
-				The group work we did was a nice taster of being part of a team.
-			</p>
-			<p>
-				Some of my <a href="#javascript-projects">projects</a> are linked below. I am particularly pleased with my <a href="#chess">chess game</a>, and my contributions to group projects.
-			</p>
-			<p>
-				After graduating from Code&nbsp;Nation, I developed my Latin Excel file into a proper <a href="#velut">website</a>, and started with <a href="#employment">Information&nbsp;Catalyst</a> on an apprenticeship. This entailed another twelve weeks at Code Nation, from August to October 2019, learning <a href="#java-projects">Java</a> and MySql.
-			</p>
-			<p>
-				In my spare time, I do more coding. Occasionally I make my own little <a href="#csharp-projects">C#</a> apps, but I keep embellishing this website and my Latin website.
-			</p>
-		</article>
-
-		<article class="showcase-group" id="csharp-projects" aria-labelledby="csharp-projects-heading">
-			<hgroup>
-				<h2 id="csharp-projects-heading">
-					C# projects
+			<article id="website-development-article">
+				<h2 id="website-development-heading">
+					Develop&shy;ing this website
 				</h2>
 				<p>
-					The GitHub logo links to the source code.
+					DuncanRitchie.co.uk is a handcoded static site written in vanilla HTML, CSS, and JavaScript.
 				</p>
-			</hgroup>
-			<!-- Format WhatsApp Conversation -->
-			<div class="project project-with-no-demo" aria-labelledby="format-whatsapp-conversation-heading">
-				<div class="project-inner-div">
-					<picture>
-						<source media="(min-width:0px)"
-							srcset="https://res.cloudinary.com/duncanritchie/image/upload/c_scale,w_180/v1599400696/project-screenshots/format-whatsapp-conversation.webp">
-						<img src="https://res.cloudinary.com/duncanritchie/image/upload/c_scale,w_180/v1599400696/project-screenshots/format-whatsapp-conversation.png"
-							class="project-screenshot" alt="Screenshot of my app to format a WhatsApp conversation" />
-					</picture>
-					<div>
-						<h3 id="format-whatsapp-conversation-heading">
-							App to format a WhatsApp conversation as a Word document
-						</h3>
-						<span class="project-reason-no-demo">
-							(no live demo because it’s a console-app, but you can download the <a
-								href="https://github.com/DuncanRitchie/FormatWhatsAppConversation/blob/main/FormatWhatsAppConversation/bin/Release/FormatWhatsAppConversation.exe">.exe
-								file</a> from GitHub)<br />
-						</span>
-						<time datetime="2020-08-04">(finished 2020 Aug 04)</time>
-					</div>
-				</div>
-				<div class="github-div">
-					<a href="https://github.com/DuncanRitchie/FormatWhatsAppConversation">
-						<span class="screenreader-only">“Format WhatsApp Conversation” code</span>
-					</a>
-				</div>
-			</div>
+				<p>
+					To keep the site lightweight, I’m serving only one font, serving compressed images in newer formats such as WebP (with fallbacks for older browsers), and not using client-side–rendering libraries such as React.js.
+				</p>
+				<p>
+					To make the site more fun and distinctive, it has two different layouts that can be switched between, if your screen is wide enough and your browser supports intersection observers. Both layouts have the picture for each section on the left-hand side, but on one layout the picture has a diagonal edge that the text stays aligned with by shifting to the left or right as you scroll.
+				</p>
+				<p>
+					I have kept it accessible to users of assistive technologies by using semantic HTML, by giving the text a decent font size and contrast, and by ensuring the site can be navigated by keyboard, among other practices.
+				</p>
+				<p>
+					There are still improvements I want to make to this site, but so far I think it’s looking pretty good. I’ve learnt a lot in developing it.
+				</p>
+				<p>
+					For all the code, and a readme file giving more detail, see <a href="https://github.com/DuncanRitchie/DuncanRitchie.github.io">the site’s GitHub repository</a>.
+				</p>
+				<p class="img-container">
+					<img src="https://app.greenweb.org/api/v3/greencheckimage/www.duncanritchie.co.uk?nocache=true" alt="This website sometimes runs on green hosting - verified by thegreenwebfoundation.org" width="200px" height="95px" />
+				</p>
+				<p>
+					(My site is hosted on Netlify, which has a mix of mostly eco-friendly servers. Sometimes it’s not a green server running my site.)
+				</p>
+			</article>
+		</section>
 
-			<!-- Transfer Photos from Card -->
-			<div class="project project-with-no-demo" aria-labelledby="transfer-photos-from-card-heading">
-				<div class="project-inner-div">
-					<picture>
-						<source media="(min-width:0px)"
-							srcset="https://res.cloudinary.com/duncanritchie/image/upload/c_scale,w_180/v1590938855/project-screenshots/transfer-photos-from-card.webp">
-						<img src="https://res.cloudinary.com/duncanritchie/image/upload/c_scale,w_180/v1590938855/project-screenshots/transfer-photos-from-card.png"
-							class="project-screenshot" alt="Screenshot of my app to transfer photos from a memory-card" />
-					</picture>
-					<div>
-						<h3 id="transfer-photos-from-card-heading">
-							App to transfer photos from a memory-card
-						</h3>
-						<span class="project-reason-no-demo">
-							(no live demo because it’s a console-app, but you can download the <a
-								href="https://github.com/DuncanRitchie/TransferPhotosFromCard/blob/main/TransferPhotosFromCard/bin/Release/TransferPhotosFromCard.exe">.exe
-								file</a> from GitHub)<br />
-						</span>
-						<time datetime="2020-05-23">(finished 2020 May 23)</time>
-					</div>
-				</div>
-				<div class="github-div">
-					<a href="https://github.com/DuncanRitchie/TransferPhotosFromCard">
-						<span class="screenreader-only">“Transfer Photos from Card” code</span>
-					</a>
-				</div>
-			</div>
+		<section id="velut" aria-labelledby="velut-heading">
+			<figure class="main-image-figure with-caption">
+				<picture class="main-image-picture">
+					<source media="(min-width:601px)"
+						srcset="https://res.cloudinary.com/duncanritchie/image/upload/t_SquareCentre1000/v1590423024/site/FulmarLanding.webp">
+					<source media="(min-width:481px)"
+						srcset="https://res.cloudinary.com/duncanritchie/image/upload/t_SquareCentre600/v1590423024/site/FulmarLanding.webp">
+					<source media="(min-width:0px)"
+						srcset="https://res.cloudinary.com/duncanritchie/image/upload/t_SquareCentre480/v1590423024/site/FulmarLanding.webp">
+					<img id="velut-main-image" class="main-image"
+						alt="Fulmar landing on a cliff"
+						src="https://res.cloudinary.com/duncanritchie/image/upload/t_SquareCentre1000/v1590423024/site/FulmarLanding.jpg" />
+				</picture>
+				<figcaption>
+					I designed the visuals of velut around the photo of a fulmar I use for my logo.
+				</figcaption>
+			</figure>
 
-			<!-- Calculator (Winforms) -->
-			<div class="project project-with-no-demo" aria-labelledby="calculator-winforms-heading">
-				<div class="project-inner-div">
-					<picture>
-						<source media="(min-width:0px)"
-							srcset="https://res.cloudinary.com/duncanritchie/image/upload/c_scale,w_180/v1590938855/project-screenshots/calculator-winforms.webp">
-						<img src="https://res.cloudinary.com/duncanritchie/image/upload/c_scale,w_180/v1590938855/project-screenshots/calculator-winforms.png"
-							class="project-screenshot" alt="Screenshot of my C# calculator" />
-					</picture>
-					<div>
-						<h3 id="calculator-winforms-heading">
-							Calculator
-						</h3>
-						<span class="project-made-with">
-							made with Windows Forms<br />
-						</span>
-						<span class="project-reason-no-demo">
-							(no live demo, but you can download the <a
-								href="https://github.com/DuncanRitchie2/CalculatorWinforms/blob/main/CalculatorWinforms/bin/Release/CalculatorWinforms.exe">.exe file</a> from GitHub)<br />
-						</span>
-						<time datetime="2019-11-27">(finished 2019 Nov 27)</time>
-					</div>
-				</div>
-				<div class="github-div">
-					<a href="https://github.com/DuncanRitchie2/CalculatorWinforms">
-						<span class="screenreader-only">C# calculator code</span>
-					</a>
-				</div>
-			</div>
-			<!-- End of last C# project -->
-		</article>
-
-		<article class="showcase-group" id="java-projects" aria-labelledby="java-projects-heading">
-			<hgroup>
-				<h2 id="java-projects-heading">
-					Java projects
+			<article id="velut-article">
+				<h2 id="velut-heading">
+					velut — a Latin rhyming diction&shy;ary
 				</h2>
 				<p>
-					The GitHub logo links to the source code.
+					If you know Latin and you’re interested in writing rhyming poetry or lyrics in that language
+					(and who isn’t???), you might just be interested in a website I started in the summer of 2019.
 				</p>
-			</hgroup>
+				<p>
+					Go to <a href="https://www.velut.co.uk">velut.co.uk</a>,
+					type in a Latin word, click “Search!”, and you’ll be returned rhymes (or other word lists),
+					information about the lemmata that the word is a form of, and links to other online dictionaries.
+					There are other features, too, such as an “Advanced” search that returns words that match a given sequence of letters or syllable lengths.
+				</p>
+				<p>
+					I started collecting the data during my time at uni, where I was <a href="aboutme.html#latin">studying Latin</a>.
+					It began as an Excel file to store Latin words and return detailed information on them, including definitions, cognates, anagrams, and rhymes.
+					The formulae got very complex.
+				</p>
+				<p>
+					After I learnt to code with web languages, I made a website for it.
+					It became my first project integrating with any sort of database (I chose MongoDB).
+					The front-end uses React.js, now within the Next.js framework.
+					Details can be found on <a href="https://www.velut.co.uk/about">velut’s about page</a> and <a href="https://github.com/DuncanRitchie/velut#readme">velut’s “readme” file</a>, and the <a href="https://github.com/DuncanRitchie/velut">code for the velut website </a> is on GitHub.
+				</p>
+				<p>
+					Excel is no longer part of the project, because I’ve created <a href="#velut-projects">scripts</a> that replicate the Excel file’s functionality.
+					(And the data are now in Json files.)
+					This was a very ambitious undertaking, due to both the number of Latin words I’ve collected and the breadth of velut’s capabilities.
+					Please see my <a href="https://www.duncanritchie.co.uk/blog/deexcellation-of-velut">blog for more on the migration</a>!
+				</p>
+				<p class="img-container">
+					<img src="https://app.greenweb.org/api/v3/greencheckimage/www.velut.co.uk?nocache=true" alt="This website (velut.co.uk) runs on green hosting - verified by thegreenwebfoundation.org" width="200px" height="95px" />
+				</p>
+				<p class="img-container">
+					<a href="https://www.velut.co.uk">
+						<picture>
+							<source media="(min-width:481px)"
+								srcset="https://res.cloudinary.com/duncanritchie/image/upload/c_scale,w_270/v1678649338/project-screenshots/velut.webp">
+							<source media="(min-width:0px)"
+								srcset="https://res.cloudinary.com/duncanritchie/image/upload/c_scale,w_180/v1678649338/project-screenshots/velut.webp">
+							<img src="https://res.cloudinary.com/duncanritchie/image/upload/c_scale,w_270/v1678649338/project-screenshots/velut.png"
+								alt="Screenshot of my Latin website" width="227" height="400" />
+						</picture>
+						<!-- https://res.cloudinary.com/duncanritchie/image/upload/v1678649338/project-screenshots/velut.png -->
+					</a>
+				</p>
+			</article>
 
-			<!-- Spring Boot weather app -->
-			<div class="project project-with-no-demo" aria-labelledby="weather-heading">
-				<div class="project-inner-div">
-					<picture>
-						<source media="(min-width:0px)"
-							srcset="https://res.cloudinary.com/duncanritchie/image/upload/c_scale,w_180/v1590938116/project-screenshots/spring-weather.webp">
-						<img src="https://res.cloudinary.com/duncanritchie/image/upload/c_scale,w_180/v1590938116/project-screenshots/spring-weather.png"
-							class="project-screenshot" alt="Screenshot of my weather app" />
-					</picture>
-					<div>
-						<h3 id="weather-heading">
-							Weather app
-						</h3>
-						<span class="project-made-with">
-							made with Spring Boot and the Mapbox and Dark Sky APIs<br />
-						</span>
-						<span class="project-reason-no-demo">
-							(no live demo; it was on Heroku but they <a href="https://blog.heroku.com/next-chapter">cancelled their free hosting</a>)<br />
-						</span>
-						<time datetime="2019-09-25">
-							(finished 2019 Sep 25)
-						</time>
+			<article class="showcase-group" id="velut-projects" aria-labelledby="velut-projects-heading">
+				<hgroup>
+					<h2 id="velut-projects-heading">
+						Ancillary projects for velut
+					</h2>
+					<p>
+						These are scripts, webpages, and a pair of Windows keyboard layouts that I made to help me maintain my Latin dictionary.
+						The GitHub logo links to the source code.
+					</p>
+					<p>
+						To update the information in velut, I edit a Json file of source data and run a private Batch script, which executes the Inflector, Lemmata Collator, and Word Data Generator and inserts the output into MongoDB.
+					</p>
+				</hgroup>
+
+				<!-- velut Lemmata Collator -->
+				<div class="project" aria-labelledby="velut-lemmata-collator-heading">
+					<div class="project-inner-div">
+						<picture>
+							<source media="(min-width:0px)"
+								srcset="https://res.cloudinary.com/duncanritchie/image/upload/c_scale,w_180/v1750697091/project-screenshots/velut-lemmata-collator.webp">
+							<img src="https://res.cloudinary.com/duncanritchie/image/upload/c_scale,w_180/v1750697091/project-screenshots/velut-lemmata-collator.png"
+								class="project-screenshot" alt="Screenshot of my Word Data Generator" width="180"/>
+						</picture>
+						<!-- https://res.cloudinary.com/duncanritchie/image/upload/v1750697091/project-screenshots/velut-lemmata-collator.png -->
+						<div>
+							<h3 id="velut-lemmata-collator-heading">
+								<a href="https://www.duncanritchie.co.uk/velut-lemmata-collator/">
+									Lemmata collator
+								</a>
+							</h3>
+							<span class="project-made-with">
+								converts the Inflector’s output into the format for the Word Data Generator<br>
+							</span>
+							<time datetime="2025-06-23">(finished 2025 Jun 23)</time>
+						</div>
+					</div>
+					<div class="github-div">
+						<a href="https://github.com/DuncanRitchie/velut-lemmata-collator">
+							<span class="screenreader-only">Lemmata collator code</span>
+						</a>
 					</div>
 				</div>
-				<div class="github-div">
-					<a href="https://github.com/DuncanRitchie2/spring-boot-weather-app">
-						<span class="screenreader-only">Weather app code</span>
-					</a>
-				</div>
-			</div>
-
-			<!-- Java snake -->
-			<div class="project project-with-no-demo" aria-labelledby="snake-java-heading">
-				<div class="project-inner-div">
-					<picture>
-						<source media="(min-width:0px)"
-							srcset="https://res.cloudinary.com/duncanritchie/image/upload/c_scale,w_180/v1590938855/project-screenshots/java-snake.webp">
-						<img src="https://res.cloudinary.com/duncanritchie/image/upload/c_scale,w_180/v1590938855/project-screenshots/java-snake.png"
-							class="project-screenshot" alt="Screenshot of my Java snake game" />
-					</picture>
-					<div>
-						<h3 id="snake-java-heading">
-							Snake
-						</h3>
-						<span class="project-made-with">
-							made with Swing<br />
-						</span>
-						<span class="project-reason-no-demo">
-							(no live demo, but you can download the <a
-								href="https://github.com/DuncanRitchie2/java-snake/blob/main/out/artifacts/Snake_jar/Snake.jar">.jar file</a> from
-							GitHub)<br />
-						</span>
-						<time datetime="2019-09-11">
-							(finished 2019 Sep 11)
-						</span>
+				<!-- velut Inflector -->
+				<div class="project" aria-labelledby="velut-inflector-heading">
+					<div class="project-inner-div">
+						<picture>
+							<source media="(min-width:0px)"
+								srcset="https://res.cloudinary.com/duncanritchie/image/upload/c_scale,w_180/v1684100616/project-screenshots/velut-inflector.webp">
+							<img src="https://res.cloudinary.com/duncanritchie/image/upload/c_scale,w_180/v1684100616/project-screenshots/velut-inflector.png"
+								class="project-screenshot" alt="Screenshot of my Word Data Generator" />
+						</picture>
+						<!-- https://res.cloudinary.com/duncanritchie/image/upload/v1684100616/project-screenshots/velut-inflector.png -->
+						<div>
+							<h3 id="velut-inflector-heading">
+								<a href="https://www.duncanritchie.co.uk/velut-inflector/">
+									Inflector
+								</a>
+							</h3>
+							<span class="project-made-with">
+								generates inflected forms from lemma objects<br>
+							</span>
+							<time datetime="2023-05-14">(finished 2023 May 14)</time>
+						</div>
+					</div>
+					<div class="github-div">
+						<a href="https://github.com/DuncanRitchie/velut-inflector">
+							<span class="screenreader-only">Inflector code</span>
+						</a>
 					</div>
 				</div>
-				<div class="github-div">
-					<a href="https://github.com/DuncanRitchie2/java-snake">
-						<span class="screenreader-only">Java snake code</span>
-					</a>
-				</div>
-			</div>
-
-			<!-- Java cyber-pet -->
-			<div class="project project-with-no-demo" aria-labelledby="cyber-pet-java-heading">
-				<div class="project-inner-div">
-					<picture>
-						<source media="(min-width:0px)"
-							srcset="https://res.cloudinary.com/duncanritchie/image/upload/c_scale,w_180/v1590938855/project-screenshots/java-cyber-pet.webp">
-						<img src="https://res.cloudinary.com/duncanritchie/image/upload/c_scale,w_180/v1590938855/project-screenshots/java-cyber-pet.png"
-							class="project-screenshot" alt="Screenshot of my Java cyber-pet" />
-					</picture>
-					<div>
-						<h3 id="cyber-pet-java-heading">
-							Cyber-pet
-						</h3>
-						<span class="project-reason-no-demo">
-							(no live demo because it&rsquo;s command-line-only)<br />
-						</span>
-						<time datetime="2019-08-12">
-							(finished 2019 Aug 12)
-						</span>
+				<!-- velut Word Data Generator -->
+				<div class="project" aria-labelledby="velut-word-data-generator-heading">
+					<div class="project-inner-div">
+						<picture>
+							<source media="(min-width:0px)"
+								srcset="https://res.cloudinary.com/duncanritchie/image/upload/c_scale,w_180/v1678657435/project-screenshots/velut-word-data-generator.webp">
+							<img src="https://res.cloudinary.com/duncanritchie/image/upload/c_scale,w_180/v1678657435/project-screenshots/velut-word-data-generator.png"
+								class="project-screenshot" alt="Screenshot of my Word Data Generator" />
+						</picture>
+						<!-- https://res.cloudinary.com/duncanritchie/image/upload/v1678657435/project-screenshots/velut-word-data-generator.png -->
+						<div>
+							<h3 id="velut-word-data-generator-heading">
+								<a href="https://www.duncanritchie.co.uk/velut-word-data-generator/">
+									Word data generator
+								</a>
+							</h3>
+							<span class="project-made-with">
+								from a list of words with their lemmata, generates other data used in velut<br>
+							</span>
+							<time datetime="2022-09-29">(finished 2022 Sep 29)</time>
+						</div>
+					</div>
+					<div class="github-div">
+						<a href="https://github.com/DuncanRitchie/velut-word-data-generator">
+							<span class="screenreader-only">Word Data Generator code</span>
+						</a>
 					</div>
 				</div>
-				<div class="github-div">
-					<a href="https://github.com/DuncanRitchie2/cyberpet">
-						<span class="screenreader-only">Java cyber-pet code</span>
-					</a>
+				<!-- Latinitas Recens -->
+				<div class="project" aria-labelledby="latinitas-recens-heading">
+					<div class="project-inner-div">
+						<picture>
+							<source media="(min-width:0px)"
+								srcset="https://res.cloudinary.com/duncanritchie/image/upload/c_scale,w_180/v1678657435/project-screenshots/latinitas-recens.webp">
+							<img src="https://res.cloudinary.com/duncanritchie/image/upload/c_scale,w_180/v1678657435/project-screenshots/latinitas-recens.png"
+								class="project-screenshot" alt="Screenshot of my mirror of Latinitas Recens, showing a search for “computer”" />
+						</picture>
+						<!-- https://res.cloudinary.com/duncanritchie/image/upload/v1678657435/project-screenshots/latinitas-recens.png -->
+						<div>
+							<h3 id="latinitas-recens-heading">
+								<a href="https://www.duncanritchie.co.uk/latinitas-recens/">
+									Mirror of a Neo-Latin lexicon
+								</a>
+							</h3>
+							<span class="project-made-with">
+								made with Next.js, TypeScript, and archived data<br>
+							</span>
+							<time datetime="2022-03-13">(finished 2022 Mar 13)</time>
+						</div>
+					</div>
+					<div class="github-div">
+						<a href="https://github.com/DuncanRitchie/latinitas-recens">
+							<span class="screenreader-only">Latinitas Recens code</span>
+						</a>
+					</div>
 				</div>
-			</div>
-			<!-- End of last Java project -->
-		</article>
+				<!-- Keyboard layouts -->
+				<div class="project project-with-no-demo" aria-labelledby="keyboard-layouts-heading">
+					<div class="project-inner-div">
+						<picture>
+							<source media="(min-width:0px)"
+								srcset="https://res.cloudinary.com/duncanritchie/image/upload/c_scale,w_180/v1679766578/project-screenshots/keyboard-layouts.webp">
+							<img src="https://res.cloudinary.com/duncanritchie/image/upload/c_scale,w_180/v1679766578/project-screenshots/keyboard-layouts.png"
+								class="project-screenshot" alt="Vowels with macron, vowels with breve, and quotation marks" />
+						</picture>
+						<!-- https://res.cloudinary.com/duncanritchie/image/upload/v1679766578/project-screenshots/keyboard-layouts.png -->
+						<div>
+							<h3 id="keyboard-layouts-heading">
+								Keyboard layouts
+							</h3>
+							<span class="project-made-with">
+								not really code: made with Microsoft Keyboard Layout Creator<br>
+							</span>
+							<span class="project-reason-no-demo">
+								(no live demo, but you can download setup.exe files from GitHub)<br />
+							</span>
+							<time datetime="2022-01-16">(finished 2022 Jan 16)</time>
+						</div>
+					</div>
+					<div class="github-div">
+						<a href="https://github.com/DuncanRitchie/KeyboardLayouts">
+							<span class="screenreader-only">Keyboard layouts code</span>
+						</a>
+					</div>
+				</div>
+				<!-- velut dictionary links -->
+				<div class="project" aria-labelledby="velut-dictionary-links-heading">
+					<div class="project-inner-div">
+						<picture>
+							<source media="(min-width:0px)"
+								srcset="https://res.cloudinary.com/duncanritchie/image/upload/c_scale,w_180/v1678657435/project-screenshots/velut-dictionary-links.webp">
+							<img src="https://res.cloudinary.com/duncanritchie/image/upload/c_scale,w_180/v1678657435/project-screenshots/velut-dictionary-links.png"
+								class="project-screenshot" alt="Screenshot of my page linking to online dictionaries" />
+						</picture>
+						<!-- https://res.cloudinary.com/duncanritchie/image/upload/v1678657435/project-screenshots/velut-dictionary-links.png -->
+						<div>
+							<h3 id="velut-dictionary-links-heading">
+								<a href="https://www.duncanritchie.co.uk/velut-dictionary-links/">
+									Links to online dictionaries
+								</a>
+							</h3>
+							<span class="project-made-with">
+								dynamically creates an &lt;a&gt; element that opens a different page on each click<br>
+							</span>
+							<time datetime="2021-09-11">(finished 2021 Sep 11)</time>
+						</div>
+					</div>
+					<div class="github-div">
+						<a href="https://github.com/DuncanRitchie/velut-dictionary-links">
+							<span class="screenreader-only">Dictionary links code</span>
+						</a>
+					</div>
+				</div>
+				<!-- velut Json generator -->
+				<div class="project" aria-labelledby="velut-json-generator-heading">
+					<div class="project-inner-div">
+						<picture>
+							<source media="(min-width:0px)"
+								srcset="https://res.cloudinary.com/duncanritchie/image/upload/c_scale,w_180/v1678657435/project-screenshots/velut-json-generator.webp">
+							<img src="https://res.cloudinary.com/duncanritchie/image/upload/c_scale,w_180/v1678657435/project-screenshots/velut-json-generator.png"
+								class="project-screenshot" alt="Screenshot of my Json generator" />
+						</picture>
+						<!-- https://res.cloudinary.com/duncanritchie/image/upload/v1678657435/project-screenshots/velut-json-generator.png -->
+						<div>
+							<h3 id="velut-json-generator-heading">
+								<a href="https://www.duncanritchie.co.uk/velut-json-generator/">
+									Json generator
+								</a>
+							</h3>
+							<span class="project-made-with">
+								for tab-delimited data<br>
+							</span>
+							<time datetime="2020-12-20">(finished 2020 Dec 20)</time>
+						</div>
+					</div>
+					<div class="github-div">
+						<a href="https://github.com/DuncanRitchie/velut-json-generator">
+							<span class="screenreader-only">Json generator code</span>
+						</a>
+					</div>
+				</div>
+			</article>
+		</section>
 
-		<article class="showcase-group" id="javascript-projects" aria-labelledby="javascript-projects-heading">
-			<hgroup>
-				<h2 id="javascript-projects-heading">
-					My first web projects
+		<section id="code" aria-labelledby="code-heading">
+			<figure class="main-image-figure with-caption">
+				<!-- https://res.cloudinary.com/duncanritchie/image/upload/v1644769537/site/CodeNation2.jpg -->
+				<picture class="main-image-picture">
+					<source media="(min-width:601px)"
+						srcset="https://res.cloudinary.com/duncanritchie/image/upload/t_SquareCentre1000/v1644769537/site/CodeNation2.webp">
+					<source media="(min-width:481px)"
+						srcset="https://res.cloudinary.com/duncanritchie/image/upload/t_SquareCentre600/v1644769537/site/CodeNation2.webp">
+					<source media="(min-width:0px)"
+						srcset="https://res.cloudinary.com/duncanritchie/image/upload/t_SquareCentre480/v1644769537/site/CodeNation2.webp">
+					<img class="main-image" alt="A room with desks and computers"
+						src="https://res.cloudinary.com/duncanritchie/image/upload/t_SquareCentre1000/v1644769537/site/CodeNation2.jpg" />
+				</picture>
+				<figcaption>
+					The class-room I studied in at Code Nation
+				</figcaption>
+			</figure>
+
+			<article id="code-article">
+				<h2 id="code-heading">
+					How I got into coding
 				</h2>
 				<p>
-					The GitHub logo links to the source code.
+					I have always been interested in getting computers to do neat stuff.
 				</p>
-			</hgroup>
+				<p>
+					I taught myself a lot of advanced MS Excel functionality, in the development of sophisticated personal projects, including a <a href="#velut">Latin rhyming dictionary</a> which I mentioned above.
+				</p>
+				<p>
+					My formal education in the field began in January 2019, when I enrolled at <a href="https://wearecodenation.com/">Code&nbsp;Nation</a> &mdash; a twelve-week bootcamp where I learnt HTML, CSS, and JavaScript, including React.js, Node.js, and Express.js.
+					For instance, I <a href="#website-development">designed and built</a> this site, though it looked a lot different then.
+					The group work we did was a nice taster of being part of a team.
+				</p>
+				<p>
+					Some of my <a href="#javascript-projects">projects</a> are linked below. I am particularly pleased with my <a href="#chess">chess game</a>, and my contributions to group projects.
+				</p>
+				<p>
+					After graduating from Code&nbsp;Nation, I developed my Latin Excel file into a proper <a href="#velut">website</a>, and started with <a href="#employment">Information&nbsp;Catalyst</a> on an apprenticeship. This entailed another twelve weeks at Code Nation, from August to October 2019, learning <a href="#java-projects">Java</a> and MySql.
+				</p>
+				<p>
+					In my spare time, I do more coding. Occasionally I make my own little <a href="#csharp-projects">C#</a> apps, but I keep embellishing this website and my Latin website.
+				</p>
+			</article>
 
-			<!-- JavaScript snake -->
-			<div class="project" aria-labelledby="snake-javascript-heading">
-				<div class="project-inner-div">
-					<picture>
-						<source media="(min-width:0px)"
-							srcset="https://res.cloudinary.com/duncanritchie/image/upload/c_scale,w_180/v1590944763/project-screenshots/snake.webp">
-						<img src="https://res.cloudinary.com/duncanritchie/image/upload/c_scale,w_180/v1590944763/project-screenshots/snake.png"
-							class="project-screenshot" alt="Screenshot of my JavaScript snake game" />
-					</picture>
-					<div>
-						<h3 id="snake-javascript-heading">
-							<a href="https://www.duncanritchie.co.uk/snake/">
+			<article class="showcase-group" id="csharp-projects" aria-labelledby="csharp-projects-heading">
+				<hgroup>
+					<h2 id="csharp-projects-heading">
+						C# projects
+					</h2>
+					<p>
+						The GitHub logo links to the source code.
+					</p>
+				</hgroup>
+				<!-- Format WhatsApp Conversation -->
+				<div class="project project-with-no-demo" aria-labelledby="format-whatsapp-conversation-heading">
+					<div class="project-inner-div">
+						<picture>
+							<source media="(min-width:0px)"
+								srcset="https://res.cloudinary.com/duncanritchie/image/upload/c_scale,w_180/v1599400696/project-screenshots/format-whatsapp-conversation.webp">
+							<img src="https://res.cloudinary.com/duncanritchie/image/upload/c_scale,w_180/v1599400696/project-screenshots/format-whatsapp-conversation.png"
+								class="project-screenshot" alt="Screenshot of my app to format a WhatsApp conversation" />
+						</picture>
+						<div>
+							<h3 id="format-whatsapp-conversation-heading">
+								App to format a WhatsApp conversation as a Word document
+							</h3>
+							<span class="project-reason-no-demo">
+								(no live demo because it’s a console-app, but you can download the <a
+									href="https://github.com/DuncanRitchie/FormatWhatsAppConversation/blob/main/FormatWhatsAppConversation/bin/Release/FormatWhatsAppConversation.exe">.exe
+									file</a> from GitHub)<br />
+							</span>
+							<time datetime="2020-08-04">(finished 2020 Aug 04)</time>
+						</div>
+					</div>
+					<div class="github-div">
+						<a href="https://github.com/DuncanRitchie/FormatWhatsAppConversation">
+							<span class="screenreader-only">“Format WhatsApp Conversation” code</span>
+						</a>
+					</div>
+				</div>
+
+				<!-- Transfer Photos from Card -->
+				<div class="project project-with-no-demo" aria-labelledby="transfer-photos-from-card-heading">
+					<div class="project-inner-div">
+						<picture>
+							<source media="(min-width:0px)"
+								srcset="https://res.cloudinary.com/duncanritchie/image/upload/c_scale,w_180/v1590938855/project-screenshots/transfer-photos-from-card.webp">
+							<img src="https://res.cloudinary.com/duncanritchie/image/upload/c_scale,w_180/v1590938855/project-screenshots/transfer-photos-from-card.png"
+								class="project-screenshot" alt="Screenshot of my app to transfer photos from a memory-card" />
+						</picture>
+						<div>
+							<h3 id="transfer-photos-from-card-heading">
+								App to transfer photos from a memory-card
+							</h3>
+							<span class="project-reason-no-demo">
+								(no live demo because it’s a console-app, but you can download the <a
+									href="https://github.com/DuncanRitchie/TransferPhotosFromCard/blob/main/TransferPhotosFromCard/bin/Release/TransferPhotosFromCard.exe">.exe
+									file</a> from GitHub)<br />
+							</span>
+							<time datetime="2020-05-23">(finished 2020 May 23)</time>
+						</div>
+					</div>
+					<div class="github-div">
+						<a href="https://github.com/DuncanRitchie/TransferPhotosFromCard">
+							<span class="screenreader-only">“Transfer Photos from Card” code</span>
+						</a>
+					</div>
+				</div>
+
+				<!-- Calculator (Winforms) -->
+				<div class="project project-with-no-demo" aria-labelledby="calculator-winforms-heading">
+					<div class="project-inner-div">
+						<picture>
+							<source media="(min-width:0px)"
+								srcset="https://res.cloudinary.com/duncanritchie/image/upload/c_scale,w_180/v1590938855/project-screenshots/calculator-winforms.webp">
+							<img src="https://res.cloudinary.com/duncanritchie/image/upload/c_scale,w_180/v1590938855/project-screenshots/calculator-winforms.png"
+								class="project-screenshot" alt="Screenshot of my C# calculator" />
+						</picture>
+						<div>
+							<h3 id="calculator-winforms-heading">
+								Calculator
+							</h3>
+							<span class="project-made-with">
+								made with Windows Forms<br />
+							</span>
+							<span class="project-reason-no-demo">
+								(no live demo, but you can download the <a
+									href="https://github.com/DuncanRitchie2/CalculatorWinforms/blob/main/CalculatorWinforms/bin/Release/CalculatorWinforms.exe">.exe file</a> from GitHub)<br />
+							</span>
+							<time datetime="2019-11-27">(finished 2019 Nov 27)</time>
+						</div>
+					</div>
+					<div class="github-div">
+						<a href="https://github.com/DuncanRitchie2/CalculatorWinforms">
+							<span class="screenreader-only">C# calculator code</span>
+						</a>
+					</div>
+				</div>
+				<!-- End of last C# project -->
+			</article>
+
+			<article class="showcase-group" id="java-projects" aria-labelledby="java-projects-heading">
+				<hgroup>
+					<h2 id="java-projects-heading">
+						Java projects
+					</h2>
+					<p>
+						The GitHub logo links to the source code.
+					</p>
+				</hgroup>
+
+				<!-- Spring Boot weather app -->
+				<div class="project project-with-no-demo" aria-labelledby="weather-heading">
+					<div class="project-inner-div">
+						<picture>
+							<source media="(min-width:0px)"
+								srcset="https://res.cloudinary.com/duncanritchie/image/upload/c_scale,w_180/v1590938116/project-screenshots/spring-weather.webp">
+							<img src="https://res.cloudinary.com/duncanritchie/image/upload/c_scale,w_180/v1590938116/project-screenshots/spring-weather.png"
+								class="project-screenshot" alt="Screenshot of my weather app" />
+						</picture>
+						<div>
+							<h3 id="weather-heading">
+								Weather app
+							</h3>
+							<span class="project-made-with">
+								made with Spring Boot and the Mapbox and Dark Sky APIs<br />
+							</span>
+							<span class="project-reason-no-demo">
+								(no live demo; it was on Heroku but they <a href="https://blog.heroku.com/next-chapter">cancelled their free hosting</a>)<br />
+							</span>
+							<time datetime="2019-09-25">
+								(finished 2019 Sep 25)
+							</time>
+						</div>
+					</div>
+					<div class="github-div">
+						<a href="https://github.com/DuncanRitchie2/spring-boot-weather-app">
+							<span class="screenreader-only">Weather app code</span>
+						</a>
+					</div>
+				</div>
+
+				<!-- Java snake -->
+				<div class="project project-with-no-demo" aria-labelledby="snake-java-heading">
+					<div class="project-inner-div">
+						<picture>
+							<source media="(min-width:0px)"
+								srcset="https://res.cloudinary.com/duncanritchie/image/upload/c_scale,w_180/v1590938855/project-screenshots/java-snake.webp">
+							<img src="https://res.cloudinary.com/duncanritchie/image/upload/c_scale,w_180/v1590938855/project-screenshots/java-snake.png"
+								class="project-screenshot" alt="Screenshot of my Java snake game" />
+						</picture>
+						<div>
+							<h3 id="snake-java-heading">
 								Snake
-							</a>
-						</h3>
-						<span class="project-made-with">
-							made with vanilla JS<br />
-						</span>
-						<time datetime="2019-09-05">
-							(finished 2019 Sep 05)
-						</span>
+							</h3>
+							<span class="project-made-with">
+								made with Swing<br />
+							</span>
+							<span class="project-reason-no-demo">
+								(no live demo, but you can download the <a
+									href="https://github.com/DuncanRitchie2/java-snake/blob/main/out/artifacts/Snake_jar/Snake.jar">.jar file</a> from
+								GitHub)<br />
+							</span>
+							<time datetime="2019-09-11">
+								(finished 2019 Sep 11)
+							</span>
+						</div>
+					</div>
+					<div class="github-div">
+						<a href="https://github.com/DuncanRitchie2/java-snake">
+							<span class="screenreader-only">Java snake code</span>
+						</a>
 					</div>
 				</div>
-				<div class="github-div">
-					<a href="https://github.com/DuncanRitchie2/js-snake">
-						<span class="screenreader-only">JavaScript snake code</span>
-					</a>
-				</div>
-			</div>
 
-			<!-- Quiz -->
-			<div class="project" aria-labelledby="quiz-heading">
-				<div class="project-inner-div">
-					<picture>
-						<source media="(min-width:0px)"
-							srcset="https://res.cloudinary.com/duncanritchie/image/upload/c_scale,w_180/v1590938116/project-screenshots/quiz.webp">
-						<img src="https://res.cloudinary.com/duncanritchie/image/upload/c_scale,w_180/v1590938116/project-screenshots/quiz.png"
-							class="project-screenshot" alt="Screenshot of my quiz" />
-					</picture>
-					<div>
-						<h3 id="quiz-heading">
-							<a href="https://www.duncanritchie.co.uk/quiz/">
-								Quiz
-							</a>
-						</h3>
-						<span class="project-made-with">
-							made with vanilla JS<br />
-						</span>
-						<time datetime="2019-09-03">
-							(finished 2019 Sep 03)
-						</span>
-					</div>
-				</div>
-				<div class="github-div">
-					<a href="https://github.com/DuncanRitchie2/quiz">
-						<span class="screenreader-only">Quiz code</span>
-					</a>
-				</div>
-			</div>
-
-			<!-- Countdown timer -->
-			<div class="project" aria-labelledby="countdown-timer-heading">
-				<div class="project-inner-div">
-					<picture>
-						<source media="(min-width:0px)"
-							srcset="https://res.cloudinary.com/duncanritchie/image/upload/c_scale,w_180/v1590938117/project-screenshots/countdown-timer.webp">
-						<img src="https://res.cloudinary.com/duncanritchie/image/upload/c_scale,w_180/v1590938117/project-screenshots/countdown-timer.png"
-							class="project-screenshot" alt="Screenshot of my countdown timer" />
-					</picture>
-					<div>
-						<h3 id="countdown-timer-heading">
-							<a href="https://www.duncanritchie.co.uk/countdown-timer/">
-								Countdown timer
-							</a>
-						</h3>
-						<span class="project-made-with">
-							made with vanilla JS<br />
-						</span>
-						<time datetime="2019-08-28">
-							(finished 2019 Aug 28)
-						</span>
-					</div>
-				</div>
-				<div class="github-div">
-					<a href="https://github.com/DuncanRitchie2/countdown-timer">
-						<span class="screenreader-only">Countdown timer code</span>
-					</a>
-				</div>
-			</div>
-
-			<!-- TiQ oeuvre -->
-			<div class="project" aria-labelledby="tiq-oeuvre-heading">
-				<div class="project-inner-div">
-					<picture>
-						<source media="(min-width:0px)"
-							srcset="https://res.cloudinary.com/duncanritchie/image/upload/c_scale,w_180/v1590938117/project-screenshots/tiq-oeuvre.webp">
-						<img src="https://res.cloudinary.com/duncanritchie/image/upload/c_scale,w_180/v1590938117/project-screenshots/tiq-oeuvre.png"
-							class="project-screenshot" alt="Screenshot of my Theatre in the Quarter &oelig;uvre" />
-					</picture>
-					<div>
-						<h3 id="tiq-oeuvre-heading">
-							<a href="https://www.duncanritchie.co.uk/tiq-oeuvre/">
-								Theatre in the Quarter &oelig;uvre
-							</a>
-						</h3>
-						<span class="project-made-with">
-							made with React.js and Json data generated by an Excel file
-							that lists my voluntary work for this drama company<br />
-						</span>
-						<time datetime="2019-04-18">
-							(finished 2019 Apr 18, but I keep the data updated)
-						</span>
-					</div>
-				</div>
-				<div class="github-div">
-					<a href="https://github.com/DuncanRitchie/tiq-oeuvre">
-						<span class="screenreader-only">TiQ &oelig;uvre code</span>
-					</a>
-				</div>
-			</div>
-
-			<!-- Chat-room app -->
-			<div class="project project-with-no-demo" aria-labelledby="chat-room-heading">
-				<div class="project-inner-div">
-					<picture>
-						<source media="(min-width:0px)"
-							srcset="https://res.cloudinary.com/duncanritchie/image/upload/c_scale,w_180/v1590938117/project-screenshots/chat-room-front-end.webp">
-						<img src="https://res.cloudinary.com/duncanritchie/image/upload/c_scale,w_180/v1590938117/project-screenshots/chat-room-front-end.png"
-							class="project-screenshot" alt="Screenshot of my chat-room front-end" />
-					</picture>
-					<div>
-						<h3 id="chat-room-heading">
-							<!-- <a href="https://www.duncanritchie.co.uk/room-me/"> -->
-								Chat-room front-end mock-up
-							<!-- </a> -->
-						</h3>
-						<span class="project-made-with">
-							made with React.js with four other devs<br />
-						</span>
-						<time datetime="2019-03-11">
-							(finished 2019 Mar 11, no longer deployed)
-						</span>
-					</div>
-				</div>
-				<div class="github-div">
-					<a href="https://github.com/DuncanRitchie/room-me">
-						<span class="screenreader-only">Chat-room front-end code</span>
-					</a>
-				</div>
-			</div>
-
-			<!-- Chess -->
-			<div class="project" id="chess" aria-labelledby="chess-heading">
-				<div class="project-inner-div">
-					<picture>
-						<source media="(min-width:0px)"
-							srcset="https://res.cloudinary.com/duncanritchie/image/upload/c_scale,w_180/v1590938117/project-screenshots/chess.webp">
-						<img src="https://res.cloudinary.com/duncanritchie/image/upload/c_scale,w_180/v1590938117/project-screenshots/chess.png"
-							class="project-screenshot" alt="Screenshot of my chess game" />
-					</picture>
-					<div>
-						<h3 id="chess-heading">
-							<a href="https://www.duncanritchie.co.uk/jsChallenges/chess/chess.html">
-								Chess
-							</a>
-						</h3>
-						<span class="project-made-with">
-							made with vanilla JS<br />
-						</span>
-						<time datetime="2019-02-18">(finished 2019 Feb 18)</time>
-					</div>
-				</div>
-				<div class="github-div">
-					<a href="https://github.com/DuncanRitchie/jsChallenges/tree/gh-pages/chess">
-						<span class="screenreader-only">Chess code</span>
-					</a>
-				</div>
-			</div>
-
-			<!-- Cyber-pet -->
-			<div class="project" aria-labelledby="cyber-pet-javascript-heading">
-				<div class="project-inner-div">
-					<picture>
-						<source media="(min-width:0px)"
-							srcset="https://res.cloudinary.com/duncanritchie/image/upload/c_scale,w_180/v1590938117/project-screenshots/cyber-pet.webp">
-						<img src="https://res.cloudinary.com/duncanritchie/image/upload/c_scale,w_180/v1590938117/project-screenshots/cyber-pet.png"
-							class="project-screenshot" alt="Screenshot of my JavaScript cyber-pet" />
-					</picture>
-					<div>
-						<h3 id="cyber-pet-javascript-heading">
-							<a href="https://www.duncanritchie.co.uk/jsChallenges/cyberpet/cyberpet.html">
+				<!-- Java cyber-pet -->
+				<div class="project project-with-no-demo" aria-labelledby="cyber-pet-java-heading">
+					<div class="project-inner-div">
+						<picture>
+							<source media="(min-width:0px)"
+								srcset="https://res.cloudinary.com/duncanritchie/image/upload/c_scale,w_180/v1590938855/project-screenshots/java-cyber-pet.webp">
+							<img src="https://res.cloudinary.com/duncanritchie/image/upload/c_scale,w_180/v1590938855/project-screenshots/java-cyber-pet.png"
+								class="project-screenshot" alt="Screenshot of my Java cyber-pet" />
+						</picture>
+						<div>
+							<h3 id="cyber-pet-java-heading">
 								Cyber-pet
-							</a>
-						</h3>
-						<span class="project-made-with">
-							made with vanilla JS<br />
-						</span>
-						<time datetime="2019-02-01">(finished 2019 Feb 01)</time>
+							</h3>
+							<span class="project-reason-no-demo">
+								(no live demo because it&rsquo;s command-line-only)<br />
+							</span>
+							<time datetime="2019-08-12">
+								(finished 2019 Aug 12)
+							</span>
+						</div>
+					</div>
+					<div class="github-div">
+						<a href="https://github.com/DuncanRitchie2/cyberpet">
+							<span class="screenreader-only">Java cyber-pet code</span>
+						</a>
 					</div>
 				</div>
-				<div class="github-div">
-					<a href="https://github.com/DuncanRitchie/jsChallenges/tree/gh-pages/cyberpet">
-						<span class="screenreader-only">JavaScript cyber-pet code</span>
-					</a>
-				</div>
-			</div>
-			<!-- End of last JavaScript project -->
+				<!-- End of last Java project -->
+			</article>
 
-		</article>
-	</section>
+			<article class="showcase-group" id="javascript-projects" aria-labelledby="javascript-projects-heading">
+				<hgroup>
+					<h2 id="javascript-projects-heading">
+						My first web projects
+					</h2>
+					<p>
+						The GitHub logo links to the source code.
+					</p>
+				</hgroup>
+
+				<!-- JavaScript snake -->
+				<div class="project" aria-labelledby="snake-javascript-heading">
+					<div class="project-inner-div">
+						<picture>
+							<source media="(min-width:0px)"
+								srcset="https://res.cloudinary.com/duncanritchie/image/upload/c_scale,w_180/v1590944763/project-screenshots/snake.webp">
+							<img src="https://res.cloudinary.com/duncanritchie/image/upload/c_scale,w_180/v1590944763/project-screenshots/snake.png"
+								class="project-screenshot" alt="Screenshot of my JavaScript snake game" />
+						</picture>
+						<div>
+							<h3 id="snake-javascript-heading">
+								<a href="https://www.duncanritchie.co.uk/snake/">
+									Snake
+								</a>
+							</h3>
+							<span class="project-made-with">
+								made with vanilla JS<br />
+							</span>
+							<time datetime="2019-09-05">
+								(finished 2019 Sep 05)
+							</span>
+						</div>
+					</div>
+					<div class="github-div">
+						<a href="https://github.com/DuncanRitchie2/js-snake">
+							<span class="screenreader-only">JavaScript snake code</span>
+						</a>
+					</div>
+				</div>
+
+				<!-- Quiz -->
+				<div class="project" aria-labelledby="quiz-heading">
+					<div class="project-inner-div">
+						<picture>
+							<source media="(min-width:0px)"
+								srcset="https://res.cloudinary.com/duncanritchie/image/upload/c_scale,w_180/v1590938116/project-screenshots/quiz.webp">
+							<img src="https://res.cloudinary.com/duncanritchie/image/upload/c_scale,w_180/v1590938116/project-screenshots/quiz.png"
+								class="project-screenshot" alt="Screenshot of my quiz" />
+						</picture>
+						<div>
+							<h3 id="quiz-heading">
+								<a href="https://www.duncanritchie.co.uk/quiz/">
+									Quiz
+								</a>
+							</h3>
+							<span class="project-made-with">
+								made with vanilla JS<br />
+							</span>
+							<time datetime="2019-09-03">
+								(finished 2019 Sep 03)
+							</span>
+						</div>
+					</div>
+					<div class="github-div">
+						<a href="https://github.com/DuncanRitchie2/quiz">
+							<span class="screenreader-only">Quiz code</span>
+						</a>
+					</div>
+				</div>
+
+				<!-- Countdown timer -->
+				<div class="project" aria-labelledby="countdown-timer-heading">
+					<div class="project-inner-div">
+						<picture>
+							<source media="(min-width:0px)"
+								srcset="https://res.cloudinary.com/duncanritchie/image/upload/c_scale,w_180/v1590938117/project-screenshots/countdown-timer.webp">
+							<img src="https://res.cloudinary.com/duncanritchie/image/upload/c_scale,w_180/v1590938117/project-screenshots/countdown-timer.png"
+								class="project-screenshot" alt="Screenshot of my countdown timer" />
+						</picture>
+						<div>
+							<h3 id="countdown-timer-heading">
+								<a href="https://www.duncanritchie.co.uk/countdown-timer/">
+									Countdown timer
+								</a>
+							</h3>
+							<span class="project-made-with">
+								made with vanilla JS<br />
+							</span>
+							<time datetime="2019-08-28">
+								(finished 2019 Aug 28)
+							</span>
+						</div>
+					</div>
+					<div class="github-div">
+						<a href="https://github.com/DuncanRitchie2/countdown-timer">
+							<span class="screenreader-only">Countdown timer code</span>
+						</a>
+					</div>
+				</div>
+
+				<!-- TiQ oeuvre -->
+				<div class="project" aria-labelledby="tiq-oeuvre-heading">
+					<div class="project-inner-div">
+						<picture>
+							<source media="(min-width:0px)"
+								srcset="https://res.cloudinary.com/duncanritchie/image/upload/c_scale,w_180/v1590938117/project-screenshots/tiq-oeuvre.webp">
+							<img src="https://res.cloudinary.com/duncanritchie/image/upload/c_scale,w_180/v1590938117/project-screenshots/tiq-oeuvre.png"
+								class="project-screenshot" alt="Screenshot of my Theatre in the Quarter &oelig;uvre" />
+						</picture>
+						<div>
+							<h3 id="tiq-oeuvre-heading">
+								<a href="https://www.duncanritchie.co.uk/tiq-oeuvre/">
+									Theatre in the Quarter &oelig;uvre
+								</a>
+							</h3>
+							<span class="project-made-with">
+								made with React.js and Json data generated by an Excel file
+								that lists my voluntary work for this drama company<br />
+							</span>
+							<time datetime="2019-04-18">
+								(finished 2019 Apr 18, but I keep the data updated)
+							</span>
+						</div>
+					</div>
+					<div class="github-div">
+						<a href="https://github.com/DuncanRitchie/tiq-oeuvre">
+							<span class="screenreader-only">TiQ &oelig;uvre code</span>
+						</a>
+					</div>
+				</div>
+
+				<!-- Chat-room app -->
+				<div class="project project-with-no-demo" aria-labelledby="chat-room-heading">
+					<div class="project-inner-div">
+						<picture>
+							<source media="(min-width:0px)"
+								srcset="https://res.cloudinary.com/duncanritchie/image/upload/c_scale,w_180/v1590938117/project-screenshots/chat-room-front-end.webp">
+							<img src="https://res.cloudinary.com/duncanritchie/image/upload/c_scale,w_180/v1590938117/project-screenshots/chat-room-front-end.png"
+								class="project-screenshot" alt="Screenshot of my chat-room front-end" />
+						</picture>
+						<div>
+							<h3 id="chat-room-heading">
+								<!-- <a href="https://www.duncanritchie.co.uk/room-me/"> -->
+									Chat-room front-end mock-up
+								<!-- </a> -->
+							</h3>
+							<span class="project-made-with">
+								made with React.js with four other devs<br />
+							</span>
+							<time datetime="2019-03-11">
+								(finished 2019 Mar 11, no longer deployed)
+							</span>
+						</div>
+					</div>
+					<div class="github-div">
+						<a href="https://github.com/DuncanRitchie/room-me">
+							<span class="screenreader-only">Chat-room front-end code</span>
+						</a>
+					</div>
+				</div>
+
+				<!-- Chess -->
+				<div class="project" id="chess" aria-labelledby="chess-heading">
+					<div class="project-inner-div">
+						<picture>
+							<source media="(min-width:0px)"
+								srcset="https://res.cloudinary.com/duncanritchie/image/upload/c_scale,w_180/v1590938117/project-screenshots/chess.webp">
+							<img src="https://res.cloudinary.com/duncanritchie/image/upload/c_scale,w_180/v1590938117/project-screenshots/chess.png"
+								class="project-screenshot" alt="Screenshot of my chess game" />
+						</picture>
+						<div>
+							<h3 id="chess-heading">
+								<a href="https://www.duncanritchie.co.uk/jsChallenges/chess/chess.html">
+									Chess
+								</a>
+							</h3>
+							<span class="project-made-with">
+								made with vanilla JS<br />
+							</span>
+							<time datetime="2019-02-18">(finished 2019 Feb 18)</time>
+						</div>
+					</div>
+					<div class="github-div">
+						<a href="https://github.com/DuncanRitchie/jsChallenges/tree/gh-pages/chess">
+							<span class="screenreader-only">Chess code</span>
+						</a>
+					</div>
+				</div>
+
+				<!-- Cyber-pet -->
+				<div class="project" aria-labelledby="cyber-pet-javascript-heading">
+					<div class="project-inner-div">
+						<picture>
+							<source media="(min-width:0px)"
+								srcset="https://res.cloudinary.com/duncanritchie/image/upload/c_scale,w_180/v1590938117/project-screenshots/cyber-pet.webp">
+							<img src="https://res.cloudinary.com/duncanritchie/image/upload/c_scale,w_180/v1590938117/project-screenshots/cyber-pet.png"
+								class="project-screenshot" alt="Screenshot of my JavaScript cyber-pet" />
+						</picture>
+						<div>
+							<h3 id="cyber-pet-javascript-heading">
+								<a href="https://www.duncanritchie.co.uk/jsChallenges/cyberpet/cyberpet.html">
+									Cyber-pet
+								</a>
+							</h3>
+							<span class="project-made-with">
+								made with vanilla JS<br />
+							</span>
+							<time datetime="2019-02-01">(finished 2019 Feb 01)</time>
+						</div>
+					</div>
+					<div class="github-div">
+						<a href="https://github.com/DuncanRitchie/jsChallenges/tree/gh-pages/cyberpet">
+							<span class="screenreader-only">JavaScript cyber-pet code</span>
+						</a>
+					</div>
+				</div>
+				<!-- End of last JavaScript project -->
+
+			</article>
+		</section>
+	</main>
 
 	<script src="./js/main.js"></script>
 	<script src="./js/navbar.js"></script>
