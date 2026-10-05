@@ -92,7 +92,10 @@ if (!!window.IntersectionObserver) {
 		}
 	}
 
-	const intersectionObserver = new IntersectionObserver(displayDiagonalImages, {threshold: [0.1, 0.9]});
+	// The thresholds mean that the observer will fire whenever an article becomes 10% visible, 30% visible, etc.
+	// If an article is longer than the viewport, it may never be true that 90% of the article is visible,
+	// so it’s useful to have smaller values as well as the 0.9.
+	const intersectionObserver = new IntersectionObserver(displayDiagonalImages, {threshold: [0.1, 0.3, 0.5, 0.7, 0.9]});
 
 	for (let i = 0; i < articles.length; i++) {
 		// console.log(`Observing Article ${i}: ${articles[i].id}`)
